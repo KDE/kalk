@@ -36,7 +36,7 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
-    
+    property alias result: inputPad.expression
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: {
         let rows = 4, columns = 3;
