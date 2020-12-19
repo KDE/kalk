@@ -47,6 +47,9 @@ Kirigami.ScrollablePage {
         model: historyManager
         delegate: Kirigami.AbstractListItem {
             highlighted: false
+            onClicked:{
+                switchToPage("qrc:/qml/CalculationPage.qml");
+            }
             Text {
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
                 color: Kirigami.Theme.activeTextColor
