@@ -48,7 +48,7 @@ Kirigami.ScrollablePage {
         delegate: Kirigami.AbstractListItem {
             highlighted: false
             onClicked:{
-                pageStack.push("qrc:/qml/CalculationPage.qml",{"result":model.display.split('=')[0]});
+                pageStack.push("qrc:/qml/CalculationPage.qml",{"result":model.display.split('=')[1]});
             }
             Text {
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
