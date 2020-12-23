@@ -133,6 +133,9 @@ double   [0-9]+|[0-9]+"."[0-9]+
 "e"      return yy::parser::make_NUMBER (2.71828182845, loc);
 "%"      return yy::parser::make_PERCENTAGE (loc);
 "="       loc.step ();
+"asin"     return yy::parser::make_ASIN (loc);
+"acos"      return yy::parser::make_ACOS (loc);
+"atan"      return yy::parser::make_ATAN (loc);
 
 {double}      return make_NUMBER (yytext, loc);
 <<EOF>>    return yy::parser::make_YYEOF (loc);

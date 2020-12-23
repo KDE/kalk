@@ -66,6 +66,9 @@
   LOG2    "LOG2"
   SQUAREROOT    "SQUAREROOT"
   PERCENTAGE    "%"
+  ASIN     "ASIN"
+  ACOS     "ACOS"
+  ATAN     "ATAN"
 ;
 
 %token <double> NUMBER "number"
@@ -102,6 +105,12 @@ exp:
 | "LOG2" "(" exp ")" { $$ = log2($3); }
 | "SQUAREROOT" "(" exp   { $$ = sqrt($3); }
 | "SQUAREROOT" "(" exp ")"  { $$ = sqrt($3); }
+| "ASIN" "(" exp     { $$ = asin($3); }
+| "ASIN" "(" exp ")" { $$ = asin($3); }
+| "ACOS" "(" exp     { $$ = acos($3); }
+| "ACOS" "(" exp ")" { $$ = acos($3); }
+| "ATAN" "(" exp     { $$ = atan($3); }
+| "ATAN" "(" exp ")" { $$ = atan($3); }
 ;
 
 factor: "(" exp ")" { $$ = $2; }
