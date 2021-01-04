@@ -30,6 +30,7 @@ set(kalk_SRCS
     unitmodel.cpp
     typemodel.cpp
     mathengine.cpp
+    inputmanager.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/parser.cc
     ${CMAKE_CURRENT_BINARY_DIR}/scanner.cc
     mathengine/driver.cc

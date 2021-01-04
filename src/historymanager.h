@@ -29,18 +29,25 @@
 class HistoryManager : public QAbstractListModel
 {
     Q_OBJECT
-    Q_PROPERTY(QString expression WRITE addExpression)
+    Q_PROPERTY(QString expression WRITE addHistory)
 public:
-    HistoryManager();
+    static HistoryManager *inst()
+    {
+        static HistoryManager singleton;
+        return &singleton;
+    }
     int rowCount(const QModelIndex &parent) const override
     {
+        Q_UNUSED(parent)
         return historyList.count();
     };
     QVariant data(const QModelIndex &index, int role) const override
     {
+        Q_UNUSED(index)
+        Q_UNUSED(role)
         return historyList.at(index.row());
     };
-    inline void addExpression(QString string)
+    void addHistory(const QString &string)
     {
         historyList.append(string);
         this->save();
@@ -51,6 +58,7 @@ public:
 private:
     QList<QString> historyList;
     void save();
+    HistoryManager();
 };
 
 #endif // HISTORYMANAGER_H

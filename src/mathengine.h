@@ -30,12 +30,17 @@ class MathEngine : public QObject
     Q_PROPERTY(QString result READ result NOTIFY resultChanged)
     Q_PROPERTY(bool error READ error NOTIFY resultChanged)
 public:
+    static MathEngine *inst()
+    {
+        static MathEngine singleton;
+        return &singleton;
+    }
     Q_INVOKABLE void parse(QString expr);
-    inline QString result()
+    QString result()
     {
         return result_;
     };
-    inline bool error()
+    bool error()
     {
         return mDriver.syntaxError_;
     };
@@ -43,6 +48,7 @@ signals:
     void resultChanged();
 
 private:
+    MathEngine(){};
     driver mDriver;
     QString result_;
 };
