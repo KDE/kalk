@@ -16,6 +16,7 @@
 #include "historymanager.h"
 #include "mathengine.h"
 #include "typemodel.h"
+#include "inputmanager.h"
 #include "unitmodel.h"
 int main(int argc, char *argv[])
 {
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     engine.rootContext()->setContextProperty("historyManager", HistoryManager::inst());
+    engine.rootContext()->setContextProperty("inputManager", InputManager::inst());
     engine.rootContext()->setContextProperty("typeModel", typeModel);
     engine.rootContext()->setContextProperty("unitModel", unitModel);
     engine.rootContext()->setContextProperty("mathEngine", MathEngine::inst());

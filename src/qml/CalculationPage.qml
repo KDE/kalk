@@ -18,7 +18,6 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
     
-    property alias result: inputPad.expression
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: {
         let rows = 4, columns = 3;
@@ -30,55 +29,46 @@ Kirigami.Page {
         }
     }
     
-    function expressionAdd(text) {
-        mathEngine.parse(inputPad.expression + text);
-        if (!mathEngine.error) {
-            inputPad.expression += text;
-        }
-    }
-    
     Keys.onPressed: {
         switch(event.key) {
         case Qt.Backspace || Qt.Delete:
-            expressionAdd("DEL"); break;
+            inputManager.backspace(); break;
         case Qt.Key_0:
-            expressionAdd("0"); break;
+            inputManager.append("0"); break;
         case Qt.Key_1:
-            expressionAdd("1"); break;
+            inputManager.append("1"); break;
         case Qt.Key_2:
-            expressionAdd("2"); break;
+            inputManager.append("2"); break;
         case Qt.Key_3:
-            expressionAdd("3"); break;
+            inputManager.append("3"); break;
         case Qt.Key_4:
-            expressionAdd("4"); break;
+            inputManager.append("4"); break;
         case Qt.Key_5:
-            expressionAdd("5"); break;
+            inputManager.append("5"); break;
         case Qt.Key_6:
-            expressionAdd("6"); break;
+            inputManager.append("6"); break;
         case Qt.Key_7:
-            expressionAdd("7"); break;
+            inputManager.append("7"); break;
         case Qt.Key_8:
-            expressionAdd("8"); break;
+            inputManager.append("8"); break;
         case Qt.Key_9:
-            expressionAdd("9"); break;
+            inputManager.append("9"); break;
         case Qt.Key_Plus:
-            expressionAdd("+"); break;
+            inputManager.append("+"); break;
         case Qt.Key_Minus:
-            expressionAdd("-"); break;
+            inputManager.append("-"); break;
         case Qt.Key_multiply:
-            expressionAdd("×"); break;
+            inputManager.append("×"); break;
         case Qt.Key_division:
-            expressionAdd("÷"); break;
+            inputManager.append("÷"); break;
         case Qt.Key_AsciiCircum:
-            expressionAdd("^"); break;
+            inputManager.append("^"); break;
         case Qt.Key_Period:
-            expressionAdd("."); break;
+            inputManager.append("."); break;
         case Qt.Key_Equal:
-            expressionAdd("="); break;
         case Qt.Key_Return:
-            expressionAdd("="); break;
         case Qt.Key_Enter:
-            expressionAdd("="); break;
+            inputManager.equal(); break;
         }
     }
     
@@ -110,7 +100,7 @@ Kirigami.Page {
                         id: expressionRow
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit
-                        text: inputPad.expression
+                        text: inputManager.expression
                         color: Kirigami.Theme.disabledTextColor
                     }
                     onContentWidthChanged: {
@@ -130,7 +120,7 @@ Kirigami.Page {
                         id: result
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 2
-                        text: mathEngine.result
+                        text: inputManager.result
                         NumberAnimation on opacity {
                             id: resultFadeInAnimation
                             from: 0.5
@@ -170,17 +160,15 @@ Kirigami.Page {
                 anchors.rightMargin: Kirigami.Units.gridUnit * 1.5 // for right side drawer indicator
                 onPressed: {
                     if (text == "DEL") {
-                        inputPad.expression = inputPad.expression.slice(0, inputPad.expression.length - 1);
-                        expressionAdd("");
+                        inputManager.backspace();
                     } else if (text == "=") {
-                        historyManager.expression = inputPad.expression + " = " + result.text;
-                        inputPad.expression = mathEngine.result;
+                        inputManager.equal();
                         resultFadeOutAnimation.start();
                     } else {
-                        expressionAdd(text);
+                        inputManager.append(text);
                     }
                 }
-                onClear: inputPad.expression = ""
+                onClear: inputManager.clear()
             }
             
             Rectangle {
@@ -229,7 +217,7 @@ Kirigami.Page {
                     anchors.rightMargin: Kirigami.Units.largeSpacing
                     anchors.topMargin: Kirigami.Units.largeSpacing
                     anchors.bottomMargin: parent.height / 4
-                    onPressed: expressionAdd(text)
+                    onPressed: inputManager.append(text)
                 }
                 // for plasma style
                 background: Rectangle {

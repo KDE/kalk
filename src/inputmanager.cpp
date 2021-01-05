@@ -60,7 +60,7 @@ void InputManager::backspace()
 
 void InputManager::equal()
 {
-    HistoryManager::inst()->addHistory(m_expression);
+    HistoryManager::inst()->addHistory(m_expression + QStringLiteral(" = ") + m_result);
     m_expression = m_result;
     m_result.clear();
     m_stack = {}; // clear the stack
