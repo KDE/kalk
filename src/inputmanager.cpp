@@ -32,6 +32,17 @@ const QString &InputManager::result() const
 
 void InputManager::append(const QString &subexpression)
 {
+    // if expression was from result and input is numeric, clear expression
+    if(m_moveFromResult && subexpression.size() == 1)
+    {
+        if(subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.'))
+        {
+            m_expression.clear();
+            m_stack.pop();
+        }
+    }
+    m_moveFromResult = false;
+
     MathEngine::inst()->parse(m_expression + subexpression);
     if(!MathEngine::inst()->error())
     {
@@ -65,6 +76,8 @@ void InputManager::equal()
     m_result.clear();
     m_stack = {}; // clear the stack
     m_stack.push(m_result.size());
+
+    m_moveFromResult = true;
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
 }
@@ -84,6 +97,8 @@ void InputManager::fromHistory(const QString &result)
     m_result.clear();
     m_stack = {};
     m_stack.push(result.size());
+
+    m_moveFromResult = true;
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
 }

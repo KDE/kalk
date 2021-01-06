@@ -27,6 +27,7 @@ Q_SIGNALS:
     void resultChanged();
 private:
     InputManager();
+    bool m_moveFromResult = false; // clear expression on none operator input
     std::stack<int, std::vector<int>> m_stack; // track subexpression length for removal later
     QString m_expression;
     QString m_result;
