@@ -32,6 +32,6 @@ public:
     bool trace_scanning;
     // The token's location used by the scanner.
     yy::location location;
-    bool syntaxError_ = false;
+    bool syntaxError = false;
 };
 #endif // ! DRIVER_HH

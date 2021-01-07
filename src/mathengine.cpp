@@ -7,7 +7,7 @@
 
 void MathEngine::parse(QString expr)
 {
-    mDriver.parse(expr.toStdString());
-    result_ = QString::number(mDriver.result);
+    m_driver.parse(expr.toStdString());
+    m_result = QString::number(m_driver.result);
     emit resultChanged();
 }

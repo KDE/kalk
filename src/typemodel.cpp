@@ -14,11 +14,13 @@ TypeModel::TypeModel()
 
 QVariant TypeModel::data(const QModelIndex &index, int role) const
 {
+    Q_UNUSED(role)
     return i18n((unitsType.at(index.row())).toLatin1());
 }
 
 int TypeModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent)
     return unitsType.size();
 }
 QHash<int, QByteArray> TypeModel::roleNames() const

@@ -12,7 +12,7 @@ driver::driver()
 }
 int driver::parse(const std::string expr)
 {
-    syntaxError_ = false;
+    syntaxError = false;
     scan_begin(expr);
     yy::parser parse(*this);
     parse.set_debug_level(trace_parsing);

@@ -128,5 +128,5 @@ yy::parser::error (const location_type& l, const std::string& m)
 {
   std::cerr << l << ": " << m << '\n';
   if(m != "syntax error, unexpected end of file")
-    drv.syntaxError_ = true;
+    drv.syntaxError = true;
 }

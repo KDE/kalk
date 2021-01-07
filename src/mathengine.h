@@ -21,19 +21,19 @@ public:
     Q_INVOKABLE void parse(QString expr);
     QString result()
     {
-        return result_;
+        return m_result;
     };
     bool error()
     {
-        return mDriver.syntaxError_;
+        return m_Driver.syntaxError;
     };
 signals:
     void resultChanged();
 
 private:
     MathEngine(){};
-    driver mDriver;
-    QString result_;
+    driver m_driver;
+    QString m_result;
 };
 
 #endif

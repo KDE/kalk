@@ -14,6 +14,7 @@ UnitModel::UnitModel()
 }
 QVariant UnitModel::data(const QModelIndex &index, int role) const
 {
+    Q_UNUSED(role)
     if (index.row() >= 0 && index.row() < m_units.count())
         return m_units.at(index.row()).symbol() + " " + m_units.at(index.row()).description();
     else
@@ -22,6 +23,7 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
 
 int UnitModel::rowCount(const QModelIndex &parent) const
 {
+    Q_UNUSED(parent)
     return m_units.count();
 }
 QHash<int, QByteArray> UnitModel::roleNames() const
