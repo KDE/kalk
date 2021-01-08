@@ -25,7 +25,7 @@ public:
     };
     bool error()
     {
-        return m_Driver.syntaxError;
+        return m_driver.syntaxError;
     };
 signals:
     void resultChanged();

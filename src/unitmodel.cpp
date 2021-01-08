@@ -58,7 +58,7 @@ QStringList UnitModel::search(QString keyword, int field)
 
     vec->clear();
 
-    for (auto unit : m_units) {
+    for (auto &unit : m_units) {
         if (unit.description().indexOf(keyword) != -1 || unit.symbol().indexOf(keyword) != -1) {
             list.append(unit.symbol() + " " + unit.description());
             vec->append(unit.id());
