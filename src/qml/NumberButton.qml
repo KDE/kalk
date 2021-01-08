@@ -55,17 +55,14 @@ Item {
             onClicked: root.clicked(root.text)
             onPressAndHold: root.longClicked()
         }
-    }
-
-    DropShadow {
-        anchors.fill: keyRect
-        source: keyRect
-        cached: true
-        horizontalOffset: 0
-        verticalOffset: 1
-        radius: 4
-        samples: 6
-        color: root.dropShadowColor
+        layer.enabled: true
+        layer.effect: DropShadow {
+            horizontalOffset: 0
+            verticalOffset: 1
+            radius: 4
+            samples: 6
+            color: root.dropShadowColor
+        }
     }
 
     Controls.Label {
