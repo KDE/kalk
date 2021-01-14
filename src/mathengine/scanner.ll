@@ -138,7 +138,7 @@ double   [0-9]+|([0-9]+)?"."[0-9]+
 "atan"      return yy::parser::make_ATAN (loc);
 
 {double}      return make_NUMBER (yytext, loc);
-<<EOF>>    return yy::parser::make_YYEOF (loc);
+<<EOF>>    return yy::parser::symbol_type (0, loc);
 %%
 
 yy::parser::symbol_type
