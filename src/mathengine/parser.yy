@@ -21,7 +21,7 @@
  * $END_LICENSE$
  */
 %skeleton "lalr1.cc" // -*- C++ -*-
-%require "3.6.4"
+%require "3.0"
 %defines
 
 %define api.token.raw
@@ -42,7 +42,7 @@
 %locations
 
 %define parse.trace
-%define parse.error detailed
+%define parse.error verbose
 %define parse.lac full
 
 %code {
