@@ -22,7 +22,8 @@ HistoryManager::HistoryManager()
     if (file.exists()) {
         file.open(QIODevice::ReadOnly);
         QJsonDocument doc(QJsonDocument::fromJson(file.readAll()));
-        for (auto record : doc.array()) {
+        auto array = doc.array();
+        for (const auto &record : qAsConst(array)) {
             historyList.append(record.toString());
         }
         file.close();
@@ -43,7 +44,7 @@ void HistoryManager::save()
 {
     QJsonDocument doc;
     QJsonArray array;
-    for (auto record : historyList) {
+    for (const auto &record : qAsConst(historyList)) {
         array.append(record);
     }
     doc.setArray(array);
