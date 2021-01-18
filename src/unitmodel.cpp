@@ -6,17 +6,24 @@
 #include "unitmodel.h"
 #include <KLocalizedContext>
 #include <KLocalizedString>
-#include <kunitconversion/converter.h>
-
+#include <QDebug>
 UnitModel::UnitModel()
 {
-    m_units = KUnitConversion::Converter().category(KUnitConversion::AccelerationCategory).units();
+    connect(this, &UnitModel::unitIndexChanged, this, &UnitModel::calculateResult);
+    connect(this, &UnitModel::valueChanged, this, &UnitModel::calculateResult);
+
+    auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
+    for(const auto &unit : qAsConst(units))
+    {
+        m_unitIDs.push_back(unit.id());
+        m_units.push_back(unit.symbol());
+    }
 }
 QVariant UnitModel::data(const QModelIndex &index, int role) const
 {
     Q_UNUSED(role)
-    if (index.row() >= 0 && index.row() < m_units.count())
-        return m_units.at(index.row()).symbol() + " " + m_units.at(index.row()).description();
+    if (index.row() >= 0 && index.row() < static_cast<int>(categoryAndEnum.size()))
+        return std::get<0>(categoryAndEnum.at(index.row()));
     else
         return QVariant();
 }
@@ -24,70 +31,95 @@ QVariant UnitModel::data(const QModelIndex &index, int role) const
 int UnitModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent)
-    return m_units.count();
+    return static_cast<int>(categoryAndEnum.size());
 }
 QHash<int, QByteArray> UnitModel::roleNames() const
 {
     return {{Qt::DisplayRole, "name"}};
 }
-
-void UnitModel::changeUnit(QString type)
+void UnitModel::setValue(QString value)
 {
-    Q_EMIT layoutAboutToBeChanged();
-    m_units = KUnitConversion::Converter().category(static_cast<KUnitConversion::CategoryId>(categoryToEnum.find(type)->second)).units();
-    Q_EMIT layoutChanged();
+    m_value = std::move(value);
+    Q_EMIT valueChanged();
 }
-
-QString UnitModel::getRet(double val, int fromTypeIndex, int toTypeIndex)
+void UnitModel::setCurrentIndex(int i)
 {
-    if (fromTypeIndex < 0 || toTypeIndex < 0 || fromTypeIndex >= m_fromUnitID.size() || toTypeIndex >= m_toUnitID.size())
-        return {};
+    if(i < 0 || i > static_cast<int>(categoryAndEnum.size()))
+        return;
+    if(m_currentIndex != i)
+    {
+        m_unitIDs.clear();
+        m_units.clear();
+        m_currentIndex = i;
+        m_value.clear();
+        m_fromUnitIndex = 0;
+        m_toUnitIndex = 1;
 
-    KUnitConversion::Value fromVal(val, m_fromUnitID.at(fromTypeIndex));
-    return fromVal.convertTo(m_toUnitID.at(toTypeIndex)).toString();
-};
-
-QStringList UnitModel::search(QString keyword, int field)
-{
-    QStringList list;
-    QVector<KUnitConversion::UnitId> *vec;
-    if (field == 0)
-        vec = &m_fromUnitID;
-    else
-        vec = &m_toUnitID;
-
-    vec->clear();
-
-    for (auto &unit : m_units) {
-        if (unit.description().indexOf(keyword) != -1 || unit.symbol().indexOf(keyword) != -1) {
-            list.append(unit.symbol() + " " + unit.description());
-            vec->append(unit.id());
+        auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
+        for(const auto &unit : qAsConst(units))
+        {
+            m_unitIDs.push_back(unit.id());
+            m_units.push_back(unit.symbol());
         }
+
+        calculateResult();
+        Q_EMIT currentIndexChanged();
+        Q_EMIT unitIndexChanged();
+        Q_EMIT typeListChanged();
+        Q_EMIT valueChanged();
     }
-    return list;
 }
-const std::unordered_map<QString, int> UnitModel::categoryToEnum = {{"Acceleration", KUnitConversion::AccelerationCategory},
-                                                                    {"Angle", KUnitConversion::AngleCategory},
-                                                                    {"Area", KUnitConversion::AreaCategory},
-                                                                    {"Binary Data", KUnitConversion::BinaryDataCategory},
-                                                                    {"Currency", KUnitConversion::CurrencyCategory},
-                                                                    {"Density", KUnitConversion::DensityCategory},
-                                                                    {"Electrical Current", KUnitConversion::ElectricalCurrentCategory},
-                                                                    {"Electrical Resistance", KUnitConversion::ElectricalResistanceCategory},
-                                                                    {"Energy", KUnitConversion::EnergyCategory},
-                                                                    {"Force", KUnitConversion::ForceCategory},
-                                                                    {"Frequency", KUnitConversion::FrequencyCategory},
-                                                                    {"Fuel Efficiency", KUnitConversion::FuelEfficiencyCategory},
-                                                                    {"Length", KUnitConversion::LengthCategory},
-                                                                    {"Mass", KUnitConversion::MassCategory},
-                                                                    {"Permeability", KUnitConversion::PermeabilityCategory},
-                                                                    {"Power", KUnitConversion::PowerCategory},
-                                                                    {"Pressure", KUnitConversion::PressureCategory},
-                                                                    {"Temperature", KUnitConversion::TemperatureCategory},
-                                                                    {"Thermal Conductivity", KUnitConversion::ThermalConductivityCategory},
-                                                                    {"Thermal Flux", KUnitConversion::ThermalFluxCategory},
-                                                                    {"Thermal Generation", KUnitConversion::ThermalGenerationCategory},
-                                                                    {"Time", KUnitConversion::TimeCategory},
-                                                                    {"Velocity", KUnitConversion::VelocityCategory},
-                                                                    {"Volume", KUnitConversion::VolumeCategory},
-                                                                    {"Voltage", KUnitConversion::VoltageCategory}};
+void UnitModel::setFromUnitIndex(int i)
+{
+    m_fromUnitIndex = i;
+    calculateResult();
+}
+void UnitModel::setToUnitIndex(int i)
+{
+    m_toUnitIndex = i;
+    calculateResult();
+}
+void UnitModel::calculateResult()
+{
+    if(m_value.size())
+    {
+        auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
+
+        if(m_fromUnitIndex < 0 || m_toUnitIndex < 0 || m_fromUnitIndex > units.size() || m_toUnitIndex > units.size())
+            return;
+
+        auto from = KUnitConversion::Value(m_value.toDouble(), units.at(m_fromUnitIndex));
+        m_result = KUnitConversion::Converter().convert(from,units.at(m_toUnitIndex)).toString();
+        qDebug() << m_result;
+    } else
+    {
+        m_result.clear();
+    }
+    Q_EMIT resultChanged();
+}
+const std::vector<std::tuple<QString, KUnitConversion::CategoryId>> UnitModel::categoryAndEnum =
+{{QStringLiteral("Acceleration"), KUnitConversion::AccelerationCategory},
+ {QStringLiteral("Angle"), KUnitConversion::AngleCategory},
+ {QStringLiteral("Area"), KUnitConversion::AreaCategory},
+ {QStringLiteral("Binary Data"), KUnitConversion::BinaryDataCategory},
+ {QStringLiteral("Currency"), KUnitConversion::CurrencyCategory},
+ {QStringLiteral("Density"), KUnitConversion::DensityCategory},
+ {QStringLiteral("Electrical Current"), KUnitConversion::ElectricalCurrentCategory},
+ {QStringLiteral("Electrical Resistance"), KUnitConversion::ElectricalResistanceCategory},
+ {QStringLiteral("Energy"), KUnitConversion::EnergyCategory},
+ {QStringLiteral("Force"), KUnitConversion::ForceCategory},
+ {QStringLiteral("Frequency"), KUnitConversion::FrequencyCategory},
+ {QStringLiteral("Fuel Efficiency"), KUnitConversion::FuelEfficiencyCategory},
+ {QStringLiteral("Length"), KUnitConversion::LengthCategory},
+ {QStringLiteral("Mass"), KUnitConversion::MassCategory},
+ {QStringLiteral("Permeability"), KUnitConversion::PermeabilityCategory},
+ {QStringLiteral("Power"), KUnitConversion::PowerCategory},
+ {QStringLiteral("Pressure"), KUnitConversion::PressureCategory},
+ {QStringLiteral("Temperature"), KUnitConversion::TemperatureCategory},
+ {QStringLiteral("Thermal Conductivity"), KUnitConversion::ThermalConductivityCategory},
+ {QStringLiteral("Thermal Flux"), KUnitConversion::ThermalFluxCategory},
+ {QStringLiteral("Thermal Generation"), KUnitConversion::ThermalGenerationCategory},
+ {QStringLiteral("Time"), KUnitConversion::TimeCategory},
+ {QStringLiteral("Velocity"), KUnitConversion::VelocityCategory},
+ {QStringLiteral("Volume"), KUnitConversion::VolumeCategory},
+ {QStringLiteral("Voltage"), KUnitConversion::VoltageCategory}};

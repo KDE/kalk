@@ -23,18 +23,13 @@ int main(int argc, char *argv[])
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
 
-    auto *typeModel = new TypeModel();
-    auto *unitModel = new UnitModel();
-    QObject::connect(typeModel, &TypeModel::categoryChanged, unitModel, &UnitModel::changeUnit);
-    // create qml app engine
     QQmlApplicationEngine engine;
     KLocalizedString::setApplicationDomain("kalk");
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     engine.rootContext()->setContextProperty("historyManager", HistoryManager::inst());
     engine.rootContext()->setContextProperty("inputManager", InputManager::inst());
-    engine.rootContext()->setContextProperty("typeModel", typeModel);
-    engine.rootContext()->setContextProperty("unitModel", unitModel);
+    engine.rootContext()->setContextProperty("unitModel", UnitModel::inst());
     KAboutData aboutData("kalk", i18n("Calculator"), "0.1", i18n("Calculator in Kirigami"), KAboutLicense::GPL, i18n("© 2020 KDE Community"));
     KAboutData::setApplicationData(aboutData);
 

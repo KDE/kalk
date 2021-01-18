@@ -3,32 +3,75 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#ifndef MYUNITMODEL_H
-#define MYUNITMODEL_H // this took me hours to debug, UNITMODEL is defined by kunitconversio
+#pragma once
 
 #include <QAbstractListModel>
 #include <QObject>
 #include <kunitconversion/unit.h>
-#include <unordered_map>
+#include <kunitconversion/converter.h>
+#include <tuple>
 
 class UnitModel : public QAbstractListModel
 {
     Q_OBJECT
+    Q_PROPERTY(QStringList typeList READ typeList NOTIFY typeListChanged)
+    Q_PROPERTY(QString result READ result NOTIFY resultChanged)
+    Q_PROPERTY(QString value READ value WRITE setValue NOTIFY valueChanged)
+    Q_PROPERTY(int currentIndex READ currentIndex WRITE setCurrentIndex NOTIFY currentIndexChanged)
+    Q_PROPERTY(int fromUnitIndex READ fromUnitIndex WRITE setFromUnitIndex NOTIFY unitIndexChanged)
+    Q_PROPERTY(int toUnitIndex READ toUnitIndex WRITE setToUnitIndex NOTIFY unitIndexChanged)
 public:
-    UnitModel();
+    static UnitModel *inst()
+    {
+        static UnitModel singleton;
+        return &singleton;
+    }
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
-    Q_INVOKABLE QString getRet(double val, int fromTypeIndex, int toTypeIndex); // use int index because text may be localized
-    Q_INVOKABLE QStringList search(QString keyword, int field);                 // 0 for from search field, 1 for to search field
-public slots:
-    void changeUnit(QString type);
-
+    const QString &value() const
+    {
+        return m_value;
+    }
+    void setValue(QString value);
+    const QString &result() const
+    {
+        return m_result;
+    }
+    int currentIndex() const
+    {
+        return m_currentIndex;
+    }
+    int fromUnitIndex() const
+    {
+        return m_fromUnitIndex;
+    }
+    int toUnitIndex() const
+    {
+        return m_toUnitIndex;
+    }
+    const QStringList &typeList() const
+    {
+        return m_units;
+    }
+    void setCurrentIndex(int i);
+    void setFromUnitIndex(int i);
+    void setToUnitIndex(int i);
+Q_SIGNALS:
+    void typeListChanged();
+    void valueChanged();
+    void resultChanged();
+    void currentIndexChanged();
+    void unitIndexChanged();
+private Q_SLOTS:
+    void calculateResult();
 private:
-    QList<KUnitConversion::Unit> m_units;
-    QVector<QString> m_displayString;
-    QVector<KUnitConversion::UnitId> m_fromUnitID;
-    QVector<KUnitConversion::UnitId> m_toUnitID;
-    static const std::unordered_map<QString, int> categoryToEnum;
+    UnitModel();
+    int m_currentIndex = 0;
+    int m_fromUnitIndex = 0;
+    int m_toUnitIndex = 1;
+    QString m_value, m_result;
+    QStringList m_units;
+    std::vector<KUnitConversion::UnitId> m_unitIDs;
+    static const std::vector<std::tuple<QString, KUnitConversion::CategoryId>> categoryAndEnum;
 };
-#endif // UNITMODEL_H

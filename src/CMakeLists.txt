@@ -28,7 +28,6 @@ set(kalk_SRCS
     main.cpp
     historymanager.cpp
     unitmodel.cpp
-    typemodel.cpp
     mathengine.cpp
     inputmanager.cpp
     ${CMAKE_CURRENT_BINARY_DIR}/parser.cc

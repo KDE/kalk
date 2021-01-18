@@ -47,7 +47,7 @@ Kirigami.ApplicationWindow {
             Kirigami.PagePoolAction {
                 text: i18n("Convertor")
                 iconName: "gtk-convert"
-                page: "qrc:/qml/UnitTypeGrid.qml"
+                page: "qrc:/qml/UnitConverter.qml"
                 pagePool: mainPagePool
             },
             Kirigami.PagePoolAction {
