@@ -51,3 +51,6 @@ prime/
 stage/
 *.snap
 *source.tar.bz2
+
+# Local Development Script
+buildscript.sh
