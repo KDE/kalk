@@ -15,7 +15,6 @@
 
 #include "historymanager.h"
 #include "mathengine.h"
-#include "typemodel.h"
 #include "inputmanager.h"
 #include "unitmodel.h"
 int main(int argc, char *argv[])
