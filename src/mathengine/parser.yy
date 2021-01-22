@@ -90,7 +90,8 @@ exp:
 | exp exp       { $$ = $1 * $2; }
 | exp "*" exp   { $$ = $1 * $3; }
 | exp "/" exp   { $$ = $1 / $3; }
-| exp "^" exp   { $$ = pow($1, $3); }
+| exp "^" factor   { $$ = pow($1, $3); }
+| exp "^"   { $$ = $1; }
 | "SIN" "(" exp     { $$ = sin($3); }
 | "SIN" "(" exp ")" { $$ = sin($3); }
 | "COS" "(" exp     { $$ = cos($3); }
