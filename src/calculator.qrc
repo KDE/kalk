@@ -6,9 +6,8 @@
         <file>qml/NumberButton.qml</file>
         <file>qml/CalculationPage.qml</file>
         <file>qml/FunctionPad.qml</file>
-        <file>qml/UnitTypeGrid.qml</file>
-        <file>qml/UnitConversion.qml</file>
         <file>qml/AboutPage.qml</file>
         <file>qml/BinaryCalculator.qml</file>
+        <file>qml/UnitConverter.qml</file>
     </qresource>
 </RCC>
