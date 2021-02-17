@@ -8,6 +8,7 @@
         <file>qml/FunctionPad.qml</file>
         <file>qml/AboutPage.qml</file>
         <file>qml/BinaryCalculator.qml</file>
+        <file>qml/BinaryPad.qml</file>
         <file>qml/UnitConverter.qml</file>
     </qresource>
 </RCC>
