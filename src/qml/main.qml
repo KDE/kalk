@@ -19,6 +19,9 @@ Kirigami.ApplicationWindow {
     width: Kirigami.Units.gridUnit * 20
     readonly property int columnWidth: Kirigami.Units.gridUnit * 13
     wideScreen: width > columnWidth * 3
+    Component.onCompleted: {
+        pageStack.globalToolBar.canContainHandles = true;
+    }
 
     function switchToPage(page) {
         while (pageStack.depth > 0) pageStack.pop();
