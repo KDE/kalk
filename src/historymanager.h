@@ -22,24 +22,24 @@ public:
     int rowCount(const QModelIndex &parent) const override
     {
         Q_UNUSED(parent)
-        return historyList.count();
+        return m_historyList.count();
     };
     QVariant data(const QModelIndex &index, int role) const override
     {
         Q_UNUSED(index)
         Q_UNUSED(role)
-        return historyList.at(index.row());
+        return m_historyList.at(index.row());
     };
     void addHistory(const QString &string)
     {
-        historyList.append(string);
+        m_historyList.append(string);
         this->save();
         emit layoutChanged();
     };
     Q_INVOKABLE void clearHistory();
 
 private:
-    QList<QString> historyList;
+    QList<QString> m_historyList;
     void save();
     HistoryManager();
 };

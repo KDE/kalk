@@ -36,6 +36,23 @@ endif()
 include(FeatureSummary)
 
 find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+set (CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set (CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" ${CMAKE_SOURCE_DIR}/cmake/modules)
+find_package(GMP)
+set_package_properties(GMP PROPERTIES
+    DESCRIPTION "The GNU Multiple Precision Arithmetic Library"
+    URL "https://gmplib.org/"
+    TYPE REQUIRED
+    PURPOSE "Required for building KCalc."
+)
+
+find_package(MPFR)
+set_package_properties(MPFR PROPERTIES
+    DESCRIPTION "The GNU Multiple Precision Floating-Point Reliable Library"
+    URL "https://www.mpfr.org/"
+    TYPE REQUIRED
+    PURPOSE "Required for building KCalc."
+)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
@@ -53,6 +70,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
         CoreAddons
         UnitConversion)
 add_subdirectory(src)
+
+configure_file(config-kcalc.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kcalc.h )
+add_subdirectory(knumber)
+
 install(PROGRAMS org.kde.kalk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kalk.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES kalk.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
