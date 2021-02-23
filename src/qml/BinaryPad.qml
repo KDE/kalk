@@ -21,6 +21,13 @@ GridLayout {
     //
     // Might have to look into adding a function overlay to seperate out uncommon functions (fractional, modulo, abs)
 
+    // Rwo Number from bottom: 6
+    NumberButton {text: ""; onClicked: pressed(text); special: true;}
+    NumberButton {text: "<<"; onClicked: pressed(text); special: true;}
+    NumberButton {text: ">>"; onClicked: pressed(text); special: true;}
+    NumberButton {text: "ONEC"; display: "ones"; onClicked: pressed(text); special: true;}
+    NumberButton {text: "TWOC"; display: "twos"; onClicked: pressed(text); special: true;}
+
     // Row Number from bottom: 5
     NumberButton {text: "(" ; onClicked: pressed(text); special: true;}
     NumberButton {text: ")" ; onClicked: pressed(text); special: true;}

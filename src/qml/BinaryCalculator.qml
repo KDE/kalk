@@ -21,7 +21,7 @@ Kirigami.Page {
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: {
-        let rows = 4, columns = 4;
+        let rows = 6, columns = 5;
         // restrict keypad so that the height of buttons never go past 0.85 times their width
         if ((initialPage.height - Kirigami.Units.gridUnit * 7) / rows > 0.85 * initialPage.width / columns) {
             return rows * 0.85 * initialPage.width / columns;
@@ -113,6 +113,8 @@ Kirigami.Page {
                 id: binaryPad
                 anchors.fill: parent
                 anchors.margins: Kirigami.Units.smallSpacing
+                // Uncomment next line for function overlay
+                // anchors.rightMargin: Kirigami.Units.gridUnit * 1.5
                 onPressed: {
                     inputManager.append(text);
                 }
