@@ -16,7 +16,7 @@ UnitModel::UnitModel()
 
     m_unitIDs.resize(units.size());
     std::transform(units.begin(), units.end(), m_unitIDs.begin(),
-        [](const KUnitConversion::Unit &unit){ return unit.symbol(); });
+        [](const KUnitConversion::Unit &unit){ return unit.id(); });
 
     m_units.reserve(units.size());
     for(const auto &unit : units)
@@ -63,12 +63,12 @@ void UnitModel::setCurrentIndex(int i)
 
         m_unitIDs.resize(units.size());
         std::transform(units.begin(), units.end(), m_unitIDs.begin(),
-            [](const KUnitConversion::Unit &unit){ return unit.symbol(); });
+            [](const KUnitConversion::Unit &unit){ return unit.id(); });
 
         m_units.reserve(units.size());
         for(const auto &unit : units)
         {
-            m_unitIDs.push_back(unit.id());
+            m_units.push_back(unit.symbol());
         }
 
         calculateResult();

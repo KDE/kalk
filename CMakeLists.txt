@@ -54,6 +54,13 @@ set_package_properties(MPFR PROPERTIES
     PURPOSE "Required for building KCalc."
 )
 
+include(CheckTypeSize)
+include(CheckIncludeFiles)
+
+check_include_files(ieeefp.h     HAVE_IEEEFP_H)
+check_type_size("signed long"    SIZEOF_SIGNED_LONG)
+check_type_size("unsigned long"  SIZEOF_UNSIGNED_LONG)
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
 include(ECMSetupVersion)
