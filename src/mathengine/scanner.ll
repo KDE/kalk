@@ -26,6 +26,8 @@
 # include <cstdlib>
 # include <cstring> // strerror
 # include <string>
+# include <knumber.h>
+# include <QString>
 # include "driver.hh"
 # include "parser.hh"
 %}
@@ -101,7 +103,7 @@
   make_NUMBER (const std::string &s, const yy::parser::location_type& loc);
 %}
 
-double   [0-9]+|([0-9]+)?"."[0-9]+
+knumber   [0-9]+|([0-9]+)?"."[0-9]+
 
 %{
   // Code run each time a pattern is matched.
@@ -129,15 +131,15 @@ double   [0-9]+|([0-9]+)?"."[0-9]+
 "log10"      return yy::parser::make_LOG10 (loc);
 "log2"      return yy::parser::make_LOG2 (loc);
 "√"      return yy::parser::make_SQUAREROOT (loc);
-"π"      return yy::parser::make_NUMBER (3.14159265358, loc);
-"e"      return yy::parser::make_NUMBER (2.71828182845, loc);
+"π"      return yy::parser::make_NUMBER (KNumber::Pi(), loc);
+"e"      return yy::parser::make_NUMBER (KNumber::Euler(), loc);
 "%"      return yy::parser::make_PERCENTAGE (loc);
 "="       loc.step ();
 "asin"     return yy::parser::make_ASIN (loc);
 "acos"      return yy::parser::make_ACOS (loc);
 "atan"      return yy::parser::make_ATAN (loc);
 
-{double}      return make_NUMBER (yytext, loc);
+{knumber}      return make_NUMBER (yytext, loc);
 <<EOF>>    return yy::parser::symbol_type (0, loc);
 %%
 
@@ -145,8 +147,8 @@ yy::parser::symbol_type
 make_NUMBER (const std::string &s, const yy::parser::location_type& loc)
 {
   errno = 0;
-  double n = strtod (s.c_str(), NULL);
-  return yy::parser::make_NUMBER ((double) n, loc);
+  KNumber n = KNumber(QString::fromStdString(s));
+  return yy::parser::make_NUMBER ((KNumber) n, loc);
 }
 
 void
