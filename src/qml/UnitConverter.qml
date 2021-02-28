@@ -44,6 +44,16 @@ Kirigami.Page {
                 }
             }
         }
+        Controls.Button {
+            Layout.alignment: Qt.AlignHCenter
+            text: i18n("swap")
+            icon.name: "gtk-convert"
+            onClicked: {
+                let tmp = fromTumbler.currentIndex;
+                fromTumbler.currentIndex = toTumbler.currentIndex;
+                toTumbler.currentIndex = tmp;
+            }
+        }
         Component {
             id: delegateComponent
             Text {
