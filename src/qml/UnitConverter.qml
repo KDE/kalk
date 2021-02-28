@@ -18,6 +18,15 @@ Kirigami.Page {
     bottomPadding: Kirigami.Units.largeSpacing
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
+    property int keypadHeight: {
+        let rows = 4, columns = 3;
+        // restrict keypad so that the height of buttons never go past 0.85 times their width
+        if ((unitConverter.height - Kirigami.Units.gridUnit * 7) / rows > 0.85 * unitConverter.width / columns) {
+            return rows * 0.85 * unitConverter.width / columns;
+        } else {
+            return unitConverter.height - Kirigami.Units.gridUnit * 7;
+        }
+    }
     
     Component {
         id: delegateComponent
@@ -58,9 +67,8 @@ Kirigami.Page {
         ColumnLayout {
             id: topPanel
             Layout.fillWidth: true
-            Layout.fillHeight: true
+            Layout.preferredHeight: unitConverter.height - unitConverter.keypadHeight
             Layout.maximumWidth: unitConverter.width
-            spacing: 0
             
             Controls.ComboBox {
                 id: categoryTumbler
@@ -76,6 +84,7 @@ Kirigami.Page {
             }
             
             RowLayout {
+                Layout.fillHeight: true
                 Layout.fillWidth: true
                 Layout.maximumWidth: unitConverter.width
                 
