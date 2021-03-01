@@ -23,11 +23,6 @@ Kirigami.ApplicationWindow {
         pageStack.globalToolBar.canContainHandles = true;
     }
 
-    function switchToPage(page) {
-        while (pageStack.depth > 0) pageStack.pop();
-        pageStack.push(page);
-    }
-
     Kirigami.PagePool {
         id: mainPagePool
     }
