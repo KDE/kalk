@@ -28,7 +28,7 @@ public:
     };
     bool error()
     {
-        return m_driver.syntaxError;
+        return m_driver.syntaxError || m_error;
     };
 signals:
     void resultChanged();
@@ -37,10 +37,11 @@ private:
     MathEngine(){};
     driver m_driver;
     QString m_result;
+    bool m_error;
     const QString bitRegex = QString("[01]+");
-    const QString operatorRegex = QString("[\\+\\-\\*\\/&\\|~\\^]|<{2}|>{2}");
-    QRegularExpression regexMatcher;
-    QRegularExpressionMatch match;
+    const QString binaryOperatorRegex = QString("[\\+\\-\\*\\/&\\|~\\^]|<{2}|>{2}");
+    // Regex for binary expression syntaxes
+    QRegularExpression expressionSyntaxRegex1 = QRegularExpression("([01]+)([\\+\\-\\*\\/&\\|~\\^]|<{2}|>{2})([01]+)");
 };
 
 #endif

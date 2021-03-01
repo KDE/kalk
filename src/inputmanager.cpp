@@ -45,13 +45,14 @@ void InputManager::append(const QString &subexpression)
     }
     m_moveFromResult = false;
 
-    // Call the corresponding parsing call based on the type of expression.
+    // Call the corresponding parser based on the type of expression.
     MathEngine * engineInstance = MathEngine::inst();
     if (m_isBinaryMode) {
         engineInstance->parseBinaryExpression(m_expression + subexpression);
     } else {
         engineInstance->parse(m_expression + subexpression);
     }
+
     if(!MathEngine::inst()->error())
     {
         m_stack.push_back(subexpression.size());
