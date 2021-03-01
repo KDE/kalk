@@ -9,7 +9,6 @@
 
 void MathEngine::parse(QString expr)
 {
-    qDebug() << "Parse Numbers " << expr;
     m_driver.parse(expr.toStdString());
     m_result = QString::number(m_driver.result);
     emit resultChanged();

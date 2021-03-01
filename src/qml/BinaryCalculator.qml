@@ -1,7 +1,5 @@
 /*
  * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
- * SPDX-FileCopyrightText: 2021-2022 Han Young <hanyoung@protonmail.com>
- * SPDX-FileCopyrightText: 2021 Devin Lin <espidev@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -28,6 +26,10 @@ Kirigami.Page {
         } else {
             return initialPage.height - Kirigami.Units.gridUnit * 7;
         }
+    }
+
+    onIsCurrentPageChanged: {
+        inputManager.setBinaryMode(true)
     }
     
     ColumnLayout {

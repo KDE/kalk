@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2020-2021 Han Young <hanyoung@protonmail.com>
+ * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -31,7 +32,7 @@ const QString &InputManager::result() const
     return m_result;
 }
 
-void InputManager::append(const QString &subexpression, const bool isBinary)
+void InputManager::append(const QString &subexpression)
 {
     // if expression was from result and input is numeric, clear expression
     if(m_moveFromResult && subexpression.size() == 1)
@@ -46,7 +47,7 @@ void InputManager::append(const QString &subexpression, const bool isBinary)
 
     // Call the corresponding parsing call based on the type of expression.
     MathEngine * engineInstance = MathEngine::inst();
-    if (isBinary) {
+    if (m_isBinaryMode) {
         engineInstance->parseBinaryExpression(m_expression + subexpression);
     } else {
         engineInstance->parse(m_expression + subexpression);
@@ -108,4 +109,9 @@ void InputManager::fromHistory(const QString &result)
     m_moveFromResult = true;
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
+}
+
+void InputManager::setBinaryMode(bool active) {
+    m_isBinaryMode = active;
+    clear();
 }

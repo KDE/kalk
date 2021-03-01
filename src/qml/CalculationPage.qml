@@ -72,6 +72,11 @@ Kirigami.Page {
             inputManager.equal(); break;
         }
     }
+
+    // Changes the current mode of the backend to non-binary
+    onIsCurrentPageChanged: {
+        inputManager.setBinaryMode(false)
+    }
     
     ColumnLayout {
         anchors.fill: parent
