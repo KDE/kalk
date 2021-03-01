@@ -6,6 +6,7 @@
 #include "inputmanager.h"
 #include "mathengine.h"
 #include "historymanager.h"
+#include <QDebug>
 InputManager::InputManager()
 {
 }
@@ -30,7 +31,7 @@ const QString &InputManager::result() const
     return m_result;
 }
 
-void InputManager::append(const QString &subexpression)
+void InputManager::append(const QString &subexpression, const bool isBinary)
 {
     // if expression was from result and input is numeric, clear expression
     if(m_moveFromResult && subexpression.size() == 1)
@@ -43,7 +44,13 @@ void InputManager::append(const QString &subexpression)
     }
     m_moveFromResult = false;
 
-    MathEngine::inst()->parse(m_expression + subexpression);
+    // Call the corresponding parsing call based on the type of expression.
+    MathEngine * engineInstance = MathEngine::inst();
+    if (isBinary) {
+        engineInstance->parseBinaryExpression(m_expression + subexpression);
+    } else {
+        engineInstance->parse(m_expression + subexpression);
+    }
     if(!MathEngine::inst()->error())
     {
         m_stack.push_back(subexpression.size());

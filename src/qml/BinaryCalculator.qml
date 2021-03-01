@@ -116,7 +116,11 @@ Kirigami.Page {
                 // Uncomment next line for function overlay
                 // anchors.rightMargin: Kirigami.Units.gridUnit * 1.5
                 onPressed: {
-                    inputManager.append(text);
+                    if (text == "DEL") {
+                        inputManager.backspace();
+                    } else {
+                        inputManager.append(text, true);
+                    }
                 }
                 onClear: inputManager.clear()
             }

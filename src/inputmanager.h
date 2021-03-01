@@ -17,7 +17,7 @@ public:
     const QString &expression() const;
     void setExpression(const QString &expression);
     const QString &result() const;
-    Q_INVOKABLE void append(const QString &subexpression);
+    Q_INVOKABLE void append(const QString &subexpression, const bool isBinary=false);
     Q_INVOKABLE void backspace();
     Q_INVOKABLE void equal();
     Q_INVOKABLE void clear();
