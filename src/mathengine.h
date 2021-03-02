@@ -9,6 +9,7 @@
 #include "mathengine/driver.hh"
 #include <QObject>
 #include <QRegularExpression>
+#include <QStringList>
 class MathEngine : public QObject
 {
     Q_OBJECT
@@ -39,9 +40,13 @@ private:
     QString m_result;
     bool m_error;
     const QString bitRegex = QString("[01]+");
-    const QString binaryOperatorRegex = QString("[\\+\\-\\*\\/&\\|~\\^]|<{2}|>{2}");
-    // Regex for binary expression syntaxes
+    const QString binaryOperatorRegex = QString("[\\+\\-\\*\\/&\\|\\^]|<{2}|>{2}");
     QRegularExpression expressionSyntaxRegex1 = QRegularExpression("([01]+)([\\+\\-\\*\\/&\\|~\\^]|<{2}|>{2})([01]+)");
+    QStringList operatorsList = {
+        "+", "-", "*", "/",
+        "&", "|", "^",
+        "<<", ">>"
+    };
 };
 
 #endif

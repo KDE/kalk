@@ -27,6 +27,37 @@ Kirigami.Page {
             return initialPage.height - Kirigami.Units.gridUnit * 7;
         }
     }
+    
+    Keys.onPressed: {
+        switch(event.key) {
+        case Qt.Backspace || Qt.Delete:
+            inputManager.backspace(); break;
+        case Qt.Key_0:
+            inputManager.append("0"); break;
+        case Qt.Key_1:
+            inputManager.append("1"); break;
+        case Qt.Key_Plus:
+            inputManager.append("+"); break;
+        case Qt.Key_Minus:
+            inputManager.append("-"); break;
+        case Qt.Key_multiply:
+            inputManager.append("*"); break;
+        case Qt.Key_division:
+            inputManager.append("/"); break;
+        case Qt.Key_Ampersand:
+            inputManager.append("&"); break;
+        case Qt.Key_Bar:
+            inputManager.append("|"); break;
+        case Qt.Key_AsciiCircum:
+            inputManager.append("^"); break;
+        case Qt.Key_Period:
+            inputManager.append("."); break;
+        case Qt.Key_Equal:
+        case Qt.Key_Return:
+        case Qt.Key_Enter:
+            inputManager.equal(); break;
+        }
+    }
 
     onIsCurrentPageChanged: {
         inputManager.setBinaryMode(true)
@@ -120,6 +151,9 @@ Kirigami.Page {
                 onPressed: {
                     if (text == "DEL") {
                         inputManager.backspace();
+                    } else if (text == "=") {
+                        inputManager.equal();
+                        resultFadeOutAnimation.start();
                     } else {
                         inputManager.append(text, true);
                     }
