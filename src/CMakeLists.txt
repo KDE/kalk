@@ -46,7 +46,8 @@ target_link_libraries(kalk
     KF5::UnitConversion
     KF5::ConfigCore
     KF5::I18n
-    KF5::CoreAddons)
+    KF5::CoreAddons
+    knumber)
 
 target_include_directories(kalk PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mathengine)
 

@@ -12,10 +12,15 @@ UnitModel::UnitModel()
     connect(this, &UnitModel::unitIndexChanged, this, &UnitModel::calculateResult);
     connect(this, &UnitModel::valueChanged, this, &UnitModel::calculateResult);
 
-    auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
-    for(const auto &unit : qAsConst(units))
+    const auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
+
+    m_unitIDs.resize(units.size());
+    std::transform(units.begin(), units.end(), m_unitIDs.begin(),
+        [](const KUnitConversion::Unit &unit){ return unit.id(); });
+
+    m_units.reserve(units.size());
+    for(const auto &unit : units)
     {
-        m_unitIDs.push_back(unit.id());
         m_units.push_back(unit.symbol());
     }
 }
@@ -48,17 +53,21 @@ void UnitModel::setCurrentIndex(int i)
         return;
     if(m_currentIndex != i)
     {
-        m_unitIDs.clear();
         m_units.clear();
         m_currentIndex = i;
         m_value.clear();
         m_fromUnitIndex = 0;
         m_toUnitIndex = 1;
 
-        auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
-        for(const auto &unit : qAsConst(units))
+        const auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
+
+        m_unitIDs.resize(units.size());
+        std::transform(units.begin(), units.end(), m_unitIDs.begin(),
+            [](const KUnitConversion::Unit &unit){ return unit.id(); });
+
+        m_units.reserve(units.size());
+        for(const auto &unit : units)
         {
-            m_unitIDs.push_back(unit.id());
             m_units.push_back(unit.symbol());
         }
 

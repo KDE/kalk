@@ -19,32 +19,31 @@ HistoryManager::HistoryManager()
     if (!dir.exists())
         dir.mkpath(".");
     QFile file(dir.path() + "/history.json");
-    if (file.exists()) {
-        file.open(QIODevice::ReadOnly);
+    if (file.open(QIODevice::ReadOnly)) {
         QJsonDocument doc(QJsonDocument::fromJson(file.readAll()));
-        auto array = doc.array();
-        for (const auto &record : qAsConst(array)) {
-            historyList.append(record.toString());
+        const auto array = doc.array();
+        m_historyList.reserve(array.size());
+        for (const auto &record : array) {
+            m_historyList.append(record.toString());
         }
-        file.close();
     }
 }
 
 void HistoryManager::clearHistory()
 {
-    historyList.clear();
+    m_historyList.clear();
     QDir dir(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/kalk");
     QFile file(dir.path() + "history.json");
     file.remove();
     emit layoutChanged();
-    this->save();
+    save();
 }
 
 void HistoryManager::save()
 {
     QJsonDocument doc;
     QJsonArray array;
-    for (const auto &record : qAsConst(historyList)) {
+    for (const auto &record : qAsConst(m_historyList)) {
         array.append(record);
     }
     doc.setArray(array);
@@ -52,6 +51,5 @@ void HistoryManager::save()
     QFile file(url + "/kalk/history.json");
     file.open(QIODevice::WriteOnly);
     file.write(doc.toJson(QJsonDocument::Compact));
-    file.close();
     qDebug() << "save" << file.fileName();
 }

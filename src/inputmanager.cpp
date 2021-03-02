@@ -38,7 +38,7 @@ void InputManager::append(const QString &subexpression)
         if(subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.'))
         {
             m_expression.clear();
-            m_stack.pop();
+            m_stack.pop_back();
         }
     }
     m_moveFromResult = false;
@@ -46,7 +46,7 @@ void InputManager::append(const QString &subexpression)
     MathEngine::inst()->parse(m_expression + subexpression);
     if(!MathEngine::inst()->error())
     {
-        m_stack.push(subexpression.size());
+        m_stack.push_back(subexpression.size());
         m_result = MathEngine::inst()->result();
         m_expression += subexpression;
         Q_EMIT resultChanged();
@@ -56,9 +56,9 @@ void InputManager::append(const QString &subexpression)
 
 void InputManager::backspace()
 {
-    if(m_stack.size())
+    if(!m_stack.empty())
     {
-        m_expression.chop(m_stack.top());
+        m_expression.chop(m_stack.back());
         Q_EMIT expressionChanged();
         MathEngine::inst()->parse(m_expression);
         if(!MathEngine::inst()->error())
@@ -74,8 +74,8 @@ void InputManager::equal()
     HistoryManager::inst()->addHistory(m_expression + QStringLiteral(" = ") + m_result);
     m_expression = m_result;
     m_result.clear();
-    m_stack = {}; // clear the stack
-    m_stack.push(m_result.size());
+    m_stack.clear();
+    m_stack.push_back(m_result.size());
 
     m_moveFromResult = true;
     Q_EMIT expressionChanged();
@@ -86,7 +86,7 @@ void InputManager::clear()
 {
     m_expression.clear();
     m_result.clear();
-    m_stack = {};
+    m_stack.clear();
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
 }
@@ -95,8 +95,8 @@ void InputManager::fromHistory(const QString &result)
 {
     m_expression = result;
     m_result.clear();
-    m_stack = {};
-    m_stack.push(result.size());
+    m_stack.clear();
+    m_stack.push_back(result.size());
 
     m_moveFromResult = true;
     Q_EMIT expressionChanged();

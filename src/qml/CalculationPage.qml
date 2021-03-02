@@ -19,6 +19,7 @@ Kirigami.Page {
     bottomPadding: 0
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
+    readonly property bool inPortrait: initialPage.width < initialPage.height
     property int keypadHeight: {
         let rows = 4, columns = 3;
         // restrict keypad so that the height of buttons never go past 0.85 times their width
@@ -145,7 +146,7 @@ Kirigami.Page {
             property string expression: ""
             id: inputPad
             Layout.fillHeight: true
-            Layout.preferredWidth: initialPage.width
+            Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.5
             Layout.alignment: Qt.AlignLeft
             Kirigami.Theme.colorSet: Kirigami.Theme.View
             Kirigami.Theme.inherit: false
@@ -204,7 +205,11 @@ Kirigami.Page {
                 parent: initialPage
                 y: initialPage.height - inputPad.height
                 height: inputPad.height
-                width: initialPage.width * 0.6
+                width: inPortrait? initialPage.width * 0.8 : initialPage.width * 0.5
+                modal: inPortrait
+                interactive: inPortrait
+                position: inPortrait ? 0 : 1
+                visible: !inPortrait
                 dragMargin: drawerIndicator.width
                 edge: Qt.RightEdge
                 dim: false

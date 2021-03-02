@@ -55,14 +55,16 @@ Item {
             onClicked: root.clicked(root.text)
             onPressAndHold: root.longClicked()
         }
-        layer.enabled: true
-        layer.effect: DropShadow {
-            horizontalOffset: 0
-            verticalOffset: 1
-            radius: 4
-            samples: 6
-            color: root.dropShadowColor
-        }
+    }
+    
+    DropShadow {
+        anchors.fill: keyRect
+        source: keyRect
+        horizontalOffset: 0
+        verticalOffset: 1
+        radius: 4
+        samples: 6
+        color: root.dropShadowColor
     }
 
     Controls.Label {
