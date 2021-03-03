@@ -136,6 +136,7 @@ double   [0-9]+|([0-9]+)?"."[0-9]+
 "asin"     return yy::parser::make_ASIN (loc);
 "acos"      return yy::parser::make_ACOS (loc);
 "atan"      return yy::parser::make_ATAN (loc);
+"abs"      return yy::parser::make_ABS (loc);
 
 {double}      return make_NUMBER (yytext, loc);
 <<EOF>>    return yy::parser::symbol_type (0, loc);

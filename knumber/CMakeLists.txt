@@ -5,6 +5,7 @@ add_library(knumber STATIC
     knumber_fraction.cpp
     knumber_integer.cpp
     knumber_operators.cpp
+    knumber_binary_wrapper.cpp
 )
 
 target_include_directories(knumber PUBLIC ${CMAKE_BINARY_DIR} ${GMP_INCLUDE_DIR})

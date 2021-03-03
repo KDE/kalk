@@ -1,5 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2020-2021 Han Young <hanyoung@protonmail.com>
+ * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@Students.iiit.ac.in>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -22,6 +23,7 @@ public:
     Q_INVOKABLE void equal();
     Q_INVOKABLE void clear();
     Q_INVOKABLE void fromHistory(const QString &result);
+    Q_INVOKABLE void setBinaryMode(bool active);
 Q_SIGNALS:
     void expressionChanged();
     void resultChanged();
@@ -31,5 +33,6 @@ private:
     std::vector<int> m_stack; // track subexpression length for removal later
     QString m_expression;
     QString m_result;
+    bool m_isBinaryMode = false; // Changes the parser based on this variable
 };
 

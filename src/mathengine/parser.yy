@@ -69,6 +69,7 @@
   ASIN     "ASIN"
   ACOS     "ACOS"
   ATAN     "ATAN"
+  ABS       "ABS"
 ;
 
 %token <double> NUMBER "number"
@@ -112,6 +113,8 @@ exp:
 | "ACOS" "(" exp ")" { $$ = acos($3); }
 | "ATAN" "(" exp     { $$ = atan($3); }
 | "ATAN" "(" exp ")" { $$ = atan($3); }
+| "ABS" "(" exp { $$ = fabs($3); }
+| "ABS" "(" exp ")" { $$ = fabs($3);}
 ;
 
 factor: "(" exp ")" { $$ = $2; }
