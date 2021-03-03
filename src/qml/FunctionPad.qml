@@ -22,4 +22,5 @@ GridLayout {
     NumberButton {text: "asin("; display: "asin"; onClicked: pressed(text);}
     NumberButton {text: "acos(" ; display: "acos"; onClicked: pressed(text);}
     NumberButton {text: "atan(" ; display: "atan"; onClicked: pressed(text);}
+    NumberButton {text: "abs(" ; display: "abs"; onClicked: pressed(text);}
 }
