@@ -53,12 +53,6 @@ Kirigami.ApplicationWindow {
                 iconName: "help-about"
                 page: "qrc:/qml/AboutPage.qml"
                 pagePool: mainPagePool
-            },
-            Kirigami.PagePoolAction {
-                text: i18n("Binary Calculator")
-                iconName: "accessories-calculator"
-                pagePool: mainPagePool
-                page: "qrc:/qml/BinaryCalculator.qml"
             }
         ]
     }
