@@ -32,7 +32,7 @@
 
 %code requires {
   # include <string>
-  #include <cmath>
+  # include <knumber.h>
   class driver;
 }
 
@@ -72,15 +72,15 @@
   ABS       "ABS"
 ;
 
-%token <double> NUMBER "number"
-%nterm <double> exp
-%nterm <double> factor
+%token <KNumber> NUMBER "number"
+%nterm <KNumber> exp
+%nterm <KNumber> factor
 
-%printer { yyo << $$; } <*>;
+%printer { yyo << $$.toQString().toStdString(); } <*>;
 
 %%
 %start unit;
-unit: exp  { drv.result = $1; };
+unit: exp  { drv.result = $1.toQString(); };
 
 %left "+" "-";
 %left "*" "/";
@@ -99,8 +99,8 @@ exp:
 | "COS" "(" exp ")" { $$ = cos($3); }
 | "TAN" "(" exp     { $$ = tan($3); }
 | "TAN" "(" exp ")" { $$ = tan($3); }
-| "LOG" "(" exp     { $$ = log($3); }
-| "LOG" "(" exp ")" { $$ = log($3); }
+| "LOG" "(" exp     { $$ = ln($3); }
+| "LOG" "(" exp ")" { $$ = ln($3); }
 | "LOG10" "(" exp   { $$ = log10($3); }
 | "LOG10" "(" exp ")" { $$ = log10($3); }
 | "LOG2" "(" exp    { $$ = log2($3); }
@@ -122,7 +122,7 @@ factor: "(" exp ")" { $$ = $2; }
 | "number"
 | "-" "number" { $$ = -$2; }
 | "+" "number" { $$ = $2; }
-| factor "%" { $$ = $1 / 100; }
+| factor "%" { $$ = $1 / KNumber(100); }
 ;
     
 %%

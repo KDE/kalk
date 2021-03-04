@@ -20,7 +20,7 @@ public:
     driver();
     std::map<std::string, int> variables;
 
-    double result = 0;
+    QString result;
 
     int parse(const std::string expr);
     // Whether to generate parser debug traces.
