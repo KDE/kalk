@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define KNUMBER_INTEGER_H_
 
 #include "knumber_base.h"
-
+class BinaryNumber;
 class KNumber;
 
 namespace detail {
@@ -32,6 +32,7 @@ class knumber_integer : public knumber_base {
 	friend class knumber_float;
 
 public:
+    static knumber_integer *binaryFromString(const QString &s);
 	explicit knumber_integer(const QString &s);
 	explicit knumber_integer(qint32 value);
 	explicit knumber_integer(qint64 value);
@@ -45,6 +46,7 @@ public:
 
 public:
 	QString toString(int precision) const override;
+    QString toBinaryString(int precision) const override;
 	quint64 toUint64() const override;
 	qint64 toInt64() const override;
 
@@ -106,7 +108,8 @@ public:
 
 public:
 	int compare(knumber_base *rhs) override;
-
+protected:
+    mpz_t &mpz();
 private:
 	// conversion constructors
 	explicit knumber_integer(const knumber_integer *value);

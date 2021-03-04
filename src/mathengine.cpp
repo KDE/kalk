@@ -1,6 +1,7 @@
 /*
  * SPDX-FileCopyrightText: 2020-2021 Han Young <hanyoung@protonmail.com>
- * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
+ * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan
+ * <rohan.asokan@students.iiit.ac.in>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -8,90 +9,97 @@
 #include <QDebug>
 #include <QRegularExpression>
 #include <QStringList>
-#include "knumber_binary_wrapper.h"
+#include <knumber.h>
 
-void MathEngine::parse(QString expr)
-{
-    m_driver.parse(expr.toStdString());
-    m_result = QString::number(m_driver.result);
+void MathEngine::parse(QString expr) {
+  m_driver.parse(expr.toStdString());
+  m_result = QString::number(m_driver.result);
+  emit resultChanged();
+}
+
+QStringList MathEngine::getRegexMatches(const QString &expr,
+                                        const QString &regex,
+                                        int *counter) const {
+  QRegularExpression re(regex);
+  QRegularExpressionMatch regexMatch;
+  QRegularExpressionMatchIterator it = re.globalMatch(expr);
+  QStringList matches;
+  while (it.hasNext()) {
+    regexMatch = it.next();
+    QString match = regexMatch.captured(0);
+    matches << match;
+    (*counter)++;
+  }
+  return matches;
+}
+
+void MathEngine::parseBinaryExpression(QString expr) {
+  m_error = true;
+  qDebug() << "Current Epxression (mathengine.cpp): " << expr;
+
+  int numbersPresent = 0;
+  int operatorsPresent = 0;
+  // Match for the numbers and binary operators
+  QStringList numbers = getRegexMatches(expr, bitRegex, &numbersPresent);
+  QStringList operators =
+      getRegexMatches(expr, binaryOperatorRegex, &operatorsPresent);
+
+  // Erroraneous Parses return here itself
+  if ((operatorsPresent != 0 && numbersPresent == 0) ||
+      (operatorsPresent > 1) || (numbersPresent > 2)) {
+    return;
+  } else {
+    m_error = false;
+    if (operatorsPresent == 0 && numbersPresent == 1) {
+      m_result = KNumber::binaryFromString(numbers[0]).toBinaryString(0);
+      emit resultChanged();
+    }
+  }
+
+  // Binary Operator Syntax
+  if (expressionSyntaxRegex1.match(expr).hasMatch()) {
+    KNumber result(0);
+    switch (operatorsList.indexOf(operators[0])) {
+    case 0: // +
+      result = KNumber::binaryFromString(numbers[0]) +
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    case 1: // -
+      result = KNumber::binaryFromString(numbers[0]) -
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    case 2: // *
+      result = KNumber::binaryFromString(numbers[0]) *
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    case 3: // /
+      result = KNumber::binaryFromString(numbers[0]) /
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    case 4: // &
+      result = KNumber::binaryFromString(numbers[0]) &
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    case 5: // |
+      result = KNumber::binaryFromString(numbers[0]) |
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    case 6: // ^
+      result = KNumber::binaryFromString(numbers[0]) ^
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    case 7: // <<
+      result = KNumber::binaryFromString(numbers[0])
+               << KNumber::binaryFromString(numbers[1]);
+      break;
+    case 8: // >>
+      result = KNumber::binaryFromString(numbers[0]) >>
+               KNumber::binaryFromString(numbers[1]);
+      break;
+    default: // error
+      m_error = true;
+    };
+    m_result = result.toBinaryString(0);
     emit resultChanged();
-}
-
-QStringList getRegexMatches(QString expr, QString regex, int *counter) {
-    QRegularExpression re(regex);
-    QRegularExpressionMatch regexMatch;
-    QRegularExpressionMatchIterator it = re.globalMatch(expr);
-    QStringList matches;
-    while (it.hasNext()) {
-        regexMatch = it.next();
-        QString match = regexMatch.captured(0);
-        matches << match;
-        (*counter)++;
-    }
-    return matches;
-}
-
-void MathEngine::parseBinaryExpression(QString expr)
-{
-    m_error = true;
-    qDebug() << "Current Epxression (mathengine.cpp): " << expr;
-
-    int numbersPresent = 0;
-    int operatorsPresent = 0;
-    // Match for the numbers and binary operators
-    QStringList numbers = getRegexMatches(expr, bitRegex, &numbersPresent);
-    QStringList operators = getRegexMatches(expr, binaryOperatorRegex, &operatorsPresent);
-
-    // Erroraneous Parses return here itself
-    if (
-        (operatorsPresent != 0 && numbersPresent == 0) ||
-        (operatorsPresent > 1) ||
-        (numbersPresent > 2)
-    ) {
-        return;
-    } else {
-        m_error = false;
-        if (operatorsPresent == 0 && numbersPresent == 1) {
-            m_result = BinaryNumber(numbers[0]).toDec();
-            emit resultChanged();
-        }
-    }
-
-    // Binary Operator Syntax
-    if (expressionSyntaxRegex1.match(expr).hasMatch()) {
-        BinaryNumber result(0);
-        switch (operatorsList.indexOf(operators[0])) {
-            case 0: // +
-                result = BinaryNumber(numbers[0]) + BinaryNumber(numbers[1]);
-                break;
-            case 1: // -
-                result = BinaryNumber(numbers[0]) - BinaryNumber(numbers[1]);
-                break;
-            case 2: // *
-                result = BinaryNumber(numbers[0]) * BinaryNumber(numbers[1]);
-                break;
-            case 3: // /
-                result = BinaryNumber(numbers[0]) / BinaryNumber(numbers[1]);
-                break;
-            case 4: // &
-                result = BinaryNumber(numbers[0]) & BinaryNumber(numbers[1]);
-                break;
-            case 5: // |
-                result = BinaryNumber(numbers[0]) | BinaryNumber(numbers[1]);
-                break;
-            case 6: // ^
-                result = BinaryNumber(numbers[0]) ^ BinaryNumber(numbers[1]);
-                break;
-            case 7: // <<
-                result = BinaryNumber(numbers[0]) << BinaryNumber(numbers[1]);
-                break;
-            case 8: // >>
-                result = BinaryNumber(numbers[0]) >> BinaryNumber(numbers[1]);
-                break;
-            default: // error
-                m_error = true;
-        };
-        m_result = result.toDec();
-        emit resultChanged();
-    }
+  }
 }

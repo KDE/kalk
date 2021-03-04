@@ -42,6 +42,7 @@ public:
 
 public:
 	virtual QString toString(int precision) const = 0;
+    virtual QString toBinaryString(int precision) const = 0;
 	virtual quint64 toUint64() const = 0;
 	virtual qint64 toInt64() const = 0;
 
