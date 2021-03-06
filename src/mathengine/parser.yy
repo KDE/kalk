@@ -113,8 +113,8 @@ exp:
 | "ACOS" "(" exp ")" { $$ = acos($3); }
 | "ATAN" "(" exp     { $$ = atan($3); }
 | "ATAN" "(" exp ")" { $$ = atan($3); }
-| "ABS" "(" exp { $$ = fabs($3); }
-| "ABS" "(" exp ")" { $$ = fabs($3);}
+| "ABS" "(" exp { $$ = abs($3); }
+| "ABS" "(" exp ")" { $$ = abs($3);}
 ;
 
 factor: "(" exp ")" { $$ = $2; }
