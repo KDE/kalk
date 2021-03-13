@@ -7,11 +7,26 @@ import QtQuick 2.0
 import org.kde.kirigami 2.13 as Kirigami
 import QtQuick.Layouts 1.1
 GridLayout {
+    id: numberPad
     signal pressed(string text)
     signal clear()
     property bool pureNumber: false
-    columns: pureNumber ? 3 : 4
-    
+
+    function calculateLayout() {
+        let childrens = 0;
+        if (pureNumber)
+            childrens = 17;
+        else
+            childrens = 24;
+
+        let calculated = Math.sqrt(numberPad.width * childrens / numberPad.height);
+        numberPad.columns = calculated;
+    }
+
+    Component.onCompleted: calculateLayout()
+    onWidthChanged: calculateLayout()
+    onHeightChanged: calculateLayout()
+
     NumberButton {text: "√(" ; display: "√"; onClicked: pressed(text);}
     NumberButton {text: "^2" ; display: "x²"; onClicked: pressed(text);}
     NumberButton {text: "(" ; onClicked: pressed(text); special: true; visible: !pureNumber}
