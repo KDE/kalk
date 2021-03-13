@@ -30,6 +30,9 @@ Item {
     property string display: text
     property bool special: false
     
+    Kirigami.Theme.colorSet: Kirigami.Theme.View
+    Kirigami.Theme.inherit: false
+    
     property color buttonColor: Qt.lighter(Kirigami.Theme.backgroundColor, 1.3)
     property color buttonPressedColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.08)
     property color buttonTextColor: Kirigami.Theme.textColor
@@ -51,8 +54,8 @@ Item {
         anchors.topMargin: 1
         anchors.fill: keyRect
         cornerRadius: keyRect.radius * 2
-        glowRadius: 4
-        spread: 0.3
+        glowRadius: 2
+        spread: 0.2
         color: root.dropShadowColor
     }
     
