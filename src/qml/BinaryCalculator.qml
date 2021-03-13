@@ -20,9 +20,9 @@ Kirigami.Page {
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: {
         let rows = 6, columns = 5;
-        // restrict keypad so that the height of buttons never go past 0.85 times their width
-        if ((initialPage.height - Kirigami.Units.gridUnit * 7) / rows > 0.85 * initialPage.width / columns) {
-            return rows * 0.85 * initialPage.width / columns;
+        // restrict keypad so that the height of buttons never go past 0.7 times their width
+        if ((initialPage.height - Kirigami.Units.gridUnit * 7) / rows > 0.7 * initialPage.width / columns) {
+            return rows * 0.7 * initialPage.width / columns;
         } else {
             return initialPage.height - Kirigami.Units.gridUnit * 7;
         }
@@ -63,16 +63,40 @@ Kirigami.Page {
         inputManager.setBinaryMode(true)
     }
     
+    background: Rectangle {
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
+        color: Kirigami.Theme.backgroundColor
+        anchors.fill: parent
+    }
+    
+    // top panel drop shadow
+    RectangularGlow {
+        anchors.fill: topPanelBackground
+        anchors.topMargin: 1
+        glowRadius: 4
+        spread: 0.2
+        color: dropShadowColor
+    }
+    
+    Rectangle {
+        id: topPanelBackground
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        color: Kirigami.Theme.backgroundColor
+        implicitHeight: outputScreen.height
+    }
+    
     ColumnLayout {
         anchors.fill: parent
         spacing: 0
         
-        Rectangle {
+        Item {
             id: outputScreen
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
             Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
-            color: Kirigami.Theme.backgroundColor
             
             Column {
                 id: outputColumn
@@ -132,15 +156,12 @@ Kirigami.Page {
         }
         
         // Binary Input Pad
-        Rectangle {
+        Item {
             property string expression: ""
             id: binaryInputPad
             Layout.fillHeight: true
             Layout.preferredWidth: initialPage.width
             Layout.alignment: Qt.AlignLeft
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            Kirigami.Theme.inherit: false
-            color: Kirigami.Theme.backgroundColor
             
             BinaryPad {
                 id: binaryPad
@@ -160,17 +181,6 @@ Kirigami.Page {
                 }
                 onClear: inputManager.clear()
             }
-        }
-        
-        // top panel drop shadow (has to be above the keypad) - from main calculator
-        DropShadow {
-            anchors.fill: outputScreen
-            source: outputScreen
-            horizontalOffset: 0
-            verticalOffset: 1
-            radius: 4
-            samples: 6
-            color: initialPage.dropShadowColor
         }
     }
     

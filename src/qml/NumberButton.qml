@@ -46,6 +46,16 @@ Item {
         duration: Kirigami.Units.shortDuration
     }
     
+    // fast drop shadow
+    RectangularGlow {
+        anchors.topMargin: 1
+        anchors.fill: keyRect
+        cornerRadius: keyRect.radius * 2
+        glowRadius: 4
+        spread: 0.3
+        color: root.dropShadowColor
+    }
+    
     Rectangle {
         id: keyRect
         anchors.fill: parent
@@ -67,16 +77,6 @@ Item {
             onClicked: root.clicked(root.text)
             onPressAndHold: root.longClicked()
         }
-    }
-    
-    DropShadow {
-        anchors.fill: keyRect
-        source: keyRect
-        horizontalOffset: 0
-        verticalOffset: 1
-        radius: 4
-        samples: 6
-        color: root.dropShadowColor
     }
 
     Controls.Label {

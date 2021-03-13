@@ -78,16 +78,41 @@ Kirigami.Page {
         inputManager.setBinaryMode(false)
     }
     
+    background: Rectangle {
+        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.inherit: false
+        color: Kirigami.Theme.backgroundColor
+        anchors.fill: parent
+    }
+    
+    // top panel drop shadow
+    RectangularGlow {
+        anchors.fill: topPanelBackground
+        anchors.topMargin: 1
+        glowRadius: 4
+        spread: 0.2
+        color: dropShadowColor
+    }
+    
+    Rectangle {
+        id: topPanelBackground
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.right: parent.right
+        color: Kirigami.Theme.backgroundColor
+        implicitHeight: outputScreen.height
+    }
+    
     ColumnLayout {
         anchors.fill: parent
         spacing: 0
         
-        Rectangle {
+        Item {
             id: outputScreen
+            z: 1
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
             Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
-            color: Kirigami.Theme.backgroundColor
             
             Column {
                 id: outputColumn
@@ -147,15 +172,12 @@ Kirigami.Page {
         }
         
         // keypad area
-        Rectangle {
+        Item {
             property string expression: ""
             id: inputPad
             Layout.fillHeight: true
             Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.5
             Layout.alignment: Qt.AlignLeft
-            Kirigami.Theme.colorSet: Kirigami.Theme.View
-            Kirigami.Theme.inherit: false
-            color: Kirigami.Theme.backgroundColor
             
             NumberPad {
                 id: numberPad
@@ -177,6 +199,15 @@ Kirigami.Page {
                 onClear: inputManager.clear()
             }
             
+            // fast drop shadow
+            RectangularGlow {
+                anchors.rightMargin: 1
+                anchors.fill: drawerIndicator
+                glowRadius: 4
+                spread: 0.2
+                color: initialPage.dropShadowColor
+            }
+            
             Rectangle {
                 id: drawerIndicator
                 anchors.top: parent.top
@@ -185,16 +216,8 @@ Kirigami.Page {
                 x: parent.width - this.width
                 
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
+                Kirigami.Theme.inherit: false
                 color: Kirigami.Theme.backgroundColor
-                
-                layer.enabled: true
-                layer.effect: DropShadow {
-                    horizontalOffset: -2
-                    verticalOffset: 0
-                    radius: 4
-                    samples: 6
-                    color: initialPage.dropShadowColor
-                }
                 
                 Rectangle {
                     anchors.centerIn: parent
@@ -236,17 +259,6 @@ Kirigami.Page {
                     anchors.fill: parent
                 }
             }
-        }
-        
-        // top panel drop shadow (has to be above the keypad)
-        DropShadow {
-            anchors.fill: outputScreen
-            source: outputScreen
-            horizontalOffset: 0
-            verticalOffset: 1
-            radius: 4
-            samples: 6
-            color: initialPage.dropShadowColor
         }
     }
     
