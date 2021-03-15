@@ -21,13 +21,17 @@ Kirigami.Page {
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     readonly property bool inPortrait: initialPage.width < initialPage.height
     property int keypadHeight: {
-        let rows = 4, columns = 3;
-        // restrict keypad so that the height of buttons never go past 0.85 times their width
-        if ((initialPage.height - Kirigami.Units.gridUnit * 7) / rows > 0.85 * initialPage.width / columns) {
-            return rows * 0.85 * initialPage.width / columns;
-        } else {
-            return initialPage.height - Kirigami.Units.gridUnit * 7;
+        let height = 0;
+        if (inPortrait)
+        {
+            height = initialPage.width * 3/2;
+        } else
+        {
+            height = initialPage.width * 3/4;
         }
+        if (height > initialPage.height - Kirigami.Units.gridUnit * 7)
+            height = initialPage.height - Kirigami.Units.gridUnit * 7;
+        return height;
     }
     
     Keys.onPressed: {
@@ -186,6 +190,7 @@ Kirigami.Page {
                 anchors.bottomMargin: Kirigami.Units.smallSpacing
                 anchors.leftMargin: Kirigami.Units.smallSpacing
                 anchors.rightMargin: Kirigami.Units.gridUnit * 1.5 // for right side drawer indicator
+                inPortrait: initialPage.inPortrait
                 onPressed: {
                     if (text == "DEL") {
                         inputManager.backspace();
