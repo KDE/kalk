@@ -7,22 +7,10 @@ import QtQuick 2.0
 import org.kde.kirigami 2.13 as Kirigami
 import QtQuick.Layouts 1.1
 GridLayout {
-    id: functionPad
     signal pressed(string text)
     columns: 2
     rowSpacing: Kirigami.Units.smallSpacing
     columnSpacing: Kirigami.Units.smallSpacing
-    function calculateLayout() {
-        let childrens = 12;
-
-        let calculated = Math.sqrt(functionPad.width * childrens / functionPad.height);
-
-        functionPad.columns = calculated;
-    }
-
-    Component.onCompleted: calculateLayout()
-    onWidthChanged: calculateLayout()
-    onHeightChanged: calculateLayout()
     NumberButton {text: "sin(" ; display: "sin"; onClicked: pressed(text);}
     NumberButton {text: "cos(" ; display: "cos"; onClicked: pressed(text);}
     NumberButton {text: "tan(" ; display: "tan"; onClicked: pressed(text);}
