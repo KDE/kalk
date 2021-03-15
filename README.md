@@ -8,6 +8,7 @@ Originally starting as a fork of [Liri calculator](https://github.com/lirios/cal
 * History
 * Unit conversion 
 * Currency conversion
+* Binary calculation
 
 ## Links
 * Project page: https://invent.kde.org/plasma-mobile/kalk
@@ -16,6 +17,7 @@ Originally starting as a fork of [Liri calculator](https://github.com/lirios/cal
 
 ## Dependencies
 * Qt5 
+* Qt5 Feedback
 * Cmake
 * KI18n
 * KUnitConversion
@@ -23,6 +25,8 @@ Originally starting as a fork of [Liri calculator](https://github.com/lirios/cal
 * KConfig
 * GNU Bison
 * Flex
+* GMP
+* MPFR
 
 ## Building and Installing
 
