@@ -24,7 +24,7 @@ Kirigami.ScrollablePage {
         }
     }
 
-    ListView{
+    ListView {
         id: listView
         Layout.fillWidth: true
         model: historyManager
@@ -34,9 +34,9 @@ Kirigami.ScrollablePage {
                 inputManager.fromHistory(model.display.split('=')[1]);
                 pageStack.push("qrc:/qml/CalculationPage.qml");
             }
-            Text {
+            Label {
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
-                color: Kirigami.Theme.activeTextColor
+                font.weight: Font.Light
                 text: model.display
                 wrapMode: Text.Wrap
             }
