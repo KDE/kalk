@@ -777,7 +777,54 @@ QString knumber_fraction::toString(int precision) const {
 		return knumber_float(this).toString(precision);
 	}
 }
+QString knumber_fraction::toBinaryString(int precision) const {
 
+
+    if(knumber_fraction::default_fractional_output) {
+
+        // TODO: figure out how to properly use mpq_numref/mpq_denref here
+
+        knumber_integer integer_part(this);
+        if(split_off_integer_for_fraction_output && !integer_part.is_zero()) {
+
+            mpz_t num;
+            mpz_init(num);
+            mpq_get_num(num, mpq_);
+
+            knumber_integer integer_part_1(this);
+
+            mpz_mul(integer_part.mpz_, integer_part.mpz_, mpq_denref(mpq_));
+            mpz_sub(num, num, integer_part.mpz_);
+
+            if(mpz_sgn(num) < 0) {
+                mpz_neg(num, num);
+            }
+
+            const size_t size = gmp_snprintf(nullptr, 0, "%Zb %Zb/%Zb", integer_part_1.mpz_, num, mpq_denref(mpq_)) + 1;
+            QScopedArrayPointer<char> buf(new char[size]);
+            gmp_snprintf(&buf[0], size, "%Zb %Zb/%Zb", integer_part_1.mpz_, num, mpq_denref(mpq_));
+
+            mpz_clear(num);
+
+            return QLatin1String(&buf[0]);
+        } else {
+
+            mpz_t num;
+            mpz_init(num);
+            mpq_get_num(num, mpq_);
+
+            const size_t size = gmp_snprintf(nullptr, 0, "%Zb/%Zb", num, mpq_denref(mpq_)) + 1;
+            QScopedArrayPointer<char> buf(new char[size]);
+            gmp_snprintf(&buf[0], size, "%Zb/%Zb", num, mpq_denref(mpq_));
+
+            mpz_clear(num);
+
+            return QLatin1String(&buf[0]);
+        }
+    } else {
+        return knumber_float(this).toString(precision);
+    }
+}
 //------------------------------------------------------------------------------
 // Name:
 //------------------------------------------------------------------------------

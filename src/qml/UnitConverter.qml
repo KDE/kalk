@@ -21,9 +21,9 @@ Kirigami.Page {
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: {
         let rows = 4, columns = 3;
-        // restrict keypad so that the height of buttons never go past 0.85 times their width
-        if ((unitConverter.height - Kirigami.Units.gridUnit * 7) / rows > 0.85 * unitConverter.width / columns) {
-            return rows * 0.85 * unitConverter.width / columns;
+        // restrict keypad so that the height of buttons never go past 0.7 times their width
+        if ((unitConverter.height - Kirigami.Units.gridUnit * 7) / rows > 0.7 * unitConverter.width / columns) {
+            return rows * 0.7 * unitConverter.width / columns;
         } else {
             return unitConverter.height - Kirigami.Units.gridUnit * 7;
         }
@@ -39,6 +39,16 @@ Kirigami.Page {
         }
     }
     
+    // top panel drop shadow
+    RectangularGlow {
+        anchors.fill: topPanelBackground
+        anchors.topMargin: 1
+        z: -2
+        glowRadius: 4
+        spread: 0.2
+        color: dropShadowColor
+    }
+    
     Rectangle {
         id: topPanelBackground
         z: -1
@@ -48,17 +58,6 @@ Kirigami.Page {
         anchors.top: parent.top
         implicitHeight: topPanel.height + Kirigami.Units.largeSpacing * 2
         anchors.margins: -Kirigami.Units.largeSpacing
-    }
-    
-    // top panel drop shadow
-    DropShadow {
-        anchors.fill: topPanelBackground
-        source: topPanelBackground
-        horizontalOffset: 0
-        verticalOffset: 1
-        radius: 4
-        samples: 6
-        color: dropShadowColor
     }
     
     ColumnLayout {

@@ -1,6 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 2020-2021 Han Young <hanyoung@protonmail.com>
- * SPDX-FileCopyrightText: 2020 Devin Lin <espidev@gmail.com>
+ * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -19,19 +18,14 @@ Kirigami.Page {
     bottomPadding: 0
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
-    readonly property bool inPortrait: initialPage.width < initialPage.height
     property int keypadHeight: {
-        let height = 0;
-        if (inPortrait)
-        {
-            height = initialPage.width * 3/2;
-        } else
-        {
-            height = initialPage.width * 3/4;
+        let rows = 6, columns = 5;
+        // restrict keypad so that the height of buttons never go past 0.7 times their width
+        if ((initialPage.height - Kirigami.Units.gridUnit * 7) / rows > 0.7 * initialPage.width / columns) {
+            return rows * 0.7 * initialPage.width / columns;
+        } else {
+            return initialPage.height - Kirigami.Units.gridUnit * 7;
         }
-        if (height > initialPage.height - Kirigami.Units.gridUnit * 7)
-            height = initialPage.height - Kirigami.Units.gridUnit * 7;
-        return height;
     }
     
     Keys.onPressed: {
@@ -42,30 +36,18 @@ Kirigami.Page {
             inputManager.append("0"); break;
         case Qt.Key_1:
             inputManager.append("1"); break;
-        case Qt.Key_2:
-            inputManager.append("2"); break;
-        case Qt.Key_3:
-            inputManager.append("3"); break;
-        case Qt.Key_4:
-            inputManager.append("4"); break;
-        case Qt.Key_5:
-            inputManager.append("5"); break;
-        case Qt.Key_6:
-            inputManager.append("6"); break;
-        case Qt.Key_7:
-            inputManager.append("7"); break;
-        case Qt.Key_8:
-            inputManager.append("8"); break;
-        case Qt.Key_9:
-            inputManager.append("9"); break;
         case Qt.Key_Plus:
             inputManager.append("+"); break;
         case Qt.Key_Minus:
             inputManager.append("-"); break;
         case Qt.Key_multiply:
-            inputManager.append("×"); break;
+            inputManager.append("*"); break;
         case Qt.Key_division:
-            inputManager.append("÷"); break;
+            inputManager.append("/"); break;
+        case Qt.Key_Ampersand:
+            inputManager.append("&"); break;
+        case Qt.Key_Bar:
+            inputManager.append("|"); break;
         case Qt.Key_AsciiCircum:
             inputManager.append("^"); break;
         case Qt.Key_Period:
@@ -77,9 +59,8 @@ Kirigami.Page {
         }
     }
 
-    // Changes the current mode of the backend to non-binary
     onIsCurrentPageChanged: {
-        inputManager.setBinaryMode(false)
+        inputManager.setBinaryMode(true)
     }
     
     background: Rectangle {
@@ -113,7 +94,6 @@ Kirigami.Page {
         
         Item {
             id: outputScreen
-            z: 1
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
             Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
@@ -177,22 +157,20 @@ Kirigami.Page {
             }
         }
         
-        // keypad area
+        // Binary Input Pad
         Item {
             property string expression: ""
-            id: inputPad
+            id: binaryInputPad
             Layout.fillHeight: true
-            Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.5
+            Layout.preferredWidth: initialPage.width
             Layout.alignment: Qt.AlignLeft
             
-            NumberPad {
-                id: numberPad
+            BinaryPad {
+                id: binaryPad
                 anchors.fill: parent
-                anchors.topMargin: Kirigami.Units.gridUnit * 0.7
-                anchors.bottomMargin: Kirigami.Units.smallSpacing
-                anchors.leftMargin: Kirigami.Units.smallSpacing
-                anchors.rightMargin: Kirigami.Units.gridUnit * 1.5 // for right side drawer indicator
-                inPortrait: initialPage.inPortrait
+                anchors.margins: Kirigami.Units.smallSpacing
+                // Uncomment next line for function overlay
+                // anchors.rightMargin: Kirigami.Units.gridUnit * 1.5
                 onPressed: {
                     if (text == "DEL") {
                         inputManager.backspace();
@@ -200,71 +178,10 @@ Kirigami.Page {
                         inputManager.equal();
                         resultFadeOutAnimation.start();
                     } else {
-                        inputManager.append(text);
+                        inputManager.append(text, true);
                     }
                 }
                 onClear: inputManager.clear()
-            }
-            
-            // fast drop shadow
-            RectangularGlow {
-                anchors.rightMargin: 1
-                anchors.fill: drawerIndicator
-                glowRadius: 4
-                spread: 0.2
-                color: initialPage.dropShadowColor
-            }
-            
-            Rectangle {
-                id: drawerIndicator
-                anchors.top: parent.top
-                anchors.bottom: parent.bottom
-                width: Kirigami.Units.gridUnit
-                x: parent.width - this.width
-                
-                Kirigami.Theme.colorSet: Kirigami.Theme.View
-                Kirigami.Theme.inherit: false
-                color: Kirigami.Theme.backgroundColor
-                
-                Rectangle {
-                    anchors.centerIn: parent
-                    height: parent.height / 20
-                    width: parent.width / 4
-                    radius: 3
-                    color: Kirigami.Theme.textColor
-                }
-            }
-
-            Controls.Drawer {
-                id: functionDrawer
-                parent: initialPage
-                y: initialPage.height - inputPad.height
-                height: inputPad.height
-                width: inPortrait? initialPage.width * 0.8 : initialPage.width * 0.5
-                modal: inPortrait
-                interactive: inPortrait
-                position: inPortrait ? 0 : 1
-                visible: !inPortrait
-                dragMargin: drawerIndicator.width
-                edge: Qt.RightEdge
-                dim: false
-                onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius
-                opacity: 1 // for plasma style
-                FunctionPad {
-                    anchors.fill: parent
-                    anchors.bottom: parent.Bottom
-                    anchors.leftMargin: Kirigami.Units.largeSpacing
-                    anchors.rightMargin: Kirigami.Units.largeSpacing
-                    anchors.topMargin: Kirigami.Units.largeSpacing
-                    anchors.bottomMargin: parent.height / 4
-                    onPressed: inputManager.append(text)
-                }
-                // for plasma style
-                background: Rectangle {
-                    Kirigami.Theme.colorSet: Kirigami.Theme.View
-                    color: Kirigami.Theme.backgroundColor
-                    anchors.fill: parent
-                }
             }
         }
     }

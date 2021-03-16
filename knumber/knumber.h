@@ -58,9 +58,9 @@ public:
 
 public:
 	// construction/destruction
+    static KNumber binaryFromString(const QString &s);
 	KNumber();
 	explicit KNumber(const QString &s);
-
 	explicit KNumber(qint32 value);
 	explicit KNumber(qint64 value);
 	explicit KNumber(quint32 value);
@@ -110,6 +110,7 @@ public:
 
 public:
 	QString toQString(int width = -1, int precision = -1) const;
+    QString toBinaryString(int precision) const;
 	quint64 toUint64() const;
 	qint64 toInt64() const;
 

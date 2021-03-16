@@ -22,9 +22,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "knumber_fraction.h"
 #include "knumber_error.h"
 #include <QScopedArrayPointer>
+#include <QRegularExpression>
 
 namespace detail {
-
+knumber_integer *knumber_integer::binaryFromString(const QString &s)
+{
+    auto instance = new knumber_integer(0);
+    const QRegularExpression binary_regex("^[01]+.[01]+|^[01]+");
+    if (binary_regex.match(s).hasMatch()) {
+        mpz_set_str(instance->mpz_, s.toLatin1().constData(), 2);
+    }
+    return instance;
+}
 //------------------------------------------------------------------------------
 // Name: knumber_integer
 //------------------------------------------------------------------------------
@@ -707,7 +716,11 @@ QString knumber_integer::toString(int precision) const {
     gmp_snprintf(&buf[0], size, "%Zd", mpz_);
     return QLatin1String(&buf[0]);
 }
-
+QString knumber_integer::toBinaryString(int precision) const
+{
+    Q_UNUSED(precision);
+    return QString::fromLatin1(mpz_get_str(NULL, 2, mpz_));
+}
 //------------------------------------------------------------------------------
 // Name:
 //------------------------------------------------------------------------------

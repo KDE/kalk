@@ -592,6 +592,26 @@ QString knumber_float::toString(int precision) const {
 	return QLatin1String(&buf[0]);
 }
 
+QString knumber_float::toBinaryString(int precision) const {
+
+    size_t size;
+
+    if (precision > 0) {
+        size = static_cast<size_t>(mpfr_snprintf(nullptr, 0, "%.*Rb", precision, mpfr_) + 1);
+    } else {
+        size = static_cast<size_t>(mpfr_snprintf(nullptr, 0, "%.Rb", mpfr_) + 1);
+    }
+
+    QScopedArrayPointer<char> buf(new char[size]);
+
+    if (precision > 0) {
+        mpfr_snprintf(&buf[0], size, "%.*Rb", precision, mpfr_);
+    } else {
+        mpfr_snprintf(&buf[0], size, "%.Rb", mpfr_);
+    }
+
+    return QLatin1String(&buf[0]);
+}
 //------------------------------------------------------------------------------
 // Name:
 //------------------------------------------------------------------------------

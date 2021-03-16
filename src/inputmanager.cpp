@@ -1,11 +1,13 @@
 /*
  * SPDX-FileCopyrightText: 2020-2021 Han Young <hanyoung@protonmail.com>
+ * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "inputmanager.h"
 #include "mathengine.h"
 #include "historymanager.h"
+#include <QDebug>
 InputManager::InputManager()
 {
 }
@@ -43,7 +45,14 @@ void InputManager::append(const QString &subexpression)
     }
     m_moveFromResult = false;
 
-    MathEngine::inst()->parse(m_expression + subexpression);
+    // Call the corresponding parser based on the type of expression.
+    MathEngine * engineInstance = MathEngine::inst();
+    if (m_isBinaryMode) {
+        engineInstance->parseBinaryExpression(m_expression + subexpression);
+    } else {
+        engineInstance->parse(m_expression + subexpression);
+    }
+
     if(!MathEngine::inst()->error())
     {
         m_stack.push_back(subexpression.size());
@@ -60,7 +69,15 @@ void InputManager::backspace()
     {
         m_expression.chop(m_stack.back());
         Q_EMIT expressionChanged();
-        MathEngine::inst()->parse(m_expression);
+
+        // Call the corresponding parser based on the type of expression.
+        MathEngine * engineInstance = MathEngine::inst();
+        if (m_isBinaryMode) {
+            engineInstance->parseBinaryExpression(m_expression);
+        } else {
+            engineInstance->parse(m_expression);
+        }
+        
         if(!MathEngine::inst()->error())
         {
             m_result = MathEngine::inst()->result();
@@ -101,4 +118,9 @@ void InputManager::fromHistory(const QString &result)
     m_moveFromResult = true;
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
+}
+
+void InputManager::setBinaryMode(bool active) {
+    m_isBinaryMode = active;
+    clear();
 }

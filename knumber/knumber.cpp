@@ -26,6 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QRegExp>
 #include <QStringList>
 #include <cmath>
+#include <QDebug>
 
 QString KNumber::GroupSeparator   = QStringLiteral(",");
 QString KNumber::DecimalSeparator = QStringLiteral(".");
@@ -268,7 +269,13 @@ KNumber KNumber::Euler() {
 //------------------------------------------------------------------------------
 KNumber::KNumber() : value_(new detail::knumber_integer(0)) {
 }
-
+KNumber KNumber::binaryFromString(const QString &s)
+{
+    KNumber instance(0);
+    delete instance.value_;
+    instance.value_ = detail::knumber_integer::binaryFromString(s);
+    return instance;
+}
 //------------------------------------------------------------------------------
 // Name: KNumber
 //------------------------------------------------------------------------------
@@ -628,6 +635,11 @@ QString KNumber::toQString(int width, int precision) const {
     } else {
         return s;
     }
+}
+
+QString KNumber::toBinaryString(int precision) const
+{
+    return value_->toBinaryString(precision);
 }
 
 //------------------------------------------------------------------------------
