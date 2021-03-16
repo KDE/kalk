@@ -115,6 +115,7 @@ Kirigami.Page {
                         id: expressionRow
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit
+                        font.weight: Font.Light
                         text: inputManager.expression
                         color: Kirigami.Theme.disabledTextColor
                     }
@@ -135,6 +136,7 @@ Kirigami.Page {
                         id: result
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 2
+                        font.weight: Font.Light
                         text: inputManager.result
                         NumberAnimation on opacity {
                             id: resultFadeInAnimation
