@@ -87,6 +87,7 @@ Item {
         anchors.centerIn: keyRect
 
         font.pointSize: keyRect.height * 0.3
+        font.weight: Font.Light
         text: root.display
         opacity: special ? 0.4 : 1.0
         horizontalAlignment: Text.AlignHCenter
