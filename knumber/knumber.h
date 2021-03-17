@@ -109,7 +109,7 @@ public:
 	KNumber integerPart() const;
 
 public:
-	QString toQString(int width = -1, int precision = -1) const;
+    QString toQString(int width = 16, int precision = -1) const;
     QString toBinaryString(int precision) const;
 	quint64 toUint64() const;
 	qint64 toInt64() const;
