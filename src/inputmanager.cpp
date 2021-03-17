@@ -1,12 +1,13 @@
 /*
  * SPDX-FileCopyrightText: 2020-2021 Han Young <hanyoung@protonmail.com>
- * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
+ * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan
+ * <rohan.asokan@students.iiit.ac.in>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include "inputmanager.h"
-#include "mathengine.h"
 #include "historymanager.h"
+#include "mathengine.h"
 #include <QDebug>
 InputManager::InputManager()
 {
@@ -35,10 +36,8 @@ const QString &InputManager::result() const
 void InputManager::append(const QString &subexpression)
 {
     // if expression was from result and input is numeric, clear expression
-    if(m_moveFromResult && subexpression.size() == 1)
-    {
-        if(subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.'))
-        {
+    if (m_moveFromResult && subexpression.size() == 1) {
+        if (subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.')) {
             m_expression.clear();
             m_stack.pop_back();
         }
@@ -46,15 +45,14 @@ void InputManager::append(const QString &subexpression)
     m_moveFromResult = false;
 
     // Call the corresponding parser based on the type of expression.
-    MathEngine * engineInstance = MathEngine::inst();
+    MathEngine *engineInstance = MathEngine::inst();
     if (m_isBinaryMode) {
         engineInstance->parseBinaryExpression(m_expression + subexpression);
     } else {
         engineInstance->parse(m_expression + subexpression);
     }
 
-    if(!MathEngine::inst()->error())
-    {
+    if (!MathEngine::inst()->error()) {
         m_stack.push_back(subexpression.size());
         m_result = MathEngine::inst()->result();
         m_expression += subexpression;
@@ -65,21 +63,19 @@ void InputManager::append(const QString &subexpression)
 
 void InputManager::backspace()
 {
-    if(!m_stack.empty())
-    {
+    if (!m_stack.empty()) {
         m_expression.chop(m_stack.back());
         Q_EMIT expressionChanged();
 
         // Call the corresponding parser based on the type of expression.
-        MathEngine * engineInstance = MathEngine::inst();
+        MathEngine *engineInstance = MathEngine::inst();
         if (m_isBinaryMode) {
             engineInstance->parseBinaryExpression(m_expression);
         } else {
             engineInstance->parse(m_expression);
         }
-        
-        if(!MathEngine::inst()->error())
-        {
+
+        if (!MathEngine::inst()->error()) {
             m_result = MathEngine::inst()->result();
             Q_EMIT resultChanged();
         }
@@ -110,7 +106,7 @@ void InputManager::clear()
 
 void InputManager::fromHistory(const QString &result)
 {
-    m_expression = result;
+    setExpression(result);
     m_result.clear();
     m_stack.clear();
     m_stack.push_back(result.size());
@@ -119,8 +115,12 @@ void InputManager::fromHistory(const QString &result)
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
 }
-
-void InputManager::setBinaryMode(bool active) {
+bool InputManager::binaryMode() const
+{
+    return m_isBinaryMode;
+}
+void InputManager::setBinaryMode(bool active)
+{
     m_isBinaryMode = active;
     clear();
 }

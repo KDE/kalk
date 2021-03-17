@@ -60,7 +60,8 @@ Kirigami.Page {
     }
 
     onIsCurrentPageChanged: {
-        inputManager.setBinaryMode(true)
+        if (!inputManager.binaryMode())
+            inputManager.setBinaryMode(true);
     }
     
     background: Rectangle {

@@ -79,7 +79,8 @@ Kirigami.Page {
 
     // Changes the current mode of the backend to non-binary
     onIsCurrentPageChanged: {
-        inputManager.setBinaryMode(false)
+        if (inputManager.binaryMode())
+            inputManager.setBinaryMode(false);
     }
     
     background: Rectangle {
