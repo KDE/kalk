@@ -26,6 +26,32 @@ Kirigami.ApplicationWindow {
     Kirigami.PagePool {
         id: mainPagePool
     }
+    
+    // page switch animation
+    NumberAnimation {
+        id: anim
+        from: 0
+        to: 1
+        duration: Kirigami.Units.longDuration * 2
+        easing.type: Easing.InOutQuad
+    }
+    NumberAnimation {
+        id: yAnim
+        from: Kirigami.Units.gridUnit * 3
+        to: 0
+        duration: Kirigami.Units.longDuration * 3
+        easing.type: Easing.OutQuint
+    }
+    
+    function pageAnimation(page) {
+        // page switch animation
+        yAnim.target = page;
+        yAnim.properties = "yTranslate";
+        anim.target = page;
+        anim.properties = "mainOpacity";
+        yAnim.restart();
+        anim.restart();
+    }
 
     globalDrawer: Kirigami.GlobalDrawer {
         isMenu: true
@@ -35,30 +61,35 @@ Kirigami.ApplicationWindow {
                 iconName: "accessories-calculator"
                 pagePool: mainPagePool
                 page: "qrc:/qml/CalculationPage.qml"
+                onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("History")
                 iconName: "shallow-history"
                 page: "qrc:/qml/HistoryView.qml"
                 pagePool: mainPagePool
+                onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Convertor")
                 iconName: "gtk-convert"
                 page: "qrc:/qml/UnitConverter.qml"
                 pagePool: mainPagePool
-            },
-            Kirigami.PagePoolAction {
-                text: i18n("About")
-                iconName: "help-about"
-                page: "qrc:/qml/AboutPage.qml"
-                pagePool: mainPagePool
+                onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Binary Calculator")
                 iconName: "accessories-calculator"
                 pagePool: mainPagePool
                 page: "qrc:/qml/BinaryCalculator.qml"
+                onTriggered: pageAnimation(pageItem())
+            },
+            Kirigami.PagePoolAction {
+                text: i18n("About")
+                iconName: "help-about"
+                page: "qrc:/qml/AboutPage.qml"
+                pagePool: mainPagePool
+                onTriggered: pageAnimation(pageItem())
             }
         ]
     }
