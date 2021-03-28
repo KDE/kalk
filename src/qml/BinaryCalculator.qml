@@ -137,7 +137,7 @@ Kirigami.Page {
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 1.5
                         font.weight: Font.Light
-                        text: inputManager.binaryResult
+                        text: "BIN: " + inputManager.binaryResult
                         onTextChanged: resultFadeInAnimation.start()
                     }
                 }
@@ -154,7 +154,7 @@ Kirigami.Page {
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 1.5
                         font.weight: Font.Light
-                        text: inputManager.result
+                        text: "DEC: " + inputManager.result
                         onTextChanged: resultFadeInAnimation.start()
                     }
                 }
@@ -171,7 +171,7 @@ Kirigami.Page {
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 1.5
                         font.weight: Font.Light
-                        text: inputManager.hexResult
+                        text: "HEX: " + inputManager.hexResult
                         onTextChanged: resultFadeInAnimation.start()
                     }
                 }
