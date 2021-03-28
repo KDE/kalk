@@ -14,6 +14,7 @@
 void MathEngine::parse(QString expr) {
   m_driver.parse(expr.toStdString());
   m_result = m_driver.result;
+  m_error = m_driver.syntaxError;
   emit resultChanged();
 }
 
@@ -35,7 +36,7 @@ QStringList MathEngine::getRegexMatches(const QString &expr,
 
 void MathEngine::parseBinaryExpression(QString expr) {
   m_error = true;
-  qDebug() << "Current Epxression (mathengine.cpp): " << expr;
+  // qDebug() << "Current Epxression (mathengine.cpp): " << expr;
 
   int numbersPresent = 0;
   int operatorsPresent = 0;
@@ -51,7 +52,7 @@ void MathEngine::parseBinaryExpression(QString expr) {
   } else {
     m_error = false;
     if (operatorsPresent == 0 && numbersPresent == 1) {
-      m_result = KNumber::binaryFromString(numbers[0]).toBinaryString(0);
+      m_result = KNumber::binaryFromString(numbers[0]);
       emit resultChanged();
     }
   }
@@ -99,7 +100,7 @@ void MathEngine::parseBinaryExpression(QString expr) {
     default: // error
       m_error = true;
     };
-    m_result = result.toBinaryString(0);
+    m_result = result;
     emit resultChanged();
   }
 }

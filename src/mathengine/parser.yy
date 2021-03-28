@@ -80,7 +80,7 @@
 
 %%
 %start unit;
-unit: exp  { drv.result = $1.toQString(); };
+unit: exp  { drv.result = $1; };
 
 %left "+" "-";
 %left "*" "/";

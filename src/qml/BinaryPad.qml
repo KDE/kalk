@@ -36,6 +36,6 @@ GridLayout {
     // Row number from bottom: 1
     NumberButton {text: "0"; onClicked: pressed(text);}
     NumberButton {text: "1"; onClicked: pressed(text);}
-    NumberButton {text: "."; onClicked: pressed(text);}
+    NumberButton {text: "";}
     NumberButton {text: "="; onClicked: pressed(text); special: true;}
 }

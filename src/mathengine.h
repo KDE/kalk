@@ -11,9 +11,11 @@
 #include <QObject>
 #include <QRegularExpression>
 #include <QStringList>
+#include <knumber.h>
+
 class MathEngine : public QObject {
   Q_OBJECT
-  Q_PROPERTY(QString result READ result NOTIFY resultChanged)
+  Q_PROPERTY(KNumber result READ result NOTIFY resultChanged)
   Q_PROPERTY(bool error READ error NOTIFY resultChanged)
 public:
   static MathEngine *inst() {
@@ -22,15 +24,15 @@ public:
   }
   Q_INVOKABLE void parse(QString expr);
   Q_INVOKABLE void parseBinaryExpression(QString expr);
-  QString result() { return m_result; };
-  bool error() { return m_driver.syntaxError || m_error; };
+  KNumber result() { return m_result; };
+  bool error() { return m_error; };
 signals:
   void resultChanged();
 
 private:
   MathEngine(){};
   driver m_driver;
-  QString m_result;
+  KNumber m_result;
   bool m_error;
   const QString bitRegex = QString("[01]+");
   const QString binaryOperatorRegex =
