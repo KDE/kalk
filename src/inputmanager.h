@@ -23,6 +23,7 @@ public:
     Q_INVOKABLE void equal();
     Q_INVOKABLE void clear();
     Q_INVOKABLE void fromHistory(const QString &result);
+    Q_INVOKABLE bool binaryMode() const;
     Q_INVOKABLE void setBinaryMode(bool active);
 Q_SIGNALS:
     void expressionChanged();

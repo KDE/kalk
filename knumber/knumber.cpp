@@ -641,7 +641,10 @@ QString KNumber::toBinaryString(int precision) const
 {
     return value_->toBinaryString(precision);
 }
-
+QString KNumber::toHexString(int precision) const
+{
+    return value_->toHexString(precision);
+}
 //------------------------------------------------------------------------------
 // Name: toUint64
 //------------------------------------------------------------------------------

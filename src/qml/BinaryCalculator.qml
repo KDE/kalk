@@ -17,6 +17,9 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
     
+    property int yTranslate: 0
+    property real mainOpacity: 1
+    
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: {
         let rows = 6, columns = 5;
@@ -60,7 +63,8 @@ Kirigami.Page {
     }
 
     onIsCurrentPageChanged: {
-        inputManager.setBinaryMode(true)
+        if (!inputManager.binaryMode())
+            inputManager.setBinaryMode(true);
     }
     
     background: Rectangle {
@@ -70,118 +74,125 @@ Kirigami.Page {
         anchors.fill: parent
     }
     
-    // top panel drop shadow
-    RectangularGlow {
-        anchors.fill: topPanelBackground
-        anchors.topMargin: 1
-        glowRadius: 4
-        spread: 0.2
-        color: dropShadowColor
-    }
-    
-    Rectangle {
-        id: topPanelBackground
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        color: Kirigami.Theme.backgroundColor
-        implicitHeight: outputScreen.height
-    }
-    
-    ColumnLayout {
+    Item {
         anchors.fill: parent
-        spacing: 0
+        opacity: mainOpacity
+        transform: Translate { y: yTranslate }
         
-        Item {
-            id: outputScreen
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignTop
-            Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
+        // top panel drop shadow
+        RectangularGlow {
+            anchors.fill: topPanelBackground
+            anchors.topMargin: 1
+            glowRadius: 4
+            spread: 0.2
+            color: dropShadowColor
+        }
+        
+        Rectangle {
+            id: topPanelBackground
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            color: Kirigami.Theme.backgroundColor
+            implicitHeight: outputScreen.height
+        }
+        
+        ColumnLayout {
+            id: mainScreen
+            anchors.fill: parent
+            spacing: 0
             
-            Column {
-                id: outputColumn
-                anchors.fill: parent
-                anchors.margins: Kirigami.Units.largeSpacing
-                spacing: Kirigami.Units.gridUnit
+            Item {
+                id: outputScreen
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignTop
+                Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
                 
-                Flickable {
-                    anchors.right: parent.right
-                    height: Kirigami.Units.gridUnit * 1.5
-                    width: Math.min(parent.width, contentWidth)
-                    contentHeight: expressionRow.height
-                    contentWidth: expressionRow.width
-                    flickableDirection: Flickable.HorizontalFlick
-                    Controls.Label {
-                        id: expressionRow
-                        horizontalAlignment: Text.AlignRight
-                        font.pointSize: Kirigami.Units.gridUnit
-                        font.weight: Font.Light
-                        text: inputManager.expression
-                        color: Kirigami.Theme.disabledTextColor
-                    }
-                    onContentWidthChanged: {
-                        if(contentWidth > width)
-                            contentX = contentWidth - width;
-                    }
-                }
-                
-                Flickable {
-                    anchors.right: parent.right
-                    height: Kirigami.Units.gridUnit * 4
-                    width: Math.min(parent.width, contentWidth)
-                    contentHeight: result.height
-                    contentWidth: result.width
-                    flickableDirection: Flickable.HorizontalFlick
-                    Controls.Label {
-                        id: result
-                        horizontalAlignment: Text.AlignRight
-                        font.pointSize: Kirigami.Units.gridUnit * 2
-                        font.weight: Font.Light
-                        text: inputManager.result
-                        NumberAnimation on opacity {
-                            id: resultFadeInAnimation
-                            from: 0.5
-                            to: 1
-                            duration: Kirigami.Units.shortDuration
+                Column {
+                    id: outputColumn
+                    anchors.fill: parent
+                    anchors.margins: Kirigami.Units.largeSpacing
+                    spacing: Kirigami.Units.gridUnit
+                    
+                    Flickable {
+                        anchors.right: parent.right
+                        height: Kirigami.Units.gridUnit * 1.5
+                        width: Math.min(parent.width, contentWidth)
+                        contentHeight: expressionRow.height
+                        contentWidth: expressionRow.width
+                        flickableDirection: Flickable.HorizontalFlick
+                        Controls.Label {
+                            id: expressionRow
+                            horizontalAlignment: Text.AlignRight
+                            font.pointSize: Kirigami.Units.gridUnit
+                            font.weight: Font.Light
+                            text: inputManager.expression
+                            color: Kirigami.Theme.disabledTextColor
                         }
-                        NumberAnimation on opacity {
-                            id: resultFadeOutAnimation
-                            from: 1
-                            to: 0
-                            duration: Kirigami.Units.shortDuration
+                        onContentWidthChanged: {
+                            if(contentWidth > width)
+                                contentX = contentWidth - width;
                         }
+                    }
+                    
+                    Flickable {
+                        anchors.right: parent.right
+                        height: Kirigami.Units.gridUnit * 4
+                        width: Math.min(parent.width, contentWidth)
+                        contentHeight: result.height
+                        contentWidth: result.width
+                        flickableDirection: Flickable.HorizontalFlick
+                        Controls.Label {
+                            id: result
+                            horizontalAlignment: Text.AlignRight
+                            font.pointSize: Kirigami.Units.gridUnit * 2
+                            font.weight: Font.Light
+                            text: inputManager.result
+                            NumberAnimation on opacity {
+                                id: resultFadeInAnimation
+                                from: 0.5
+                                to: 1
+                                duration: Kirigami.Units.shortDuration
+                            }
+                            NumberAnimation on opacity {
+                                id: resultFadeOutAnimation
+                                from: 1
+                                to: 0
+                                duration: Kirigami.Units.shortDuration
+                            }
 
-                        onTextChanged: resultFadeInAnimation.start()
+                            onTextChanged: resultFadeInAnimation.start()
+                        }
                     }
                 }
             }
-        }
-        
-        // Binary Input Pad
-        Item {
-            property string expression: ""
-            id: binaryInputPad
-            Layout.fillHeight: true
-            Layout.preferredWidth: initialPage.width
-            Layout.alignment: Qt.AlignLeft
             
-            BinaryPad {
-                id: binaryPad
-                anchors.fill: parent
-                anchors.margins: Kirigami.Units.smallSpacing
-                // Uncomment next line for function overlay
-                // anchors.rightMargin: Kirigami.Units.gridUnit * 1.5
-                onPressed: {
-                    if (text == "DEL") {
-                        inputManager.backspace();
-                    } else if (text == "=") {
-                        inputManager.equal();
-                        resultFadeOutAnimation.start();
-                    } else {
-                        inputManager.append(text, true);
+            // Binary Input Pad
+            Item {
+                property string expression: ""
+                id: binaryInputPad
+                Layout.fillHeight: true
+                Layout.preferredWidth: initialPage.width
+                Layout.alignment: Qt.AlignLeft
+                
+                BinaryPad {
+                    id: binaryPad
+                    anchors.fill: parent
+                    anchors.margins: Kirigami.Units.smallSpacing
+                    // Uncomment next line for function overlay
+                    // anchors.rightMargin: Kirigami.Units.gridUnit * 1.5
+                    onPressed: {
+                        if (text == "DEL") {
+                            inputManager.backspace();
+                        } else if (text == "=") {
+                            inputManager.equal();
+                            resultFadeOutAnimation.start();
+                        } else {
+                            inputManager.append(text, true);
+                        }
                     }
+                    onClear: inputManager.clear()
                 }
-                onClear: inputManager.clear()
             }
         }
     }

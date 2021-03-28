@@ -56,6 +56,7 @@ private:
 public:
 	QString toString(int precision) const override;
     QString toBinaryString(int precision) const override;
+    QString toHexString(int precision) const override;
 	quint64 toUint64() const override;
 	qint64 toInt64() const override;
 

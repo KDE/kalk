@@ -11,6 +11,10 @@ import org.kde.kirigami 2.12 as Kirigami
 
 Kirigami.ScrollablePage {
     title: i18n("History")
+    
+    property int yTranslate: 0
+    property real mainOpacity: 1
+    
     Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
         text: i18n("History is empty")
@@ -26,6 +30,12 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listView
+        
+        opacity: mainOpacity
+        transform: Translate { y: yTranslate }
+        
+        currentIndex: -1
+        
         Layout.fillWidth: true
         model: historyManager
         delegate: Kirigami.AbstractListItem {

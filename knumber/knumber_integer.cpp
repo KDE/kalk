@@ -721,6 +721,10 @@ QString knumber_integer::toBinaryString(int precision) const
     Q_UNUSED(precision);
     return QString::fromLatin1(mpz_get_str(NULL, 2, mpz_));
 }
+QString knumber_integer::toHexString(int precision) const {
+    Q_UNUSED(precision);
+    return QString::fromLatin1(mpz_get_str(NULL, 16, mpz_));
+}
 //------------------------------------------------------------------------------
 // Name:
 //------------------------------------------------------------------------------

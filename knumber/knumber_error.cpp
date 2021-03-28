@@ -112,6 +112,19 @@ QString knumber_error::toBinaryString(int precision) const {
         return QStringLiteral("nan");
     }
 }
+QString knumber_error::toHexString(int precision) const {
+    Q_UNUSED(precision);
+
+    switch(error_) {
+    case ERROR_POS_INFINITY:
+        return QStringLiteral("inf");
+    case ERROR_NEG_INFINITY:
+        return QStringLiteral("-inf");
+    case ERROR_UNDEFINED:
+    default:
+        return QStringLiteral("nan");
+    }
+}
 //------------------------------------------------------------------------------
 // Name:
 //------------------------------------------------------------------------------

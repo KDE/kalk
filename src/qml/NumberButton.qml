@@ -33,7 +33,8 @@ Item {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
     
-    property color buttonColor: Qt.lighter(Kirigami.Theme.backgroundColor, 1.3)
+    property color buttonColor: Qt.lighter(Kirigami.Theme.alternateBackgroundColor, 1.3)
+    property color buttonBorderColor: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.08)
     property color buttonPressedColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.08)
     property color buttonTextColor: Kirigami.Theme.textColor
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
@@ -65,6 +66,7 @@ Item {
         anchors.margins: Kirigami.Units.smallSpacing * 0.5
         radius: Kirigami.Units.smallSpacing
         color: root.buttonColor
+        border.color: root.buttonBorderColor
         
         Controls.AbstractButton {
             anchors.fill: parent
@@ -72,8 +74,10 @@ Item {
                 if (pressed) {
                     vibrate.start();
                     parent.color = root.buttonPressedColor;
+                    parent.border.color = root.buttonPressedColor;
                 } else {
                     parent.color = root.buttonColor;
+                    parent.border.color = root.buttonBorderColor;
                 }
             }
 
@@ -86,8 +90,7 @@ Item {
         id: label
         anchors.centerIn: keyRect
 
-        font.pointSize: keyRect.height * 0.3
-        font.weight: Font.Light
+        font.pointSize: Math.round(keyRect.height * 0.28)
         text: root.display
         opacity: special ? 0.4 : 1.0
         horizontalAlignment: Text.AlignHCenter
