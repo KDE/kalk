@@ -143,7 +143,7 @@ Kirigami.Page {
                             visible: parent.text.length
                             anchors.left: parent.right
                             anchors.bottom: parent.bottom
-                            text: i18n("2")
+                            text: "2"
                             font.pointSize: Kirigami.Units.gridUnit * 0.5
                             font.weight: Font.Light
                             color: Kirigami.Theme.disabledTextColor
@@ -169,7 +169,7 @@ Kirigami.Page {
                             visible: parent.text.length
                             anchors.left: parent.right
                             anchors.bottom: parent.bottom
-                            text: i18n("10")
+                            text: "10"
                             font.pointSize: Kirigami.Units.gridUnit * 0.5
                             font.weight: Font.Light
                             color: Kirigami.Theme.disabledTextColor
@@ -195,7 +195,7 @@ Kirigami.Page {
                             visible: parent.text.length
                             anchors.left: parent.right
                             anchors.bottom: parent.bottom
-                            text: i18n("16")
+                            text: "16"
                             font.pointSize: Kirigami.Units.gridUnit * 0.5
                             font.weight: Font.Light
                             color: Kirigami.Theme.disabledTextColor
