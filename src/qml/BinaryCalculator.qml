@@ -130,15 +130,24 @@ Kirigami.Page {
                     height: Kirigami.Units.gridUnit * 2
                     width: Math.min(parent.width, contentWidth)
                     contentHeight: resultBin.height
-                    contentWidth: resultBin.width
+                    contentWidth: resultBin.width + Kirigami.Units.gridUnit
                     flickableDirection: Flickable.HorizontalFlick
                     Controls.Label {
                         id: resultBin
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 1.5
                         font.weight: Font.Light
-                        text: "BIN: " + inputManager.binaryResult
+                        text: inputManager.binaryResult
                         onTextChanged: resultFadeInAnimation.start()
+                        Controls.Label {
+                            visible: parent.text.length
+                            anchors.left: parent.right
+                            anchors.bottom: parent.bottom
+                            text: i18n("B")
+                            font.pointSize: Kirigami.Units.gridUnit
+                            font.weight: Font.Light
+                            color: Kirigami.Theme.disabledTextColor
+                        }
                     }
                 }
                 
@@ -147,15 +156,24 @@ Kirigami.Page {
                     height: Kirigami.Units.gridUnit * 2
                     width: Math.min(parent.width, contentWidth)
                     contentHeight: resultDec.height
-                    contentWidth: resultDec.width
+                    contentWidth: resultDec.width + Kirigami.Units.gridUnit
                     flickableDirection: Flickable.HorizontalFlick
                     Controls.Label {
                         id: resultDec
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 1.5
                         font.weight: Font.Light
-                        text: "DEC: " + inputManager.result
+                        text: inputManager.result
                         onTextChanged: resultFadeInAnimation.start()
+                        Controls.Label {
+                            visible: parent.text.length
+                            anchors.left: parent.right
+                            anchors.bottom: parent.bottom
+                            text: i18n("D")
+                            font.pointSize: Kirigami.Units.gridUnit
+                            font.weight: Font.Light
+                            color: Kirigami.Theme.disabledTextColor
+                        }
                     }
                 }
                 
@@ -164,15 +182,24 @@ Kirigami.Page {
                     height: Kirigami.Units.gridUnit * 2
                     width: Math.min(parent.width, contentWidth)
                     contentHeight: resultHex.height
-                    contentWidth: resultHex.width
+                    contentWidth: resultHex.width + Kirigami.Units.gridUnit
                     flickableDirection: Flickable.HorizontalFlick
                     Controls.Label {
                         id: resultHex
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: Kirigami.Units.gridUnit * 1.5
                         font.weight: Font.Light
-                        text: "HEX: " + inputManager.hexResult
+                        text: inputManager.hexResult
                         onTextChanged: resultFadeInAnimation.start()
+                        Controls.Label {
+                            visible: parent.text.length
+                            anchors.left: parent.right
+                            anchors.bottom: parent.bottom
+                            text: i18n("H")
+                            font.pointSize: Kirigami.Units.gridUnit
+                            font.weight: Font.Light
+                            color: Kirigami.Theme.disabledTextColor
+                        }
                     }
                 }
 
