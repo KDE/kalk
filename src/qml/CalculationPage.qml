@@ -195,78 +195,102 @@ Kirigami.Page {
             }
             
             // keypad area
-            Item {
-                property string expression: ""
-                id: inputPad
+            RowLayout {
                 Layout.fillHeight: true
-                Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.5
-                Layout.alignment: Qt.AlignLeft
-                
-                NumberPad {
-                    id: numberPad
-                    anchors.fill: parent
-                    anchors.topMargin: Kirigami.Units.gridUnit * 0.7
-                    anchors.bottomMargin: Kirigami.Units.smallSpacing
-                    anchors.leftMargin: Kirigami.Units.smallSpacing
-                    anchors.rightMargin: Kirigami.Units.gridUnit * 1.5 // for right side drawer indicator
-                    inPortrait: initialPage.inPortrait
-                    onPressed: {
-                        if (text == "DEL") {
-                            inputManager.backspace();
-                        } else if (text == "=") {
-                            inputManager.equal();
-                            resultFadeOutAnimation.start();
-                        } else {
-                            inputManager.append(text);
+                Layout.fillWidth: true
+                Item {
+                    property string expression: ""
+                    id: inputPad
+                    Layout.fillHeight: true
+                    Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.5
+                    Layout.alignment: Qt.AlignLeft
+
+                    NumberPad {
+                        id: numberPad
+                        anchors.fill: parent
+                        anchors.topMargin: Kirigami.Units.gridUnit * 0.7
+                        anchors.bottomMargin: Kirigami.Units.smallSpacing
+                        anchors.leftMargin: Kirigami.Units.smallSpacing
+                        anchors.rightMargin: Kirigami.Units.gridUnit * 1.5 // for right side drawer indicator
+                        inPortrait: initialPage.inPortrait
+                        onPressed: {
+                            if (text == "DEL") {
+                                inputManager.backspace();
+                            } else if (text == "=") {
+                                inputManager.equal();
+                                resultFadeOutAnimation.start();
+                            } else {
+                                inputManager.append(text);
+                            }
+                        }
+                        onClear: inputManager.clear()
+                    }
+
+                    // fast drop shadow
+                    RectangularGlow {
+                        visible: inPortrait
+                        anchors.rightMargin: 1
+                        anchors.fill: drawerIndicator
+                        glowRadius: 4
+                        spread: 0.2
+                        color: initialPage.dropShadowColor
+                    }
+
+                    Rectangle {
+                        id: drawerIndicator
+                        visible: inPortrait
+                        anchors.top: parent.top
+                        anchors.bottom: parent.bottom
+                        width: Kirigami.Units.gridUnit
+                        x: parent.width - this.width
+
+                        Kirigami.Theme.colorSet: Kirigami.Theme.View
+                        Kirigami.Theme.inherit: false
+                        color: Kirigami.Theme.backgroundColor
+
+                        Rectangle {
+                            anchors.centerIn: parent
+                            height: parent.height / 20
+                            width: parent.width / 4
+                            radius: 3
+                            color: Kirigami.Theme.textColor
                         }
                     }
-                    onClear: inputManager.clear()
-                }
-                
-                // fast drop shadow
-                RectangularGlow {
-                    anchors.rightMargin: 1
-                    anchors.fill: drawerIndicator
-                    glowRadius: 4
-                    spread: 0.2
-                    color: initialPage.dropShadowColor
-                }
-                
-                Rectangle {
-                    id: drawerIndicator
-                    anchors.top: parent.top
-                    anchors.bottom: parent.bottom
-                    width: Kirigami.Units.gridUnit
-                    x: parent.width - this.width
-                    
-                    Kirigami.Theme.colorSet: Kirigami.Theme.View
-                    Kirigami.Theme.inherit: false
-                    color: Kirigami.Theme.backgroundColor
-                    
-                    Rectangle {
-                        anchors.centerIn: parent
-                        height: parent.height / 20
-                        width: parent.width / 4
-                        radius: 3
-                        color: Kirigami.Theme.textColor
+
+                    Controls.Drawer {
+                        id: functionDrawer
+                        parent: initialPage
+                        y: initialPage.height - inputPad.height
+                        height: inputPad.height
+                        width: initialPage.width * 0.8
+                        visible: inPortrait
+                        dragMargin: drawerIndicator.width
+                        edge: Qt.RightEdge
+                        dim: false
+                        onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius
+                        opacity: 1 // for plasma style
+                        FunctionPad {
+                            anchors.fill: parent
+                            anchors.bottom: parent.Bottom
+                            anchors.leftMargin: Kirigami.Units.largeSpacing
+                            anchors.rightMargin: Kirigami.Units.largeSpacing
+                            anchors.topMargin: Kirigami.Units.largeSpacing
+                            anchors.bottomMargin: parent.height / 4
+                            onPressed: inputManager.append(text)
+                        }
+                        // for plasma style
+                        background: Rectangle {
+                            Kirigami.Theme.colorSet: Kirigami.Theme.View
+                            color: Kirigami.Theme.backgroundColor
+                            anchors.fill: parent
+                        }
                     }
                 }
-
-                Controls.Drawer {
-                    id: functionDrawer
-                    parent: initialPage
-                    y: initialPage.height - inputPad.height
-                    height: inputPad.height
-                    width: inPortrait? initialPage.width * 0.8 : initialPage.width * 0.5
-                    modal: inPortrait
-                    interactive: inPortrait
-                    position: inPortrait ? 0 : 1
+                Item {
+                    Layout.alignment:  Qt.AlignRight
+                    Layout.fillHeight: true
+                    Layout.fillWidth: true
                     visible: !inPortrait
-                    dragMargin: drawerIndicator.width
-                    edge: Qt.RightEdge
-                    dim: false
-                    onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius
-                    opacity: 1 // for plasma style
                     FunctionPad {
                         anchors.fill: parent
                         anchors.bottom: parent.Bottom
@@ -275,12 +299,6 @@ Kirigami.Page {
                         anchors.topMargin: Kirigami.Units.largeSpacing
                         anchors.bottomMargin: parent.height / 4
                         onPressed: inputManager.append(text)
-                    }
-                    // for plasma style
-                    background: Rectangle {
-                        Kirigami.Theme.colorSet: Kirigami.Theme.View
-                        color: Kirigami.Theme.backgroundColor
-                        anchors.fill: parent
                     }
                 }
             }
