@@ -38,7 +38,8 @@ Kirigami.Page {
     
     Keys.onPressed: {
         switch(event.key) {
-        case Qt.Backspace || Qt.Delete:
+        case Qt.Key_Delete:
+        case Qt.Key_Backspace:
             inputManager.backspace(); break;
         case Qt.Key_0:
             inputManager.append("0"); break;
@@ -64,9 +65,9 @@ Kirigami.Page {
             inputManager.append("+"); break;
         case Qt.Key_Minus:
             inputManager.append("-"); break;
-        case Qt.Key_multiply:
+        case Qt.Key_Asterisk:
             inputManager.append("×"); break;
-        case Qt.Key_division:
+        case Qt.Key_Slash:
             inputManager.append("÷"); break;
         case Qt.Key_AsciiCircum:
             inputManager.append("^"); break;
@@ -77,12 +78,13 @@ Kirigami.Page {
         case Qt.Key_Enter:
             inputManager.equal(); break;
         }
+        event.accepted = true;
     }
 
     // Changes the current mode of the backend to non-binary
     onIsCurrentPageChanged: {
-        if (inputManager.binaryMode())
-            inputManager.setBinaryMode(false);
+        if (inputManager.binaryMode)
+            inputManager.binaryMode = false
     }
     
     background: Rectangle {
