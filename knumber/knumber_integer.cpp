@@ -244,7 +244,7 @@ knumber_base *knumber_integer::div(knumber_base *rhs) {
 	}
 
 	if(knumber_integer *const p = dynamic_cast<knumber_integer *>(rhs)) {
-		knumber_fraction *q = new knumber_fraction(this);
+        auto *q = new knumber_float(this);
 		delete this;
 		return q->div(p);
 	} else if(knumber_float *const p = dynamic_cast<knumber_float *>(rhs)) {
