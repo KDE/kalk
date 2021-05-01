@@ -15,6 +15,7 @@ class InputManager : public QObject
     Q_PROPERTY(QString result READ result NOTIFY resultChanged)
     Q_PROPERTY(QString binaryResult READ binaryResult NOTIFY binaryResultChanged)
     Q_PROPERTY(QString hexResult READ hexResult NOTIFY hexResultChanged)
+    Q_PROPERTY(bool binaryMode READ binaryMode WRITE setBinaryMode)
 public:
     static InputManager *inst();
     const QString &expression() const;
@@ -27,7 +28,8 @@ public:
     Q_INVOKABLE void equal();
     Q_INVOKABLE void clear();
     Q_INVOKABLE void fromHistory(const QString &result);
-    Q_INVOKABLE void setBinaryMode(bool active);
+    void setBinaryMode(bool active);
+    bool binaryMode();
 Q_SIGNALS:
     void expressionChanged();
     void resultChanged();

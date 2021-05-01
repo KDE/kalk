@@ -156,3 +156,7 @@ void InputManager::setBinaryMode(bool active) {
     m_isBinaryMode = active;
     clear();
 }
+bool InputManager::binaryMode()
+{
+    return m_isBinaryMode;
+}
