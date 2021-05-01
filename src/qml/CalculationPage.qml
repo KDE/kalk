@@ -25,15 +25,14 @@ Kirigami.Page {
     readonly property bool inPortrait: initialPage.width < initialPage.height
     property int keypadHeight: {
         let height = 0;
-        if (inPortrait)
-        {
-            height = initialPage.width * 3/2;
-        } else
-        {
+        if (inPortrait) {
+            height = initialPage.width * 7/6;
+        } else {
             height = initialPage.width * 3/4;
         }
-        if (height > initialPage.height - Kirigami.Units.gridUnit * 7)
+        if (height > initialPage.height - Kirigami.Units.gridUnit * 7) {
             height = initialPage.height - Kirigami.Units.gridUnit * 7;
+        }
         return height;
     }
     
