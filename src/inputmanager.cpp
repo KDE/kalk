@@ -10,6 +10,7 @@
 #include <QDebug>
 InputManager::InputManager()
 {
+    KNumber::setDefaultFloatOutput(true);
 }
 
 InputManager *InputManager::inst()
