@@ -24,15 +24,22 @@
 bison_target(MyParser ${CMAKE_CURRENT_SOURCE_DIR}/mathengine/parser.yy ${CMAKE_CURRENT_BINARY_DIR}/parser.cc)
 flex_target(MyScanner ${CMAKE_CURRENT_SOURCE_DIR}/mathengine/scanner.ll ${CMAKE_CURRENT_BINARY_DIR}/scanner.cc)
 
-set(kalk_SRCS
-    main.cpp
+add_library(kalklib STATIC
     historymanager.cpp
-    unitmodel.cpp
-    mathengine.cpp
     inputmanager.cpp
+    mathengine.cpp
+    mathengine/driver.cc
     ${CMAKE_CURRENT_BINARY_DIR}/parser.cc
     ${CMAKE_CURRENT_BINARY_DIR}/scanner.cc
-    mathengine/driver.cc
+)
+
+target_link_libraries(kalklib
+    Qt5::Core
+    knumber)
+
+set(kalk_SRCS
+    main.cpp
+    unitmodel.cpp
     calculator.qrc)
 add_executable(kalk ${kalk_SRCS})
 
@@ -47,8 +54,9 @@ target_link_libraries(kalk
     KF5::ConfigCore
     KF5::I18n
     KF5::CoreAddons
+    kalklib
     knumber)
 
-target_include_directories(kalk PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mathengine)
+target_include_directories(kalklib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mathengine)
 
 install(TARGETS kalk ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
