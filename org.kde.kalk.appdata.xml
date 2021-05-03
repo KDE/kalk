@@ -72,6 +72,7 @@
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
+  <metadata_license>CC0-1.0</metadata_license>
   <description>
     <p>Kalk is a powerful calculator designed for mobile platform.</p>
     <p xml:lang="ca">El Kalk és una potent calculadora dissenyada per a plataformes mòbils.</p>
