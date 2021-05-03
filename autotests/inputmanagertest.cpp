@@ -18,7 +18,7 @@ private slots:
 #ifndef Q_OS_WIN
 void initLocale()
 {
-    setenv("LC_ALL", "C", 1);
+    setenv("LC_ALL", LANG, 1);
 }
 
 Q_CONSTRUCTOR_FUNCTION(initLocale)
@@ -26,6 +26,12 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 
 void InputManagerTest::init()
 {
+    if (QString(LANG) != "C") {
+        if (QLocale().language() != QLocale::German) {
+            qWarning() << "Please enable the" << LANG << "locale on your system";
+            exit(0);
+        }
+    }
     InputManager::inst()->clear();
 }
 
@@ -70,7 +76,11 @@ void InputManagerTest::testNonIntegerDivision()
     InputManager::inst()->append("70");
     InputManager::inst()->append("÷");
     InputManager::inst()->append("9");
-    QVERIFY(InputManager::inst()->result().startsWith("7.77777"));
+    if (QString(LANG) == "C") {
+        QVERIFY(InputManager::inst()->result().startsWith("7.77777"));
+    } else {
+        QVERIFY(InputManager::inst()->result().startsWith("7,77777"));
+    }
     InputManager::inst()->equal();
     InputManager::inst()->append("*");
     InputManager::inst()->append("9");
