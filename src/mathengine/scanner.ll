@@ -103,7 +103,7 @@
   make_NUMBER (const std::string &s, const yy::parser::location_type& loc);
 %}
 
-knumber   [0-9]+|([0-9]+)?"."[0-9]+
+knumber   [0-9]+|([0-9]+)?("."|",")[0-9]+
 
 %{
   // Code run each time a pattern is matched.
