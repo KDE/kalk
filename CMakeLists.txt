@@ -22,6 +22,7 @@
 #  $END_LICENSE$
 project(Kalk)
 
+set(PROJECT_VERSION "21.05")
 find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
@@ -69,6 +70,11 @@ include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(ECMPoQmTools)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX KALK
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
+)
+
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Widgets)
 find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
         Config
