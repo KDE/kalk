@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 #else
     engine.rootContext()->setContextProperty(QStringLiteral("debug"), false);
 #endif
+    engine.rootContext()->setContextProperty(QStringLiteral("kalkAboutData"), QVariant::fromValue(aboutData));
     // load main ui
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
 
