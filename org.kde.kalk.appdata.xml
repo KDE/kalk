@@ -82,6 +82,12 @@
   <description>
     <p>Kalk is a convergent calculator for Plasma.</p>
   </description>
+  <screenshots>
+    <screenshot>
+      <caption>Calculator Page</caption>
+      <image>https://cdn.kde.org/screenshots/kalk/kalk.png</image>
+    </screenshot>
+  </screenshots>
   <recommends>
     <control>pointing</control>
     <control>keyboard</control>
