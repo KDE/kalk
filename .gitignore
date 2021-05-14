@@ -54,3 +54,6 @@ stage/
 
 # Clang
 .clang-format
+
+# Flatpak
+.flatpak-builder
