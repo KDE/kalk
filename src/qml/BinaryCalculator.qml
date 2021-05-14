@@ -17,6 +17,9 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
     
+    property int yTranslate: 0
+    property real mainOpacity: 1
+    
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: {
         let rows = 6, columns = 5;
@@ -71,35 +74,38 @@ Kirigami.Page {
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
-    }
-    
-    // top panel drop shadow
-    RectangularGlow {
-        anchors.fill: topPanelBackground
-        anchors.topMargin: 1
-        glowRadius: 4
-        spread: 0.2
-        color: dropShadowColor
-    }
-    
-    Rectangle {
-        id: topPanelBackground
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.right: parent.right
-        color: Kirigami.Theme.backgroundColor
-        implicitHeight: outputScreen.height
+        opacity: mainOpacity
     }
     
     ColumnLayout {
         anchors.fill: parent
+        opacity: mainOpacity
+        transform: Translate { y: yTranslate }
         spacing: 0
         
         Item {
             id: outputScreen
+            z: 1
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
-            Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
+            Layout.preferredHeight: initialPage.height - initialPage.keypadHeight            
+            
+            // top panel drop shadow
+            RectangularGlow {
+                anchors.fill: topPanelBackground
+                anchors.topMargin: 1
+                glowRadius: 4
+                spread: 0.2
+                color: dropShadowColor
+            }
+            Rectangle {
+                id: topPanelBackground
+                anchors.top: parent.top
+                anchors.left: parent.left
+                anchors.right: parent.right
+                color: Kirigami.Theme.backgroundColor
+                implicitHeight: outputScreen.height
+            }
             
             Column {
                 id: outputColumn
