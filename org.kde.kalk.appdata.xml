@@ -81,10 +81,28 @@
   <metadata_license>CC0-1.0</metadata_license>
   <description>
     <p>Kalk is a convergent calculator for Plasma.</p>
+    <p xml:lang="ca">El Kalk és una calculadora convergent per al Plasma.</p>
+    <p xml:lang="es">Kalk es una calculadora convergente para Plasma.</p>
+    <p xml:lang="nl">Kalk is een convergente rekenmachine voor Plasma.</p>
+    <p xml:lang="pl">Kalk jest spójnym kalkulatorem dla Plazmy.</p>
+    <p xml:lang="pt">O Kalk é uma calculadora convergente para o Plasma.</p>
+    <p xml:lang="pt-BR">Kalk é uma calculadora convergente para o Plasma.</p>
+    <p xml:lang="sv">Kalk är en konvergent räknare för Plasma.</p>
+    <p xml:lang="uk">Kalk — потужний калькулятор для Плазми.</p>
+    <p xml:lang="x-test">xxKalk is a convergent calculator for Plasma.xx</p>
   </description>
   <screenshots>
     <screenshot>
       <caption>Calculator Page</caption>
+      <caption xml:lang="ca">Pàgina Calculadora</caption>
+      <caption xml:lang="es">Página de la calculadora</caption>
+      <caption xml:lang="nl">Rekenmachinepagina</caption>
+      <caption xml:lang="pl">Strona kalkulatora</caption>
+      <caption xml:lang="pt">Página da Calculadora</caption>
+      <caption xml:lang="pt-BR">Página da calculadora</caption>
+      <caption xml:lang="sv">Räknarsida</caption>
+      <caption xml:lang="uk">Сторінка «Калькулятора»</caption>
+      <caption xml:lang="x-test">xxCalculator Pagexx</caption>
       <image>https://cdn.kde.org/screenshots/kalk/kalk.png</image>
     </screenshot>
   </screenshots>
