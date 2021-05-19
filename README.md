@@ -3,6 +3,8 @@ Kalk is a convergent calculator application built with the [Kirigami framework](
 
 Originally starting as a fork of [Liri calculator](https://github.com/lirios/calculator), Kalk has gone through heavy development, and no longer shares the same codebase with Liri calculator.
 
+<a href='https://flathub.org/apps/details/org.kde.kalk'><img width='190px' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-i-en.png'/></a>
+
 ## Features
 * Basic calculation
 * History
