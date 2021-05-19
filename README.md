@@ -33,7 +33,7 @@ Originally starting as a fork of [Liri calculator](https://github.com/lirios/cal
 ```sh
 mkdir build
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=/path/to/prefix -G Ninja ..
+cmake -DCMAKE_INSTALL_PREFIX=/path/to/prefix -G Ninja .. # add -DCMAKE_BUILD_TYPE=Release to compile for release
 ninja install # use sudo if necessary
 ```
 
