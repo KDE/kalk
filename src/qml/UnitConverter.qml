@@ -32,6 +32,41 @@ Kirigami.Page {
         }
     }
     
+    Keys.onPressed: {
+        switch(event.key) {
+        case Qt.Key_Delete:
+        case Qt.Key_Backspace:
+            unitNumberPad.pressed("DEL"); break;
+        case Qt.Key_0:
+            unitNumberPad.pressed("0"); break;
+        case Qt.Key_1:
+            unitNumberPad.pressed("1"); break;
+        case Qt.Key_2:
+            unitNumberPad.pressed("2"); break;
+        case Qt.Key_3:
+            unitNumberPad.pressed("3"); break;
+        case Qt.Key_4:
+            unitNumberPad.pressed("4"); break;
+        case Qt.Key_5:
+            unitNumberPad.pressed("5"); break;
+        case Qt.Key_6:
+            unitNumberPad.pressed("6"); break;
+        case Qt.Key_7:
+            unitNumberPad.pressed("7"); break;
+        case Qt.Key_8:
+            unitNumberPad.pressed("8"); break;
+        case Qt.Key_9:
+            unitNumberPad.pressed("9"); break;
+        case Qt.Key_Period:
+            unitNumberPad.pressed("."); break;
+        case Qt.Key_Equal:
+        case Qt.Key_Return:
+        case Qt.Key_Enter:
+            inputManager.equal(); break;
+        }
+        event.accepted = true;
+    }
+    
     Component {
         id: delegateComponent
         Controls.Label {
