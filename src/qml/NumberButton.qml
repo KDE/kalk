@@ -89,11 +89,20 @@ Item {
     Controls.Label {
         id: label
         anchors.centerIn: keyRect
+        visible: root.display !== "⌫" // not backspace icon
 
         font.pointSize: Math.round(keyRect.height * 0.28)
         text: root.display
         opacity: special ? 0.4 : 1.0
         horizontalAlignment: Text.AlignHCenter
         color: root.buttonTextColor
+    }
+    Kirigami.Icon {
+        visible: root.display === "⌫" // backspace icon
+        source: "edit-clear"
+        anchors.centerIn: keyRect
+        opacity: special ? 0.6 : 1.0
+        implicitWidth: Math.round(keyRect.height * 0.3)
+        implicitHeight: width
     }
 }
