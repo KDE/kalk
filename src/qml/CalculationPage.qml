@@ -240,6 +240,7 @@ Kirigami.Page {
                     Rectangle {
                         id: drawerIndicator
                         visible: inPortrait
+                        z: 1
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
                         width: Kirigami.Units.gridUnit
@@ -248,7 +249,7 @@ Kirigami.Page {
                         Kirigami.Theme.colorSet: Kirigami.Theme.View
                         Kirigami.Theme.inherit: false
                         color: Kirigami.Theme.backgroundColor
-
+                        
                         Rectangle {
                             anchors.centerIn: parent
                             height: parent.height / 20
@@ -268,8 +269,19 @@ Kirigami.Page {
                         dragMargin: drawerIndicator.width
                         edge: Qt.RightEdge
                         dim: false
-                        onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius
+                        onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius;
                         opacity: 1 // for plasma style
+                        
+                        property bool firstOpen: true
+                        onOpened: {
+                            // HACK: don't open drawer when application starts
+                            // there doesn't seem to be another way to do this...
+                            if (firstOpen) {
+                                close();
+                                firstOpen = false;
+                            }
+                        }
+                        
                         FunctionPad {
                             anchors.fill: parent
                             anchors.bottom: parent.Bottom
