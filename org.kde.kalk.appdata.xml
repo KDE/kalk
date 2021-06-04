@@ -135,7 +135,21 @@
   <url type="homepage">https://invent.kde.org/plasma-mobile/kalk</url>
   <url type="bugtracker">https://invent.kde.org/plasma-mobile/kalk/-/issues</url>
   <releases>
-    <release version="21.06" date="2021-06-10"/>
+    <release version="21.06" date="2021-06-10">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Updated the application icon</li>
+          <li>Added support for parentheses keyboard input</li>
+          <li>Fixed the calculator drawer opening when the application opens</li>
+          <li>Changed backspace icon to use a proper system icon instead of a font provided one</li>
+          <li>Added keyboard support to unit converter</li>
+          <li>Fixed page change animation for binary calculator</li>
+          <li>Enabled qml debugging when compiled in debug mode</li>
+          <li>Added ability to recognize the decimal separator in other locales</li>
+        </ul>
+      </description>
+    </release>
     <release version="21.05" date="2021-05-10"/>
   </releases>
 </component>
