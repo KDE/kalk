@@ -84,6 +84,7 @@
     <p xml:lang="ca">El Kalk és una calculadora convergent per al Plasma.</p>
     <p xml:lang="ca-valencia">El Kalk és una calculadora convergent per al Plasma.</p>
     <p xml:lang="de">Kalk ist ein konvergenter Rechner für Plasma.</p>
+    <p xml:lang="en-GB">Kalk is a convergent calculator for Plasma.</p>
     <p xml:lang="es">Kalk es una calculadora convergente para Plasma.</p>
     <p xml:lang="fr">Kalk est une calculatrice universelle conçue pour Plasma.</p>
     <p xml:lang="it">Kalk è una semplice calcolatrice per Plasma.</p>
@@ -104,6 +105,7 @@
       <caption xml:lang="ca-valencia">Pàgina Calculadora</caption>
       <caption xml:lang="cs">Stránka kalkulačky</caption>
       <caption xml:lang="de">Calculator-Seite</caption>
+      <caption xml:lang="en-GB">Calculator Page</caption>
       <caption xml:lang="es">Página de la calculadora</caption>
       <caption xml:lang="fr">Page de la calculatrice</caption>
       <caption xml:lang="it">Pagina della calcolatrice</caption>
