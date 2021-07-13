@@ -89,6 +89,7 @@
     <p xml:lang="de">Kalk ist ein konvergenter Rechner für Plasma.</p>
     <p xml:lang="en-GB">Kalk is a convergent calculator for Plasma.</p>
     <p xml:lang="es">Kalk es una calculadora convergente para Plasma.</p>
+    <p xml:lang="eu">Kalk, Plasmarako kalkulagailu konbergente bat da.</p>
     <p xml:lang="fi">Kalk on mukautuva laskin Plasmaan.</p>
     <p xml:lang="fr">Kalk est une calculatrice universelle conçue pour Plasma.</p>
     <p xml:lang="hi">कल्क प्लाज़्मा के लिए एक अभिसृत गणक है।</p>
@@ -112,6 +113,7 @@
       <caption xml:lang="de">Calculator-Seite</caption>
       <caption xml:lang="en-GB">Calculator Page</caption>
       <caption xml:lang="es">Página de la calculadora</caption>
+      <caption xml:lang="eu">Kalkulagailu-orria</caption>
       <caption xml:lang="fi">Laskinsivu</caption>
       <caption xml:lang="fr">Page de la calculatrice</caption>
       <caption xml:lang="hi">गणक पृष्ठ</caption>
