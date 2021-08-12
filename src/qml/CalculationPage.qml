@@ -92,6 +92,11 @@ Kirigami.Page {
           case "÷":
           case "/":
             inputManager.append("÷"); break;
+          case "−":
+          case "-":
+            inputManager.append("-"); break;
+					case "+":
+						inputManager.append("+"); break;
           }
         }
         event.accepted = true;
