@@ -17,10 +17,10 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
-    
+
     property int yTranslate: 0
     property real mainOpacity: 1
-    
+
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     readonly property bool inPortrait: initialPage.width < initialPage.height
     property int keypadHeight: {
@@ -35,7 +35,7 @@ Kirigami.Page {
         }
         return height;
     }
-    
+
     Keys.onPressed: {
         switch(event.key) {
         case Qt.Key_Delete:
@@ -81,6 +81,18 @@ Kirigami.Page {
         case Qt.Key_Return:
         case Qt.Key_Enter:
             inputManager.equal(); break;
+        default:
+          switch(event.text) {
+          case "⋅":
+          case "×":
+          case "*":
+            inputManager.append("×"); break;
+          case "∶":
+          case "∕":
+          case "÷":
+          case "/":
+            inputManager.append("÷"); break;
+          }
         }
         event.accepted = true;
     }
@@ -90,62 +102,62 @@ Kirigami.Page {
         if (inputManager.binaryMode)
             inputManager.binaryMode = false
     }
-    
+
     background: Rectangle {
         opacity: mainOpacity
-        
+
         Kirigami.Theme.colorSet: Kirigami.Theme.View
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
     }
-    
+
     Item {
         anchors.fill: parent
         opacity: mainOpacity
         transform: Translate { y: yTranslate }
-        
+
         // top panel drop shadow
         RectangularGlow {
             opacity: mainOpacity
-            
+
             anchors.fill: topPanelBackground
             anchors.topMargin: 1
             glowRadius: 4
             spread: 0.2
             color: dropShadowColor
         }
-        
+
         Rectangle {
             id: topPanelBackground
             opacity: mainOpacity
-            
+
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
             color: Kirigami.Theme.backgroundColor
             implicitHeight: outputScreen.height
         }
-        
+
         ColumnLayout {
             opacity: mainOpacity
             transform: Translate { y: yTranslate }
             anchors.fill: parent
             spacing: 0
-            
+
             Item {
                 id: outputScreen
                 z: 1
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignTop
                 Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
-                
+
                 Column {
                     id: outputColumn
                     anchors.fill: parent
                     anchors.margins: Kirigami.Units.largeSpacing
                     spacing: Kirigami.Units.gridUnit
-                    
+
                     Flickable {
                         anchors.right: parent.right
                         height: Kirigami.Units.gridUnit * 1.5
@@ -166,7 +178,7 @@ Kirigami.Page {
                                 contentX = contentWidth - width;
                         }
                     }
-                    
+
                     Flickable {
                         anchors.right: parent.right
                         height: Kirigami.Units.gridUnit * 4
@@ -198,7 +210,7 @@ Kirigami.Page {
                     }
                 }
             }
-            
+
             // keypad area
             RowLayout {
                 Layout.fillHeight: true
@@ -253,7 +265,7 @@ Kirigami.Page {
                         Kirigami.Theme.colorSet: Kirigami.Theme.View
                         Kirigami.Theme.inherit: false
                         color: Kirigami.Theme.backgroundColor
-                        
+
                         Rectangle {
                             anchors.centerIn: parent
                             height: parent.height / 20
@@ -275,7 +287,7 @@ Kirigami.Page {
                         dim: false
                         onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius;
                         opacity: 1 // for plasma style
-                        
+
                         property bool firstOpen: true
                         onOpened: {
                             // HACK: don't open drawer when application starts
@@ -285,7 +297,7 @@ Kirigami.Page {
                                 firstOpen = false;
                             }
                         }
-                        
+
                         FunctionPad {
                             anchors.fill: parent
                             anchors.bottom: parent.Bottom
@@ -321,5 +333,5 @@ Kirigami.Page {
             }
         }
     }
-    
+
 }
