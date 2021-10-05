@@ -6,7 +6,7 @@
  */
 import QtQuick 2.7
 import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as Controls
+import QtQuick.Controls 2.15 as Controls
 import Qt.labs.platform 1.0
 import Qt.labs.settings 1.0
 import org.kde.kirigami 2.13 as Kirigami
@@ -19,9 +19,9 @@ Kirigami.ApplicationWindow {
     width: Kirigami.Units.gridUnit * 20
     readonly property int columnWidth: Kirigami.Units.gridUnit * 13
     wideScreen: width > columnWidth * 3
-    Component.onCompleted: {
-        pageStack.globalToolBar.canContainHandles = true;
-    }
+    
+    pageStack.globalToolBar.canContainHandles: true
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
 
     Kirigami.PagePool {
         id: mainPagePool
@@ -53,9 +53,15 @@ Kirigami.ApplicationWindow {
         anim.restart();
     }
 
-    globalDrawer: Kirigami.GlobalDrawer {
-        isMenu: true
-        actions: [
+    globalDrawer: Kirigami.OverlayDrawer {
+        id: drawer
+        width: 300
+        height: root.height
+        enabled: Kirigami.Settings.isMobile
+        
+        // for desktop menu
+        property bool isMenu: true
+        property list<QtObject> actions: [
             Kirigami.PagePoolAction {
                 text: i18n("Calculator")
                 iconName: "accessories-calculator"
@@ -92,6 +98,123 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageAnimation(pageItem())
             }
         ]
+        
+        // for mobile sidebar
+        handleClosedIcon.source: "application-menu"
+        handleOpenIcon.source: "application-menu"
+        
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
+        Kirigami.Theme.inherit: false
+        
+        contentItem: ColumnLayout {
+            id: column
+            spacing: 0
+            
+            // allows for lazy loading of pages compared to using a binding
+            property string currentlyChecked: i18n("Calculator")
+            
+            Kirigami.Heading {
+                text: i18n("Calculator")
+                type: Kirigami.Heading.Secondary
+                Layout.margins: Kirigami.Units.gridUnit
+            }
+            
+            SidebarButton {
+                text: i18n("Calculator")
+                icon.name: "format-number-percent"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                checked: column.currentlyChecked === text
+                onClicked: {
+                    column.currentlyChecked = text;
+                    
+                    let page = mainPagePool.loadPage("qrc:/qml/CalculationPage.qml");
+                    while (pageStack.depth > 0) pageStack.pop();
+                    pageStack.push(page);
+                    pageAnimation(page);
+                    drawer.close();
+                }
+            }
+            
+            SidebarButton {
+                text: i18n("History")
+                icon.name: "shallow-history"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                checked: column.currentlyChecked === text
+                onClicked: {
+                    column.currentlyChecked = text;
+                    
+                    let page = mainPagePool.loadPage("qrc:/qml/HistoryView.qml");
+                    while (pageStack.depth > 0) pageStack.pop();
+                    pageStack.push(page);
+                    pageAnimation(page);
+                    drawer.close();
+                }
+            }
+            
+            SidebarButton {
+                text: i18n("Convertor")
+                icon.name: "gtk-convert"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                checked: column.currentlyChecked === text
+                onClicked: {
+                    column.currentlyChecked = text;
+                    
+                    let page = mainPagePool.loadPage("qrc:/qml/UnitConverter.qml");
+                    while (pageStack.depth > 0) pageStack.pop();
+                    pageStack.push(page);
+                    pageAnimation(page);
+                    drawer.close();
+                }
+            }
+            
+            SidebarButton {
+                text: i18n("Binary Calculator")
+                icon.name: "format-number-percent"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                checked: column.currentlyChecked === text
+                onClicked: {
+                    column.currentlyChecked = text;
+                    
+                    let page = mainPagePool.loadPage("qrc:/qml/BinaryCalculator.qml");
+                    while (pageStack.depth > 0) pageStack.pop();
+                    pageStack.push(page);
+                    pageAnimation(page);
+                    drawer.close();
+                }
+            }
+            
+            Item { Layout.fillHeight: true }
+            Kirigami.Separator { 
+                Layout.fillWidth: true 
+                Layout.margins: Kirigami.Units.smallSpacing
+            }
+            
+            SidebarButton {
+                text: i18n("About")
+                icon.name: "help-about"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                checked: column.currentlyChecked === text
+                onClicked: {
+                    column.currentlyChecked = text;
+                    
+                    let page = mainPagePool.loadPage("qrc:/qml/AboutPage.qml")
+                    while (pageStack.depth > 0) pageStack.pop();
+                    pageStack.push(page);
+                    pageAnimation(page);
+                    drawer.close();
+                }
+            }
+        }
     }
 
     pageStack.initialPage: mainPagePool.loadPage("qrc:/qml/CalculationPage.qml")

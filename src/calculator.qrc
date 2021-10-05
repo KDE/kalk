@@ -12,5 +12,6 @@
         <file>qml/UnitConverter.qml</file>
         <file>qml/PortraitPad.qml</file>
         <file>qml/LandScapePad.qml</file>
+        <file>qml/SidebarButton.qml</file>
     </qresource>
 </RCC>
