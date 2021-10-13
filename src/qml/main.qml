@@ -100,8 +100,8 @@ Kirigami.ApplicationWindow {
         ]
         
         // for mobile sidebar
-        handleClosedIcon.source: "application-menu"
-        handleOpenIcon.source: "application-menu"
+        handleClosedIcon.source: null
+        handleOpenIcon.source: null
         
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
