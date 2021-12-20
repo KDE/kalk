@@ -57,14 +57,17 @@ public:
     void setCurrentIndex(int i);
     void setFromUnitIndex(int i);
     void setToUnitIndex(int i);
+    
 Q_SIGNALS:
     void typeListChanged();
     void valueChanged();
     void resultChanged();
     void currentIndexChanged();
     void unitIndexChanged();
+
 private Q_SLOTS:
     void calculateResult();
+
 private:
     UnitModel();
     int m_currentIndex = 0;

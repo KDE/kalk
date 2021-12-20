@@ -32,10 +32,16 @@ int main(int argc, char *argv[])
     parser.addVersionOption();
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
-    engine.rootContext()->setContextProperty("historyManager", HistoryManager::inst());
-    engine.rootContext()->setContextProperty("inputManager", InputManager::inst());
-    engine.rootContext()->setContextProperty("unitModel", UnitModel::inst());
-    KAboutData aboutData("kalk", i18n("Calculator"), QStringLiteral(KALK_VERSION_STRING), i18n("Calculator in Kirigami"), KAboutLicense::GPL, i18n("© 2020 KDE Community"));
+    engine.rootContext()->setContextProperty(QStringLiteral("historyManager"), HistoryManager::inst());
+    engine.rootContext()->setContextProperty(QStringLiteral("inputManager"), InputManager::inst());
+    engine.rootContext()->setContextProperty(QStringLiteral("unitModel"), UnitModel::inst());
+    
+    KAboutData aboutData(QStringLiteral("kalk"), 
+                         i18n("Calculator"), 
+                         QStringLiteral(KALK_VERSION_STRING), 
+                         i18n("Calculator in Kirigami"), 
+                         KAboutLicense::GPL, 
+                         i18n("© 2020-2021 KDE Community"));
     KAboutData::setApplicationData(aboutData);
 
     parser.process(app);

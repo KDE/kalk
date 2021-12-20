@@ -28,7 +28,7 @@ namespace detail {
 knumber_integer *knumber_integer::binaryFromString(const QString &s)
 {
     auto instance = new knumber_integer(0);
-    const QRegularExpression binary_regex("^[01]+.[01]+|^[01]+");
+    const QRegularExpression binary_regex(QStringLiteral("^[01]+.[01]+|^[01]+"));
     if (binary_regex.match(s).hasMatch()) {
         mpz_set_str(instance->mpz_, s.toLatin1().constData(), 2);
     }

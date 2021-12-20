@@ -3,8 +3,8 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#ifndef HISTORYMANAGER_H
-#define HISTORYMANAGER_H
+
+#pragma once
 
 #include <QAbstractListModel>
 #include <QObject>
@@ -34,7 +34,7 @@ public:
     {
         m_historyList.append(string);
         this->save();
-        emit layoutChanged();
+        Q_EMIT layoutChanged();
     };
     Q_INVOKABLE void clearHistory();
 
@@ -43,5 +43,3 @@ private:
     void save();
     HistoryManager();
 };
-
-#endif // HISTORYMANAGER_H

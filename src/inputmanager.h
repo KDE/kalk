@@ -4,7 +4,9 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+
 #pragma once
+
 #include <stack>
 #include <QObject>
 
@@ -16,6 +18,7 @@ class InputManager : public QObject
     Q_PROPERTY(QString binaryResult READ binaryResult NOTIFY binaryResultChanged)
     Q_PROPERTY(QString hexResult READ hexResult NOTIFY hexResultChanged)
     Q_PROPERTY(bool binaryMode READ binaryMode WRITE setBinaryMode)
+
 public:
     static InputManager *inst();
     const QString &expression() const;
@@ -30,6 +33,7 @@ public:
     Q_INVOKABLE void fromHistory(const QString &result);
     void setBinaryMode(bool active);
     bool binaryMode();
+
 Q_SIGNALS:
     void expressionChanged();
     void resultChanged();

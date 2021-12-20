@@ -8,6 +8,7 @@
 #include "mathengine.h"
 #include "historymanager.h"
 #include <QDebug>
+
 InputManager::InputManager()
 {
     KNumber::setDefaultFloatOutput(true);

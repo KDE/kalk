@@ -27,8 +27,8 @@ find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
 cmake_minimum_required(VERSION 2.8.12)
-set(KF5_MIN_VERSION "5.18.0")
-set(QT_MIN_VERSION "5.5.0")
+set(KF5_MIN_VERSION "5.89.0")
+set(QT_MIN_VERSION "5.15.0")
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
     message(FATAL_ERROR "This application requires an out of source build. Please
         create a separate build directory.")
@@ -67,12 +67,19 @@ check_type_size("unsigned long"  SIZEOF_UNSIGNED_LONG)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
+# only enable QML debugging on debug builds
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DQT_QML_DEBUG ")
+
+include(FeatureSummary)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
+include(ECMPoQmTools)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(ECMPoQmTools)
 include(KDECompilerSettings NO_POLICY_SCOPE)
+include(KDEClangFormat)
+include(KDEGitCommitHooks)
+
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KALK
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
