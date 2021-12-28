@@ -17,6 +17,8 @@ Kirigami.ApplicationWindow {
     visible: true
     height: Kirigami.Units.gridUnit * 30
     width: Kirigami.Units.gridUnit * 20
+    minimumHeight: Kirigami.Units.gridUnit * 30
+    minimumWidth: Kirigami.Units.gridUnit * 20
     readonly property int columnWidth: Kirigami.Units.gridUnit * 13
     wideScreen: width > columnWidth * 3
     
