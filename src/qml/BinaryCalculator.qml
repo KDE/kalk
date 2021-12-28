@@ -21,15 +21,8 @@ Kirigami.Page {
     property real mainOpacity: 1
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
-    property int keypadHeight: {
-        let rows = 6, columns = 5;
-        // restrict keypad so that the height of buttons never go past 0.7 times their width
-        if ((initialPage.height - Kirigami.Units.gridUnit * 7) / rows > 0.7 * initialPage.width / columns) {
-            return rows * 0.7 * initialPage.width / columns;
-        } else {
-            return initialPage.height - Kirigami.Units.gridUnit * 7;
-        }
-    }
+    property int keypadHeight: initialPage.height * 3 / 5
+    property int screenHeight: initialPage.height - initialPage.keypadHeight
     
     Keys.onPressed: {
         switch(event.key) {
@@ -88,7 +81,7 @@ Kirigami.Page {
             z: 1
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
-            Layout.preferredHeight: initialPage.height - initialPage.keypadHeight            
+            Layout.preferredHeight: initialPage.screenHeight            
             
             // top panel drop shadow
             RectangularGlow {
@@ -111,11 +104,11 @@ Kirigami.Page {
                 id: outputColumn
                 anchors.fill: parent
                 anchors.margins: Kirigami.Units.largeSpacing
-                spacing: Kirigami.Units.gridUnit
+                spacing: initialPage.screenHeight / 8
                 
                 Flickable {
                     anchors.right: parent.right
-                    height: Kirigami.Units.gridUnit * 1.5
+                    height: initialPage.screenHeight / 8
                     width: Math.min(parent.width, contentWidth)
                     contentHeight: expressionRow.height
                     contentWidth: expressionRow.width
@@ -123,7 +116,7 @@ Kirigami.Page {
                     Controls.Label {
                         id: expressionRow
                         horizontalAlignment: Text.AlignRight
-                        font.pointSize: Kirigami.Units.gridUnit
+                        font.pointSize: initialPage.screenHeight * 0.1 / 1.5
                         font.weight: Font.Light
                         text: inputManager.expression
                         color: Kirigami.Theme.disabledTextColor
@@ -136,7 +129,7 @@ Kirigami.Page {
                 
                 Flickable {
                     anchors.right: parent.right
-                    height: Kirigami.Units.gridUnit * 2
+                    height: initialPage.screenHeight / 8
                     width: Math.min(parent.width, contentWidth)
                     contentHeight: resultBin.height
                     contentWidth: resultBin.width + Kirigami.Units.gridUnit
@@ -144,7 +137,7 @@ Kirigami.Page {
                     Controls.Label {
                         id: resultBin
                         horizontalAlignment: Text.AlignRight
-                        font.pointSize: Kirigami.Units.gridUnit * 1.5
+                        font.pointSize: initialPage.screenHeight * 0.1
                         font.weight: Font.Light
                         text: inputManager.binaryResult
                         onTextChanged: resultFadeInAnimation.start()
@@ -153,7 +146,7 @@ Kirigami.Page {
                             anchors.left: parent.right
                             anchors.bottom: parent.bottom
                             text: "2"
-                            font.pointSize: Kirigami.Units.gridUnit * 0.5
+                            font.pointSize: initialPage.screenHeight * 0.1 * 0.3
                             font.weight: Font.Light
                             color: Kirigami.Theme.disabledTextColor
                         }
@@ -162,7 +155,7 @@ Kirigami.Page {
                 
                 Flickable {
                     anchors.right: parent.right
-                    height: Kirigami.Units.gridUnit * 2
+                    height: initialPage.screenHeight / 8
                     width: Math.min(parent.width, contentWidth)
                     contentHeight: resultDec.height
                     contentWidth: resultDec.width + Kirigami.Units.gridUnit
@@ -170,7 +163,7 @@ Kirigami.Page {
                     Controls.Label {
                         id: resultDec
                         horizontalAlignment: Text.AlignRight
-                        font.pointSize: Kirigami.Units.gridUnit * 1.5
+                        font.pointSize: initialPage.screenHeight * 0.1
                         font.weight: Font.Light
                         text: inputManager.result
                         onTextChanged: resultFadeInAnimation.start()
@@ -179,7 +172,7 @@ Kirigami.Page {
                             anchors.left: parent.right
                             anchors.bottom: parent.bottom
                             text: "10"
-                            font.pointSize: Kirigami.Units.gridUnit * 0.5
+                            font.pointSize: initialPage.screenHeight * 0.1 * 0.3
                             font.weight: Font.Light
                             color: Kirigami.Theme.disabledTextColor
                         }
@@ -188,7 +181,7 @@ Kirigami.Page {
                 
                 Flickable {
                     anchors.right: parent.right
-                    height: Kirigami.Units.gridUnit * 2
+                    height: initialPage.screenHeight / 8
                     width: Math.min(parent.width, contentWidth)
                     contentHeight: resultHex.height
                     contentWidth: resultHex.width + Kirigami.Units.gridUnit
@@ -196,7 +189,7 @@ Kirigami.Page {
                     Controls.Label {
                         id: resultHex
                         horizontalAlignment: Text.AlignRight
-                        font.pointSize: Kirigami.Units.gridUnit * 1.5
+                        font.pointSize: initialPage.screenHeight * 0.1
                         font.weight: Font.Light
                         text: inputManager.hexResult
                         onTextChanged: resultFadeInAnimation.start()
@@ -205,7 +198,7 @@ Kirigami.Page {
                             anchors.left: parent.right
                             anchors.bottom: parent.bottom
                             text: "16"
-                            font.pointSize: Kirigami.Units.gridUnit * 0.5
+                            font.pointSize: initialPage.screenHeight * 0.1 * 0.3
                             font.weight: Font.Light
                             color: Kirigami.Theme.disabledTextColor
                         }

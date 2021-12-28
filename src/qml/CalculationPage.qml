@@ -23,18 +23,8 @@ Kirigami.Page {
 
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     readonly property bool inPortrait: initialPage.width < initialPage.height
-    property int keypadHeight: {
-        let height = 0;
-        if (inPortrait) {
-            height = initialPage.width * 7/6;
-        } else {
-            height = initialPage.width * 3/4;
-        }
-        if (height > initialPage.height - Kirigami.Units.gridUnit * 7) {
-            height = initialPage.height - Kirigami.Units.gridUnit * 7;
-        }
-        return height;
-    }
+    property int keypadHeight: initialPage.height * 3 / 4
+    property int screenHeight: initialPage.height - initialPage.keypadHeight
 
     Keys.onPressed: {
         switch(event.key) {
@@ -155,13 +145,13 @@ Kirigami.Page {
                 z: 1
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignTop
-                Layout.preferredHeight: initialPage.height - initialPage.keypadHeight
+                Layout.preferredHeight: initialPage.screenHeight
 
                 Column {
                     id: outputColumn
                     anchors.fill: parent
                     anchors.margins: Kirigami.Units.largeSpacing
-                    spacing: Kirigami.Units.gridUnit
+                    spacing: initialPage.screenHeight / 4
 
                     Flickable {
                         anchors.right: parent.right
@@ -173,7 +163,7 @@ Kirigami.Page {
                         Controls.Label {
                             id: expressionRow
                             horizontalAlignment: Text.AlignRight
-                            font.pointSize: Kirigami.Units.gridUnit
+                            font.pointSize: initialPage.screenHeight * 0.15
                             font.weight: Font.Light
                             text: inputManager.expression
                             color: Kirigami.Theme.disabledTextColor
@@ -194,7 +184,7 @@ Kirigami.Page {
                         Controls.Label {
                             id: result
                             horizontalAlignment: Text.AlignRight
-                            font.pointSize: Kirigami.Units.gridUnit * 2
+                            font.pointSize: initialPage.screenHeight * 0.15 * 2
                             font.weight: Font.Light
                             text: inputManager.result
                             NumberAnimation on opacity {
