@@ -91,7 +91,7 @@ Item {
         anchors.centerIn: keyRect
         visible: root.display !== "⌫" // not backspace icon
 
-        font.pointSize: Math.round(keyRect.height * 0.28)
+        font.pointSize: Math.min(Math.round(keyRect.height * 0.28), Math.round(keyRect.width * 0.28))
         text: root.display
         opacity: special ? 0.4 : 1.0
         horizontalAlignment: Text.AlignHCenter
