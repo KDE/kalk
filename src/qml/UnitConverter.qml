@@ -22,15 +22,8 @@ Kirigami.Page {
     property real mainOpacity: 1
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
-    property int keypadHeight: {
-        let rows = 4, columns = 3;
-        // restrict keypad so that the height of buttons never go past 0.7 times their width
-        if ((unitConverter.height - Kirigami.Units.gridUnit * 7) / rows > 0.7 * unitConverter.width / columns) {
-            return rows * 0.7 * unitConverter.width / columns;
-        } else {
-            return unitConverter.height - Kirigami.Units.gridUnit * 7;
-        }
-    }
+    property int keypadHeight: unitConverter.height * 3 / 5
+    property int screenHeight: unitConverter.height - unitConverter.keypadHeight
     
     Keys.onPressed: {
         switch(event.key) {
@@ -74,6 +67,7 @@ Kirigami.Page {
             opacity: 0.4 + Math.max(0, 1 - Math.abs(Controls.Tumbler.displacement)) * 0.6
             horizontalAlignment: Text.AlignHCenter
             font.bold: Controls.Tumbler.displacement == 0
+            font.pointSize: unitConverter.screenHeight * 0.05
         }
     }
     
@@ -110,7 +104,7 @@ Kirigami.Page {
             ColumnLayout {
                 id: topPanel
                 Layout.fillWidth: true
-                Layout.preferredHeight: unitConverter.height - unitConverter.keypadHeight
+                Layout.preferredHeight: unitConverter.screenHeight
                 Layout.maximumWidth: unitConverter.width
                 
                 Controls.ComboBox {
@@ -130,11 +124,13 @@ Kirigami.Page {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
                     Layout.maximumWidth: unitConverter.width
+                    Layout.maximumHeight: unitConverter.screenHeight * 3 / 5
                     
                     Controls.Tumbler {
                         id: fromTumbler
                         Layout.fillWidth: true
-                        Layout.maximumHeight: Kirigami.Units.gridUnit * 6
+                        Layout.fillHeight: true
+                        Layout.maximumHeight: unitConverter.screenHeight * 0.5
                         
                         model: unitModel.typeList
                         currentIndex: unitModel.fromUnitIndex
@@ -148,6 +144,8 @@ Kirigami.Page {
                         Layout.alignment: Qt.AlignHCenter
                         text: i18n("Swap")
                         icon.name: "gtk-convert"
+                        icon.height: unitConverter.screenHeight * 0.1
+                        icon.width: unitConverter.screenHeight * 0.1
                         display: Controls.AbstractButton.IconOnly
                         onClicked: {
                             let tmp = fromTumbler.currentIndex;
@@ -159,7 +157,8 @@ Kirigami.Page {
                     Controls.Tumbler {
                         id: toTumbler
                         Layout.fillWidth: true
-                        Layout.maximumHeight: Kirigami.Units.gridUnit * 6
+                        Layout.fillHeight: true
+                        Layout.maximumHeight: unitConverter.screenHeight * 0.5
                         
                         model: unitModel.typeList
                         currentIndex: unitModel.toUnitIndex
@@ -178,6 +177,7 @@ Kirigami.Page {
                 Controls.Label {
                     Layout.topMargin: Kirigami.Units.largeSpacing
                     Layout.fillWidth: true
+                    font.pointSize: unitConverter.screenHeight * 0.045
                     text: unitModel.value
                     color: Kirigami.Theme.textColor
                     horizontalAlignment: Text.AlignHCenter
@@ -186,6 +186,7 @@ Kirigami.Page {
                 Controls.Label {
                     Layout.topMargin: Kirigami.Units.smallSpacing
                     Layout.fillWidth: true
+                    font.pointSize: unitConverter.screenHeight * 0.045
                     text: unitModel.result
                     color: Kirigami.Theme.textColor
                     horizontalAlignment: Text.AlignHCenter
