@@ -15,10 +15,10 @@ Kirigami.ApplicationWindow {
     id: root
     title: 'Kalk'
     visible: true
-    height: Kirigami.Units.gridUnit * 30
-    width: Kirigami.Units.gridUnit * 20
-    minimumHeight: Kirigami.Units.gridUnit * 30
-    minimumWidth: Kirigami.Units.gridUnit * 20
+    height: 700
+    width: 360
+    minimumHeight: 700
+    minimumWidth: 360
     readonly property int columnWidth: Kirigami.Units.gridUnit * 13
     wideScreen: width > columnWidth * 3
     
