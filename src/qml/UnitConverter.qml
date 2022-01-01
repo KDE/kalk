@@ -22,7 +22,7 @@ Kirigami.Page {
     property real mainOpacity: 1
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
-    property int keypadHeight: unitConverter.height * 3 / 5
+    property int keypadHeight: unitConverter.height * 3 / 7
     property int screenHeight: unitConverter.height - unitConverter.keypadHeight
     
     Keys.onPressed: {
@@ -67,7 +67,7 @@ Kirigami.Page {
             opacity: 0.4 + Math.max(0, 1 - Math.abs(Controls.Tumbler.displacement)) * 0.6
             horizontalAlignment: Text.AlignHCenter
             font.bold: Controls.Tumbler.displacement == 0
-            font.pointSize: unitConverter.screenHeight * 0.05
+            font.pointSize: unitConverter.screenHeight * 0.04
         }
     }
     
@@ -130,7 +130,7 @@ Kirigami.Page {
                         id: fromTumbler
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.maximumHeight: unitConverter.screenHeight * 0.5
+                        Layout.maximumHeight: unitConverter.screenHeight * 0.3
                         
                         model: unitModel.typeList
                         currentIndex: unitModel.fromUnitIndex
@@ -158,7 +158,7 @@ Kirigami.Page {
                         id: toTumbler
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.maximumHeight: unitConverter.screenHeight * 0.5
+                        Layout.maximumHeight: unitConverter.screenHeight * 0.3
                         
                         model: unitModel.typeList
                         currentIndex: unitModel.toUnitIndex
@@ -177,7 +177,7 @@ Kirigami.Page {
                 Controls.Label {
                     Layout.topMargin: Kirigami.Units.largeSpacing
                     Layout.fillWidth: true
-                    font.pointSize: unitConverter.screenHeight * 0.045
+                    font.pointSize: unitConverter.screenHeight * 0.04
                     text: unitModel.value
                     color: Kirigami.Theme.textColor
                     horizontalAlignment: Text.AlignHCenter
@@ -186,7 +186,7 @@ Kirigami.Page {
                 Controls.Label {
                     Layout.topMargin: Kirigami.Units.smallSpacing
                     Layout.fillWidth: true
-                    font.pointSize: unitConverter.screenHeight * 0.045
+                    font.pointSize: unitConverter.screenHeight * 0.04
                     text: unitModel.result
                     color: Kirigami.Theme.textColor
                     horizontalAlignment: Text.AlignHCenter

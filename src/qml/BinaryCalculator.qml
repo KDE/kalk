@@ -21,7 +21,7 @@ Kirigami.Page {
     property real mainOpacity: 1
     
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
-    property int keypadHeight: initialPage.height * 3 / 5
+    property int keypadHeight: initialPage.height * 3 / 7
     property int screenHeight: initialPage.height - initialPage.keypadHeight
     
     Keys.onPressed: {

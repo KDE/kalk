@@ -23,7 +23,7 @@ Kirigami.Page {
 
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     readonly property bool inPortrait: initialPage.width < initialPage.height
-    property int keypadHeight: initialPage.height * 3 / 4
+    property int keypadHeight: initialPage.height * 3 / 5
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
     Keys.onPressed: {
@@ -151,7 +151,7 @@ Kirigami.Page {
                     id: outputColumn
                     anchors.fill: parent
                     anchors.margins: Kirigami.Units.largeSpacing
-                    spacing: initialPage.screenHeight / 4
+                    spacing: initialPage.screenHeight / 2
 
                     Flickable {
                         anchors.right: parent.right
@@ -163,7 +163,7 @@ Kirigami.Page {
                         Controls.Label {
                             id: expressionRow
                             horizontalAlignment: Text.AlignRight
-                            font.pointSize: initialPage.screenHeight * 0.15
+                            font.pointSize: initialPage.screenHeight * 0.1
                             font.weight: Font.Light
                             text: inputManager.expression
                             color: Kirigami.Theme.disabledTextColor
@@ -184,7 +184,7 @@ Kirigami.Page {
                         Controls.Label {
                             id: result
                             horizontalAlignment: Text.AlignRight
-                            font.pointSize: initialPage.screenHeight * 0.15 * 2
+                            font.pointSize: initialPage.screenHeight * 0.1 * 2
                             font.weight: Font.Light
                             text: inputManager.result
                             NumberAnimation on opacity {
