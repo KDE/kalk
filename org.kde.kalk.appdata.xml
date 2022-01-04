@@ -21,6 +21,7 @@
   <name xml:lang="ko">계산기</name>
   <name xml:lang="nl">Rekenmachine</name>
   <name xml:lang="nn">Kalkulator</name>
+  <name xml:lang="pa">ਕੈਲਕੂਲੇਟਰ</name>
   <name xml:lang="pl">Kalkulator</name>
   <name xml:lang="pt">Calculadora</name>
   <name xml:lang="pt-BR">Calculadora</name>
@@ -47,6 +48,7 @@
   <summary xml:lang="ko">다기능 계산기</summary>
   <summary xml:lang="nl">Een rekenmachine rijk aan mogelijkheden</summary>
   <summary xml:lang="nn">Funksjonsrik kalkulator</summary>
+  <summary xml:lang="pa">ਫ਼ੀਚਰ ਭਰਪੂਰ ਕੈਲਕੂਲੇਟਰ</summary>
   <summary xml:lang="pl">Rozbudowany kalkulator</summary>
   <summary xml:lang="pt">Uma calculadora rica em funcionalidades</summary>
   <summary xml:lang="pt-BR">Uma calculadora cheia de recursos</summary>
@@ -74,6 +76,7 @@
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
+  <developer_name xml:lang="pa">ਕੇਡੀਈ ਕਮਿਊਨਟੀ</developer_name>
   <developer_name xml:lang="pl">Społeczność KDE</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">Comunidade KDE</developer_name>
