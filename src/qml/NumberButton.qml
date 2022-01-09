@@ -56,7 +56,6 @@ Item {
     Rectangle {
         id: keyRect
         anchors.fill: parent
-        anchors.margins: Kirigami.Units.smallSpacing * 0.5
         radius: Kirigami.Units.smallSpacing
         color: button.pressed ? root.buttonPressedColor : 
                                 (hoverHandler.hovered ? root.buttonHoveredColor : root.buttonColor)
