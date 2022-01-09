@@ -11,9 +11,7 @@ import org.kde.kirigami 2.12 as Kirigami
 
 Kirigami.ScrollablePage {
     title: i18n("History")
-    
-    property int yTranslate: 0
-    property real mainOpacity: 1
+    width: 0
     
     Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
@@ -30,9 +28,6 @@ Kirigami.ScrollablePage {
 
     ListView {
         id: listView
-        
-        opacity: mainOpacity
-        transform: Translate { y: yTranslate }
         
         currentIndex: -1
         

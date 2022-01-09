@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2020-2021 Han Young <hanyoung@protonmail.com>
- * SPDX-FileCopyrightText: 2020 Devin Lin <espidev@gmail.com>
+ * SPDX-FileCopyrightText: 2020-2022 Devin Lin <espidev@gmail.com>
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -17,7 +17,13 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
-
+    
+    actions.main: Kirigami.Action {
+        text: i18n("History")
+        iconName: "shallow-history"
+        onTriggered: applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml")
+    }
+    
     property int yTranslate: 0
     property real mainOpacity: 1
 

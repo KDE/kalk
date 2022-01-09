@@ -24,7 +24,27 @@ Kirigami.ApplicationWindow {
     
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
+    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
 
+    // pop pages when not in use
+    Connections {
+        target: applicationWindow().pageStack
+        function onCurrentIndexChanged() {
+            // wait for animation to finish before popping pages
+            pageTimer.restart();
+        }
+    }
+    Timer {
+        id: pageTimer
+        interval: 300
+        onTriggered: {
+            let currentIndex = applicationWindow().pageStack.currentIndex;
+            while (applicationWindow().pageStack.depth > (currentIndex + 1) && currentIndex >= 0) {
+                applicationWindow().pageStack.pop();
+            }
+        }
+    }
+    
     Kirigami.PagePool {
         id: mainPagePool
     }
@@ -69,13 +89,6 @@ Kirigami.ApplicationWindow {
                 iconName: "accessories-calculator"
                 pagePool: mainPagePool
                 page: "qrc:/qml/CalculationPage.qml"
-                onTriggered: pageAnimation(pageItem())
-            },
-            Kirigami.PagePoolAction {
-                text: i18n("History")
-                iconName: "shallow-history"
-                page: "qrc:/qml/HistoryView.qml"
-                pagePool: mainPagePool
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
@@ -132,24 +145,6 @@ Kirigami.ApplicationWindow {
                     column.currentlyChecked = text;
                     
                     let page = mainPagePool.loadPage("qrc:/qml/CalculationPage.qml");
-                    while (pageStack.depth > 0) pageStack.pop();
-                    pageStack.push(page);
-                    pageAnimation(page);
-                    drawer.close();
-                }
-            }
-            
-            SidebarButton {
-                text: i18n("History")
-                icon.name: "shallow-history"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
-                checked: column.currentlyChecked === text
-                onClicked: {
-                    column.currentlyChecked = text;
-                    
-                    let page = mainPagePool.loadPage("qrc:/qml/HistoryView.qml");
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
                     pageAnimation(page);
