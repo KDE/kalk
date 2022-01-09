@@ -184,7 +184,7 @@ Kirigami.Page {
                         Controls.Label {
                             id: result
                             horizontalAlignment: Text.AlignRight
-                            font.pointSize: initialPage.screenHeight * 0.1 * 2
+                            font.pointSize: expressionRow.font.pointSize * 1.5
                             font.weight: Font.Light
                             text: inputManager.result
                             NumberAnimation on opacity {

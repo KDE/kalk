@@ -7,13 +7,13 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import QtQuick 2.4
+import QtQuick 2.15
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.12
 import QtQuick.Controls 2.2 as Controls
 import QtFeedback 5.0
 
-import org.kde.kirigami 2.2 as Kirigami
+import org.kde.kirigami 2.15 as Kirigami
 
 Item {
     id: root
@@ -33,11 +33,14 @@ Item {
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
     
-    property color buttonColor: Qt.lighter(Kirigami.Theme.alternateBackgroundColor, 1.3)
-    property color buttonBorderColor: Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.08)
-    property color buttonPressedColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.08)
+    property color baseColor: Kirigami.Theme.highlightColor
+    property color buttonColor: "transparent"
+    property color buttonHoveredColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
+    property color buttonPressedColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.3)
+    property color buttonBorderColor: "transparent"
+    property color buttonBorderHoveredColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
+    property color buttonBorderPressedColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.7)
     property color buttonTextColor: Kirigami.Theme.textColor
-    property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
 
     // vibration
     HapticsEffect {
@@ -47,17 +50,7 @@ Item {
         fadeTime: 0
         fadeIntensity: 0.0
         intensity: 0.5
-        duration: Kirigami.Units.shortDuration
-    }
-    
-    // fast drop shadow
-    RectangularGlow {
-        anchors.topMargin: 1
-        anchors.fill: keyRect
-        cornerRadius: keyRect.radius * 2
-        glowRadius: 2
-        spread: 0.2
-        color: root.dropShadowColor
+        duration: 40
     }
     
     Rectangle {
@@ -65,24 +58,31 @@ Item {
         anchors.fill: parent
         anchors.margins: Kirigami.Units.smallSpacing * 0.5
         radius: Kirigami.Units.smallSpacing
-        color: root.buttonColor
-        border.color: root.buttonBorderColor
+        color: button.pressed ? root.buttonPressedColor : 
+                                (hoverHandler.hovered ? root.buttonHoveredColor : root.buttonColor)
+        border.color: button.pressed ? root.buttonBorderPressedColor : 
+                                       (hoverHandler.hovered ? root.buttonBorderHoveredColor : root.buttonBorderColor)
+        
+        Behavior on color { ColorAnimation { duration: 50 } }
+        Behavior on border.color { ColorAnimation { duration: 50 } }
         
         Controls.AbstractButton {
+            id: button
             anchors.fill: parent
+            
             onPressedChanged: {
                 if (pressed) {
                     vibrate.start();
-                    parent.color = root.buttonPressedColor;
-                    parent.border.color = root.buttonPressedColor;
-                } else {
-                    parent.color = root.buttonColor;
-                    parent.border.color = root.buttonBorderColor;
                 }
             }
 
             onClicked: root.clicked(root.text)
             onPressAndHold: root.longClicked()
+            
+            HoverHandler {
+                id: hoverHandler
+                acceptedDevices: PointerDevice.Mouse | PointerDevice.Stylus
+            }
         }
     }
 
@@ -92,6 +92,7 @@ Item {
         visible: root.display !== "⌫" // not backspace icon
 
         font.pointSize: Math.min(Math.round(keyRect.height * 0.28), Math.round(keyRect.width * 0.28))
+        font.weight: Font.Light
         text: root.display
         opacity: special ? 0.4 : 1.0
         horizontalAlignment: Text.AlignHCenter
