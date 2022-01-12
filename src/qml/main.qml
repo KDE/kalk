@@ -15,7 +15,7 @@ Kirigami.ApplicationWindow {
     id: root
     title: 'Kalk'
     visible: true
-    height: 700
+    height: 540
     width: 360
     minimumHeight: 280
     minimumWidth: 280

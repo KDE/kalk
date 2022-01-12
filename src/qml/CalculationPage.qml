@@ -29,7 +29,7 @@ Kirigami.Page {
 
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     readonly property bool inPortrait: initialPage.width < initialPage.height
-    property int keypadHeight: initialPage.height * 0.65
+    property int keypadHeight: initialPage.height * 0.7
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
     Keys.onPressed: {
@@ -153,61 +153,65 @@ Kirigami.Page {
                 Layout.alignment: Qt.AlignTop
                 Layout.preferredHeight: initialPage.screenHeight
 
-                Column {
-                    id: outputColumn
-                    anchors.fill: parent
+                // input row
+                Flickable {
+                    anchors.top: parent.top
+                    anchors.right: parent.right
                     anchors.margins: Kirigami.Units.largeSpacing
-                    spacing: initialPage.screenHeight / 2
 
-                    Flickable {
-                        anchors.right: parent.right
-                        height: Kirigami.Units.gridUnit * 1.5
-                        width: Math.min(parent.width, contentWidth)
-                        contentHeight: expressionRow.height
-                        contentWidth: expressionRow.width
-                        flickableDirection: Flickable.HorizontalFlick
-                        Controls.Label {
-                            id: expressionRow
-                            horizontalAlignment: Text.AlignRight
-                            font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.5)
-                            font.weight: Font.Light
-                            text: inputManager.expression
-                            color: Kirigami.Theme.disabledTextColor
-                        }
-                        onContentWidthChanged: {
-                            if(contentWidth > width)
-                                contentX = contentWidth - width;
+                    height: Kirigami.Units.gridUnit * 1.5
+                    width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, contentWidth)
+                    
+                    contentHeight: expressionRow.height
+                    contentWidth: expressionRow.width
+                    flickableDirection: Flickable.HorizontalFlick
+                    Controls.Label {
+                        id: expressionRow
+                        horizontalAlignment: Text.AlignRight
+                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.5)
+                        font.weight: Font.Light
+                        text: inputManager.expression
+                        color: Kirigami.Theme.disabledTextColor
+                    }
+                    onContentWidthChanged: {
+                        if (contentWidth > width) {
+                            contentX = contentWidth - width;
                         }
                     }
-
-                    Flickable {
-                        anchors.right: parent.right
-                        height: Kirigami.Units.gridUnit * 4
-                        width: Math.min(parent.width, contentWidth)
-                        contentHeight: result.height
-                        contentWidth: result.width
-                        flickableDirection: Flickable.HorizontalFlick
-                        Controls.Label {
-                            id: result
-                            horizontalAlignment: Text.AlignRight
-                            font.pointSize: Math.round(expressionRow.font.pointSize * 1.5)
-                            font.weight: Font.Light
-                            text: inputManager.result
-                            NumberAnimation on opacity {
-                                id: resultFadeInAnimation
-                                from: 0.5
-                                to: 1
-                                duration: Kirigami.Units.shortDuration
-                            }
-                            NumberAnimation on opacity {
-                                id: resultFadeOutAnimation
-                                from: 1
-                                to: 0
-                                duration: Kirigami.Units.shortDuration
-                            }
-
-                            onTextChanged: resultFadeInAnimation.start()
+                }
+                
+                // answer row
+                Flickable {
+                    anchors.bottom: parent.bottom
+                    anchors.right: parent.right
+                    anchors.margins: Kirigami.Units.largeSpacing
+                    
+                    height: Kirigami.Units.gridUnit * 4
+                    width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, contentWidth)
+                    
+                    contentHeight: result.height
+                    contentWidth: result.width
+                    flickableDirection: Flickable.HorizontalFlick
+                    Controls.Label {
+                        id: result
+                        horizontalAlignment: Text.AlignRight
+                        font.pointSize: Math.round(expressionRow.font.pointSize * 1.5)
+                        font.weight: Font.Light
+                        text: inputManager.result
+                        NumberAnimation on opacity {
+                            id: resultFadeInAnimation
+                            from: 0.5
+                            to: 1
+                            duration: Kirigami.Units.shortDuration
                         }
+                        NumberAnimation on opacity {
+                            id: resultFadeOutAnimation
+                            from: 1
+                            to: 0
+                            duration: Kirigami.Units.shortDuration
+                        }
+
+                        onTextChanged: resultFadeInAnimation.start()
                     }
                 }
             }
