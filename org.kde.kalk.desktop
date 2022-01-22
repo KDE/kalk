@@ -61,4 +61,5 @@ Icon=kalk
 Type=Application
 Terminal=false
 Categories=Qt;KDE;Utility;
+Keywords=Calculator;Kalk;
 X-KDE-FormFactor=desktop;tablet;handset;
