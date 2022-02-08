@@ -22,7 +22,7 @@
 #  $END_LICENSE$
 project(Kalk)
 
-set(PROJECT_VERSION "21.12")
+set(PROJECT_VERSION "22.02")
 find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
