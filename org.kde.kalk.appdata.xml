@@ -62,7 +62,7 @@
   <summary xml:lang="sv">En funktionsrik räknare</summary>
   <summary xml:lang="uk">Калькулятор із широкими можливостями</summary>
   <summary xml:lang="x-test">xxA feature rich calculatorxx</summary>
-  <summary xml:lang="zh-CN">一个功能丰富的计算器</summary>
+  <summary xml:lang="zh-CN">一款功能丰富的计算器</summary>
   <developer_name>KDE Community</developer_name>
   <developer_name xml:lang="ar">مجتمع كدي</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
@@ -117,7 +117,7 @@
     <p xml:lang="sv">Kalk är en konvergent räknare för Plasma.</p>
     <p xml:lang="uk">Kalk — потужний калькулятор для Плазми.</p>
     <p xml:lang="x-test">xxKalk is a convergent calculator for Plasma.xx</p>
-    <p xml:lang="zh-CN">Kalk 是 Plasma 上的收敛型计算器。</p>
+    <p xml:lang="zh-CN">Kalk 是 Plasma 的桌面与移动设备通用计算器。</p>
   </description>
   <screenshots>
     <screenshot>
