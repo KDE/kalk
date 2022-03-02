@@ -10,6 +10,7 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QQmlContext>
+#include <QQuickStyle>
 
 #include <KAboutData>
 #include <KLocalizedContext>
@@ -23,7 +24,17 @@
 
 int main(int argc, char *argv[])
 {
+    // set default style
+    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
+        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
+    }
+    // if using org.kde.desktop, ensure we use kde style if possible
+    if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORMTHEME")) {
+        qputenv("QT_QPA_PLATFORMTHEME", "kde");
+    }
+
     QCommandLineParser parser;
+
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication app(argc, argv);
 
