@@ -39,9 +39,9 @@ target_link_libraries(kalklib
 
 set(kalk_SRCS
     main.cpp
-    unitmodel.cpp
-    calculator.qrc)
-add_executable(kalk ${kalk_SRCS})
+    unitmodel.cpp)
+qtquick_compiler_add_resources(RESOURCES calculator.qrc)
+add_executable(kalk ${kalk_SRCS} ${RESOURCES})
 
 add_flex_bison_dependency(MyScanner MyParser)
 
