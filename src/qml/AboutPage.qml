@@ -5,6 +5,9 @@
  */
 import QtQuick 2.0
 import org.kde.kirigami 2.13 as Kirigami
+
+import org.kde.kalk 1.0
+
 Kirigami.AboutPage {
     id: aboutPage
     
@@ -14,5 +17,5 @@ Kirigami.AboutPage {
     
     visible: false
     title: i18n("About")
-    aboutData: kalkAboutData
+    aboutData: AboutType.aboutData
 }

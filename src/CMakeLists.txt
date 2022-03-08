@@ -39,6 +39,7 @@ target_link_libraries(kalklib
 
 set(kalk_SRCS
     main.cpp
+    about.cpp
     unitmodel.cpp)
 qtquick_compiler_add_resources(RESOURCES calculator.qrc)
 add_executable(kalk ${kalk_SRCS} ${RESOURCES})
