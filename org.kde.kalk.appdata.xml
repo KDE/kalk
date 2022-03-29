@@ -31,6 +31,7 @@
   <name xml:lang="sk">Kalkulačka</name>
   <name xml:lang="sl">Kalkulator</name>
   <name xml:lang="sv">Räknare</name>
+  <name xml:lang="tr">Hesap Makinesi</name>
   <name xml:lang="uk">Калькулятор</name>
   <name xml:lang="x-test">xxCalculatorxx</name>
   <name xml:lang="zh-CN">计算器</name>
@@ -60,6 +61,7 @@
   <summary xml:lang="sk">Kalkulačka plná funkcií</summary>
   <summary xml:lang="sl">Kalkulator z veliko možnostmi</summary>
   <summary xml:lang="sv">En funktionsrik räknare</summary>
+  <summary xml:lang="tr">Çok özellikli bir hesap makinesi</summary>
   <summary xml:lang="uk">Калькулятор із широкими можливостями</summary>
   <summary xml:lang="x-test">xxA feature rich calculatorxx</summary>
   <summary xml:lang="zh-CN">一款功能丰富的计算器</summary>
@@ -90,6 +92,7 @@
   <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sl">Skupnost KDE</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
+  <developer_name xml:lang="tr">KDE Topluluğu</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
@@ -97,7 +100,7 @@
     <p>Kalk is a convergent calculator for Plasma.</p>
     <p xml:lang="ar">تطبيق الحاسبة هو متعددة الواجهات لبلازما</p>
     <p xml:lang="ca">El Kalk és una calculadora convergent per al Plasma.</p>
-    <p xml:lang="ca-valencia">El Kalk és una calculadora convergent per al Plasma.</p>
+    <p xml:lang="ca-valencia">Kalk és una calculadora convergent per a Plasma.</p>
     <p xml:lang="de">Kalk ist ein konvergenter Rechner für Plasma.</p>
     <p xml:lang="en-GB">Kalk is a convergent calculator for Plasma.</p>
     <p xml:lang="es">Kalk es una calculadora convergente para Plasma.</p>
@@ -115,6 +118,7 @@
     <p xml:lang="ru">Kalk — мощный калькулятор для Plasma.</p>
     <p xml:lang="sl">Kalk je konvergenten kalkulator za Plasmo.</p>
     <p xml:lang="sv">Kalk är en konvergent räknare för Plasma.</p>
+    <p xml:lang="tr">Kalk, Plasma için yakınsak bir hesap makinesidir.</p>
     <p xml:lang="uk">Kalk — потужний калькулятор для Плазми.</p>
     <p xml:lang="x-test">xxKalk is a convergent calculator for Plasma.xx</p>
     <p xml:lang="zh-CN">Kalk 是 Plasma 的桌面与移动设备通用计算器。</p>
@@ -143,6 +147,7 @@
       <caption xml:lang="ru">Страница калькулятора</caption>
       <caption xml:lang="sl">Stran kalkulatorja</caption>
       <caption xml:lang="sv">Räknarsida</caption>
+      <caption xml:lang="tr">Hesap Makinesi Sayfası</caption>
       <caption xml:lang="uk">Сторінка «Калькулятора»</caption>
       <caption xml:lang="x-test">xxCalculator Pagexx</caption>
       <caption xml:lang="zh-CN">计算器页面</caption>
