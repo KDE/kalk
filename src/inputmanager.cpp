@@ -9,8 +9,10 @@
 #include "historymanager.h"
 #include <QDebug>
 
+
 InputManager::InputManager()
 {
+
     KNumber::setDefaultFloatOutput(true);
 }
 
@@ -52,7 +54,9 @@ void InputManager::append(const QString &subexpression)
         if(subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.'))
         {
             m_expression.clear();
-            m_stack.pop_back();
+            if (m_stack.size()) {
+                m_stack.pop_back();
+            }
         }
     }
     m_moveFromResult = false;
