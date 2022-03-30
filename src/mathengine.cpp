@@ -15,6 +15,10 @@ void MathEngine::parse(QString expr) {
   m_driver.parse(expr.toStdString());
   m_result = m_driver.result;
   m_error = m_driver.syntaxError;
+  if (m_error && (expr == QStringLiteral("-") || expr == QStringLiteral("+"))) {
+      m_result = KNumber::Zero;
+      m_error = false;
+  }
   Q_EMIT resultChanged();
 }
 
