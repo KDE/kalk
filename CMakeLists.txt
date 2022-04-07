@@ -101,6 +101,8 @@ if(BUILD_TESTING)
    add_subdirectory(autotests)
 endif()
 
+ki18n_install(po)
+
 install(PROGRAMS org.kde.kalk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kalk.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES kalk.svg DESTINATION ${KDE_INSTALL_FULL_ICONDIR}/hicolor/scalable/apps/)
