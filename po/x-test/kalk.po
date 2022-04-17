@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kalk package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-09 00:47+0000\n"
+"PO-Revision-Date: 2021-12-21 01:45+0000\n"
+"Last-Translator: transxx.py program <null@kde.org>\n"
+"Language-Team: KDE Test Language <kde-i18n-doc@kde.org>\n"
+"Language: x-test\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "xxYour namesxx"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xxYour emailsxx"
+
+#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
+#: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
+#, kde-format
+msgid "Calculator"
+msgstr "xxCalculatorxx"
+
+#: main.cpp:54
+#, kde-format
+msgid "Calculator in Kirigami"
+msgstr "xxCalculator in Kirigamixx"
+
+#: main.cpp:56
+#, kde-format
+msgid "© 2020-2021 KDE Community"
+msgstr "xx© 2020-2021 KDE Communityxx"
+
+#: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
+#, kde-format
+msgid "About"
+msgstr "xxAboutxx"
+
+#: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
+#, kde-format
+msgid "History"
+msgstr "xxHistoryxx"
+
+#: qml/HistoryView.qml:18
+#, kde-format
+msgid "History is empty"
+msgstr "xxHistory is emptyxx"
+
+#: qml/HistoryView.qml:24
+#, kde-format
+msgid "Clear history"
+msgstr "xxClear historyxx"
+
+#: qml/main.qml:95 qml/main.qml:156
+#, kde-format
+msgid "Convertor"
+msgstr "xxConvertorxx"
+
+#: qml/main.qml:102 qml/main.qml:174
+#, kde-format
+msgid "Binary Calculator"
+msgstr "xxBinary Calculatorxx"
+
+#: qml/UnitConverter.qml:15
+#, kde-format
+msgid "Conversion"
+msgstr "xxConversionxx"
+
+#: qml/UnitConverter.qml:145
+#, kde-format
+msgid "Swap"
+msgstr "xxSwapxx"

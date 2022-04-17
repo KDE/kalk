@@ -1,0 +1,109 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kalk package.
+#
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-09 00:47+0000\n"
+"PO-Revision-Date: 2021-12-22 11:46+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.04.3\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Matjaž Jeran"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "matjaz.jeran@amis.net"
+
+#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
+#: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
+#, kde-format
+msgid "Calculator"
+msgstr "Kalkulator"
+
+#: main.cpp:54
+#, kde-format
+msgid "Calculator in Kirigami"
+msgstr "Kalkulator v Kirigamiju"
+
+#: main.cpp:56
+#, kde-format
+msgid "© 2020-2021 KDE Community"
+msgstr "© 2020-2021 Skupnost KDE"
+
+#: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
+#, kde-format
+msgid "About"
+msgstr "O programu"
+
+#: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
+#, kde-format
+msgid "History"
+msgstr "Zgodovina"
+
+#: qml/HistoryView.qml:18
+#, kde-format
+msgid "History is empty"
+msgstr "Zgodovina je prazna"
+
+#: qml/HistoryView.qml:24
+#, kde-format
+msgid "Clear history"
+msgstr "Počisti zgodovino"
+
+#: qml/main.qml:95 qml/main.qml:156
+#, kde-format
+msgid "Convertor"
+msgstr "Pretvornik"
+
+#: qml/main.qml:102 qml/main.qml:174
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Binarni kalkulator"
+
+#: qml/UnitConverter.qml:15
+#, kde-format
+msgid "Conversion"
+msgstr "Pretvorba"
+
+#: qml/UnitConverter.qml:145
+#, kde-format
+msgid "Swap"
+msgstr "Premenjaj"
+
+#~ msgid "Calculator built with Kirigami."
+#~ msgstr "Kalkulator izdelan s Kirigamijem."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 Razvojna ekipa Plasma"
+
+#~ msgid "Han Young"
+#~ msgstr "Han Young"
+
+#~ msgid "cahfofpai"
+#~ msgstr "cahfofpai"
+
+#~ msgid "Acceleration"
+#~ msgstr "Pospešek"
+
+#~ msgid "From: "
+#~ msgstr "Od: "
+
+#~ msgid "To: "
+#~ msgstr "Do: "
+
+#~ msgid "Units Converter"
+#~ msgstr "Pretvornik enot"

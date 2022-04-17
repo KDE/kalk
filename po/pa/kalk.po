@@ -1,0 +1,99 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kalk package.
+#
+# A S Alam <aalam.yellow@gmail.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-09 00:47+0000\n"
+"PO-Revision-Date: 2021-01-20 21:43-0800\n"
+"Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
+"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "ਅ.ਸ.ਆਲਮ ੨੦੨੧"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alam.yellow@gmail.com"
+
+#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
+#: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
+#, kde-format
+msgid "Calculator"
+msgstr "ਕੈਲਕੂਲੇਟਰ"
+
+#: main.cpp:54
+#, kde-format
+msgid "Calculator in Kirigami"
+msgstr "ਕੀਰੀਗਾਮੀ ਵਿੱਚ ਕੈਲਕੂਲੇਟਰ"
+
+#: main.cpp:56
+#, fuzzy, kde-format
+#| msgid "© 2020 KDE Community"
+msgid "© 2020-2021 KDE Community"
+msgstr "© 2020 ਕੇਡੀਈ ਕਮਿਊਨਟੀ"
+
+#: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
+#, kde-format
+msgid "About"
+msgstr "ਇਸ ਬਾਰੇ"
+
+#: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
+#, kde-format
+msgid "History"
+msgstr "ਅਤੀਤ"
+
+#: qml/HistoryView.qml:18
+#, kde-format
+msgid "History is empty"
+msgstr "ਅਤੀਤ ਖਾਲੀ ਹੈ"
+
+#: qml/HistoryView.qml:24
+#, kde-format
+msgid "Clear history"
+msgstr "ਅਤੀਤ ਨੂੰ ਮਿਟਾਓ"
+
+#: qml/main.qml:95 qml/main.qml:156
+#, kde-format
+msgid "Convertor"
+msgstr "ਤਬਾਦਲਾਕਾਰ"
+
+#: qml/main.qml:102 qml/main.qml:174
+#, fuzzy, kde-format
+#| msgid "Calculator"
+msgid "Binary Calculator"
+msgstr "ਕੈਲਕੂਲੇਟਰ"
+
+#: qml/UnitConverter.qml:15
+#, fuzzy, kde-format
+#| msgid "Convertor"
+msgid "Conversion"
+msgstr "ਤਬਾਦਲਾਕਾਰ"
+
+#: qml/UnitConverter.qml:145
+#, kde-format
+msgid "Swap"
+msgstr ""
+
+#~ msgid "Calculator built with Kirigami."
+#~ msgstr "ਕੀਰੀਗਾਮੀ ਵਿੱਚ ਬਣਾਇਆ ਕੈਲਕੂਲੇਟਰ ਹੈ।"
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 ਪਲਾਜ਼ਮਾ ਡਿਵੈਲਪਮੈਂਟ ਟੀਮ"
+
+#~ msgid "Han Young"
+#~ msgstr "ਹਾਂ ਯੰਗ"
+
+#~ msgid "cahfofpai"
+#~ msgstr "cahfofpai"

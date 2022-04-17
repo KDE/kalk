@@ -1,0 +1,105 @@
+# Xavier Besnard <xavier.besnard@neuf.fr>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-09 00:47+0000\n"
+"PO-Revision-Date: 2021-12-21 19:37+0100\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
+"Language-Team: French <kde-francophone@kde.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 21.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Xavier Besnard"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xavier.besnard@neuf.fr"
+
+#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
+#: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
+#, kde-format
+msgid "Calculator"
+msgstr "Calculatrice"
+
+#: main.cpp:54
+#, kde-format
+msgid "Calculator in Kirigami"
+msgstr "Une calculatrice dans Kirigami"
+
+#: main.cpp:56
+#, kde-format
+msgid "© 2020-2021 KDE Community"
+msgstr "© 2020-2021 Communauté KDE"
+
+#: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
+#, kde-format
+msgid "About"
+msgstr "À propos"
+
+#: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
+#, kde-format
+msgid "History"
+msgstr "Historique"
+
+#: qml/HistoryView.qml:18
+#, kde-format
+msgid "History is empty"
+msgstr "L'historique est vide"
+
+#: qml/HistoryView.qml:24
+#, kde-format
+msgid "Clear history"
+msgstr "Effacer l'historique"
+
+#: qml/main.qml:95 qml/main.qml:156
+#, kde-format
+msgid "Convertor"
+msgstr "Convertisseur"
+
+#: qml/main.qml:102 qml/main.qml:174
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Calculatrice basique"
+
+#: qml/UnitConverter.qml:15
+#, kde-format
+msgid "Conversion"
+msgstr "Conversion"
+
+#: qml/UnitConverter.qml:145
+#, kde-format
+msgid "Swap"
+msgstr "Échange"
+
+#~ msgid "Calculator built with Kirigami."
+#~ msgstr "Une calculatrice créée avec Kirigami."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2020 L'équipe de développement de Plasma"
+
+#~ msgid "Han Young"
+#~ msgstr "Han Young"
+
+#~ msgid "cahfofpai"
+#~ msgstr "cahfofpai"
+
+#~ msgid "Acceleration"
+#~ msgstr "Accélération"
+
+#~ msgid "From: "
+#~ msgstr "De : "
+
+#~ msgid "To: "
+#~ msgstr "A :"
+
+#~ msgid "Units Converter"
+#~ msgstr "Convertisseur d'unités"

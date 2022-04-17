@@ -1,0 +1,107 @@
+# translation of kalk.po to Slovak
+# Roman Paholík <wizzardsk@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-03-09 00:47+0000\n"
+"PO-Revision-Date: 2020-08-03 21:50+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Roman Paholík"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "wizzardsk@gmail.com"
+
+#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
+#: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
+#, kde-format
+msgid "Calculator"
+msgstr "Kalkulačka"
+
+#: main.cpp:54
+#, kde-format
+msgid "Calculator in Kirigami"
+msgstr "Kalkulačka v Kirigami"
+
+#: main.cpp:56
+#, fuzzy, kde-format
+#| msgid "© 2020 KDE Community"
+msgid "© 2020-2021 KDE Community"
+msgstr "© 2020 KDE komunita"
+
+#: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
+#, kde-format
+msgid "About"
+msgstr "O aplikácii"
+
+#: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
+#, kde-format
+msgid "History"
+msgstr "História"
+
+#: qml/HistoryView.qml:18
+#, kde-format
+msgid "History is empty"
+msgstr "História je prázdna"
+
+#: qml/HistoryView.qml:24
+#, kde-format
+msgid "Clear history"
+msgstr "Vyčistiť históriu"
+
+#: qml/main.qml:95 qml/main.qml:156
+#, fuzzy, kde-format
+#| msgid "Units Converter"
+msgid "Convertor"
+msgstr "Konvertor jednotiek"
+
+#: qml/main.qml:102 qml/main.qml:174
+#, fuzzy, kde-format
+#| msgid "Calculator"
+msgid "Binary Calculator"
+msgstr "Kalkulačka"
+
+#: qml/UnitConverter.qml:15
+#, fuzzy, kde-format
+#| msgid "Units Converter"
+msgid "Conversion"
+msgstr "Konvertor jednotiek"
+
+#: qml/UnitConverter.qml:145
+#, kde-format
+msgid "Swap"
+msgstr ""
+
+#~ msgid "Calculator built with Kirigami."
+#~ msgstr "Kalkulačka vytvorená s Kirigami."
+
+#~ msgid "© 2020 Plasma Development Team"
+#~ msgstr "© 2010-2019 Vývojový tím Plasma"
+
+#~ msgid "Han Young"
+#~ msgstr "Han Young"
+
+#~ msgid "cahfofpai"
+#~ msgstr "cahfofpai"
+
+#~ msgid "From: "
+#~ msgstr "Od:"
+
+#~ msgid "To: "
+#~ msgstr "Pre: "
+
+#~ msgid "Units Converter"
+#~ msgstr "Konvertor jednotiek"
