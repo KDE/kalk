@@ -1,18 +1,18 @@
 # translation of kalk.po to Slovak
-# Roman Paholík <wizzardsk@gmail.com>, 2020.
+# Roman Paholík <wizzardsk@gmail.com>, 2020, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-03-09 00:47+0000\n"
-"PO-Revision-Date: 2020-08-03 21:50+0200\n"
+"PO-Revision-Date: 2022-04-18 17:53+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -37,10 +37,9 @@ msgid "Calculator in Kirigami"
 msgstr "Kalkulačka v Kirigami"
 
 #: main.cpp:56
-#, fuzzy, kde-format
-#| msgid "© 2020 KDE Community"
+#, kde-format
 msgid "© 2020-2021 KDE Community"
-msgstr "© 2020 KDE komunita"
+msgstr "© 2020-2021 KDE komunita"
 
 #: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
 #, kde-format
@@ -63,27 +62,24 @@ msgid "Clear history"
 msgstr "Vyčistiť históriu"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, fuzzy, kde-format
-#| msgid "Units Converter"
+#, kde-format
 msgid "Convertor"
-msgstr "Konvertor jednotiek"
+msgstr "Konvertor"
 
 #: qml/main.qml:102 qml/main.qml:174
-#, fuzzy, kde-format
-#| msgid "Calculator"
+#, kde-format
 msgid "Binary Calculator"
-msgstr "Kalkulačka"
+msgstr "Binárna kalkulačka"
 
 #: qml/UnitConverter.qml:15
-#, fuzzy, kde-format
-#| msgid "Units Converter"
+#, kde-format
 msgid "Conversion"
-msgstr "Konvertor jednotiek"
+msgstr "Prevod"
 
 #: qml/UnitConverter.qml:145
 #, kde-format
 msgid "Swap"
-msgstr ""
+msgstr "Odkladací priestor"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Kalkulačka vytvorená s Kirigami."
