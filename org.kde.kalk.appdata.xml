@@ -175,6 +175,14 @@
   <url type="homepage">https://invent.kde.org/plasma-mobile/kalk</url>
   <url type="bugtracker">https://invent.kde.org/plasma-mobile/kalk/-/issues</url>
   <releases>
+    <release version="22.04" date="2022-04-26">
+      <url>https://www.plasma-mobile.org/2022/04/26/plasma-mobile-gear-22-04/</url>
+      <description>
+        <ul>
+          <li>General bugfixing and code quality improvements</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.02" date="2022-02-09">
       <url>https://www.plasma-mobile.org/2022/02/09/plasma-mobile-gear-22-02/</url>
       <description>
