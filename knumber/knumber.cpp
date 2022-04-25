@@ -16,21 +16,21 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <config-kcalc.h>
 #include "knumber.h"
 #include "knumber_base.h"
 #include "knumber_error.h"
 #include "knumber_float.h"
 #include "knumber_fraction.h"
 #include "knumber_integer.h"
+#include <QDebug>
+#include <QLocale>
 #include <QRegExp>
 #include <QStringList>
 #include <cmath>
-#include <QDebug>
+#include <config-kcalc.h>
 
 QString KNumber::GroupSeparator   = QStringLiteral(",");
-QString KNumber::DecimalSeparator = QStringLiteral(".");
-
+QString KNumber::DecimalSeparator = QLocale::system().decimalPoint();
 const KNumber KNumber::Zero(QStringLiteral("0"));
 const KNumber KNumber::One(QStringLiteral("1"));
 const KNumber KNumber::NegOne(QStringLiteral("-1"));
