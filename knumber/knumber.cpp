@@ -27,7 +27,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QRegExp>
 #include <QStringList>
 #include <cmath>
-#include <config-kcalc.h>
 
 QString KNumber::GroupSeparator   = QStringLiteral(",");
 QString KNumber::DecimalSeparator = QLocale::system().decimalPoint();

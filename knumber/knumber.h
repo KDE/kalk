@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "knumber_operators.h"
 #include <QString>
+#include <config-kcalc.h>
 
 namespace detail {
 class knumber_base;
