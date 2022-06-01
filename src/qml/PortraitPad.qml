@@ -6,6 +6,8 @@
 import QtQuick 2.0
 import org.kde.kirigami 2.13 as Kirigami
 import QtQuick.Layouts 1.1
+import QtQml 2.15
+
 GridLayout {
     signal pressed(string text)
     signal clear()
@@ -38,7 +40,7 @@ GridLayout {
     NumberButton {text: "+" ; onClicked: pressed(text); special: true; visible: !pureNumber}
 
     NumberButton {text: "0" ; onClicked: pressed(text);}
-    NumberButton {text: "." ; onClicked: pressed(text);}
+    NumberButton {text: Qt.locale().decimalPoint ; onClicked: pressed(text);}
     NumberButton {text: "^" ; onClicked: pressed(text); visible: !pureNumber}
     NumberButton {text: "=" ; onClicked: pressed(text); special: true; visible: !pureNumber}
 }

@@ -73,6 +73,8 @@ Kirigami.Page {
               inputManager.append("("); break;
           case Qt.Key_ParenRight:
               inputManager.append(")"); break;
+          case Qt.Key_Comma:
+              inputManager.append(","); break;
           case Qt.Key_Equal:
           case Qt.Key_Return:
           case Qt.Key_Enter:
