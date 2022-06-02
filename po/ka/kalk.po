@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-03-09 00:47+0000\n"
+"POT-Creation-Date: 2022-06-02 00:47+0000\n"
 "PO-Revision-Date: 2022-05-23 05:35+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
+#: main.cpp:51 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
 #: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
 #, kde-format
 msgid "Calculator"
 msgstr "კალკულატორი"
 
-#: main.cpp:54
+#: main.cpp:53
 #, kde-format
 msgid "Calculator in Kirigami"
 msgstr "კალკულატორი Kirigami-ში"
 
-#: main.cpp:56
+#: main.cpp:55
 #, kde-format
 msgid "© 2020-2021 KDE Community"
 msgstr "© 2020-2021 KDE-ის საზოგადოება. ყველა უფლება დაცულია"
