@@ -116,6 +116,7 @@
     <p xml:lang="ka">Kalc-ი Plasma-ის კალკულატორია.</p>
     <p xml:lang="ko">Kalk는 Plasma용 다기능 계산기입니다.</p>
     <p xml:lang="nl">Kalk is een convergente rekenmachine voor Plasma.</p>
+    <p xml:lang="nn">Kalk er ein kalkulator for Plasma, tilpassa ulike typar brukarflater.</p>
     <p xml:lang="pl">Kalk jest spójnym kalkulatorem dla Plazmy.</p>
     <p xml:lang="pt">O Kalk é uma calculadora convergente para o Plasma.</p>
     <p xml:lang="pt-BR">Kalk é uma calculadora convergente para o Plasma.</p>
@@ -147,6 +148,7 @@
       <caption xml:lang="ka">კალკულატორის გვერდი</caption>
       <caption xml:lang="ko">계산기 페이지</caption>
       <caption xml:lang="nl">Rekenmachinepagina</caption>
+      <caption xml:lang="nn">Kalkulatorside</caption>
       <caption xml:lang="pl">Strona kalkulatora</caption>
       <caption xml:lang="pt">Página da Calculadora</caption>
       <caption xml:lang="pt-BR">Página da calculadora</caption>
