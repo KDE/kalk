@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Calculator
 Name[ar]=حاسبة
+Name[az]=Hesablayıcı
 Name[ca]=Calculadora
 Name[ca@valencia]=Calculadora
 Name[cs]=Kalkulačka
@@ -31,6 +32,7 @@ Name[x-test]=xxCalculatorxx
 Name[zh_CN]=计算器
 Comment=A feature rich calculator
 Comment[ar]=حاسبة متكاملة
+Comment[az]=Geniş imkanlı hesablayıcı
 Comment[ca]=Una calculadora plena de característiques
 Comment[ca@valencia]=Una calculadora plena de característiques
 Comment[cs]=Vybavená aplikace pro výpočty
@@ -63,6 +65,7 @@ Terminal=false
 Categories=Qt;KDE;Utility;
 Keywords=Calculator;Kalk;
 Keywords[ar]=حاسبة;كالك;
+Keywords[az]=Hesablayıcı;Kalk
 Keywords[ca]=Calculadora;Kalk;
 Keywords[ca@valencia]=Calculadora;Kalk;
 Keywords[cs]=Kalkulačka;Kalk;
