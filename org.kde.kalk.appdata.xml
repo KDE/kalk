@@ -6,6 +6,7 @@
   <content_rating type="oars-1.1"/>
   <name>Calculator</name>
   <name xml:lang="ar">حاسبة</name>
+  <name xml:lang="az">Hesablayıcı</name>
   <name xml:lang="ca">Calculadora</name>
   <name xml:lang="ca-valencia">Calculadora</name>
   <name xml:lang="cs">Kalkulačka</name>
@@ -38,6 +39,7 @@
   <name xml:lang="zh-CN">计算器</name>
   <summary>A feature rich calculator</summary>
   <summary xml:lang="ar">حاسبة متكاملة</summary>
+  <summary xml:lang="az">Çoxfunksiyalı hesablayıcı</summary>
   <summary xml:lang="ca">Una calculadora rica en característiques</summary>
   <summary xml:lang="ca-valencia">Una calculadora rica en característiques</summary>
   <summary xml:lang="de">Ein leistungsfähiger Rechner</summary>
@@ -69,6 +71,7 @@
   <summary xml:lang="zh-CN">一款功能丰富的计算器</summary>
   <developer_name>KDE Community</developer_name>
   <developer_name xml:lang="ar">مجتمع كدي</developer_name>
+  <developer_name xml:lang="az">KDE Cəmiyyəti</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
@@ -102,6 +105,7 @@
   <description>
     <p>Kalk is a convergent calculator for Plasma.</p>
     <p xml:lang="ar">تطبيق الحاسبة هو متعددة الواجهات لبلازما</p>
+    <p xml:lang="az">Kalk, Plasma üçün güclü hesablayıcıdır.</p>
     <p xml:lang="ca">El Kalk és una calculadora convergent per al Plasma.</p>
     <p xml:lang="ca-valencia">Kalk és una calculadora convergent per a Plasma.</p>
     <p xml:lang="de">Kalk ist ein konvergenter Rechner für Plasma.</p>
@@ -133,6 +137,7 @@
     <screenshot>
       <caption>Calculator Page</caption>
       <caption xml:lang="ar">صفحة الحاسبة</caption>
+      <caption xml:lang="az">Hesablama səhifəsi</caption>
       <caption xml:lang="ca">Pàgina Calculadora</caption>
       <caption xml:lang="ca-valencia">Pàgina Calculadora</caption>
       <caption xml:lang="cs">Stránka kalkulačky</caption>
