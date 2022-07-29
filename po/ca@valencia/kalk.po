@@ -59,7 +59,7 @@ msgstr "Historial"
 #: qml/HistoryView.qml:18
 #, kde-format
 msgid "History is empty"
-msgstr "L'historial és buit"
+msgstr "L'historial està buit"
 
 #: qml/HistoryView.qml:24
 #, kde-format
