@@ -92,7 +92,7 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
-                text: i18n("Convertor")
+                text: i18n("Converter")
                 iconName: "gtk-convert"
                 page: "qrc:/qml/UnitConverter.qml"
                 pagePool: mainPagePool
@@ -153,7 +153,7 @@ Kirigami.ApplicationWindow {
             }
             
             SidebarButton {
-                text: i18n("Convertor")
+                text: i18n("Converter")
                 icon.name: "gtk-convert"
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
