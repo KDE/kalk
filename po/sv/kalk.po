@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-02 00:47+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2021-12-21 20:13+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -64,8 +64,9 @@ msgid "Clear history"
 msgstr "Rensa historik"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, kde-format
-msgid "Convertor"
+#, fuzzy, kde-format
+#| msgid "Convertor"
+msgid "Converter"
 msgstr "Konverterare"
 
 #: qml/main.qml:102 qml/main.qml:174

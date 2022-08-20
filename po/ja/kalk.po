@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-02 00:47+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2020-08-02 21:58-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: qml/main.qml:95 qml/main.qml:156
 #, kde-format
-msgid "Convertor"
+msgid "Converter"
 msgstr ""
 
 #: qml/main.qml:102 qml/main.qml:174

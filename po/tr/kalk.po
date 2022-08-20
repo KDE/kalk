@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-02 00:47+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2022-03-28 13:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -64,8 +64,9 @@ msgid "Clear history"
 msgstr "Geçmişi temizle"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, kde-format
-msgid "Convertor"
+#, fuzzy, kde-format
+#| msgid "Convertor"
+msgid "Converter"
 msgstr "Dönüştürücü"
 
 #: qml/main.qml:102 qml/main.qml:174

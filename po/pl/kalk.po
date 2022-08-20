@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-02 00:47+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2021-12-30 12:15+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -65,8 +65,9 @@ msgid "Clear history"
 msgstr "Wyczyść historię"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, kde-format
-msgid "Convertor"
+#, fuzzy, kde-format
+#| msgid "Convertor"
+msgid "Converter"
 msgstr "Przekształcacz"
 
 #: qml/main.qml:102 qml/main.qml:174

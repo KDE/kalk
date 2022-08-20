@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-02 00:47+0000\n"
+"POT-Creation-Date: 2022-08-20 00:47+0000\n"
 "PO-Revision-Date: 2022-08-13 03:53\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -64,8 +64,9 @@ msgid "Clear history"
 msgstr "清除历史记录"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, kde-format
-msgid "Convertor"
+#, fuzzy, kde-format
+#| msgid "Convertor"
+msgid "Converter"
 msgstr "转换器"
 
 #: qml/main.qml:102 qml/main.qml:174
