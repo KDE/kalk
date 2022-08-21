@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-20 00:47+0000\n"
-"PO-Revision-Date: 2022-01-24 11:30+0100\n"
+"PO-Revision-Date: 2022-08-20 10:12+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -67,8 +67,7 @@ msgid "Clear history"
 msgstr "Neteja l'historial"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
 msgstr "Convertidor"
 
@@ -86,36 +85,3 @@ msgstr "Conversió"
 #, kde-format
 msgid "Swap"
 msgstr "Intercanvia"
-
-#~ msgid "Calculator built with Kirigami."
-#~ msgstr "Una calculadora construïda amb el Kirigami."
-
-#~ msgid "© 2020 Plasma Development Team"
-#~ msgstr "© 2020 L'equip de desenvolupament del Plasma"
-
-#~ msgid "Han Young"
-#~ msgstr "Han Young"
-
-#~ msgid "cahfofpai"
-#~ msgstr "cahfofpai"
-
-#~ msgid "B"
-#~ msgstr "B"
-
-#~ msgid "D"
-#~ msgstr "D"
-
-#~ msgid "H"
-#~ msgstr "H"
-
-#~ msgid "Acceleration"
-#~ msgstr "Acceleració"
-
-#~ msgid "From: "
-#~ msgstr "Des de: "
-
-#~ msgid "To: "
-#~ msgstr "A: "
-
-#~ msgid "Units Converter"
-#~ msgstr "Convertidor d'unitats"
