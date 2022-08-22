@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-20 00:47+0000\n"
-"PO-Revision-Date: 2021-04-01 10:42+0100\n"
+"PO-Revision-Date: 2022-08-21 18:33+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -60,8 +60,7 @@ msgid "Clear history"
 msgstr "Limpar o histórico"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
 msgstr "Conversor"
 
@@ -79,24 +78,3 @@ msgstr "Conversão"
 #, kde-format
 msgid "Swap"
 msgstr "Memória virtual"
-
-#~ msgid "Calculator built with Kirigami."
-#~ msgstr "Uma calculadora criada com o Kirigami."
-
-#~ msgid "© 2020 Plasma Development Team"
-#~ msgstr "© 2020 Equipa de Desenvolvimento do Plasma"
-
-#~ msgid "Han Young"
-#~ msgstr "Han Young"
-
-#~ msgid "cahfofpai"
-#~ msgstr "cahfofpai"
-
-#~ msgid "B"
-#~ msgstr "B"
-
-#~ msgid "D"
-#~ msgstr "D"
-
-#~ msgid "H"
-#~ msgstr "H"
