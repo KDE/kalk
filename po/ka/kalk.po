@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-20 00:47+0000\n"
-"PO-Revision-Date: 2022-05-23 05:35+0200\n"
+"PO-Revision-Date: 2022-08-22 17:32+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,8 +65,7 @@ msgid "Clear history"
 msgstr "ისტორიის გაწმენდა"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
 msgstr "გადამყვანი"
 
