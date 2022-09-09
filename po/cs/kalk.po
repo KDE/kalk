@@ -64,10 +64,9 @@ msgid "Clear history"
 msgstr "Vyprázdnit historii"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
-msgstr "Převodník"
+msgstr ""
 
 #: qml/main.qml:102 qml/main.qml:174
 #, kde-format
