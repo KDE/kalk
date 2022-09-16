@@ -61,4 +61,4 @@ target_include_directories(kalk PRIVATE ${CMAKE_BINARY_DIR})
 
 target_include_directories(kalklib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mathengine)
 
-install(TARGETS kalk ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kalk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
