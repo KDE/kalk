@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021.
+# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-20 00:47+0000\n"
-"PO-Revision-Date: 2021-12-21 20:13+0100\n"
+"PO-Revision-Date: 2022-09-25 10:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -64,8 +64,7 @@ msgid "Clear history"
 msgstr "Rensa historik"
 
 #: qml/main.qml:95 qml/main.qml:156
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
 msgstr "Konverterare"
 
