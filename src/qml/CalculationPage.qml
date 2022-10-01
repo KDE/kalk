@@ -289,6 +289,7 @@ Kirigami.Page {
                         height: inputPad.height
                         width: initialPage.width * 0.8
                         visible: inPortrait
+                        interactive: inPortrait
                         dragMargin: drawerIndicator.width
                         edge: Qt.RightEdge
                         dim: false
