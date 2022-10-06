@@ -98,7 +98,12 @@ void InputManager::backspace()
         } else {
             engineInstance->parse(m_expression);
         }
-        
+
+        if (m_expression.length() == 0) {
+            clear();
+            return;
+        }
+
         if(!MathEngine::inst()->error())
         {
             KNumber result = MathEngine::inst()->result();
