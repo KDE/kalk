@@ -91,17 +91,17 @@ void InputManager::backspace()
         m_expression.chop(m_stack.back());
         Q_EMIT expressionChanged();
 
+        if (m_expression.length() == 0) {
+            clear();
+            return;
+        }
+
         // Call the corresponding parser based on the type of expression.
         MathEngine * engineInstance = MathEngine::inst();
         if (m_isBinaryMode) {
             engineInstance->parseBinaryExpression(m_expression);
         } else {
             engineInstance->parse(m_expression);
-        }
-
-        if (m_expression.length() == 0) {
-            clear();
-            return;
         }
 
         if(!MathEngine::inst()->error())
