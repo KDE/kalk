@@ -14,7 +14,7 @@ Originally starting as a fork of [Liri calculator](https://github.com/lirios/cal
 
 ## Links
 * Project page: https://invent.kde.org/plasma-mobile/kalk
-* Issues: https://invent.kde.org/plasma-mobile/kalk/-/issues
+* Issues: https://bugs.kde.org/enter_bug.cgi?product=Kalk
 * Development channel: https://matrix.to/#/#plasmamobile:matrix.org
 
 ## Dependencies
