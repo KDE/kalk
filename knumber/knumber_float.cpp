@@ -144,8 +144,8 @@ knumber_base *knumber_float::clone() {
 }
 
 mpfr_ptr knumber_float::new_mpfr() {
-	mpfr_init(mpfr_);
-	return mpfr_;
+    mpfr_init2(mpfr_, precision);
+    return mpfr_;
 }
 
 //------------------------------------------------------------------------------
@@ -576,20 +576,20 @@ QString knumber_float::toString(int precision) const {
 	size_t size;
 
 	if (precision > 0) {
-		size = static_cast<size_t>(mpfr_snprintf(nullptr, 0, "%.*Rg", precision, mpfr_) + 1);
-	} else {
-		size = static_cast<size_t>(mpfr_snprintf(nullptr, 0, "%.Rg", mpfr_) + 1);
-	}
+        size = static_cast<size_t>(mpfr_snprintf(nullptr, 0, "%.*Rg", precision, mpfr_) + 1);
+    } else {
+        size = static_cast<size_t>(mpfr_snprintf(nullptr, 0, "%.Rg", mpfr_) + 1);
+    }
 
-	QScopedArrayPointer<char> buf(new char[size]);
+    QScopedArrayPointer<char> buf(new char[size]);
 
-	if (precision > 0) {
-		mpfr_snprintf(&buf[0], size, "%.*Rg", precision, mpfr_);
-	} else {
-		mpfr_snprintf(&buf[0], size, "%.Rg", mpfr_);
-	}
+    if (precision > 0) {
+        mpfr_snprintf(&buf[0], size, "%.*Rg", precision, mpfr_);
+    } else {
+        mpfr_snprintf(&buf[0], size, "%.Rg", mpfr_);
+    }
 
-	return QLatin1String(&buf[0]);
+    return QLatin1String(&buf[0]);
 }
 
 QString knumber_float::toBinaryString(int precision) const {
