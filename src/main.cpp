@@ -4,10 +4,11 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 #include <QApplication>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
+#include <QIcon>
 #include <QObject>
 #include <QQmlApplicationEngine>
-#include <QCommandLineParser>
-#include <QCommandLineOption>
 #include <QQmlContext>
 #include <QQuickStyle>
 
@@ -66,6 +67,9 @@ int main(int argc, char *argv[])
 #endif
     // load main ui
     engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+
+    // required for X11
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kalk")));
 
     return app.exec();
 }
