@@ -50,7 +50,7 @@ Item {
         fadeTime: 0
         fadeIntensity: 0.0
         intensity: 0.5
-        duration: 40
+        duration: 10
     }
     
     Rectangle {
