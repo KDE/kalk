@@ -51,9 +51,10 @@ int main(int argc, char *argv[])
     KAboutData aboutData(QStringLiteral("kalk"), 
                          i18n("Calculator"), 
                          QStringLiteral(KALK_VERSION_STRING), 
-                         i18n("Calculator in Kirigami"), 
+                         i18n("Calculator for Plasma"), 
                          KAboutLicense::GPL, 
-                         i18n("© 2020-2021 KDE Community"));
+                         i18n("© 2020-2022 KDE Community"));
+    aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=kalk");
     KAboutData::setApplicationData(aboutData);
 
     parser.process(app);
