@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-20 00:47+0000\n"
+"POT-Creation-Date: 2022-10-24 00:50+0000\n"
 "PO-Revision-Date: 2022-09-11 19:45+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -30,18 +30,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: main.cpp:51 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
+#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
 #: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
 #, kde-format
 msgid "Calculator"
 msgstr "Kalkulator"
 
-#: main.cpp:53
+#: main.cpp:54
 #, kde-format
 msgid "Calculator in Kirigami"
 msgstr "Kalkulator i Kirigami"
 
-#: main.cpp:55
+#: main.cpp:56
 #, kde-format
 msgid "© 2020-2021 KDE Community"
 msgstr "© 2020–2021 KDE-fellesskapet"
