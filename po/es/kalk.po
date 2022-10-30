@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:47+0000\n"
-"PO-Revision-Date: 2022-08-23 19:02+0200\n"
+"PO-Revision-Date: 2022-10-29 19:01+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.07.90\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -36,16 +36,14 @@ msgid "Calculator"
 msgstr "Calculadora"
 
 #: main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Calculator in Kirigami"
+#, kde-format
 msgid "Calculator for Plasma"
-msgstr "Calculadora en Kirigami"
+msgstr "Calculadora para Plasma"
 
 #: main.cpp:56
-#, fuzzy, kde-format
-#| msgid "© 2020-2021 KDE Community"
+#, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020-2021 la Comunidad de KDE"
+msgstr "© 2020-2022 la Comunidad de KDE"
 
 #: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
 #, kde-format
