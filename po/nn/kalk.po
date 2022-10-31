@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:47+0000\n"
-"PO-Revision-Date: 2022-09-11 19:45+0200\n"
+"PO-Revision-Date: 2022-10-30 09:35+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.08.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -39,12 +39,12 @@ msgstr "Kalkulator"
 #: main.cpp:54
 #, kde-format
 msgid "Calculator for Plasma"
-msgstr ""
+msgstr "Kalkulator for Plasma"
 
 #: main.cpp:56
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr ""
+msgstr "© 2020–2022 KDE-fellesskapet"
 
 #: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
 #, kde-format

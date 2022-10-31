@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-28 00:47+0000\n"
-"PO-Revision-Date: 2022-10-22 05:29\n"
+"PO-Revision-Date: 2022-10-30 07:49\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -34,16 +34,14 @@ msgid "Calculator"
 msgstr "计算器"
 
 #: main.cpp:54
-#, fuzzy, kde-format
-#| msgid "Calculator in Kirigami"
+#, kde-format
 msgid "Calculator for Plasma"
-msgstr "基于 Kirigami 程序框架的计算器。"
+msgstr ""
 
 #: main.cpp:56
-#, fuzzy, kde-format
-#| msgid "© 2020-2021 KDE Community"
+#, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020-2021 KDE Community"
+msgstr ""
 
 #: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
 #, kde-format
