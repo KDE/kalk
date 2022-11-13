@@ -1,0 +1,7 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Kalk
+Source: https://invent.kde.org/plasma-mobile/kalk
+
+Files: android/res/drawable/kalk.png kalk.png logo.png org.kde.kalk.svg
+Copyright: 2021 Manuel Jesús de la Fuente <m@nueljl.in>
+License: CC-BY-4.0

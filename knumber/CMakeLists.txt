@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
+# SPDX-License-Identifier: GPL-2.0-or-later
+
 add_library(knumber STATIC
     knumber.cpp
     knumber_error.cpp

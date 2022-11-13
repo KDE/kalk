@@ -1,3 +1,8 @@
+/*
+ * SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
+ * SPDX-License-Identifier: GPL-2.0-or-later
+*/
+ 
 /* Define to 1 if you have the <ieeefp.h> header file. */
 #cmakedefine HAVE_IEEEFP_H 1
 

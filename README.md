@@ -1,3 +1,8 @@
+<!--
+- SPDX-FileCopyrightText: None 
+- SPDX-License-Identifier: CC0-1.0
+-->
+
 # Kalk <img src="kalk.png" width="40"/>
 Kalk is a convergent calculator application built with the [Kirigami framework](https://kde.org/products/kirigami/). Although it is mainly targeted for mobile platforms, it can also be used on the desktop.
 
