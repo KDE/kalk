@@ -8,12 +8,12 @@ ${CMAKE_CURRENT_SOURCE_DIR}/../knumber
 
 ecm_add_test(inputmanagertest.cpp
     TEST_NAME "inputmanagertest"
-    LINK_LIBRARIES Qt5::Test knumber kalklib
+    LINK_LIBRARIES Qt::Test knumber kalklib
 )
 
 ecm_add_test(inputmanagertest.cpp
     TEST_NAME "inputmanagertest_de"
-    LINK_LIBRARIES Qt5::Test knumber kalklib
+    LINK_LIBRARIES Qt::Test knumber kalklib
 )
 
 target_compile_definitions(inputmanagertest PUBLIC LANG="C")

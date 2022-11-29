@@ -15,23 +15,28 @@ add_library(kalklib STATIC
 )
 
 target_link_libraries(kalklib
-    Qt5::Core
+    Qt::Core
     knumber)
 
 set(kalk_SRCS
     main.cpp
     about.cpp
     unitmodel.cpp)
-qtquick_compiler_add_resources(RESOURCES calculator.qrc)
+
+if (QT_MAJOR_VERSION EQUAL "6")
+    list(APPEND kalk_SRCS calculator.qrc)
+else()
+    qtquick_compiler_add_resources(RESOURCES calculator.qrc)
+endif()
 add_executable(kalk ${kalk_SRCS} ${RESOURCES})
 
 add_flex_bison_dependency(MyScanner MyParser)
 
 target_link_libraries(kalk
-    Qt5::Core
-    Qt5::Widgets
-    Qt5::Qml
-    Qt5::QuickControls2
+    Qt::Core
+    Qt::Widgets
+    Qt::Qml
+    Qt::QuickControls2
     KF5::UnitConversion
     KF5::ConfigCore
     KF5::I18n

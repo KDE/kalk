@@ -766,6 +766,7 @@ void testingConstructors() {
 	std::cout << "Testing Constructors:\n";
 	std::cout << "---------------------\n";
 
+    KNumber::setDecimalSeparator(QStringLiteral("."));
     checkResult(QStringLiteral("KNumber(5)"), KNumber(5), QStringLiteral("5"), KNumber::TYPE_INTEGER);
 	checkType(QStringLiteral("KNumber(5.3)"), KNumber(5.3).type(), KNumber::TYPE_FLOAT);
 	checkType(QStringLiteral("KNumber(0.0)"), KNumber(0.0).type(), KNumber::TYPE_INTEGER);

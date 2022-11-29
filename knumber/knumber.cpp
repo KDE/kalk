@@ -9,7 +9,7 @@
 #include "knumber_integer.h"
 #include <QDebug>
 #include <QLocale>
-#include <QRegExp>
+#include <QRegularExpression>
 #include <QStringList>
 #include <cmath>
 
@@ -132,7 +132,7 @@ void round(QString &str, int precision) {
 QString round(const QString &s, int precision) {
 
 	QString tmp = s;
-    if (precision < 0 || !QRegExp(QLatin1String("^[+-]?\\d+(\\.\\d+)*(e[+-]?\\d+)?$")).exactMatch(tmp)) {
+    if (precision < 0 || !QRegularExpression(QLatin1String("^[+-]?\\d+(\\.\\d+)*(e[+-]?\\d+)?$")).match(tmp).hasMatch()) {
         return s;
     }
 
@@ -264,55 +264,49 @@ KNumber KNumber::binaryFromString(const QString &s)
 // Name: KNumber
 //------------------------------------------------------------------------------
 KNumber::KNumber(const QString &s) : value_(nullptr) {
+    const QRegularExpression special_regex(QLatin1String("^(inf|-inf|nan)$"));
+    const QRegularExpression integer_regex(QLatin1String("^[+-]?\\d+$"));
+    const QRegularExpression fraction_regex(QLatin1String("^[+-]?\\d+/\\d+$"));
+    const QRegularExpression float_regex(QLatin1String("^([+-]?\\d*)(%1\\d*)?(e([+-]?\\d+))?$").arg(QRegularExpression::escape(DecimalSeparator)));
 
-	const QRegExp special_regex(QLatin1String("^(inf|-inf|nan)$"));
-	const QRegExp integer_regex(QLatin1String("^[+-]?\\d+$"));
-	const QRegExp fraction_regex(QLatin1String("^[+-]?\\d+/\\d+$"));
-	const QRegExp float_regex(QString(QLatin1String("^([+-]?\\d*)(%1\\d*)?(e([+-]?\\d+))?$")).arg(QRegExp::escape(DecimalSeparator)));
+    if (special_regex.match(s).hasMatch()) {
+        value_ = new detail::knumber_error(s);
+    } else if (integer_regex.match(s).hasMatch()) {
+        value_ = new detail::knumber_integer(s);
+    } else if (fraction_regex.match(s).hasMatch()) {
+        value_ = new detail::knumber_fraction(s);
+        simplify();
+    } else if (float_regex.match(s).hasMatch()) {
+        if (detail::knumber_fraction::default_fractional_input) {
+            const QStringList list = float_regex.match(s).capturedTexts();
+            const QString ipart = list[1];
+            const QString fpart = list[2];
+            const int e_val = list.size() == 5 ? list[4].toInt() : 0;
 
-	if (special_regex.exactMatch(s)) {
-		value_ = new detail::knumber_error(s);
-	} else if (integer_regex.exactMatch(s)) {
-		value_ = new detail::knumber_integer(s);
-	} else if (fraction_regex.exactMatch(s)) {
-		value_ = new detail::knumber_fraction(s);
-		simplify();
-	} else if (float_regex.exactMatch(s)) {
+            QString num = ipart + fpart.mid(1);
+            QString den = QLatin1String("1") + QString(fpart.size() - 1, QLatin1Char('0'));
 
-		if(detail::knumber_fraction::default_fractional_input) {
+            if (e_val < 0) {
+                den = den + QString(::abs(e_val), QLatin1Char('0'));
+            } else if (e_val > 0) {
+                num = num + QString(::abs(e_val), QLatin1Char('0'));
+            }
 
-			const QStringList list = float_regex.capturedTexts();
-			if(list.size() == 5) {
+            value_ = new detail::knumber_fraction(QStringLiteral("%1/%2").arg(num, den));
+            simplify();
+            return;
+        }
 
-				const QString ipart = list[1];
-				const QString fpart = list[2];
-				const int e_val     = list[4].toInt();
+        // we need to normalize the decimal separator to US style because that's
+        // the only type that the GMP function accept
+        QString new_s = s;
+        new_s.replace(DecimalSeparator, QLatin1String("."));
 
-				QString num = ipart + fpart.mid(1);
-				QString den = QLatin1String("1") + QString(fpart.size() - 1, QLatin1Char('0'));
-
-				if(e_val < 0) {
-					den = den + QString(::abs(e_val), QLatin1Char('0'));
-				} else if(e_val > 0) {
-					num = num + QString(::abs(e_val), QLatin1Char('0'));
-				}
-
-				value_ = new detail::knumber_fraction(QStringLiteral("%1/%2").arg(num, den));
-				simplify();
-				return;
-			}
-		}
-
-		// we need to normalize the decimal separator to US style because that's
-		// the only type that the GMP function accept
-		QString new_s = s;
-		new_s.replace(DecimalSeparator, QLatin1String("."));
-
-		value_ = new detail::knumber_float(new_s);
-		simplify();
-	} else {
-		value_ = new detail::knumber_error(detail::knumber_error::ERROR_UNDEFINED);
-	}
+        value_ = new detail::knumber_float(new_s);
+        simplify();
+    } else {
+        value_ = new detail::knumber_error(detail::knumber_error::ERROR_UNDEFINED);
+    }
 }
 
 //------------------------------------------------------------------------------
