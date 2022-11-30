@@ -4,7 +4,7 @@
 
 project(Kalk)
 
-set(PROJECT_VERSION "22.09")
+set(PROJECT_VERSION "22.11")
 find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
