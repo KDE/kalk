@@ -25,25 +25,7 @@ Kirigami.ApplicationWindow {
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
-
-    // pop pages when not in use
-    Connections {
-        target: applicationWindow().pageStack
-        function onCurrentIndexChanged() {
-            // wait for animation to finish before popping pages
-            pageTimer.restart();
-        }
-    }
-    Timer {
-        id: pageTimer
-        interval: 300
-        onTriggered: {
-            let currentIndex = applicationWindow().pageStack.currentIndex;
-            while (applicationWindow().pageStack.depth > (currentIndex + 1) && currentIndex >= 0) {
-                applicationWindow().pageStack.pop();
-            }
-        }
-    }
+    pageStack.popHiddenPages: true
     
     Kirigami.PagePool {
         id: mainPagePool
