@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:47+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2022-04-18 17:53+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -26,7 +26,7 @@ msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
 #: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
-#: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
+#: qml/main.qml:70 qml/main.qml:111 qml/main.qml:114 qml/main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "Kalkulačka"
@@ -43,7 +43,7 @@ msgstr "Kalkulačka v Kirigami"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2021 KDE komunita"
 
-#: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
+#: qml/AboutPage.qml:19 qml/main.qml:91 qml/main.qml:180
 #, kde-format
 msgid "About"
 msgstr "O aplikácii"
@@ -63,13 +63,13 @@ msgstr "História je prázdna"
 msgid "Clear history"
 msgstr "Vyčistiť históriu"
 
-#: qml/main.qml:95 qml/main.qml:156
+#: qml/main.qml:77 qml/main.qml:138
 #, fuzzy, kde-format
 #| msgid "Convertor"
 msgid "Converter"
 msgstr "Konvertor"
 
-#: qml/main.qml:102 qml/main.qml:174
+#: qml/main.qml:84 qml/main.qml:156
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Binárna kalkulačka"

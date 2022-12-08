@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-28 00:47+0000\n"
+"POT-Creation-Date: 2022-12-08 00:48+0000\n"
 "PO-Revision-Date: 2022-10-28 12:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -28,7 +28,7 @@ msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
 #: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
-#: qml/main.qml:88 qml/main.qml:129 qml/main.qml:132 qml/main.qml:138
+#: qml/main.qml:70 qml/main.qml:111 qml/main.qml:114 qml/main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "Hesap Makinesi"
@@ -43,7 +43,7 @@ msgstr "Plasma için Hesap Makinesi"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE Community"
 
-#: qml/AboutPage.qml:19 qml/main.qml:109 qml/main.qml:198
+#: qml/AboutPage.qml:19 qml/main.qml:91 qml/main.qml:180
 #, kde-format
 msgid "About"
 msgstr "Hakkında"
@@ -63,12 +63,12 @@ msgstr "Geçmiş boş"
 msgid "Clear history"
 msgstr "Geçmişi temizle"
 
-#: qml/main.qml:95 qml/main.qml:156
+#: qml/main.qml:77 qml/main.qml:138
 #, kde-format
 msgid "Converter"
 msgstr "Dönüştürücü"
 
-#: qml/main.qml:102 qml/main.qml:174
+#: qml/main.qml:84 qml/main.qml:156
 #, kde-format
 msgid "Binary Calculator"
 msgstr "İkili Hesap Makinesi"
