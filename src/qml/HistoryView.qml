@@ -37,7 +37,7 @@ Kirigami.ScrollablePage {
             highlighted: false
             onClicked:{
                 inputManager.fromHistory(model.display.split('=')[1]);
-                pageStack.push("qrc:/qml/CalculationPage.qml");
+                pageStack.pop()
             }
             Label {
                 font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2

@@ -21,9 +21,12 @@ Kirigami.Page {
     actions.main: Kirigami.Action {
         text: i18n("History")
         iconName: "shallow-history"
-        onTriggered: applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml")
+        onTriggered: {
+            applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
+            functionDrawer.close();
+        }
     }
-    
+
     property int yTranslate: 0
     property real mainOpacity: 1
 
@@ -222,6 +225,12 @@ Kirigami.Page {
             RowLayout {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+            
+                onWidthChanged: {
+                    if (!functionDrawer.opened && inPortrait)
+                        drawerIndicator.x = this.width - drawerIndicator.width + drawerIndicator.radius;
+                }
+
                 Item {
                     property string expression: ""
                     id: inputPad
@@ -286,6 +295,7 @@ Kirigami.Page {
                         id: functionDrawer
                         parent: initialPage
                         y: initialPage.height - inputPad.height
+                        x: initialPage.width // BUG: We can not stop drawer from covering history, when window is in landscape mode, by making its x to edge of initial page instead, as according to QT docs 'It is not possible to set the x-coordinate (or horizontal margins) of a drawer at the left or right window edge'
                         height: inputPad.height
                         width: initialPage.width * 0.8
                         visible: inPortrait
@@ -295,7 +305,7 @@ Kirigami.Page {
                         dim: false
                         onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius;
                         opacity: 1 // for plasma style
-
+                        
                         property bool firstOpen: true
                         onOpened: {
                             // HACK: don't open drawer when application starts
