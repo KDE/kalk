@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-15 00:50+0000\n"
 "PO-Revision-Date: 2022-10-19 15:36-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -27,8 +27,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "elchevive@opensuse.org"
 
-#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
-#: qml/main.qml:70 qml/main.qml:111 qml/main.qml:114 qml/main.qml:120
+#: main.cpp:52 qml/CalculationPage.qml:15 qml/main.qml:70 qml/main.qml:111
+#: qml/main.qml:114 qml/main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "Calculadora"
@@ -50,6 +50,11 @@ msgstr "© 2020-2021 Comunidade KDE"
 msgid "About"
 msgstr "Sobre"
 
+#: qml/BinaryCalculator.qml:14 qml/main.qml:84 qml/main.qml:156
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Calculadora binária"
+
 #: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
 #, kde-format
 msgid "History"
@@ -69,11 +74,6 @@ msgstr "Limpar histórico"
 #, kde-format
 msgid "Converter"
 msgstr "Conversor"
-
-#: qml/main.qml:84 qml/main.qml:156
-#, kde-format
-msgid "Binary Calculator"
-msgstr "Calculadora binária"
 
 #: qml/UnitConverter.qml:15
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-15 00:50+0000\n"
 "PO-Revision-Date: 2022-01-10 16:20+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -28,8 +28,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "translation-team@basealt.ru"
 
-#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
-#: qml/main.qml:70 qml/main.qml:111 qml/main.qml:114 qml/main.qml:120
+#: main.cpp:52 qml/CalculationPage.qml:15 qml/main.qml:70 qml/main.qml:111
+#: qml/main.qml:114 qml/main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "Калькулятор"
@@ -51,6 +51,11 @@ msgstr "© Сообщество KDE, 2020-2021"
 msgid "About"
 msgstr "О программе"
 
+#: qml/BinaryCalculator.qml:14 qml/main.qml:84 qml/main.qml:156
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Двоичный калькулятор"
+
 #: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
 #, kde-format
 msgid "History"
@@ -71,11 +76,6 @@ msgstr "Очистить журнал"
 #| msgid "Convertor"
 msgid "Converter"
 msgstr "Средство преобразования"
-
-#: qml/main.qml:84 qml/main.qml:156
-#, kde-format
-msgid "Binary Calculator"
-msgstr "Двоичный калькулятор"
 
 #: qml/UnitConverter.qml:15
 #, kde-format

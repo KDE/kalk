@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-15 00:50+0000\n"
 "PO-Revision-Date: 2021-03-23 09:59+0100\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -27,8 +27,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: main.cpp:52 qml/BinaryCalculator.qml:14 qml/CalculationPage.qml:15
-#: qml/main.qml:70 qml/main.qml:111 qml/main.qml:114 qml/main.qml:120
+#: main.cpp:52 qml/CalculationPage.qml:15 qml/main.qml:70 qml/main.qml:111
+#: qml/main.qml:114 qml/main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "Kalkulačka"
@@ -50,6 +50,11 @@ msgstr "© 2020-2021 Komunita KDE"
 msgid "About"
 msgstr "O aplikaci"
 
+#: qml/BinaryCalculator.qml:14 qml/main.qml:84 qml/main.qml:156
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Binární kalkulačka"
+
 #: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
 #, kde-format
 msgid "History"
@@ -69,11 +74,6 @@ msgstr "Vyprázdnit historii"
 #, kde-format
 msgid "Converter"
 msgstr ""
-
-#: qml/main.qml:84 qml/main.qml:156
-#, kde-format
-msgid "Binary Calculator"
-msgstr "Binární kalkulačka"
 
 #: qml/UnitConverter.qml:15
 #, kde-format
