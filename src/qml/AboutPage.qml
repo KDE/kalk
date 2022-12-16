@@ -17,5 +17,5 @@ Kirigami.AboutPage {
     
     visible: false
     title: i18n("About")
-    aboutData: AboutType.aboutData
+    aboutData: About
 }

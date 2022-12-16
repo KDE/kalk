@@ -16,7 +16,6 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
-#include "about.h"
 #include "historymanager.h"
 #include "mathengine.h"
 #include "inputmanager.h"
@@ -59,8 +58,9 @@ int main(int argc, char *argv[])
 
     parser.process(app);
 
-    qmlRegisterSingletonInstance("org.kde.kalk", 1, 0, "AboutType", &AboutType::instance());
-
+    qmlRegisterSingletonType("org.kde.kalk", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
+        return engine->toScriptValue(KAboutData::applicationData());
+    });
 #ifdef QT_DEBUG
     engine.rootContext()->setContextProperty(QStringLiteral("debug"), true);
 #else

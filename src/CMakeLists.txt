@@ -20,7 +20,6 @@ target_link_libraries(kalklib
 
 set(kalk_SRCS
     main.cpp
-    about.cpp
     unitmodel.cpp)
 
 if (QT_MAJOR_VERSION EQUAL "6")
