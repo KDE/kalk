@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-15 00:50+0000\n"
+"POT-Creation-Date: 2022-12-16 00:52+0000\n"
 "PO-Revision-Date: 2022-10-29 05:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:52 qml/CalculationPage.qml:15 qml/main.qml:70 qml/main.qml:111
+#: main.cpp:51 qml/CalculationPage.qml:15 qml/main.qml:70 qml/main.qml:111
 #: qml/main.qml:114 qml/main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "კალკულატორი"
 
-#: main.cpp:54
+#: main.cpp:53
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "კალკულატორი Plasma-სთვის"
 
-#: main.cpp:56
+#: main.cpp:55
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE-ის საზოგადოება"
