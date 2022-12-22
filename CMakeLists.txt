@@ -2,13 +2,14 @@
 # SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+cmake_minimum_required(VERSION 2.8.12)
 project(Kalk)
 
 set(PROJECT_VERSION "22.11")
 find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
-cmake_minimum_required(VERSION 2.8.12)
+
 set(KF5_MIN_VERSION "5.89.0")
 set(QT_MIN_VERSION "5.15.2")
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
