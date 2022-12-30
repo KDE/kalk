@@ -674,10 +674,18 @@ void testingInfArithmetic() {
     checkResult(QStringLiteral("KNumber(\"-5/3\") / nan"), KNumber(QStringLiteral("-5/3")) / KNumber::NaN, QStringLiteral("nan"), KNumber::TYPE_ERROR);
     checkResult(QStringLiteral("nan / KNumber(2.01)"), KNumber::NaN / KNumber(2.01), QStringLiteral("nan"), KNumber::TYPE_ERROR);
     checkResult(QStringLiteral("KNumber(-5.4) / nan"), KNumber(-5.4) / KNumber::NaN, QStringLiteral("nan"), KNumber::TYPE_ERROR);
-    checkResult(QStringLiteral("inf / inf"), KNumber::PosInfinity / KNumber::PosInfinity, QStringLiteral("nan"), KNumber::TYPE_ERROR);
+    checkResult(QStringLiteral("inf / inf"),
+                // cppcheck-suppress duplicateExpression
+                KNumber::PosInfinity / KNumber::PosInfinity,
+                QStringLiteral("nan"),
+                KNumber::TYPE_ERROR);
     checkResult(QStringLiteral("inf / -inf"), KNumber::PosInfinity / KNumber::NegInfinity, QStringLiteral("nan"), KNumber::TYPE_ERROR);
     checkResult(QStringLiteral("-inf / inf"), KNumber::NegInfinity / KNumber::PosInfinity, QStringLiteral("nan"), KNumber::TYPE_ERROR);
-    checkResult(QStringLiteral("-inf / -inf"), KNumber::NegInfinity / KNumber::NegInfinity, QStringLiteral("nan"), KNumber::TYPE_ERROR);
+    checkResult(QStringLiteral("-inf / -inf"),
+                // cppcheck-suppress duplicateExpression
+                KNumber::NegInfinity / KNumber::NegInfinity,
+                QStringLiteral("nan"),
+                KNumber::TYPE_ERROR);
     checkResult(QStringLiteral("inf / nan"), KNumber::PosInfinity / KNumber::NaN, QStringLiteral("nan"), KNumber::TYPE_ERROR);
     checkResult(QStringLiteral("-inf / nan"), KNumber::NegInfinity / KNumber::NaN, QStringLiteral("nan"), KNumber::TYPE_ERROR);
     checkResult(QStringLiteral("nan / inf"), KNumber::NaN / KNumber::PosInfinity, QStringLiteral("nan"), KNumber::TYPE_ERROR);
