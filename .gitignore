@@ -1,12 +1,19 @@
 # SPDX-FileCopyrightText: None
 # SPDX-License-Identifier: CC0-1.0
+# From kconfig/.gitignore
+
+# Ignore the following files
+*~
+*.[oa]
+*.moc
+CMakeLists.txt.user*
+/.clang-format
+/compile_commands.json
 
 # C++ objects and libs
 
 *.slo
 *.lo
-*.o
-*.a
 *.la
 *.lai
 *.so
@@ -20,7 +27,6 @@
 *.pro.user.*
 *.qbs.user
 *.qbs.user.*
-*.moc
 moc_*.cpp
 qrc_*.cpp
 ui_*.h
@@ -34,9 +40,6 @@ Makefile*
 # QtCtreator Qml
 *.qmlproject.user
 *.qmlproject.user.*
-
-# QtCtreator CMake
-CMakeLists.txt.user
 
 # Oxide and QtWebEngine
 GPUCache/
@@ -54,9 +57,6 @@ prime/
 stage/
 *.snap
 *source.tar.bz2
-
-# Clang
-.clang-format
 
 # Flatpak
 .flatpak-builder
