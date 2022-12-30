@@ -19,7 +19,7 @@ HistoryManager::HistoryManager()
     if (!dir.exists()) {
         dir.mkpath(QStringLiteral("."));
     }
-    
+
     QFile file(dir.path() + QStringLiteral("/history.json"));
     if (file.open(QIODevice::ReadOnly)) {
         QJsonDocument doc(QJsonDocument::fromJson(file.readAll()));

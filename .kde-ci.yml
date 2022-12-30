@@ -10,3 +10,6 @@ Dependencies:
     'frameworks/ki18n': '@stable'
     'frameworks/kconfig': '@stable'
     'frameworks/kunitconversion': '@stable'
+
+Options:
+    cppcheck-arguments: '--enable=warning,style,performance --inline-suppr --suppress=passedByValue --suppress=nullPointer'
