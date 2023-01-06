@@ -16,6 +16,7 @@
   <name xml:lang="ca-valencia">Calculadora</name>
   <name xml:lang="cs">Kalkulačka</name>
   <name xml:lang="de">Calculator</name>
+  <name xml:lang="el">Αριθμομηχανή</name>
   <name xml:lang="en-GB">Calculator</name>
   <name xml:lang="es">Calculadora</name>
   <name xml:lang="eu">Kalkulagailua</name>
@@ -48,6 +49,7 @@
   <summary xml:lang="ca">Una calculadora rica en característiques</summary>
   <summary xml:lang="ca-valencia">Una calculadora rica en característiques</summary>
   <summary xml:lang="de">Ein leistungsfähiger Rechner</summary>
+  <summary xml:lang="el">Μια αριθμομηχανή πλούσια σε χαρακτηριστικά</summary>
   <summary xml:lang="en-GB">A feature rich calculator</summary>
   <summary xml:lang="es">Una calculadora con numerosas funciones</summary>
   <summary xml:lang="eu">Ezaugarritan aberatsa den kalkulagailua bat</summary>
@@ -81,6 +83,7 @@
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
   <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
+  <developer_name xml:lang="el">Η Κοινότητα του KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE Community</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
   <developer_name xml:lang="eu">KDE komunitatea</developer_name>
@@ -114,6 +117,7 @@
     <p xml:lang="ca">El Kalk és una calculadora convergent per al Plasma.</p>
     <p xml:lang="ca-valencia">Kalk és una calculadora convergent per a Plasma.</p>
     <p xml:lang="de">Kalk ist ein konvergenter Rechner für Plasma.</p>
+    <p xml:lang="el">Το Kalk είναι μια αριθμομηχανή για το Plasma.</p>
     <p xml:lang="en-GB">Kalk is a convergent calculator for Plasma.</p>
     <p xml:lang="es">Kalk es una calculadora convergente para Plasma.</p>
     <p xml:lang="eu">Kalk, Plasmarako kalkulagailu konbergente bat da.</p>
@@ -147,6 +151,7 @@
       <caption xml:lang="ca-valencia">Pàgina Calculadora</caption>
       <caption xml:lang="cs">Stránka kalkulačky</caption>
       <caption xml:lang="de">Calculator-Seite</caption>
+      <caption xml:lang="el">Η σελίδα του Kalk</caption>
       <caption xml:lang="en-GB">Calculator Page</caption>
       <caption xml:lang="es">Página de la calculadora</caption>
       <caption xml:lang="eu">Kalkulagailu-orria</caption>
