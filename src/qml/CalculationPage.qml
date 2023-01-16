@@ -103,6 +103,8 @@ Kirigami.Page {
         event.accepted = true;
     }
 
+    onHeightChanged: functionDrawer.close()
+
     // Changes the current mode of the backend to non-binary
     onIsCurrentPageChanged: {
         if (inputManager.binaryMode)
@@ -305,16 +307,6 @@ Kirigami.Page {
                         dim: false
                         onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius;
                         opacity: 1 // for plasma style
-                        
-                        property bool firstOpen: true
-                        onOpened: {
-                            // HACK: don't open drawer when application starts
-                            // there doesn't seem to be another way to do this...
-                            if (firstOpen) {
-                                close();
-                                firstOpen = false;
-                            }
-                        }
 
                         FunctionPad {
                             anchors.fill: parent
@@ -323,7 +315,10 @@ Kirigami.Page {
                             anchors.rightMargin: Kirigami.Units.largeSpacing
                             anchors.topMargin: Kirigami.Units.largeSpacing
                             anchors.bottomMargin: parent.height / 4
-                            onPressed: inputManager.append(text)
+                            onPressed: {
+                                inputManager.append(text)
+                                functionDrawer.close()
+                            }
                         }
                         // for plasma style
                         background: Rectangle {
