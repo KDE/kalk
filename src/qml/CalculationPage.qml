@@ -164,9 +164,10 @@ Kirigami.Page {
                 Flickable {
                     anchors.top: parent.top
                     anchors.right: parent.right
-                    anchors.margins: Kirigami.Units.largeSpacing
+                    anchors.leftMargin: Kirigami.Units.largeSpacing
+                    anchors.rightMargin: Kirigami.Units.largeSpacing
 
-                    height: Kirigami.Units.gridUnit * 1.5
+                    height: contentHeight
                     width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, contentWidth)
                     
                     contentHeight: expressionRow.height
@@ -191,9 +192,10 @@ Kirigami.Page {
                 Flickable {
                     anchors.bottom: parent.bottom
                     anchors.right: parent.right
-                    anchors.margins: Kirigami.Units.largeSpacing
+                    anchors.leftMargin: Kirigami.Units.largeSpacing
+                    anchors.rightMargin: Kirigami.Units.largeSpacing
                     
-                    height: Kirigami.Units.gridUnit * 4
+                    height: contentHeight
                     width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, contentWidth)
                     
                     contentHeight: result.height
