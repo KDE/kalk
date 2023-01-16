@@ -68,6 +68,7 @@ Item {
         Controls.AbstractButton {
             id: button
             anchors.fill: parent
+            focusPolicy: Qt.NoFocus
             
             onPressedChanged: {
                 if (pressed) {
@@ -90,8 +91,7 @@ Item {
         anchors.centerIn: keyRect
         visible: root.display !== "⌫" // not backspace icon
 
-        font.pointSize: Math.min(Math.round(keyRect.height * 0.28), Math.round(keyRect.width * 0.28))
-        font.weight: Font.Light
+        font.pointSize: Math.max(Math.min(Math.round(keyRect.height * 0.4), Math.round(keyRect.width * 0.4)),10)
         text: root.display
         opacity: special ? 0.4 : 1.0
         horizontalAlignment: Text.AlignHCenter
