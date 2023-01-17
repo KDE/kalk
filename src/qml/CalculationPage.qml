@@ -4,11 +4,12 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import QtQuick 2.7
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as Controls
-import QtGraphicalEffects 1.12
-import org.kde.kirigami 2.13 as Kirigami
+import QtQuick 2.15
+import QtQuick.Layouts 1.15
+import QtQuick.Controls 2.15 as Controls
+import QtGraphicalEffects 1.15
+
+import org.kde.kirigami 2.15 as Kirigami
 
 Kirigami.Page {
     id: initialPage
@@ -160,6 +161,11 @@ Kirigami.Page {
                 Layout.alignment: Qt.AlignTop
                 Layout.preferredHeight: initialPage.screenHeight
 
+                TextEdit{
+                    id: textEdit
+                    visible: false
+                }
+
                 // input row
                 Flickable {
                     anchors.top: parent.top
@@ -180,6 +186,15 @@ Kirigami.Page {
                         font.weight: Font.Light
                         text: inputManager.expression
                         color: Kirigami.Theme.disabledTextColor
+
+                        TapHandler {
+                            onLongPressed: {
+                                textEdit.text = expressionRow.text;
+                                textEdit.selectAll();
+                                textEdit.copy();
+                                showPassiveNotification(i18n("copied"));
+                            }
+                        }
                     }
                     onContentWidthChanged: {
                         if (contentWidth > width) {
@@ -221,6 +236,15 @@ Kirigami.Page {
                         }
 
                         onTextChanged: resultFadeInAnimation.start()
+
+                        TapHandler {
+                            onLongPressed: {
+                                textEdit.text = result.text;
+                                textEdit.selectAll();
+                                textEdit.copy();
+                                showPassiveNotification(i18n("copied"));
+                            }
+                        }
                     }
                 }
             }
