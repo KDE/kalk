@@ -17,6 +17,7 @@ class InputManager : public QObject
     Q_PROPERTY(QString result READ result NOTIFY resultChanged)
     Q_PROPERTY(QString binaryResult READ binaryResult NOTIFY binaryResultChanged)
     Q_PROPERTY(QString hexResult READ hexResult NOTIFY hexResultChanged)
+    Q_PROPERTY(bool moveFromResult READ moveFromResult NOTIFY resultChanged)
     Q_PROPERTY(bool binaryMode READ binaryMode WRITE setBinaryMode)
 
 public:
@@ -26,6 +27,7 @@ public:
     const QString &result() const;
     const QString &binaryResult() const;
     const QString &hexResult() const;
+    bool moveFromResult() const;
     Q_INVOKABLE void append(const QString &subexpression);
     Q_INVOKABLE void backspace();
     Q_INVOKABLE void equal();
@@ -39,6 +41,7 @@ Q_SIGNALS:
     void resultChanged();
     void binaryResultChanged();
     void hexResultChanged();
+
 private:
     InputManager();
     bool m_moveFromResult = false; // clear expression on none operator input

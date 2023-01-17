@@ -198,7 +198,12 @@ Kirigami.Page {
                     }
                     onContentWidthChanged: {
                         if (contentWidth > width) {
-                            contentX = contentWidth - width;
+                            // keep flickable at start if coming from result
+                            if (inputManager.moveFromResult) {
+                                contentX = 0;
+                            } else {
+                                contentX = contentWidth - width;
+                            }
                         }
                     }
                 }

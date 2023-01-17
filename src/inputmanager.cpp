@@ -46,6 +46,11 @@ const QString &InputManager::hexResult() const
     return m_hexResult;
 }
 
+bool InputManager::moveFromResult() const
+{
+    return m_moveFromResult;
+}
+
 void InputManager::append(const QString &subexpression)
 {
     // if expression was from result and input is numeric, clear expression
