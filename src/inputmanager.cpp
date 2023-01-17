@@ -89,6 +89,7 @@ void InputManager::backspace()
     if(!m_stack.empty())
     {
         m_expression.chop(m_stack.back());
+        m_stack.pop_back();
         Q_EMIT expressionChanged();
 
         if (m_expression.length() == 0) {
