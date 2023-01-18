@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:52+0000\n"
+"POT-Creation-Date: 2023-01-18 00:59+0000\n"
 "PO-Revision-Date: 2021-01-20 21:43-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: main.cpp:51 qml/CalculationPage.qml:15 qml/main.qml:70 qml/main.qml:111
+#: main.cpp:51 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:111
 #: qml/main.qml:114 qml/main.qml:120
 #, kde-format
 msgid "Calculator"
@@ -56,10 +56,15 @@ msgstr "ਇਸ ਬਾਰੇ"
 msgid "Binary Calculator"
 msgstr "ਕੈਲਕੂਲੇਟਰ"
 
-#: qml/CalculationPage.qml:22 qml/HistoryView.qml:13
+#: qml/CalculationPage.qml:23 qml/HistoryView.qml:13
 #, kde-format
 msgid "History"
 msgstr "ਅਤੀਤ"
+
+#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
+#, kde-format
+msgid "copied"
+msgstr ""
 
 #: qml/HistoryView.qml:18
 #, kde-format
