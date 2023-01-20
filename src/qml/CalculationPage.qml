@@ -161,6 +161,8 @@ Kirigami.Page {
                 Layout.alignment: Qt.AlignTop
                 Layout.preferredHeight: initialPage.screenHeight
 
+                property int flexPointSize: Math.max(Math.min(height / 4, width / 16), Kirigami.Theme.defaultFont.pointSize)
+
                 TextEdit{
                     id: textEdit
                     visible: false
@@ -182,7 +184,7 @@ Kirigami.Page {
                     Controls.Label {
                         id: expressionRow
                         horizontalAlignment: Text.AlignRight
-                        font.pointSize: Math.round(Kirigami.Theme.defaultFont.pointSize * 2.5)
+                        font.pointSize: outputScreen.flexPointSize
                         font.weight: Font.Light
                         text: inputManager.expression
                         color: Kirigami.Theme.disabledTextColor
@@ -224,7 +226,7 @@ Kirigami.Page {
                     Controls.Label {
                         id: result
                         horizontalAlignment: Text.AlignRight
-                        font.pointSize: Math.round(expressionRow.font.pointSize * 1.5)
+                        font.pointSize: Math.round(outputScreen.flexPointSize * 1.5)
                         font.weight: Font.Light
                         text: inputManager.result
                         NumberAnimation on opacity {
