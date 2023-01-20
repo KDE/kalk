@@ -35,6 +35,8 @@ public:
     Q_INVOKABLE void fromHistory(const QString &result);
     void setBinaryMode(bool active);
     bool binaryMode();
+    QString formatNumbers(const QString &text);
+    void addNumberSeparators(QString &number);
 
 Q_SIGNALS:
     void expressionChanged();
@@ -46,10 +48,14 @@ private:
     InputManager();
     bool m_moveFromResult = false; // clear expression on none operator input
     std::vector<int> m_stack; // track subexpression length for removal later
+    QString m_input;
+    QString m_output;
     QString m_expression;
     QString m_result;
     QString m_binaryResult;
     QString m_hexResult;
     bool m_isBinaryMode = false; // Changes the parser based on this variable
+    QString m_groupSeparator;
+    QString m_decimalPoint;
 };
 
