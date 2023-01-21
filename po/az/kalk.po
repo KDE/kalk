@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:59+0000\n"
+"POT-Creation-Date: 2023-01-21 01:00+0000\n"
 "PO-Revision-Date: 2022-06-26 13:31+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr "Binar hesablayıcı"
 msgid "History"
 msgstr "Jurnal"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
+#: qml/CalculationPage.qml:197 qml/CalculationPage.qml:252
 #, kde-format
 msgid "copied"
 msgstr ""

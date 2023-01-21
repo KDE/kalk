@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:59+0000\n"
+"POT-Creation-Date: 2023-01-21 01:00+0000\n"
 "PO-Revision-Date: 2020-08-02 21:58-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -55,7 +55,7 @@ msgstr ""
 msgid "History"
 msgstr ""
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
+#: qml/CalculationPage.qml:197 qml/CalculationPage.qml:252
 #, kde-format
 msgid "copied"
 msgstr ""

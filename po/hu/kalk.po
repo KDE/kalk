@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:59+0000\n"
+"POT-Creation-Date: 2023-01-21 01:00+0000\n"
 "PO-Revision-Date: 2020-12-29 14:55+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -61,7 +61,7 @@ msgstr "Számológép"
 msgid "History"
 msgstr "Előzmények"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
+#: qml/CalculationPage.qml:197 qml/CalculationPage.qml:252
 #, kde-format
 msgid "copied"
 msgstr ""

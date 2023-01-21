@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:59+0000\n"
+"POT-Creation-Date: 2023-01-21 01:00+0000\n"
 "PO-Revision-Date: 2022-02-10 11:32+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -61,7 +61,7 @@ msgstr "बाइनरी गणक"
 msgid "History"
 msgstr "इतिहास"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
+#: qml/CalculationPage.qml:197 qml/CalculationPage.qml:252
 #, kde-format
 msgid "copied"
 msgstr ""

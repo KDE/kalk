@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-18 00:59+0000\n"
+"POT-Creation-Date: 2023-01-21 01:00+0000\n"
 "PO-Revision-Date: 2022-12-15 11:15-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -58,7 +58,7 @@ msgstr "Calculadora binária"
 msgid "History"
 msgstr "Histórico"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
+#: qml/CalculationPage.qml:197 qml/CalculationPage.qml:252
 #, kde-format
 msgid "copied"
 msgstr ""
