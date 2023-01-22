@@ -24,9 +24,6 @@ Item {
     signal longClicked()
 
     property string text
-    property alias fontSize: label.font.pointSize
-    property alias backgroundColor: keyRect.color
-    property alias textColor: label.color
     property string display: text
     property bool special: false
     
@@ -52,57 +49,60 @@ Item {
         intensity: 0.5
         duration: 10
     }
-    
-    Rectangle {
-        id: keyRect
+        
+    Controls.AbstractButton {
+        id: button
         anchors.fill: parent
-        radius: Kirigami.Units.smallSpacing
-        color: button.pressed ? root.buttonPressedColor : 
-                                (hoverHandler.hovered ? root.buttonHoveredColor : root.buttonColor)
-        border.color: button.pressed ? root.buttonBorderPressedColor : 
-                                       (hoverHandler.hovered ? root.buttonBorderHoveredColor : root.buttonBorderColor)
-        
-        Behavior on color { ColorAnimation { duration: 50 } }
-        Behavior on border.color { ColorAnimation { duration: 50 } }
-        
-        Controls.AbstractButton {
-            id: button
-            anchors.fill: parent
-            focusPolicy: Qt.NoFocus
-            
-            onPressedChanged: {
-                if (pressed) {
-                    vibrate.start();
-                }
-            }
+        focusPolicy: Qt.NoFocus
 
-            onClicked: root.clicked(root.text)
-            onPressAndHold: root.longClicked()
-            
-            HoverHandler {
-                id: hoverHandler
-                acceptedDevices: PointerDevice.Mouse | PointerDevice.Stylus
+        background: Rectangle {
+            anchors.fill: parent
+            radius: Kirigami.Units.smallSpacing
+            color: button.pressed ? root.buttonPressedColor :
+            (hoverHandler.hovered ? root.buttonHoveredColor : root.buttonColor)
+            border.color: button.pressed ? root.buttonBorderPressedColor :
+            (hoverHandler.hovered ? root.buttonBorderHoveredColor : root.buttonBorderColor)
+
+            Behavior on color { ColorAnimation { duration: 50 } }
+            Behavior on border.color { ColorAnimation { duration: 50 } }
+        }
+
+        contentItem: Item {
+            anchors.centerIn: parent
+
+            Controls.Label {
+                id: label
+                anchors.centerIn: parent
+                visible: root.display !== "⌫" // not backspace icon
+
+                font.pointSize: Math.max(Math.min(Math.round(parent.height * 0.4), Math.round(parent.width * 0.4)),10)
+                text: root.display
+                opacity: special ? 0.4 : 1.0
+                horizontalAlignment: Text.AlignHCenter
+                color: root.buttonTextColor
+            }
+            Kirigami.Icon {
+                visible: root.display === "⌫" // backspace icon
+                source: "edit-clear"
+                anchors.centerIn: parent
+                opacity: special ? 0.6 : 1.0
+                implicitWidth: Math.round(parent.height * 0.3)
+                implicitHeight: width
             }
         }
-    }
 
-    Controls.Label {
-        id: label
-        anchors.centerIn: keyRect
-        visible: root.display !== "⌫" // not backspace icon
+        onPressedChanged: {
+            if (pressed) {
+                vibrate.start();
+            }
+        }
 
-        font.pointSize: Math.max(Math.min(Math.round(keyRect.height * 0.4), Math.round(keyRect.width * 0.4)),10)
-        text: root.display
-        opacity: special ? 0.4 : 1.0
-        horizontalAlignment: Text.AlignHCenter
-        color: root.buttonTextColor
-    }
-    Kirigami.Icon {
-        visible: root.display === "⌫" // backspace icon
-        source: "edit-clear"
-        anchors.centerIn: keyRect
-        opacity: special ? 0.6 : 1.0
-        implicitWidth: Math.round(keyRect.height * 0.3)
-        implicitHeight: width
+        onClicked: root.clicked(root.text)
+        onPressAndHold: root.longClicked()
+
+        HoverHandler {
+            id: hoverHandler
+            acceptedDevices: PointerDevice.Mouse | PointerDevice.Stylus
+        }
     }
 }
