@@ -30,7 +30,9 @@ Kirigami.ScrollablePage {
         id: listView
         
         currentIndex: -1
-        
+
+        property int flexPointSize: Math.min(Kirigami.Theme.defaultFont.pointSize * 1.5, Math.max(width / 20, 5))
+
         Layout.fillWidth: true
         model: historyManager
         delegate: Kirigami.AbstractListItem {
@@ -40,7 +42,7 @@ Kirigami.ScrollablePage {
                 pageStack.pop()
             }
             Label {
-                font.pointSize: Kirigami.Theme.defaultFont.pointSize * 2
+                font.pointSize: listView.flexPointSize
                 font.weight: Font.Light
                 text: model.display
                 wrapMode: Text.Wrap
