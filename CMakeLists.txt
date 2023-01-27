@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.16)
 
 set(PROJECT_VERSION "23.01")
 project(Kalk VERSION ${PROJECT_VERSION})
