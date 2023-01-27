@@ -3,9 +3,10 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 cmake_minimum_required(VERSION 2.8.12)
-project(Kalk)
 
-set(PROJECT_VERSION "22.11")
+set(PROJECT_VERSION "23.01")
+project(Kalk VERSION ${PROJECT_VERSION})
+
 find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
