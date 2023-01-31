@@ -18,6 +18,10 @@ find_package(FLEX REQUIRED)
 
 set(KF5_MIN_VERSION "5.89.0")
 set(QT_MIN_VERSION "5.15.2")
+if (ANDROID)
+    set(QT_MIN_VERSION "5.15.8")
+endif()
+
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
     message(FATAL_ERROR "This application requires an out of source build. Please
         create a separate build directory.")
@@ -80,6 +84,10 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
         I18n
         CoreAddons
         UnitConversion)
+if (ANDROID)
+    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Svg)
+    find_package(OpenSSL REQUIRED)
+endif()
 add_subdirectory(src)
 
 configure_file(config-kcalc.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kcalc.h )
@@ -90,6 +98,11 @@ if(BUILD_TESTING)
 endif()
 
 ki18n_install(po)
+
+
+if (ANDROID)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
+endif()
 
 install(PROGRAMS org.kde.kalk.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 install(FILES org.kde.kalk.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})

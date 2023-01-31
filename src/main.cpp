@@ -22,6 +22,9 @@
 #include "unitmodel.h"
 #include "version.h"
 
+#ifdef Q_OS_ANDROID
+Q_DECL_EXPORT
+#endif
 int main(int argc, char *argv[])
 {
     // set default style

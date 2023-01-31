@@ -31,9 +31,8 @@ add_executable(kalk ${kalk_SRCS} ${RESOURCES})
 
 add_flex_bison_dependency(MyScanner MyParser)
 
-target_link_libraries(kalk
+target_link_libraries(kalk PRIVATE
     Qt::Core
-    Qt::Widgets
     Qt::Qml
     Qt::QuickControls2
     KF5::UnitConversion
@@ -42,6 +41,29 @@ target_link_libraries(kalk
     KF5::CoreAddons
     kalklib
     knumber)
+
+if(ANDROID)
+    target_link_libraries(kalk PRIVATE
+        KF5::Kirigami2
+        Qt::Svg
+        OpenSSL::SSL
+    )
+
+    kirigami_package_breeze_icons(ICONS
+        org.kde.kalk
+        accessories-calculator
+        edit-clear
+        edit-clear-history
+        format-number-percent
+        gtk-convert
+        help-about
+        shallow-history
+    )
+else()
+    target_link_libraries(kalk PRIVATE Qt::Widgets)
+endif()
+
+
 target_include_directories(kalk PRIVATE ${CMAKE_BINARY_DIR})
 
 target_include_directories(kalklib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mathengine)
