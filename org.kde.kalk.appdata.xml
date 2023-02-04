@@ -143,7 +143,7 @@
     <p xml:lang="zh-CN">Kalk 是 Plasma 的桌面与移动设备通用计算器。</p>
   </description>
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <caption>Calculator Page</caption>
       <caption xml:lang="ar">صفحة الحاسبة</caption>
       <caption xml:lang="az">Hesablama səhifəsi</caption>
