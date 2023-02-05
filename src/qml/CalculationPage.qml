@@ -104,8 +104,6 @@ Kirigami.Page {
         event.accepted = true;
     }
 
-    onHeightChanged: functionDrawer.close()
-
     // Changes the current mode of the backend to non-binary
     onIsCurrentPageChanged: {
         if (inputManager.binaryMode)
@@ -333,7 +331,6 @@ Kirigami.Page {
                         x: initialPage.width // BUG: We can not stop drawer from covering history, when window is in landscape mode, by making its x to edge of initial page instead, as according to QT docs 'It is not possible to set the x-coordinate (or horizontal margins) of a drawer at the left or right window edge'
                         height: inputPad.height
                         width: initialPage.width * 0.8
-                        visible: inPortrait
                         interactive: inPortrait
                         dragMargin: drawerIndicator.width
                         edge: Qt.RightEdge
