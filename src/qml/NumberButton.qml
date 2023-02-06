@@ -32,7 +32,7 @@ Item {
     
     property color baseColor: Kirigami.Theme.highlightColor
     property color buttonColor: "transparent"
-    property color buttonHoveredColor: Kirigami.Settings.isMobile ? Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2) : buttonColor
+    property color buttonHoveredColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
     property color buttonPressedColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.3)
     property color buttonBorderColor: "transparent"
     property color buttonBorderHoveredColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
@@ -54,13 +54,14 @@ Item {
         id: button
         anchors.fill: parent
         focusPolicy: Qt.NoFocus
+
         background: Rectangle {
             anchors.fill: parent
             radius: Kirigami.Units.smallSpacing
             color: button.pressed ? root.buttonPressedColor :
-            (hoverHandler.hovered ? root.buttonHoveredColor : root.buttonColor)
+            (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonHoveredColor : root.buttonColor)
             border.color: button.pressed ? root.buttonBorderPressedColor :
-            (hoverHandler.hovered ? root.buttonBorderHoveredColor : root.buttonBorderColor)
+            (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonBorderHoveredColor : root.buttonBorderColor)
 
             Behavior on color { ColorAnimation { duration: 50 } }
             Behavior on border.color { ColorAnimation { duration: 50 } }
