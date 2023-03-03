@@ -82,7 +82,28 @@ Kirigami.Page {
           case Qt.Key_Equal:
           case Qt.Key_Return:
           case Qt.Key_Enter:
-              inputManager.equal(); break;
+              inputManager.equal();
+              expressionRow.focus = false;
+              break;
+          case Qt.Key_Left:
+              expressionRow.focus = true;
+              const idealPosLeft = inputManager.idealCursorPosition(expressionRow.cursorPosition - 1);
+              if (expressionRow.cursorPosition === idealPosLeft) {
+                  expressionRow.cursorPosition -= 2;
+              } else if (expressionRow.cursorPosition === idealPosLeft - 1) {
+                  expressionRow.cursorPosition -= 3;
+              } else {
+                  expressionRow.cursorPosition -= 1;
+              }
+              break;
+          case Qt.Key_Right:
+              expressionRow.focus = true;
+              if (expressionRow.cursorPosition === inputManager.idealCursorPosition(expressionRow.cursorPosition + 1)) {
+                  expressionRow.cursorPosition += 3;
+              } else {
+                  expressionRow.cursorPosition += 1;
+              }
+              break;
           default:
             switch(event.text) {
               case "⋅":
@@ -161,7 +182,7 @@ Kirigami.Page {
 
                 property int flexPointSize: Math.max(Math.min(height / 4, width / 16), Kirigami.Theme.defaultFont.pointSize)
 
-                TextEdit{
+                TextEdit {
                     id: textEdit
                     visible: false
                 }
@@ -170,30 +191,65 @@ Kirigami.Page {
                 Flickable {
                     anchors.top: parent.top
                     anchors.right: parent.right
-                    anchors.leftMargin: Kirigami.Units.largeSpacing
-                    anchors.rightMargin: Kirigami.Units.largeSpacing
+                    anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+                    anchors.rightMargin: Kirigami.Units.largeSpacing * 2
 
                     height: contentHeight
                     width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, contentWidth)
-                    
+
                     contentHeight: expressionRow.height
                     contentWidth: expressionRow.width
                     flickableDirection: Flickable.HorizontalFlick
-                    Controls.Label {
+
+                    Controls.TextArea {
                         id: expressionRow
-                        horizontalAlignment: Text.AlignRight
+                        activeFocusOnPress: false
                         font.pointSize: outputScreen.flexPointSize
                         font.weight: Font.Light
                         text: inputManager.expression
                         color: Kirigami.Theme.disabledTextColor
+                        background: Rectangle { color: "transparent" }
+                        padding: 0
+                        selectByMouse: false
+                        textFormat: Text.PlainText
 
-                        TapHandler {
-                            onLongPressed: {
-                                textEdit.text = expressionRow.text;
-                                textEdit.selectAll();
-                                textEdit.copy();
-                                showPassiveNotification(i18n("copied"));
+                        property string lastText
+                        onTextChanged: {
+                            if (text !== inputManager.expression) {
+                                const pasteText = text.replace(/,/g, "");
+                                inputManager.clear();
+                                inputManager.append(pasteText);
+                            } else {
+                                cursorPosition = inputManager.cursorPosition;
                             }
+                        }
+                        onCursorPositionChanged: {
+                            if (lastText === text && selectedText === "") {
+                                const pos = inputManager.idealCursorPosition(cursorPosition); // this only calculate the postion, doesn't modify inputManager in anyway
+                                cursorPosition = pos;
+                                inputManager.cursorPosition = pos;
+                            } else {
+                                lastText = text;
+                            }
+                        }
+                        onPressed: {
+                            focus = true;
+                            result.focus = false;
+                            result.deselect();
+                        }
+                        onPressAndHold: {
+                            // use textEdit as a proxy to select
+                            // replace separators with letters so are treated a single words
+                            // replace symbols with spaces
+                            textEdit.text = inputManager.expression.replace(/[,\.\(\)]/g, "n").replace(/[\+\-×÷%\!\^]/g, " ");
+                            textEdit.cursorPosition = cursorPosition;
+                            textEdit.selectWord();
+                            select(textEdit.selectionStart, textEdit.selectionEnd);
+                        }
+
+                        Keys.onPressed: {
+                            event.accepted = false;
+                            initialPage.Keys.pressed(event);
                         }
                     }
                     onContentWidthChanged: {
@@ -201,6 +257,8 @@ Kirigami.Page {
                             // keep flickable at start if coming from result
                             if (inputManager.moveFromResult) {
                                 contentX = 0;
+                            } else if (inputManager.cursorPosition < expressionRow.positionAt(contentX + width, height / 2)) {
+                                // do nothing
                             } else {
                                 contentX = contentWidth - width;
                             }
@@ -212,8 +270,8 @@ Kirigami.Page {
                 Flickable {
                     anchors.bottom: parent.bottom
                     anchors.right: parent.right
-                    anchors.leftMargin: Kirigami.Units.largeSpacing
-                    anchors.rightMargin: Kirigami.Units.largeSpacing
+                    anchors.leftMargin: Kirigami.Units.largeSpacing * 2
+                    anchors.rightMargin: Kirigami.Units.largeSpacing * 2
                     
                     height: contentHeight
                     width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, contentWidth)
@@ -221,12 +279,26 @@ Kirigami.Page {
                     contentHeight: result.height
                     contentWidth: result.width
                     flickableDirection: Flickable.HorizontalFlick
-                    Controls.Label {
+
+                    Controls.TextArea {
                         id: result
-                        horizontalAlignment: Text.AlignRight
+                        activeFocusOnPress: false
                         font.pointSize: Math.round(outputScreen.flexPointSize * 1.5)
                         font.weight: Font.Light
                         text: inputManager.result
+                        background: Rectangle { color: "transparent" }
+                        padding: 0
+                        selectByMouse: false
+                        textFormat: Text.PlainText
+                        readOnly: true
+
+                        onTextChanged: resultFadeInAnimation.start()
+                        onPressed: {
+                            focus = false
+                            expressionRow.focus = false
+                        }
+                        onPressAndHold: selectAll()
+
                         NumberAnimation on opacity {
                             id: resultFadeInAnimation
                             from: 0.5
@@ -239,17 +311,14 @@ Kirigami.Page {
                             to: 0
                             duration: Kirigami.Units.shortDuration
                         }
+                    }
+                }
 
-                        onTextChanged: resultFadeInAnimation.start()
-
-                        TapHandler {
-                            onLongPressed: {
-                                textEdit.text = result.text;
-                                textEdit.selectAll();
-                                textEdit.copy();
-                                showPassiveNotification(i18n("copied"));
-                            }
-                        }
+                TapHandler {
+                    onTapped: {
+                        expressionRow.focus = false
+                        result.focus = false
+                        result.deselect()
                     }
                 }
             }
@@ -284,6 +353,7 @@ Kirigami.Page {
                                 inputManager.backspace();
                             } else if (text == "=") {
                                 inputManager.equal();
+                                expressionRow.focus = false;
                                 resultFadeOutAnimation.start();
                             } else {
                                 inputManager.append(text);
@@ -376,5 +446,4 @@ Kirigami.Page {
             }
         }
     }
-
 }

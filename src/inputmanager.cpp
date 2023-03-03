@@ -55,39 +55,117 @@ bool InputManager::moveFromResult() const
     return m_moveFromResult;
 }
 
+int InputManager::getCursorPosition() const
+{
+    int position = m_inputPosition;
+
+    // account for group separators in expression
+    int i = 0;
+    while (i < position && i < m_expression.size()) {
+        if (m_expression.at(i) == m_groupSeparator) {
+            position++;
+        }
+        i++;
+    }
+    return position;
+}
+
+void InputManager::setCursorPosition(int position)
+{
+    m_inputPosition = position;
+
+    int i = 0;
+    while (i < position && i < m_expression.size()) {
+        if (m_expression.at(i) == m_groupSeparator) {
+            m_inputPosition--;
+        }
+        i++;
+    }
+}
+
+int InputManager::idealCursorPosition(int position) const
+{
+    // position cursor ahead of group separator
+    if (position > 1 && position < m_expression.size()) {
+        if (m_expression.at(position - 1) == m_groupSeparator) {
+            position++;
+            return position;
+        }
+    }
+
+    // position cursor around functions not between
+    QRegularExpression re(QStringLiteral(R"([^\d\+−×÷\!,\^\(\) ]{2,})"));
+    QRegularExpressionMatch match = re.match(m_expression.mid(position - 1, 2));
+    if (match.hasMatch()) {
+        if (position == m_expression.size()) {
+            // at end, do nothing
+        } else if (m_expression.at(position - 1) == m_expression.at(position)) {
+            // same char, do nothing
+        } else {
+            // check nearest left
+            int posLeft = position - 1;
+            while (posLeft > 0) {
+                if (m_expression.at(posLeft).isDigit()) {
+                    break;
+                }
+                posLeft--;
+            }
+
+            // check nearest right
+            int posRight = position + 1;
+            while (posRight < m_expression.size()) {
+                if (m_expression.at(posRight).isDigit()) {
+                    break;
+                }
+                posRight++;
+            }
+
+            // prefer the closest side
+            if (position - posLeft < posRight - position) {
+                position -= position - posLeft - 1;
+            } else {
+                position += posRight - position;
+            }
+
+            return position;
+        }
+    }
+
+    return position;
+}
+
 void InputManager::append(const QString &subexpression)
 {
     // if expression was from result and input is numeric, clear expression
-    if(m_moveFromResult && subexpression.size() == 1)
-    {
+    if (m_moveFromResult && subexpression.size() == 1 && m_inputPosition == m_input.size()) {
         if(subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.'))
         {
             m_input.clear();
-            if (m_stack.size()) {
-                m_stack.pop_back();
-            }
         }
     }
     m_moveFromResult = false;
 
+    QString temp = m_input;
+    temp.insert(m_inputPosition, subexpression);
+
     // Call the corresponding parser based on the type of expression.
     MathEngine * engineInstance = MathEngine::inst();
     if (m_isBinaryMode) {
-        engineInstance->parseBinaryExpression(m_input + subexpression);
+        engineInstance->parseBinaryExpression(temp);
     } else {
-        engineInstance->parse(m_input + subexpression);
+        engineInstance->parse(temp);
     }
 
-    if(!MathEngine::inst()->error())
-    {
-        m_stack.push_back(subexpression.size());
+    if (!MathEngine::inst()->error()) {
         KNumber result = MathEngine::inst()->result();
         m_output = result.toQString();
         m_binaryResult = result.toBinaryString(0);
         m_hexResult = result.toHexString(0);
-        m_input += subexpression;
+        m_input = temp;
+        m_inputPosition += subexpression.size();
         m_expression = formatNumbers(m_input);
         m_result = formatNumbers(m_output);
+
         Q_EMIT resultChanged();
         Q_EMIT binaryResultChanged();
         Q_EMIT hexResultChanged();
@@ -97,11 +175,33 @@ void InputManager::append(const QString &subexpression)
 
 void InputManager::backspace()
 {
-    if(!m_stack.empty())
-    {
-        m_input.chop(m_stack.back());
-        m_stack.pop_back();
+    if (m_inputPosition > 0) {
+        // delete entire function
+        QRegularExpression re(QStringLiteral(R"([^\d\+−×÷\!,\^ ]{2,})"));
+        QRegularExpressionMatch match = re.match(m_expression.mid(m_inputPosition - 2, 2));
+        if (match.hasMatch()) {
+            // check backwards
+            int posBack = m_inputPosition - 2;
+            while (posBack >= 0) {
+                if (m_expression.at(posBack).isDigit() || m_expression.at(posBack) == QStringLiteral("(")) {
+                    break;
+                } else if (posBack > 0 && m_expression.at(posBack - 1) == m_expression.at(posBack)) {
+                    posBack--;
+                    break;
+                }
+                posBack--;
+            }
+
+            const int diff = m_inputPosition - posBack;
+            m_input.remove(m_inputPosition - diff + 1, diff - 1);
+            m_inputPosition = m_inputPosition - diff + 1;
+        } else {
+            m_input.remove(m_inputPosition - 1, 1);
+            m_inputPosition--;
+        }
+
         m_expression = formatNumbers(m_input);
+
         Q_EMIT expressionChanged();
 
         if (m_input.length() == 0) {
@@ -141,10 +241,9 @@ void InputManager::equal()
     m_result.clear();
     m_binaryResult.clear();
     m_hexResult.clear();
-    m_stack.clear();
-    m_stack.push_back(m_input.size());
 
     m_moveFromResult = true;
+    m_inputPosition = m_input.size();
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
     Q_EMIT binaryResultChanged();
@@ -159,7 +258,8 @@ void InputManager::clear()
     m_result.clear();
     m_binaryResult.clear();
     m_hexResult.clear();
-    m_stack.clear();
+
+    m_inputPosition = 0;
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
     Q_EMIT binaryResultChanged();
@@ -175,10 +275,9 @@ void InputManager::fromHistory(const QString &result)
     m_result.clear();
     m_binaryResult.clear();
     m_hexResult.clear();
-    m_stack.clear();
-    m_stack.push_back(m_input.size());
 
     m_moveFromResult = true;
+    m_inputPosition = m_input.size();
     Q_EMIT expressionChanged();
     Q_EMIT resultChanged();
     Q_EMIT binaryResultChanged();
@@ -215,6 +314,9 @@ QString InputManager::formatNumbers(const QString &text)
         addNumberSeparators(number);
         formatted.append(number);
     }
+
+    formatted.replace(QStringLiteral("log10"), QStringLiteral("log₁₀"));
+    formatted.replace(QStringLiteral("log2"), QStringLiteral("log₂"));
 
     return formatted;
 }

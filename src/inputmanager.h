@@ -7,7 +7,6 @@
 
 #pragma once
 
-#include <stack>
 #include <QObject>
 
 class InputManager : public QObject
@@ -18,6 +17,7 @@ class InputManager : public QObject
     Q_PROPERTY(QString binaryResult READ binaryResult NOTIFY binaryResultChanged)
     Q_PROPERTY(QString hexResult READ hexResult NOTIFY hexResultChanged)
     Q_PROPERTY(bool moveFromResult READ moveFromResult NOTIFY resultChanged)
+    Q_PROPERTY(int cursorPosition READ getCursorPosition WRITE setCursorPosition NOTIFY cursorPositionChanged)
     Q_PROPERTY(bool binaryMode READ binaryMode WRITE setBinaryMode)
 
 public:
@@ -28,6 +28,9 @@ public:
     const QString &binaryResult() const;
     const QString &hexResult() const;
     bool moveFromResult() const;
+    int getCursorPosition() const;
+    void setCursorPosition(int position);
+    Q_INVOKABLE int idealCursorPosition(int position) const;
     Q_INVOKABLE void append(const QString &subexpression);
     Q_INVOKABLE void backspace();
     Q_INVOKABLE void equal();
@@ -43,11 +46,12 @@ Q_SIGNALS:
     void resultChanged();
     void binaryResultChanged();
     void hexResultChanged();
+    void cursorPositionChanged();
 
 private:
     InputManager();
     bool m_moveFromResult = false; // clear expression on none operator input
-    std::vector<int> m_stack; // track subexpression length for removal later
+    int m_inputPosition;
     QString m_input;
     QString m_output;
     QString m_expression;
@@ -58,4 +62,3 @@ private:
     QString m_groupSeparator;
     QString m_decimalPoint;
 };
-
