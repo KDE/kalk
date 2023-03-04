@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-04 00:49+0000\n"
 "PO-Revision-Date: 2021-01-20 21:43-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -60,11 +60,6 @@ msgstr "ਕੈਲਕੂਲੇਟਰ"
 #, kde-format
 msgid "History"
 msgstr "ਅਤੀਤ"
-
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
-#, kde-format
-msgid "copied"
-msgstr ""
 
 #: qml/HistoryView.qml:18
 #, kde-format

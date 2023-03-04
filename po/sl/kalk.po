@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-04 00:49+0000\n"
 "PO-Revision-Date: 2023-01-19 09:13+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -59,11 +59,6 @@ msgstr "Binarni kalkulator"
 msgid "History"
 msgstr "Zgodovina"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
-#, kde-format
-msgid "copied"
-msgstr "kopirano"
-
 #: qml/HistoryView.qml:18
 #, kde-format
 msgid "History is empty"
@@ -88,6 +83,9 @@ msgstr "Pretvorba"
 #, kde-format
 msgid "Swap"
 msgstr "Premenjaj"
+
+#~ msgid "copied"
+#~ msgstr "kopirano"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Kalkulator izdelan s Kirigamijem."

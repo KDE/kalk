@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-04 00:49+0000\n"
 "PO-Revision-Date: 2023-02-12 09:42+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -59,11 +59,6 @@ msgstr "Kalkulator dwójkowy"
 msgid "History"
 msgstr "Historia"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
-#, kde-format
-msgid "copied"
-msgstr "skopiowano"
-
 #: qml/HistoryView.qml:18
 #, kde-format
 msgid "History is empty"
@@ -88,6 +83,9 @@ msgstr "Przekształcenie"
 #, kde-format
 msgid "Swap"
 msgstr "Zamień"
+
+#~ msgid "copied"
+#~ msgstr "skopiowano"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Kalkulator zbudowany w Kirigami."

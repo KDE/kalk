@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-04 00:49+0000\n"
 "PO-Revision-Date: 2023-01-19 07:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -59,11 +59,6 @@ msgstr "ბინარული კალკულატორი"
 msgid "History"
 msgstr "ისტორია"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
-#, kde-format
-msgid "copied"
-msgstr "კოპირებულია"
-
 #: qml/HistoryView.qml:18
 #, kde-format
 msgid "History is empty"
@@ -88,3 +83,6 @@ msgstr "გადაყვანა"
 #, kde-format
 msgid "Swap"
 msgstr "სვაპი"
+
+#~ msgid "copied"
+#~ msgstr "კოპირებულია"

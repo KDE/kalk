@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-04 00:49+0000\n"
 "PO-Revision-Date: 2023-01-20 18:57+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -56,11 +56,6 @@ msgstr "Calculatrice basique"
 msgid "History"
 msgstr "Historique"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
-#, kde-format
-msgid "copied"
-msgstr "copié"
-
 #: qml/HistoryView.qml:18
 #, kde-format
 msgid "History is empty"
@@ -85,6 +80,9 @@ msgstr "Conversion"
 #, kde-format
 msgid "Swap"
 msgstr "Échange"
+
+#~ msgid "copied"
+#~ msgstr "copié"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Une calculatrice créée avec Kirigami."

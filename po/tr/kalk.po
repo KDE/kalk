@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-04 00:49+0000\n"
 "PO-Revision-Date: 2023-01-18 20:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -58,11 +58,6 @@ msgstr "İkili Hesap Makinesi"
 msgid "History"
 msgstr "Geçmiş"
 
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
-#, kde-format
-msgid "copied"
-msgstr "kopyalandı"
-
 #: qml/HistoryView.qml:18
 #, kde-format
 msgid "History is empty"
@@ -87,3 +82,6 @@ msgstr "Dönüşüm"
 #, kde-format
 msgid "Swap"
 msgstr "Değiştir"
+
+#~ msgid "copied"
+#~ msgstr "kopyalandı"
