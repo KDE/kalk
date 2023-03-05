@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-06 01:03+0000\n"
+"POT-Creation-Date: 2023-03-04 00:49+0000\n"
 "PO-Revision-Date: 2023-02-09 21:44+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -60,11 +60,6 @@ msgstr "Binærkalkulator"
 #, kde-format
 msgid "History"
 msgstr "Logg"
-
-#: qml/CalculationPage.qml:195 qml/CalculationPage.qml:250
-#, kde-format
-msgid "copied"
-msgstr "kopiert"
 
 #: qml/HistoryView.qml:18
 #, kde-format
