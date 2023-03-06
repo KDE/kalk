@@ -178,14 +178,14 @@ void InputManager::backspace()
     if (m_inputPosition > 0) {
         // delete entire function
         QRegularExpression re(QStringLiteral(R"([^\d\+−×÷\!,\^ ]{2,})"));
-        QRegularExpressionMatch match = re.match(m_expression.mid(m_inputPosition - 2, 2));
+        QRegularExpressionMatch match = re.match(m_input.mid(m_inputPosition - 2, 2));
         if (match.hasMatch()) {
             // check backwards
             int posBack = m_inputPosition - 2;
             while (posBack >= 0) {
-                if (m_expression.at(posBack).isDigit() || m_expression.at(posBack) == QStringLiteral("(")) {
+                if (m_input.at(posBack).isDigit() || m_input.at(posBack) == QStringLiteral("(")) {
                     break;
-                } else if (posBack > 0 && m_expression.at(posBack - 1) == m_expression.at(posBack)) {
+                } else if (posBack > 0 && m_input.at(posBack - 1) == m_input.at(posBack)) {
                     posBack--;
                     break;
                 }
