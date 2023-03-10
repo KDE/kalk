@@ -82,6 +82,3 @@ msgstr "Převod"
 #, kde-format
 msgid "Swap"
 msgstr "Odkládací prostor"
-
-#~ msgid "copied"
-#~ msgstr "zkopírováno"
