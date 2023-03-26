@@ -3,7 +3,6 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-#include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QIcon>
@@ -11,6 +10,12 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
+
+#ifdef Q_OS_ANDROID
+#include <QGuiApplication>
+#else
+#include <QApplication>
+#endif
 
 #include <KAboutData>
 #include <KLocalizedContext>
@@ -27,7 +32,16 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char *argv[])
 {
-    // set default style
+    QCommandLineParser parser;
+
+    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#ifdef Q_OS_ANDROID
+    QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
+#else
+    QApplication app(argc, argv);
+    // set default style and icon theme
+    QIcon::setFallbackThemeName(QStringLiteral("breeze"));
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
     }
@@ -35,12 +49,7 @@ int main(int argc, char *argv[])
     if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORMTHEME")) {
         qputenv("QT_QPA_PLATFORMTHEME", "kde");
     }
-
-    QCommandLineParser parser;
-
-    QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QApplication app(argc, argv);
-
+#endif
     QQmlApplicationEngine engine;
     KLocalizedString::setApplicationDomain("kalk");
     parser.addVersionOption();
