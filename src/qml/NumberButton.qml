@@ -75,9 +75,10 @@ Item {
                 anchors.centerIn: parent
                 visible: root.display !== "⌫" // not backspace icon
 
-                font.pointSize: Math.max(Math.min(Math.round(parent.height * 0.4), Math.round(parent.width * 0.4)),10)
+                font.pointSize: Math.max(Math.min(Math.round(parent.height * 0.3), Math.round(parent.width * 0.3)),10)
+                font.weight: Font.DemiBold
                 text: root.display
-                opacity: special ? 0.4 : 1.0
+                opacity: special ? 0.4 : 0.9
                 horizontalAlignment: Text.AlignHCenter
                 color: root.buttonTextColor
             }
