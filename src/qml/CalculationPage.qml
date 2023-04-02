@@ -18,12 +18,17 @@ Kirigami.Page {
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
-    
+
     actions.main: Kirigami.Action {
         text: i18n("History")
         iconName: "shallow-history"
         onTriggered: {
-            applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
+            if (applicationWindow().pageStack.depth > 1) {
+                applicationWindow().pageStack.pop();
+            }
+            else {
+                applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
+            };
             functionDrawer.close();
         }
     }
@@ -265,17 +270,17 @@ Kirigami.Page {
                         }
                     }
                 }
-                
+
                 // answer row
                 Flickable {
                     anchors.bottom: parent.bottom
                     anchors.right: parent.right
                     anchors.leftMargin: Kirigami.Units.largeSpacing * 2
                     anchors.rightMargin: Kirigami.Units.largeSpacing * 2
-                    
+
                     height: contentHeight
                     width: Math.min(parent.width - Kirigami.Units.largeSpacing * 2, contentWidth)
-                    
+
                     contentHeight: result.height
                     contentWidth: result.width
                     flickableDirection: Flickable.HorizontalFlick
@@ -327,7 +332,7 @@ Kirigami.Page {
             RowLayout {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-            
+
                 onWidthChanged: {
                     if (!functionDrawer.opened && inPortrait)
                         drawerIndicator.x = this.width - drawerIndicator.width + drawerIndicator.radius;
