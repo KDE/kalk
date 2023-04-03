@@ -139,7 +139,7 @@ Kirigami.Page {
     background: Rectangle {
         opacity: mainOpacity
 
-        Kirigami.Theme.colorSet: Kirigami.Theme.View
+        Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent

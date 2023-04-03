@@ -31,11 +31,11 @@ Item {
     Kirigami.Theme.inherit: false
     
     property color baseColor: Kirigami.Theme.highlightColor
-    property color buttonColor: "transparent"
-    property color buttonHoveredColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
+    property color buttonColor: Kirigami.Theme.backgroundColor
+    property color buttonHoveredColor: Kirigami.Theme.alternateBackgroundColor
     property color buttonPressedColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.3)
-    property color buttonBorderColor: "transparent"
-    property color buttonBorderHoveredColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.2)
+    property color buttonBorderColor: Qt.rgba(buttonTextColor.r, buttonTextColor.g, buttonTextColor.b, 0.2)
+    property color buttonBorderHoveredColor: buttonBorderColor
     property color buttonBorderPressedColor: Qt.rgba(baseColor.r, baseColor.g, baseColor.b, 0.7)
     property color buttonTextColor: Kirigami.Theme.textColor
 
@@ -49,22 +49,40 @@ Item {
         intensity: 0.5
         duration: 10
     }
-        
+
     Controls.AbstractButton {
         id: button
         anchors.fill: parent
         focusPolicy: Qt.NoFocus
 
         background: Rectangle {
-            anchors.fill: parent
             radius: Kirigami.Units.smallSpacing
-            color: button.pressed ? root.buttonPressedColor :
-            (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonHoveredColor : root.buttonColor)
-            border.color: button.pressed ? root.buttonBorderPressedColor :
-            (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonBorderHoveredColor : root.buttonBorderColor)
+            color: Kirigami.Theme.backgroundColor
 
-            Behavior on color { ColorAnimation { duration: 50 } }
-            Behavior on border.color { ColorAnimation { duration: 50 } }
+            // actual background fill
+            Rectangle {
+                anchors.fill: parent
+                radius: Kirigami.Units.smallSpacing
+                color: button.pressed ? root.buttonPressedColor :
+                (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonHoveredColor : root.buttonColor)
+                border.color: button.pressed ? root.buttonBorderPressedColor :
+                    (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonBorderHoveredColor : root.buttonBorderColor)
+
+                Behavior on color { ColorAnimation { duration: 50 } }
+                Behavior on border.color { ColorAnimation { duration: 50 } }
+            }
+
+            // small box shadow
+            Rectangle {
+                anchors.top: parent.top
+                anchors.topMargin: 1
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: parent.height
+                z: -1
+                color: Qt.rgba(0, 0, 0, 0.05)
+                radius: Kirigami.Units.smallSpacing
+            }
         }
 
         contentItem: Item {
@@ -75,7 +93,7 @@ Item {
                 anchors.centerIn: parent
                 visible: root.display !== "⌫" // not backspace icon
 
-                font.pointSize: Math.max(Math.min(Math.round(parent.height * 0.3), Math.round(parent.width * 0.3)),10)
+                font.pointSize: Math.max(Math.min(Math.round(parent.height * 0.27), Math.round(parent.width * 0.27)), 10)
                 font.weight: Font.DemiBold
                 text: root.display
                 opacity: special ? 0.4 : 0.9
