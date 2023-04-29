@@ -129,7 +129,7 @@ knumber_base *knumber_float::clone() {
 }
 
 mpfr_ptr knumber_float::new_mpfr() {
-    mpfr_init2(mpfr_, precision);
+    mpfr_init(mpfr_);
     return mpfr_;
 }
 
