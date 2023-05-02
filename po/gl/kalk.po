@@ -1,0 +1,84 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kalk package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-27 00:52+0000\n"
+"PO-Revision-Date: 2023-05-01 10:41+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language: gl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Adrian Chaves (Gallaecio)"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "adrian@chaves.io"
+
+#: main.cpp:63 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:111
+#: qml/main.qml:114 qml/main.qml:120
+#, kde-format
+msgid "Calculator"
+msgstr "Calculadora"
+
+#: main.cpp:65
+#, kde-format
+msgid "Calculator for Plasma"
+msgstr "Calculadora para Plasma"
+
+#: main.cpp:67
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 Comunidade KDE"
+
+#: qml/AboutPage.qml:19 qml/main.qml:91 qml/main.qml:180
+#, kde-format
+msgid "About"
+msgstr "Sobre"
+
+#: qml/BinaryCalculator.qml:14 qml/main.qml:84 qml/main.qml:156
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Calculadora binaria"
+
+#: qml/CalculationPage.qml:23 qml/HistoryView.qml:13
+#, kde-format
+msgid "History"
+msgstr "Historial"
+
+#: qml/HistoryView.qml:18
+#, kde-format
+msgid "History is empty"
+msgstr "O historial está baleiro"
+
+#: qml/HistoryView.qml:24
+#, kde-format
+msgid "Clear history"
+msgstr "Borrar o historial"
+
+#: qml/main.qml:77 qml/main.qml:138
+#, kde-format
+msgid "Converter"
+msgstr "Convertedor"
+
+#: qml/UnitConverter.qml:15
+#, kde-format
+msgid "Conversion"
+msgstr "Conversión"
+
+#: qml/UnitConverter.qml:145
+#, kde-format
+msgid "Swap"
+msgstr "Intercambiar"
