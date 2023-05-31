@@ -17,6 +17,11 @@ InputManager::InputManager()
 
     QLocale locale;
     m_groupSeparator = locale.groupSeparator();
+
+    // change non breaking space into classic space, because UI converts it to classic space
+    if (m_groupSeparator == QString(QChar(160))) {
+        m_groupSeparator = QLatin1Char(32);
+    }
     m_decimalPoint = locale.decimalPoint();
 }
 
@@ -147,6 +152,7 @@ void InputManager::append(const QString &subexpression)
 
     QString temp = m_input;
     temp.insert(m_inputPosition, subexpression);
+    temp.remove(m_groupSeparator);
 
     // Call the corresponding parser based on the type of expression.
     MathEngine * engineInstance = MathEngine::inst();
