@@ -83,6 +83,6 @@ int main(int argc, char *argv[])
 
     // required for X11
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kalk")));
-
+    KNumber::setDefaultFloatPrecision(1000);
     return app.exec();
 }
