@@ -35,16 +35,16 @@ target_link_libraries(kalk PRIVATE
     Qt::Core
     Qt::Qml
     Qt::QuickControls2
-    KF5::UnitConversion
-    KF5::ConfigCore
-    KF5::I18n
-    KF5::CoreAddons
+    KF${QT_MAJOR_VERSION}::UnitConversion
+    KF${QT_MAJOR_VERSION}::ConfigCore
+    KF${QT_MAJOR_VERSION}::I18n
+    KF${QT_MAJOR_VERSION}::CoreAddons
     kalklib
     knumber)
 
 if(ANDROID)
     target_link_libraries(kalk PRIVATE
-        KF5::Kirigami2
+        KF${QT_MAJOR_VERSION}::Kirigami2
         Qt::Svg
         OpenSSL::SSL
     )
