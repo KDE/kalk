@@ -16,7 +16,7 @@ find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
 
-set(KF5_MIN_VERSION "5.89.0")
+set(KF_MIN_VERSION "5.89.0")
 set(QT_MIN_VERSION "5.15.2")
 if (ANDROID)
     set(QT_MIN_VERSION "5.15.8")
@@ -32,7 +32,7 @@ include(FeatureSummary)
 # only enable QML debugging on debug builds
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DQT_QML_DEBUG ")
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake/modules)
 
 find_package(GMP)
@@ -78,7 +78,7 @@ ecm_setup_version(${PROJECT_VERSION}
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Widgets)
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS QuickCompiler)
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
+find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
         Config
         Kirigami2
         I18n
