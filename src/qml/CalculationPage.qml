@@ -7,8 +7,6 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15 as Controls
-import QtGraphicalEffects 1.15
-
 import org.kde.kirigami 2.15 as Kirigami
 
 Kirigami.Page {
@@ -19,19 +17,21 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
 
-    actions.main: Kirigami.Action {
-        text: i18n("History")
-        iconName: "shallow-history"
-        onTriggered: {
-            if (applicationWindow().pageStack.depth > 1) {
-                applicationWindow().pageStack.pop();
+    actions: [
+        Kirigami.Action {
+            text: i18n("History")
+            icon.name: "shallow-history"
+            onTriggered: {
+                if (applicationWindow().pageStack.depth > 1) {
+                    applicationWindow().pageStack.pop();
+                }
+                else {
+                    applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
+                };
+                functionDrawer.close();
             }
-            else {
-                applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
-            };
-            functionDrawer.close();
         }
-    }
+    ]
 
     property int yTranslate: 0
     property real mainOpacity: 1
@@ -151,13 +151,11 @@ Kirigami.Page {
         transform: Translate { y: yTranslate }
 
         // top panel drop shadow
-        RectangularGlow {
+        Kirigami.ShadowedRectangle {
             opacity: mainOpacity
-
+            shadow.size: 4
             anchors.fill: topPanelBackground
             anchors.topMargin: 1
-            glowRadius: 4
-            spread: 0.2
             color: dropShadowColor
         }
 
@@ -368,12 +366,11 @@ Kirigami.Page {
                     }
 
                     // fast drop shadow
-                    RectangularGlow {
+                    Kirigami.ShadowedRectangle {
                         visible: inPortrait
                         anchors.rightMargin: 1
                         anchors.fill: drawerIndicator
-                        glowRadius: 4
-                        spread: 0.2
+                        shadow.size: 4
                         color: initialPage.dropShadowColor
                     }
 

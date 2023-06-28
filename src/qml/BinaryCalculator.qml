@@ -6,7 +6,6 @@
 import QtQuick 2.7
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.1 as Controls
-import QtGraphicalEffects 1.12
 import org.kde.kirigami 2.13 as Kirigami
 
 Kirigami.Page {
@@ -84,11 +83,10 @@ Kirigami.Page {
             Layout.preferredHeight: initialPage.screenHeight            
             
             // top panel drop shadow
-            RectangularGlow {
+            Kirigami.ShadowedRectangle {
                 anchors.fill: topPanelBackground
                 anchors.topMargin: 1
-                glowRadius: 4
-                spread: 0.2
+                shadow.size: 4
                 color: dropShadowColor
             }
             Rectangle {

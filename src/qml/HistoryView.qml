@@ -18,13 +18,14 @@ Kirigami.ScrollablePage {
         text: i18n("History is empty")
         visible: listView.count == 0
     }
-    actions {
-        main: Kirigami.Action {
-            iconName: "edit-clear-history"
+    actions: [
+        Kirigami.Action {
+            icon.name: "edit-clear-history"
             text: i18n("Clear history")
             onTriggered: historyManager.clearHistory();
         }
-    }
+    ]
+
 
     ListView {
         id: listView

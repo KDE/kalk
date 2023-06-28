@@ -8,7 +8,6 @@ import QtQuick 2.7
 import QtQuick.Layouts 1.1
 import QtQuick.Controls 2.15 as Controls
 import org.kde.kirigami 2.13 as Kirigami
-import QtGraphicalEffects 1.12
 
 Kirigami.Page {
     id: unitConverter
@@ -77,12 +76,11 @@ Kirigami.Page {
         transform: Translate { y: yTranslate }
         
         // top panel drop shadow
-        RectangularGlow {
+        Kirigami.ShadowedRectangle {
             anchors.fill: topPanelBackground
             anchors.topMargin: 1
             z: -2
-            glowRadius: 4
-            spread: 0.2
+            shadow.size: 4
             color: dropShadowColor
         }
         
