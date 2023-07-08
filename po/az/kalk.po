@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# Kheyyam <xxmn77@gmail.com>, 2022.
+# Kheyyam <xxmn77@gmail.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:52+0000\n"
-"PO-Revision-Date: 2022-06-26 13:31+0400\n"
+"PO-Revision-Date: 2023-06-30 13:42+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -34,16 +34,14 @@ msgid "Calculator"
 msgstr "Hesablayıcı"
 
 #: main.cpp:65
-#, fuzzy, kde-format
-#| msgid "Calculator in Kirigami"
+#, kde-format
 msgid "Calculator for Plasma"
-msgstr "Hesablayıcı Kirigami-də"
+msgstr "Plasma üçün hesablayıcı"
 
 #: main.cpp:67
-#, fuzzy, kde-format
-#| msgid "© 2020-2021 KDE Community"
+#, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020-2021 KDE Cəmiyyəti"
+msgstr "© 2020-2022 KDE Cəmiyyəti"
 
 #: qml/AboutPage.qml:19 qml/main.qml:91 qml/main.qml:180
 #, kde-format
@@ -71,8 +69,7 @@ msgid "Clear history"
 msgstr "Jurnalı təmizləyin"
 
 #: qml/main.qml:77 qml/main.qml:138
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
 msgstr "Çevirici"
 
