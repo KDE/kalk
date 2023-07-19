@@ -85,6 +85,3 @@ msgstr "Conversió"
 #, kde-format
 msgid "Swap"
 msgstr "Intercanvia"
-
-#~ msgid "copied"
-#~ msgstr "s'ha copiat"
