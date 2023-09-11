@@ -92,7 +92,6 @@ Kirigami.ApplicationWindow {
                 iconName: "help-about"
                 page: "qrc:/qml/AboutPage.qml"
                 pagePool: mainPagePool
-                onTriggered: pageAnimation(pageItem())
             }
         ]
         

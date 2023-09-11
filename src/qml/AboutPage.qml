@@ -5,17 +5,12 @@
  */
 import QtQuick 2.0
 import org.kde.kirigami 2.13 as Kirigami
+import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
 import org.kde.kalk 1.0
 
-Kirigami.AboutPage {
+FormCard.AboutPage {
     id: aboutPage
-    
-    property real mainOpacity: 1
-    property int yTranslate: 0
-    opacity: mainOpacity
-    
-    visible: false
-    title: i18n("About")
+
     aboutData: About
 }
