@@ -12,18 +12,16 @@ import QtGraphicalEffects 1.12
 
 Kirigami.Page {
     id: unitConverter
-    title: i18n("Conversion")
-    topPadding: Kirigami.Units.largeSpacing
-    leftPadding: Kirigami.Units.largeSpacing
-    rightPadding: Kirigami.Units.largeSpacing
-    bottomPadding: Kirigami.Units.largeSpacing
+    topPadding: 0
+    leftPadding: 0
+    rightPadding: 0
+    bottomPadding: 0
     
     property int yTranslate: 0
     property real mainOpacity: 1
-    
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
-    property int keypadHeight: unitConverter.height * 3 / 7
-    property int screenHeight: unitConverter.height - unitConverter.keypadHeight
+    property int screenHeight: unitConverter.height * 0.5
+    property int flexPointSize: Math.max(Math.min(screenHeight / 14, width / 24), Kirigami.Theme.defaultFont.pointSize - 3)
     
     Keys.onPressed: {
         switch(event.key) {
@@ -59,6 +57,14 @@ Kirigami.Page {
         }
         event.accepted = true;
     }
+
+    actions {
+        main: Kirigami.Action {
+            iconName: "category"
+            text: i18n("Category")
+            onTriggered: categories.open();
+        }
+    }
     
     Component {
         id: delegateComponent
@@ -67,7 +73,7 @@ Kirigami.Page {
             opacity: 0.4 + Math.max(0, 1 - Math.abs(Controls.Tumbler.displacement)) * 0.6
             horizontalAlignment: Text.AlignHCenter
             font.bold: Controls.Tumbler.displacement == 0
-            font.pointSize: unitConverter.screenHeight * 0.04
+            font.pointSize: flexPointSize
         }
     }
     
@@ -93,8 +99,7 @@ Kirigami.Page {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
-            implicitHeight: topPanel.height + Kirigami.Units.largeSpacing * 2
-            anchors.margins: -Kirigami.Units.largeSpacing
+            implicitHeight: topPanel.height
         }
         
         ColumnLayout {
@@ -104,33 +109,17 @@ Kirigami.Page {
             ColumnLayout {
                 id: topPanel
                 Layout.fillWidth: true
-                Layout.preferredHeight: unitConverter.screenHeight
-                Layout.maximumWidth: unitConverter.width
-                
-                Controls.ComboBox {
-                    id: categoryTumbler
-                    
-                    Layout.fillWidth: true
-                    Layout.maximumWidth: unitConverter.width
-                    
-                    model: unitModel
-                    currentIndex: unitModel.currentIndex
-                    onCurrentIndexChanged: {
-                        unitModel.currentIndex = currentIndex;
-                    }
-                }
-                
+
                 RowLayout {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    Layout.maximumWidth: unitConverter.width
-                    Layout.maximumHeight: unitConverter.screenHeight * 3 / 5
                     
                     Controls.Tumbler {
                         id: fromTumbler
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.maximumHeight: unitConverter.screenHeight * 0.3
+                        Layout.maximumHeight: unitConverter.screenHeight * 0.5
+                        wrap: false
                         
                         model: unitModel.typeList
                         currentIndex: unitModel.fromUnitIndex
@@ -141,12 +130,9 @@ Kirigami.Page {
                     }
                     
                     Controls.ToolButton {
-                        Layout.alignment: Qt.AlignHCenter
-                        text: i18n("Swap")
                         icon.name: "gtk-convert"
-                        icon.height: unitConverter.screenHeight * 0.1
-                        icon.width: unitConverter.screenHeight * 0.1
-                        display: Controls.AbstractButton.IconOnly
+                        icon.height: unitConverter.screenHeight * 0.15
+                        icon.width: unitConverter.screenHeight * 0.15
                         onClicked: {
                             let tmp = fromTumbler.currentIndex;
                             fromTumbler.currentIndex = toTumbler.currentIndex;
@@ -158,7 +144,8 @@ Kirigami.Page {
                         id: toTumbler
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        Layout.maximumHeight: unitConverter.screenHeight * 0.3
+                        Layout.maximumHeight: unitConverter.screenHeight * 0.5
+                        wrap: false
                         
                         model: unitModel.typeList
                         currentIndex: unitModel.toUnitIndex
@@ -170,64 +157,57 @@ Kirigami.Page {
                 }
                 
                 Kirigami.Separator {
-                    Layout.topMargin: Kirigami.Units.smallSpacing
                     Layout.fillWidth: true
                 }
                 
-                Controls.Label {
-                    Layout.topMargin: Kirigami.Units.largeSpacing
+                GridLayout {
+                    columns: unitConverter.width > unitConverter.height ? 3 : 1
                     Layout.fillWidth: true
-                    font.pointSize: unitConverter.screenHeight * 0.04
-                    text: unitModel.value
-                    color: Kirigami.Theme.textColor
-                    horizontalAlignment: Text.AlignHCenter
-                }
-                
-                Controls.Label {
-                    Layout.topMargin: Kirigami.Units.smallSpacing
-                    Layout.fillWidth: true
-                    font.pointSize: unitConverter.screenHeight * 0.04
-                    text: unitModel.result
-                    color: Kirigami.Theme.textColor
-                    horizontalAlignment: Text.AlignHCenter
+                    Layout.alignment: Qt.AlignHCenter
+
+                    Controls.Label {
+                        Layout.fillWidth: true
+                        font.pointSize: flexPointSize
+                        text: unitModel.value
+                        color: Kirigami.Theme.textColor
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+
+                    Controls.Label {
+                        visible: parent.columns > 1 || unitConverter.height > 250
+                        Layout.fillWidth: true
+                        font.pointSize: flexPointSize
+                        text: "="
+                        color: Kirigami.Theme.textColor
+                        horizontalAlignment: Text.AlignHCenter
+                    }
+
+                    Controls.Label {
+                        Layout.fillWidth: true
+                        font.pointSize: flexPointSize
+                        text: unitModel.result
+                        color: Kirigami.Theme.textColor
+                        horizontalAlignment: Text.AlignHCenter
+                    }
                 }
             }
 
-            GridLayout {
+            PortraitPad {
                 id: unitNumberPad
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                Layout.maximumWidth: unitConverter.width
-                Layout.maximumHeight: unitConverter.height
-                Layout.topMargin: Kirigami.Units.largeSpacing * 2
-                columns: 3
-
-                function pressed(text) {
+                Layout.margins: Kirigami.Units.smallSpacing
+                pureNumber: true
+                onPressed: {
                     if (text == "DEL") {
                         unitModel.value = unitModel.value.slice(0, unitModel.value.length - 1);
                     } else {
                         unitModel.value += text;
                     }
                 }
-                function clear() {
+                onClear: {
                     unitModel.value = "";
                 }
-
-                NumberButton {text: "7" ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "8" ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "9" ; onClicked: unitNumberPad.pressed(text);}
-
-                NumberButton {text: "4" ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "5" ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "6" ; onClicked: unitNumberPad.pressed(text);}
-
-                NumberButton {text: "1" ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "2" ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "3" ; onClicked: unitNumberPad.pressed(text);}
-
-                NumberButton {text: "." ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "0" ; onClicked: unitNumberPad.pressed(text);}
-                NumberButton {text: "DEL"; display: "⌫"; onClicked: unitNumberPad.pressed(text); onLongClicked: unitNumberPad.clear(); special: true; }
             }
         }
     }
@@ -240,5 +220,33 @@ Kirigami.Page {
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
     }
-}
 
+    Controls.Dialog {
+        id: categories
+        modal: true
+        focus: true
+        width: Math.min(parent.width, 400)
+        x: parent.width / 2 - width / 2
+
+        contentItem: Controls.ScrollView {
+            ListView {
+                id: listview
+                model: unitModel
+                delegate: Controls.RadioDelegate {
+                    width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
+                    text: modelData
+                    checked: index === unitModel.currentIndex
+                    onClicked: {
+                        unitConverter.title = text;
+                        unitModel.currentIndex = index;
+                        categories.close();
+                    }
+                }
+
+                Component.onCompleted: unitConverter.title = listview.currentItem.text
+            }
+
+            Component.onCompleted: background.visible = true
+        }
+    }
+}
