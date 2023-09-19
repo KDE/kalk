@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:48+0000\n"
+"POT-Creation-Date: 2023-09-19 00:48+0000\n"
 "PO-Revision-Date: 2022-02-10 11:32+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -77,15 +77,16 @@ msgstr "परिवर्तक"
 msgid "About"
 msgstr "परिचय"
 
-#: qml/UnitConverter.qml:15
+#: qml/UnitConverter.qml:64
 #, kde-format
-msgid "Conversion"
-msgstr "परिवर्तन"
+msgid "Category"
+msgstr ""
 
-#: qml/UnitConverter.qml:145
-#, kde-format
-msgid "Swap"
-msgstr "विनिमय करें"
+#~ msgid "Conversion"
+#~ msgstr "परिवर्तन"
+
+#~ msgid "Swap"
+#~ msgstr "विनिमय करें"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "किरिगामी द्वारा निर्मित एक गणक।"

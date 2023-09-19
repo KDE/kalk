@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:48+0000\n"
+"POT-Creation-Date: 2023-09-19 00:48+0000\n"
 "PO-Revision-Date: 2023-02-26 19:21+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -73,15 +73,16 @@ msgstr "Muunnin"
 msgid "About"
 msgstr "Tietoa"
 
-#: qml/UnitConverter.qml:15
+#: qml/UnitConverter.qml:64
 #, kde-format
-msgid "Conversion"
-msgstr "Yksikkömuunnos"
+msgid "Category"
+msgstr ""
 
-#: qml/UnitConverter.qml:145
-#, kde-format
-msgid "Swap"
-msgstr "Vaihda keskenään"
+#~ msgid "Conversion"
+#~ msgstr "Yksikkömuunnos"
+
+#~ msgid "Swap"
+#~ msgstr "Vaihda keskenään"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Kirigamilla toteutettu laskin."

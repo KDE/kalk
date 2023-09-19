@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:48+0000\n"
+"POT-Creation-Date: 2023-09-19 00:48+0000\n"
 "PO-Revision-Date: 2023-01-20 19:02+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -76,15 +76,16 @@ msgstr "Bihurtzailea"
 msgid "About"
 msgstr "Honi buruz"
 
-#: qml/UnitConverter.qml:15
+#: qml/UnitConverter.qml:64
 #, kde-format
-msgid "Conversion"
-msgstr "Bihurketa"
+msgid "Category"
+msgstr ""
 
-#: qml/UnitConverter.qml:145
-#, kde-format
-msgid "Swap"
-msgstr "Trukatzea"
+#~ msgid "Conversion"
+#~ msgstr "Bihurketa"
+
+#~ msgid "Swap"
+#~ msgstr "Trukatzea"
 
 #~ msgid "copied"
 #~ msgstr "kopiatuta"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:48+0000\n"
+"POT-Creation-Date: 2023-09-19 00:48+0000\n"
 "PO-Revision-Date: 2020-12-29 14:55+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -77,16 +77,15 @@ msgstr "Átváltó"
 msgid "About"
 msgstr "Névjegy"
 
-#: qml/UnitConverter.qml:15
-#, fuzzy, kde-format
-#| msgid "Convertor"
-msgid "Conversion"
-msgstr "Átváltó"
-
-#: qml/UnitConverter.qml:145
+#: qml/UnitConverter.qml:64
 #, kde-format
-msgid "Swap"
+msgid "Category"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Convertor"
+#~ msgid "Conversion"
+#~ msgstr "Átváltó"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Számológép a Kirigamival építve."

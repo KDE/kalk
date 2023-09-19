@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:48+0000\n"
+"POT-Creation-Date: 2023-09-19 00:48+0000\n"
 "PO-Revision-Date: 2022-04-18 17:53+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -74,15 +74,16 @@ msgstr "Konvertor"
 msgid "About"
 msgstr "O aplikácii"
 
-#: qml/UnitConverter.qml:15
+#: qml/UnitConverter.qml:64
 #, kde-format
-msgid "Conversion"
-msgstr "Prevod"
+msgid "Category"
+msgstr ""
 
-#: qml/UnitConverter.qml:145
-#, kde-format
-msgid "Swap"
-msgstr "Odkladací priestor"
+#~ msgid "Conversion"
+#~ msgstr "Prevod"
+
+#~ msgid "Swap"
+#~ msgstr "Odkladací priestor"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Kalkulačka vytvorená s Kirigami."

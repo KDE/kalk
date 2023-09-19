@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-12 00:48+0000\n"
+"POT-Creation-Date: 2023-09-19 00:48+0000\n"
 "PO-Revision-Date: 2023-02-04 00:36+0100\n"
 "Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -75,15 +75,16 @@ msgstr "Umwandlung"
 msgid "About"
 msgstr "Über"
 
-#: qml/UnitConverter.qml:15
+#: qml/UnitConverter.qml:64
 #, kde-format
-msgid "Conversion"
-msgstr "Umwandeln"
+msgid "Category"
+msgstr ""
 
-#: qml/UnitConverter.qml:145
-#, kde-format
-msgid "Swap"
-msgstr "Tauschen"
+#~ msgid "Conversion"
+#~ msgstr "Umwandeln"
+
+#~ msgid "Swap"
+#~ msgstr "Tauschen"
 
 #~ msgid "copied"
 #~ msgstr "kopiert"
