@@ -76,13 +76,4 @@ msgstr "Hakkında"
 #: qml/UnitConverter.qml:64
 #, kde-format
 msgid "Category"
-msgstr ""
-
-#~ msgid "Conversion"
-#~ msgstr "Dönüşüm"
-
-#~ msgid "Swap"
-#~ msgstr "Değiştir"
-
-#~ msgid "copied"
-#~ msgstr "kopyalandı"
+msgstr "Kategori"
