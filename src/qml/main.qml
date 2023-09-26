@@ -68,28 +68,28 @@ Kirigami.ApplicationWindow {
         property list<QtObject> actions: [
             Kirigami.PagePoolAction {
                 text: i18n("Calculator")
-                iconName: "accessories-calculator"
+                icon.name: "accessories-calculator"
                 pagePool: mainPagePool
                 page: "qrc:/qml/CalculationPage.qml"
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Converter")
-                iconName: "gtk-convert"
+                icon.name: "gtk-convert"
                 page: "qrc:/qml/UnitConverter.qml"
                 pagePool: mainPagePool
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Binary Calculator")
-                iconName: "accessories-calculator"
+                icon.name: "accessories-calculator"
                 pagePool: mainPagePool
                 page: "qrc:/qml/BinaryCalculator.qml"
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("About")
-                iconName: "help-about"
+                icon.name: "help-about"
                 page: "qrc:/qml/AboutPage.qml"
                 pagePool: mainPagePool
             }

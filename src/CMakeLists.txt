@@ -18,34 +18,29 @@ target_link_libraries(kalklib
     Qt::Core
     knumber)
 
-set(kalk_SRCS
+add_executable(kalk
     main.cpp
-    unitmodel.cpp)
-
-if (QT_MAJOR_VERSION EQUAL "6")
-    list(APPEND kalk_SRCS calculator.qrc)
-else()
-    qtquick_compiler_add_resources(RESOURCES calculator.qrc)
-endif()
-add_executable(kalk ${kalk_SRCS} ${RESOURCES})
+    unitmodel.cpp
+    calculator.qrc
+)
 
 add_flex_bison_dependency(MyScanner MyParser)
 
 target_link_libraries(kalk PRIVATE
-    Qt::Core
-    Qt::Qml
-    Qt::QuickControls2
-    KF${QT_MAJOR_VERSION}::UnitConversion
-    KF${QT_MAJOR_VERSION}::ConfigCore
-    KF${QT_MAJOR_VERSION}::I18n
-    KF${QT_MAJOR_VERSION}::CoreAddons
+    Qt6::Core
+    Qt6::Qml
+    Qt6::QuickControls2
+    KF6::UnitConversion
+    KF6::ConfigCore
+    KF6::I18n
+    KF6::CoreAddons
     kalklib
     knumber)
 
 if(ANDROID)
     target_link_libraries(kalk PRIVATE
-        KF${QT_MAJOR_VERSION}::Kirigami2
-        Qt::Svg
+        KF6::Kirigami2
+        Qt6::Svg
         OpenSSL::SSL
     )
 
@@ -60,7 +55,7 @@ if(ANDROID)
         shallow-history
     )
 else()
-    target_link_libraries(kalk PRIVATE Qt::Widgets)
+    target_link_libraries(kalk PRIVATE Qt6::Widgets)
 endif()
 
 

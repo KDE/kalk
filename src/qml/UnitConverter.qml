@@ -4,25 +4,26 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import QtQuick 2.7
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.15 as Controls
-import org.kde.kirigami 2.13 as Kirigami
-import QtGraphicalEffects 1.12
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as Controls
+import org.kde.kirigami as Kirigami
+import Qt5Compat.GraphicalEffects
 
 Kirigami.Page {
     id: unitConverter
+
     topPadding: 0
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
-    
+
     property int yTranslate: 0
     property real mainOpacity: 1
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int screenHeight: unitConverter.height * 0.5
     property int flexPointSize: Math.max(Math.min(screenHeight / 14, width / 24), Kirigami.Theme.defaultFont.pointSize - 3)
-    
+
     Keys.onPressed: {
         switch(event.key) {
         case Qt.Key_Delete:
@@ -58,14 +59,12 @@ Kirigami.Page {
         event.accepted = true;
     }
 
-    actions {
-        main: Kirigami.Action {
-            iconName: "category"
-            text: i18n("Category")
-            onTriggered: categories.open();
-        }
+    actions: Kirigami.Action {
+        icon.name: "category"
+        text: i18n("Category")
+        onTriggered: categories.open();
     }
-    
+
     Component {
         id: delegateComponent
         Controls.Label {

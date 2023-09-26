@@ -15,12 +15,8 @@ project(kalk VERSION ${RELEASE_SERVICE_VERSION})
 find_package(BISON REQUIRED)
 find_package(FLEX REQUIRED)
 
-
-set(KF_MIN_VERSION "5.89.0")
-set(QT_MIN_VERSION "5.15.2")
-if (ANDROID)
-    set(QT_MIN_VERSION "5.15.8")
-endif()
+set(KF_MIN_VERSION "5.240.0")
+set(QT_MIN_VERSION "6.5.0")
 
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
     message(FATAL_ERROR "This application requires an out of source build. Please
@@ -76,21 +72,22 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Widgets)
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} NO_MODULE COMPONENTS QuickCompiler)
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS
-        Config
-        Kirigami2
-        I18n
-        CoreAddons
-        UnitConversion)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Widgets)
+find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS QuickCompiler)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
+    Config
+    Kirigami2
+    I18n
+    CoreAddons
+    UnitConversion
+)
 if (ANDROID)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Svg)
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Svg)
     find_package(OpenSSL REQUIRED)
 endif()
 add_subdirectory(src)
 
-configure_file(config-kcalc.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kcalc.h )
+configure_file(config-kcalc.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kcalc.h)
 add_subdirectory(knumber)
 
 if(BUILD_TESTING)

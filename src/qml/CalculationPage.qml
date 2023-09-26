@@ -4,24 +4,26 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import QtQuick 2.15
-import QtQuick.Layouts 1.15
-import QtQuick.Controls 2.15 as Controls
-import QtGraphicalEffects 1.15
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as Controls
+import Qt5Compat.GraphicalEffects
 
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami as Kirigami
 
 Kirigami.Page {
     id: initialPage
+
     title: i18n("Calculator")
+
     topPadding: 0
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
 
-    actions.main: Kirigami.Action {
+    actions: Kirigami.Action {
         text: i18n("History")
-        iconName: "shallow-history"
+        icon.name: "shallow-history"
         onTriggered: {
             if (applicationWindow().pageStack.depth > 1) {
                 applicationWindow().pageStack.pop();

@@ -1,29 +1,29 @@
-/*
- * SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
- *
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-import QtQuick 2.7
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.1 as Controls
-import QtGraphicalEffects 1.12
-import org.kde.kirigami 2.13 as Kirigami
+// SPDX-FileCopyrightText: 2021-2022 Rohan Asokan <rohan.asokan@students.iiit.ac.in>
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as Controls
+import Qt5Compat.GraphicalEffects
+import org.kde.kirigami as Kirigami
 
 Kirigami.Page {
     id: initialPage
+
     title: i18n("Binary Calculator")
+
     topPadding: 0
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
-    
+
     property int yTranslate: 0
     property real mainOpacity: 1
-    
+
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: initialPage.height * 3 / 7
     property int screenHeight: initialPage.height - initialPage.keypadHeight
-    
+
     Keys.onPressed: {
         switch(event.key) {
         case Qt.Key_Delete:
@@ -81,7 +81,7 @@ Kirigami.Page {
             z: 1
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
-            Layout.preferredHeight: initialPage.screenHeight            
+            Layout.preferredHeight: initialPage.screenHeight
             
             // top panel drop shadow
             RectangularGlow {
@@ -250,5 +250,4 @@ Kirigami.Page {
             }
         }
     }
-    
 }

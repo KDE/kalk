@@ -9,9 +9,8 @@
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.1
-import QtGraphicalEffects 1.12
+import Qt5Compat.GraphicalEffects
 import QtQuick.Controls 2.2 as Controls
-import QtFeedback 5.0
 
 import org.kde.kirigami 2.15 as Kirigami
 
@@ -40,15 +39,16 @@ Item {
     property color buttonTextColor: Kirigami.Theme.textColor
 
     // vibration
-    HapticsEffect {
-        id: vibrate
-        attackIntensity: 0.0
-        attackTime: 0
-        fadeTime: 0
-        fadeIntensity: 0.0
-        intensity: 0.5
-        duration: 10
-    }
+    // TODO bring back
+    //HapticsEffect {
+    //    id: vibrate
+    //    attackIntensity: 0.0
+    //    attackTime: 0
+    //    fadeTime: 0
+    //    fadeIntensity: 0.0
+    //    intensity: 0.5
+    //    duration: 10
+    //}
 
     Controls.AbstractButton {
         id: button
@@ -112,7 +112,7 @@ Item {
 
         onPressedChanged: {
             if (pressed) {
-                vibrate.start();
+                //vibrate.start();
             }
         }
 
