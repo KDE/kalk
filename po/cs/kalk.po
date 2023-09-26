@@ -76,10 +76,4 @@ msgstr "O aplikaci"
 #: qml/UnitConverter.qml:64
 #, kde-format
 msgid "Category"
-msgstr ""
-
-#~ msgid "Conversion"
-#~ msgstr "Převod"
-
-#~ msgid "Swap"
-#~ msgstr "Odkládací prostor"
+msgstr "Kategorie"
