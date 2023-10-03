@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 00:48+0000\n"
+"POT-Creation-Date: 2023-10-03 00:44+0000\n"
 "PO-Revision-Date: 2023-09-22 18:51+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@bredband.net"
 
-#: main.cpp:63 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:110
+#: main.cpp:63 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
 #: qml/main.qml:113 qml/main.qml:119
 #, kde-format
 msgid "Calculator"
@@ -43,22 +43,22 @@ msgstr "Räknare för Plasma"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE-gemenskapen"
 
-#: qml/BinaryCalculator.qml:14 qml/main.qml:84 qml/main.qml:155
+#: qml/BinaryCalculator.qml:13 qml/main.qml:84 qml/main.qml:155
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Binärräknare"
 
-#: qml/CalculationPage.qml:23 qml/HistoryView.qml:13
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:13
 #, kde-format
 msgid "History"
 msgstr "Historik"
 
-#: qml/HistoryView.qml:18
+#: qml/HistoryView.qml:17
 #, kde-format
 msgid "History is empty"
 msgstr "Historiken är tom"
 
-#: qml/HistoryView.qml:24
+#: qml/HistoryView.qml:22
 #, kde-format
 msgid "Clear history"
 msgstr "Rensa historik"
