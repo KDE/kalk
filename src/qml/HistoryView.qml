@@ -15,7 +15,7 @@ Kirigami.ScrollablePage {
     Kirigami.PlaceholderMessage {
         anchors.centerIn: parent
         text: i18n("History is empty")
-        visible: listView.count == 0
+        visible: listView.count === 0
     }
     actions: Kirigami.Action {
         icon.name: "edit-clear-history"

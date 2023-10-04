@@ -15,7 +15,7 @@ Item {
         visible: inPortrait
         anchors.fill: parent
         pureNumber: numberPad.pureNumber
-        onPressed: {
+        onPressed: text => {
             numberPad.pressed(text);
         }
         onClear: {
@@ -27,7 +27,7 @@ Item {
         visible: !inPortrait
         anchors.fill: parent
         pureNumber: numberPad.pureNumber
-        onPressed: {
+        onPressed: text => {
             numberPad.pressed(text);
         }
         onClear: {

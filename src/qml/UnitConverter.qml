@@ -24,7 +24,7 @@ Kirigami.Page {
     property int screenHeight: unitConverter.height * 0.5
     property int flexPointSize: Math.max(Math.min(screenHeight / 14, width / 24), Kirigami.Theme.defaultFont.pointSize - 3)
 
-    Keys.onPressed: {
+    Keys.onPressed: event => {
         switch(event.key) {
         case Qt.Key_Delete:
         case Qt.Key_Backspace:
@@ -71,7 +71,7 @@ Kirigami.Page {
             text: modelData
             opacity: 0.4 + Math.max(0, 1 - Math.abs(Controls.Tumbler.displacement)) * 0.6
             horizontalAlignment: Text.AlignHCenter
-            font.bold: Controls.Tumbler.displacement == 0
+            font.bold: Controls.Tumbler.displacement === 0
             font.pointSize: flexPointSize
         }
     }
@@ -197,8 +197,8 @@ Kirigami.Page {
                 Layout.fillWidth: true
                 Layout.margins: Kirigami.Units.smallSpacing
                 pureNumber: true
-                onPressed: {
-                    if (text == "DEL") {
+                onPressed: text => {
+                    if (text === "DEL") {
                         unitModel.value = unitModel.value.slice(0, unitModel.value.length - 1);
                     } else {
                         unitModel.value += text;

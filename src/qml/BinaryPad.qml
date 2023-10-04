@@ -16,26 +16,26 @@ GridLayout {
 
     // Buttons are from left to right
     // Row Number from bottom: 4
-    NumberButton {text: "<<"; onClicked: pressed(text);}
-    NumberButton {text: ">>"; onClicked: pressed(text);}
+    NumberButton {text: "<<"; onClicked: text => pressed(text);}
+    NumberButton {text: ">>"; onClicked: text => pressed(text);}
     NumberButton {text: "CLEAR"; display: "CLR"; onClicked: clear(); special: true;}
-    NumberButton {text: "DEL"; display: "⌫"; onClicked: pressed(text); onLongClicked: clear(); special: true;}
+    NumberButton {text: "DEL"; display: "⌫"; onClicked: text => pressed(text); onLongClicked: clear(); special: true;}
 
     // Row number from bottom: 3
-    NumberButton {text: "^"; onClicked: pressed(text); special: true;}
-    NumberButton {text: "~"; onClicked: pressed(text); special: true;}
-    NumberButton {text: "|"; onClicked: pressed(text); special: true;}
-    NumberButton {text: "&"; onClicked: pressed(text); special: true;}
+    NumberButton {text: "^"; onClicked: text => pressed(text); special: true;}
+    NumberButton {text: "~"; onClicked: text => pressed(text); special: true;}
+    NumberButton {text: "|"; onClicked: text => pressed(text); special: true;}
+    NumberButton {text: "&"; onClicked: text => pressed(text); special: true;}
 
     // Row number from bottom: 2
-    NumberButton {text: "/"; display: "÷"; onClicked: pressed(text);}
-    NumberButton {text: "*"; display: "×"; onClicked: pressed(text);}
-    NumberButton {text: "-"; onClicked: pressed(text);}
-    NumberButton {text: "+"; onClicked: pressed(text);}
+    NumberButton {text: "/"; display: "÷"; onClicked: text => pressed(text);}
+    NumberButton {text: "*"; display: "×"; onClicked: text => pressed(text);}
+    NumberButton {text: "-"; onClicked: text => pressed(text);}
+    NumberButton {text: "+"; onClicked: text => pressed(text);}
 
     // Row number from bottom: 1
-    NumberButton {text: "0"; onClicked: pressed(text);}
-    NumberButton {text: "1"; onClicked: pressed(text);}
+    NumberButton {text: "0"; onClicked: text => pressed(text);}
+    NumberButton {text: "1"; onClicked: text => pressed(text);}
     NumberButton {text: "";}
-    NumberButton {text: "="; onClicked: pressed(text); special: true;}
+    NumberButton {text: "="; onClicked: text => pressed(text); special: true;}
 }

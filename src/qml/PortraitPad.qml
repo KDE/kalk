@@ -14,35 +14,35 @@ GridLayout {
     property bool pureNumber: false
     columns: pureNumber ? 3 : 4
 
-    NumberButton {text: "√(" ; display: "√"; onClicked: pressed(text);visible: !pureNumber}
-    NumberButton {text: "^2" ; display: "x²"; onClicked: pressed(text);visible: !pureNumber}
-    NumberButton {text: "(" ; onClicked: pressed(text); special: true; visible: !pureNumber}
-    NumberButton {text: ")" ; onClicked: pressed(text); special: true; visible: !pureNumber}
+    NumberButton {text: "√(" ; display: "√"; onClicked: text => pressed(text);visible: !pureNumber}
+    NumberButton {text: "^2" ; display: "x²"; onClicked:text => pressed(text);visible: !pureNumber}
+    NumberButton {text: "(" ; onClicked: text => pressed(text); special: true; visible: !pureNumber}
+    NumberButton {text: ")" ; onClicked: text => pressed(text); special: true; visible: !pureNumber}
 
-    NumberButton {text: "%" ; onClicked: pressed(text);visible: !pureNumber}
+    NumberButton {text: "%" ; onClicked: text => pressed(text);visible: !pureNumber}
     NumberButton {text: "CLEAR"; display: "C"; onClicked: clear(); special: true; visible: !pureNumber}
-    NumberButton {text: "DEL"; display: "⌫"; onClicked: pressed(text); onLongClicked: clear(); special: true; visible: !pureNumber}
-    NumberButton {text: "÷" ; onClicked: pressed(text); special: true; visible: !pureNumber}
+    NumberButton {text: "DEL"; display: "⌫"; onClicked: text => pressed(text); onLongClicked: clear(); special: true; visible: !pureNumber}
+    NumberButton {text: "÷" ; onClicked: text => pressed(text); special: true; visible: !pureNumber}
 
-    NumberButton {text: "7" ; onClicked: pressed(text);}
-    NumberButton {text: "8" ; onClicked: pressed(text);}
-    NumberButton {text: "9" ; onClicked: pressed(text);}
-    NumberButton {text: "×" ; onClicked: pressed(text); special: true; visible: !pureNumber}
+    NumberButton {text: "7" ; onClicked: text => pressed(text);}
+    NumberButton {text: "8" ; onClicked: text => pressed(text);}
+    NumberButton {text: "9" ; onClicked: text => pressed(text);}
+    NumberButton {text: "×" ; onClicked: text => pressed(text); special: true; visible: !pureNumber}
 
-    NumberButton {text: "4" ; onClicked: pressed(text);}
-    NumberButton {text: "5" ; onClicked: pressed(text);}
-    NumberButton {text: "6" ; onClicked: pressed(text);}
-    NumberButton {text: "-" ; onClicked: pressed(text); special: true; visible: !pureNumber}
+    NumberButton {text: "4" ; onClicked: text => pressed(text);}
+    NumberButton {text: "5" ; onClicked: text => pressed(text);}
+    NumberButton {text: "6" ; onClicked: text => pressed(text);}
+    NumberButton {text: "-" ; onClicked: text => pressed(text); special: true; visible: !pureNumber}
 
-    NumberButton {text: "1" ; onClicked: pressed(text);}
-    NumberButton {text: "2" ; onClicked: pressed(text);}
-    NumberButton {text: "3" ; onClicked: pressed(text);}
-    NumberButton {text: "+" ; onClicked: pressed(text); special: true; visible: !pureNumber}
+    NumberButton {text: "1" ; onClicked: text => pressed(text);}
+    NumberButton {text: "2" ; onClicked: text => pressed(text);}
+    NumberButton {text: "3" ; onClicked: text => pressed(text);}
+    NumberButton {text: "+" ; onClicked: text => pressed(text); special: true; visible: !pureNumber}
 
-    NumberButton {text: "0" ; onClicked: pressed(text);}
-    NumberButton {text: Qt.locale().decimalPoint ; onClicked: pressed(text);}
-    NumberButton {text: "DEL"; display: "⌫"; onClicked: pressed(text); onLongClicked: clear(); special: true; visible: pureNumber}
-    NumberButton {text: "^" ; onClicked: pressed(text); visible: !pureNumber}
-    NumberButton {text: "=" ; onClicked: pressed(text); special: true; visible: !pureNumber}
+    NumberButton {text: "0" ; onClicked: text => pressed(text);}
+    NumberButton {text: Qt.locale().decimalPoint ; onClicked: text => pressed(text);}
+    NumberButton {text: "DEL"; display: "⌫"; onClicked: text => pressed(text); onLongClicked: clear(); special: true; visible: pureNumber}
+    NumberButton {text: "^" ; onClicked: text => pressed(text); visible: !pureNumber}
+    NumberButton {text: "=" ; onClicked: text => pressed(text); special: true; visible: !pureNumber}
 }
 

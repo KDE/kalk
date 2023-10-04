@@ -43,7 +43,7 @@ Kirigami.Page {
     property int keypadHeight: initialPage.height * 0.7
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
-    Keys.onPressed: {
+    Keys.onPressed: event => {
         switch(event.key) {
           case Qt.Key_Delete:
           case Qt.Key_Backspace:
@@ -355,7 +355,7 @@ Kirigami.Page {
                         anchors.leftMargin: Kirigami.Units.smallSpacing
                         anchors.rightMargin: Kirigami.Units.gridUnit * 1.5 // for right side drawer indicator
                         inPortrait: initialPage.inPortrait
-                        onPressed: {
+                        onPressed: text => {
                             if (text == "DEL") {
                                 inputManager.backspace();
                             } else if (text == "=") {
@@ -422,7 +422,7 @@ Kirigami.Page {
                             anchors.rightMargin: Kirigami.Units.largeSpacing
                             anchors.topMargin: Kirigami.Units.largeSpacing
                             anchors.bottomMargin: parent.height / 4
-                            onPressed: {
+                            onPressed: text => {
                                 inputManager.append(text)
                                 functionDrawer.close()
                             }
@@ -447,7 +447,7 @@ Kirigami.Page {
                         anchors.rightMargin: Kirigami.Units.largeSpacing
                         anchors.topMargin: Kirigami.Units.largeSpacing
                         anchors.bottomMargin: parent.height / 4
-                        onPressed: inputManager.append(text)
+                        onPressed: text => inputManager.append(text)
                     }
                 }
             }

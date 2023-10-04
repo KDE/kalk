@@ -24,7 +24,7 @@ Kirigami.Page {
     property int keypadHeight: initialPage.height * 3 / 7
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
-    Keys.onPressed: {
+    Keys.onPressed: event => {
         switch(event.key) {
         case Qt.Key_Delete:
         case Qt.Key_Backspace:
@@ -236,10 +236,10 @@ Kirigami.Page {
                 anchors.margins: Kirigami.Units.smallSpacing
                 // Uncomment next line for function overlay
                 // anchors.rightMargin: Kirigami.Units.gridUnit * 1.5
-                onPressed: {
-                    if (text == "DEL") {
+                onPressed: text => {
+                    if (text === "DEL") {
                         inputManager.backspace();
-                    } else if (text == "=") {
+                    } else if (text === "=") {
                         inputManager.equal();
                         resultFadeOutAnimation.start();
                     } else {
