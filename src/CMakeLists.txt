@@ -7,8 +7,11 @@ flex_target(MyScanner ${CMAKE_CURRENT_SOURCE_DIR}/mathengine/scanner.ll ${CMAKE_
 
 add_library(kalklib STATIC
     historymanager.cpp
+    historymanager.h
     inputmanager.cpp
+    inputmanager.h
     mathengine.cpp
+    mathengine.h
     mathengine/driver.cc
     ${CMAKE_CURRENT_BINARY_DIR}/parser.cc
     ${CMAKE_CURRENT_BINARY_DIR}/scanner.cc
@@ -21,6 +24,7 @@ target_link_libraries(kalklib
 add_executable(kalk
     main.cpp
     unitmodel.cpp
+    unitmodel.h
     calculator.qrc
 )
 

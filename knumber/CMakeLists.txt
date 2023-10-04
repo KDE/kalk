@@ -3,11 +3,17 @@
 
 add_library(knumber STATIC
     knumber.cpp
+    knumber.h
     knumber_error.cpp
+    knumber_error.h
     knumber_float.cpp
+    knumber_float.h
     knumber_fraction.cpp
+    knumber_fraction.h
     knumber_integer.cpp
+    knumber_integer.h
     knumber_operators.cpp
+    knumber_operators.h
 )
 
 target_include_directories(knumber PUBLIC ${CMAKE_BINARY_DIR} ${GMP_INCLUDE_DIR})
