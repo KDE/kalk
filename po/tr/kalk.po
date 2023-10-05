@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 00:44+0000\n"
+"POT-Creation-Date: 2023-10-05 01:42+0000\n"
 "PO-Revision-Date: 2023-01-18 20:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "emir_sari@icloud.com"
 
-#: main.cpp:63 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
+#: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
 #: qml/main.qml:113 qml/main.qml:119
 #, kde-format
 msgid "Calculator"
 msgstr "Hesap Makinesi"
 
-#: main.cpp:65
+#: main.cpp:64
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Plasma için Hesap Makinesi"
 
-#: main.cpp:67
+#: main.cpp:66
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE Community"

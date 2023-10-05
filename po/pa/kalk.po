@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-03 00:44+0000\n"
+"POT-Creation-Date: 2023-10-05 01:42+0000\n"
 "PO-Revision-Date: 2021-01-20 21:43-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -27,19 +27,19 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: main.cpp:63 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
+#: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
 #: qml/main.qml:113 qml/main.qml:119
 #, kde-format
 msgid "Calculator"
 msgstr "ਕੈਲਕੂਲੇਟਰ"
 
-#: main.cpp:65
+#: main.cpp:64
 #, fuzzy, kde-format
 #| msgid "Calculator in Kirigami"
 msgid "Calculator for Plasma"
 msgstr "ਕੀਰੀਗਾਮੀ ਵਿੱਚ ਕੈਲਕੂਲੇਟਰ"
 
-#: main.cpp:67
+#: main.cpp:66
 #, fuzzy, kde-format
 #| msgid "© 2020 KDE Community"
 msgid "© 2020-2022 KDE Community"
