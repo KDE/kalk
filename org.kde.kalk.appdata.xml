@@ -26,6 +26,7 @@
   <name xml:lang="gl">Calculadora</name>
   <name xml:lang="hi">गणक</name>
   <name xml:lang="hu">Számológép</name>
+  <name xml:lang="ia">Calculator</name>
   <name xml:lang="id">Kalkulator</name>
   <name xml:lang="it">Calcolatrice</name>
   <name xml:lang="ka">კალკულატორი</name>
@@ -61,6 +62,7 @@
   <summary xml:lang="gl">Unha calculadora con moitas funcionalidades</summary>
   <summary xml:lang="hi">एक सुविधा संपन्न गणक</summary>
   <summary xml:lang="hu">Funkciógazdag számológép</summary>
+  <summary xml:lang="ia">Un Calculator ric de  characteristicas</summary>
   <summary xml:lang="id">Sebuah kalkulator yang kaya-fitur</summary>
   <summary xml:lang="it">Una calcolatrice ricca di funzionalità</summary>
   <summary xml:lang="ka">მრავალფუნქციური კალკულატორი</summary>
@@ -97,6 +99,7 @@
   <developer_name xml:lang="gl">Comunidade KDE</developer_name>
   <developer_name xml:lang="hi">केडीई समुदाय</developer_name>
   <developer_name xml:lang="hu">A KDE Közösség</developer_name>
+  <developer_name xml:lang="ia">Communitate de KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">© 2020 La comunità KDE</developer_name>
   <developer_name xml:lang="ka">KDE-ის საზოგადოება</developer_name>
@@ -132,6 +135,7 @@
     <p xml:lang="fr">Kalk est une calculatrice universelle conçue pour Plasma.</p>
     <p xml:lang="gl">Kalk é unha calculadora converxente para Plasma.</p>
     <p xml:lang="hi">कल्क प्लाज़्मा के लिए एक अभिसृत गणक है।</p>
+    <p xml:lang="ia">Kalk es un calculator convergente per Plasma</p>
     <p xml:lang="id">Kalk adalah kalkulator yang konvergen untuk Plasma.</p>
     <p xml:lang="it">Kalk è una semplice calcolatrice per Plasma.</p>
     <p xml:lang="ka">Kalc-ი Plasma-ის კალკულატორია.</p>
@@ -168,6 +172,7 @@
       <caption xml:lang="fr">Page de la calculatrice</caption>
       <caption xml:lang="gl">Páxina de calculadora</caption>
       <caption xml:lang="hi">गणक पृष्ठ</caption>
+      <caption xml:lang="ia">Pagina de Calculator</caption>
       <caption xml:lang="id">Halaman Kalkulator</caption>
       <caption xml:lang="it">Pagina della calcolatrice</caption>
       <caption xml:lang="ka">კალკულატორის გვერდი</caption>
