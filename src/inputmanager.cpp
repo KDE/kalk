@@ -239,6 +239,10 @@ void InputManager::backspace()
 
 void InputManager::equal()
 {
+    if (m_output.isEmpty()) {
+        // if the output is empty, either the input is empty or user has pressed equal twice
+        return;
+    }
     HistoryManager::inst()->addHistory(m_expression + QStringLiteral(" = ") + m_result);
 
     m_input = m_output;
