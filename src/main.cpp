@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     }
 #endif
     QQmlApplicationEngine engine;
-    KLocalizedString::setApplicationDomain("kalk");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kalk"));
     parser.addVersionOption();
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
