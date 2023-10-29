@@ -12,7 +12,7 @@ import Qt5Compat.GraphicalEffects
 
 Kirigami.Page {
     id: unitConverter
-
+    title: i18n("Converter")
     topPadding: 0
     leftPadding: 0
     rightPadding: 0
@@ -60,6 +60,7 @@ Kirigami.Page {
     }
 
     actions: Kirigami.Action {
+        id: category
         icon.name: "category"
         text: i18n("Category")
         onTriggered: categories.open();
@@ -236,13 +237,13 @@ Kirigami.Page {
                     text: modelData
                     checked: index === unitModel.currentIndex
                     onClicked: {
-                        unitConverter.title = text;
+                        category.text = text;
                         unitModel.currentIndex = index;
                         categories.close();
                     }
                 }
 
-                Component.onCompleted: unitConverter.title = listview.currentItem.text
+                Component.onCompleted: category.text = listview.currentItem.text
             }
 
             Component.onCompleted: background.visible = true
