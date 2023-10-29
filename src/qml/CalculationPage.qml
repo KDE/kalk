@@ -21,20 +21,42 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
 
-    actions: Kirigami.Action {
-        text: i18n("History")
-        icon.name: "shallow-history"
-        onTriggered: {
-            if (applicationWindow().pageStack.depth > 1) {
-                applicationWindow().pageStack.pop();
+    actions: [
+        Kirigami.Action {
+            text: i18n("History")
+            icon.name: "shallow-history"
+            shortcut: "Ctrl+H"
+            onTriggered: {
+                if (applicationWindow().pageStack.depth > 1) {
+                    applicationWindow().pageStack.pop();
+                }
+                else {
+                    applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
+                };
+                functionDrawer.close();
             }
-            else {
-                applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
-            };
-            functionDrawer.close();
+        },
+        Kirigami.Action {
+            icon.name: "edit-cut"
+            text: i18n("Cut")
+            shortcut: "ctrl+X"
+            enabled: expressionRow.selectedText
+            onTriggered: cut()
+        },
+        Kirigami.Action {
+            icon.name: "edit-copy"
+            text: i18n("Copy")
+            shortcut: "ctrl+C"
+            enabled: expressionRow.text || result.text
+            onTriggered: copy()
+        },
+        Kirigami.Action {
+            icon.name: "edit-paste"
+            text: i18n("Paste")
+            shortcut: "ctrl+V"
+            onTriggered: paste()
         }
-        shortcut: "Ctrl+H"
-    }
+    ]
 
     property int yTranslate: 0
     property real mainOpacity: 1
@@ -44,7 +66,55 @@ Kirigami.Page {
     property int keypadHeight: initialPage.height * 0.7
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
+    function cut() {
+        if (expressionRow.selectedText) {
+            const pos = expressionRow.cursorPosition - expressionRow.selectedText.length;
+            expressionRow.cut();
+            expressionRow.cursorPosition = pos;
+        }
+    }
+    function copy() {
+        if (expressionRow.selectedText) {
+            expressionRow.copy();
+        } else if (result.selectedText) {
+            result.copy();
+        } else {
+            result.selectAll();
+            result.copy();
+            result.deselect();
+        }
+    }
+    function paste() {
+        expressionRow.paste();
+    }
+
     Keys.onPressed: event => {
+        if (event.matches(StandardKey.Cut)) {
+            cut();
+            event.accepted = true;
+            return;
+        } else if (event.matches(StandardKey.Copy)) {
+            copy();
+            event.accepted = true;
+            return;
+        } else if (event.matches(StandardKey.Paste)) {
+            paste();
+            event.accepted = true;
+            return;
+        } else if (event.matches(StandardKey.SelectAll)) {
+            if (expressionRow.focus) {
+                expressionRow.focus = false;
+                expressionRow.selectAll();
+            } else {
+                result.selectAll();
+            }
+            event.accepted = true;
+            return;
+        } else if (event.modifiers && !event.text) {
+            event.accepted = true;
+            return;
+        }
+
         switch(event.key) {
           case Qt.Key_Delete:
               if (expressionRow.cursorPosition < expressionRow.length) {
@@ -249,6 +319,12 @@ Kirigami.Page {
                             focus = true;
                             result.focus = false;
                             result.deselect();
+                            textEdit.deselect();
+                        }
+                        onEditingFinished: {
+                            if (textEdit.selectedText) {
+                                select(textEdit.selectionStart, textEdit.selectionEnd);
+                            }
                         }
                         onPressAndHold: {
                             // use textEdit as a proxy to select
@@ -260,7 +336,7 @@ Kirigami.Page {
                             select(textEdit.selectionStart, textEdit.selectionEnd);
                         }
 
-                        Keys.onPressed: {
+                        Keys.onPressed: event => {
                             event.accepted = false;
                             initialPage.Keys.pressed(event);
                         }
@@ -307,8 +383,9 @@ Kirigami.Page {
 
                         onTextChanged: resultFadeInAnimation.start()
                         onPressed: {
-                            focus = false
-                            expressionRow.focus = false
+                            focus = false;
+                            expressionRow.focus = false;
+                            expressionRow.deselect();
                         }
                         onPressAndHold: selectAll()
 
@@ -329,9 +406,10 @@ Kirigami.Page {
 
                 TapHandler {
                     onTapped: {
-                        expressionRow.focus = false
-                        result.focus = false
-                        result.deselect()
+                        expressionRow.focus = false;
+                        result.focus = false;
+                        result.deselect();
+                        expressionRow.deselect();
                     }
                 }
             }
