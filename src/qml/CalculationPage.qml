@@ -47,6 +47,11 @@ Kirigami.Page {
     Keys.onPressed: event => {
         switch(event.key) {
           case Qt.Key_Delete:
+              if (expressionRow.cursorPosition < expressionRow.length) {
+                  expressionRow.cursorPosition += 1;
+                  inputManager.backspace();
+              }
+              break;
           case Qt.Key_Backspace:
               inputManager.backspace(); break;
           case Qt.Key_0:
