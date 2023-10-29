@@ -335,6 +335,7 @@ Kirigami.Page {
             RowLayout {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+                spacing: Kirigami.Units.gridUnit
 
                 onWidthChanged: {
                     if (!functionDrawer.opened && inPortrait)
@@ -351,10 +352,10 @@ Kirigami.Page {
                     NumberPad {
                         id: numberPad
                         anchors.fill: parent
-                        anchors.topMargin: Kirigami.Units.gridUnit * 0.7
+                        anchors.topMargin: Kirigami.Units.largeSpacing
                         anchors.bottomMargin: Kirigami.Units.smallSpacing
                         anchors.leftMargin: Kirigami.Units.smallSpacing
-                        anchors.rightMargin: Kirigami.Units.gridUnit * 1.5 // for right side drawer indicator
+                        anchors.rightMargin: inPortrait ? Kirigami.Units.gridUnit * 1.5 : 0 // for right side drawer indicator
                         inPortrait: initialPage.inPortrait
                         onPressed: text => {
                             if (text == "DEL") {
@@ -444,8 +445,8 @@ Kirigami.Page {
                     FunctionPad {
                         anchors.fill: parent
                         anchors.bottom: parent.Bottom
-                        anchors.leftMargin: Kirigami.Units.largeSpacing
-                        anchors.rightMargin: Kirigami.Units.largeSpacing
+                        anchors.leftMargin: Kirigami.Units.smallSpacing
+                        anchors.rightMargin: Kirigami.Units.smallSpacing
                         anchors.topMargin: Kirigami.Units.largeSpacing
                         anchors.bottomMargin: parent.height / 4
                         onPressed: text => inputManager.append(text)
