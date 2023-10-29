@@ -81,8 +81,8 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
-                text: i18n("Binary Calculator")
-                icon.name: "accessories-calculator"
+                text: i18n("Programmer")
+                icon.name: "format-text-code"
                 pagePool: mainPagePool
                 page: "qrc:/qml/BinaryCalculator.qml"
                 onTriggered: pageAnimation(pageItem())

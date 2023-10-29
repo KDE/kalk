@@ -10,7 +10,7 @@ import org.kde.kirigami as Kirigami
 Kirigami.Page {
     id: initialPage
 
-    title: i18n("Binary Calculator")
+    title: i18n("Programmer")
 
     topPadding: 0
     leftPadding: 0
