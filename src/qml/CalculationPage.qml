@@ -33,6 +33,7 @@ Kirigami.Page {
             };
             functionDrawer.close();
         }
+        shortcut: "Ctrl+H"
     }
 
     property int yTranslate: 0
