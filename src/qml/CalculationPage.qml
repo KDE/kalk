@@ -383,7 +383,7 @@ Kirigami.Page {
 
                     Rectangle {
                         id: drawerIndicator
-                        visible: inPortrait
+                        visible: inPortrait || functionDrawer.opened
                         z: 1
                         anchors.top: parent.top
                         anchors.bottom: parent.bottom
@@ -410,7 +410,7 @@ Kirigami.Page {
                         x: initialPage.width // BUG: We can not stop drawer from covering history, when window is in landscape mode, by making its x to edge of initial page instead, as according to QT docs 'It is not possible to set the x-coordinate (or horizontal margins) of a drawer at the left or right window edge'
                         height: inputPad.height
                         width: initialPage.width * 0.8
-                        interactive: inPortrait
+                        interactive: inPortrait || opened
                         dragMargin: drawerIndicator.width
                         edge: Qt.RightEdge
                         dim: false
