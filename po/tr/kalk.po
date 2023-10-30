@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-30 01:42+0000\n"
 "PO-Revision-Date: 2023-01-18 20:47+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -43,10 +43,10 @@ msgstr "Plasma için Hesap Makinesi"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE Community"
 
-#: qml/BinaryCalculator.qml:13 qml/main.qml:84 qml/main.qml:155
+#: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
-msgid "Binary Calculator"
-msgstr "İkili Hesap Makinesi"
+msgid "Programmer"
+msgstr ""
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:13
 #, kde-format
@@ -63,7 +63,7 @@ msgstr "Geçmiş boş"
 msgid "Clear history"
 msgstr "Geçmişi temizle"
 
-#: qml/main.qml:77 qml/main.qml:137
+#: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format
 msgid "Converter"
 msgstr "Dönüştürücü"
@@ -73,7 +73,12 @@ msgstr "Dönüştürücü"
 msgid "About"
 msgstr "Hakkında"
 
-#: qml/UnitConverter.qml:64
+#: qml/main.qml:155
+#, kde-format
+msgid "Binary Calculator"
+msgstr "İkili Hesap Makinesi"
+
+#: qml/UnitConverter.qml:65
 #, kde-format
 msgid "Category"
 msgstr "Kategori"

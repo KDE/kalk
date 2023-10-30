@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-30 01:42+0000\n"
 "PO-Revision-Date: 2021-01-20 21:43-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -45,11 +45,10 @@ msgstr "ਕੀਰੀਗਾਮੀ ਵਿੱਚ ਕੈਲਕੂਲੇਟਰ"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020 ਕੇਡੀਈ ਕਮਿਊਨਟੀ"
 
-#: qml/BinaryCalculator.qml:13 qml/main.qml:84 qml/main.qml:155
-#, fuzzy, kde-format
-#| msgid "Calculator"
-msgid "Binary Calculator"
-msgstr "ਕੈਲਕੂਲੇਟਰ"
+#: qml/BinaryCalculator.qml:13 qml/main.qml:84
+#, kde-format
+msgid "Programmer"
+msgstr ""
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:13
 #, kde-format
@@ -66,7 +65,7 @@ msgstr "ਅਤੀਤ ਖਾਲੀ ਹੈ"
 msgid "Clear history"
 msgstr "ਅਤੀਤ ਨੂੰ ਮਿਟਾਓ"
 
-#: qml/main.qml:77 qml/main.qml:137
+#: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, fuzzy, kde-format
 #| msgid "Convertor"
 msgid "Converter"
@@ -77,7 +76,13 @@ msgstr "ਤਬਾਦਲਾਕਾਰ"
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
-#: qml/UnitConverter.qml:64
+#: qml/main.qml:155
+#, fuzzy, kde-format
+#| msgid "Calculator"
+msgid "Binary Calculator"
+msgstr "ਕੈਲਕੂਲੇਟਰ"
+
+#: qml/UnitConverter.qml:65
 #, kde-format
 msgid "Category"
 msgstr ""

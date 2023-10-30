@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-30 01:42+0000\n"
 "PO-Revision-Date: 2023-01-18 13:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -39,10 +39,10 @@ msgstr "Calculadora do Plasma"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 da Comunidade do KDE"
 
-#: qml/BinaryCalculator.qml:13 qml/main.qml:84 qml/main.qml:155
+#: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
-msgid "Binary Calculator"
-msgstr "Calculadora Binária"
+msgid "Programmer"
+msgstr ""
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:13
 #, kde-format
@@ -59,7 +59,7 @@ msgstr "O histórico está vazio"
 msgid "Clear history"
 msgstr "Limpar o histórico"
 
-#: qml/main.qml:77 qml/main.qml:137
+#: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format
 msgid "Converter"
 msgstr "Conversor"
@@ -69,7 +69,12 @@ msgstr "Conversor"
 msgid "About"
 msgstr "Acerca"
 
-#: qml/UnitConverter.qml:64
+#: qml/main.qml:155
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Calculadora Binária"
+
+#: qml/UnitConverter.qml:65
 #, kde-format
 msgid "Category"
 msgstr ""

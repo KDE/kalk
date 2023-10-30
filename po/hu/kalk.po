@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:42+0000\n"
+"POT-Creation-Date: 2023-10-30 01:42+0000\n"
 "PO-Revision-Date: 2020-12-29 14:55+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -45,11 +45,10 @@ msgstr "Számológép Kirigamiban"
 msgid "© 2020-2022 KDE Community"
 msgstr "© A KDE közösség, 2020."
 
-#: qml/BinaryCalculator.qml:13 qml/main.qml:84 qml/main.qml:155
-#, fuzzy, kde-format
-#| msgid "Calculator"
-msgid "Binary Calculator"
-msgstr "Számológép"
+#: qml/BinaryCalculator.qml:13 qml/main.qml:84
+#, kde-format
+msgid "Programmer"
+msgstr ""
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:13
 #, kde-format
@@ -66,7 +65,7 @@ msgstr "Nincsenek előzmények"
 msgid "Clear history"
 msgstr "Előzmények törlése"
 
-#: qml/main.qml:77 qml/main.qml:137
+#: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, fuzzy, kde-format
 #| msgid "Convertor"
 msgid "Converter"
@@ -77,7 +76,13 @@ msgstr "Átváltó"
 msgid "About"
 msgstr "Névjegy"
 
-#: qml/UnitConverter.qml:64
+#: qml/main.qml:155
+#, fuzzy, kde-format
+#| msgid "Calculator"
+msgid "Binary Calculator"
+msgstr "Számológép"
+
+#: qml/UnitConverter.qml:65
 #, kde-format
 msgid "Category"
 msgstr ""
