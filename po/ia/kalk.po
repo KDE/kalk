@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-30 01:42+0000\n"
+"POT-Creation-Date: 2023-11-01 01:42+0000\n"
 "PO-Revision-Date: 2023-10-10 10:47+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -48,10 +48,25 @@ msgstr "© 2020-2022 Communitate de KDE"
 msgid "Programmer"
 msgstr ""
 
-#: qml/CalculationPage.qml:25 qml/HistoryView.qml:13
+#: qml/CalculationPage.qml:26 qml/HistoryView.qml:13
 #, kde-format
 msgid "History"
 msgstr "Chronologia"
+
+#: qml/CalculationPage.qml:41
+#, kde-format
+msgid "Cut"
+msgstr ""
+
+#: qml/CalculationPage.qml:48
+#, kde-format
+msgid "Copy"
+msgstr ""
+
+#: qml/CalculationPage.qml:55
+#, kde-format
+msgid "Paste"
+msgstr ""
 
 #: qml/HistoryView.qml:17
 #, kde-format
