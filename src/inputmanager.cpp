@@ -344,3 +344,5 @@ void InputManager::addNumberSeparators(QString &number)
         number.replace(QRegularExpression(QStringLiteral(R"(\B(?=(\d{3})+(?!\d)))")), m_groupSeparator);
     }
 }
+
+#include "moc_inputmanager.cpp"

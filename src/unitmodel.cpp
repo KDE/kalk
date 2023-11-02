@@ -132,3 +132,5 @@ const std::vector<std::tuple<QString, KUnitConversion::CategoryId>> UnitModel::c
  {QStringLiteral("Velocity"), KUnitConversion::VelocityCategory},
  {QStringLiteral("Volume"), KUnitConversion::VolumeCategory},
  {QStringLiteral("Voltage"), KUnitConversion::VoltageCategory}};
+
+#include "moc_unitmodel.cpp"

@@ -55,3 +55,5 @@ void HistoryManager::save()
     file.write(doc.toJson(QJsonDocument::Compact));
     qDebug() << "save" << file.fileName();
 }
+
+#include "moc_historymanager.cpp"

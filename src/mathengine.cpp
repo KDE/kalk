@@ -108,3 +108,5 @@ void MathEngine::parseBinaryExpression(QString expr) {
         Q_EMIT resultChanged();
     }
 }
+
+#include "moc_mathengine.cpp"
