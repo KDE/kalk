@@ -8,42 +8,49 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.ScrollablePage {
     title: i18n("History")
 
-    Kirigami.PlaceholderMessage {
-        anchors.centerIn: parent
-        text: i18n("History is empty")
-        visible: listView.count === 0
-    }
     actions: Kirigami.Action {
         icon.name: "edit-clear-history"
         text: i18n("Clear history")
         onTriggered: historyManager.clearHistory();
     }
 
-ListView {
-    id: listView
+    ListView {
+        id: listView
 
         currentIndex: -1
 
-        property int flexPointSize: Math.min(Kirigami.Theme.defaultFont.pointSize * 1.5, Math.max(width / 20, 5))
-
-        Layout.fillWidth: true
         model: historyManager
-        delegate: Kirigami.AbstractListItem {
+        delegate: Delegates.RoundedItemDelegate {
+            id: historyDelegate
+
+            required property int index
+            required property var model
+
             highlighted: false
-            onClicked:{
+            onClicked: {
                 inputManager.fromHistory(model.display.split('=')[1]);
                 pageStack.pop()
             }
-            Label {
-                font.pointSize: listView.flexPointSize
-                font.weight: Font.Light
-                text: model.display
+            text: historyDelegate.model.display
+            contentItem: Label {
+                font {
+                    weight: Font.Light
+                }
+                text: historyDelegate.model.display
                 wrapMode: Text.Wrap
             }
+        }
+
+        Kirigami.PlaceholderMessage {
+            anchors.centerIn: parent
+            text: i18n("History is empty")
+            visible: listView.count === 0
+            width: parent.width - Kirigami.Units.gridUnit * 4
         }
     }
 }
