@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:42+0000\n"
+"POT-Creation-Date: 2023-11-04 01:39+0000\n"
 "PO-Revision-Date: 2023-01-24 15:33+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,7 @@ msgstr "© 2020-2022 Komunita KDE"
 msgid "Programmer"
 msgstr "Programátor"
 
-#: qml/CalculationPage.qml:26 qml/HistoryView.qml:13
+#: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
 msgid "History"
 msgstr "Historie"
@@ -68,15 +68,15 @@ msgstr ""
 msgid "Paste"
 msgstr ""
 
-#: qml/HistoryView.qml:17
-#, kde-format
-msgid "History is empty"
-msgstr "Historie je prázdná"
-
-#: qml/HistoryView.qml:22
+#: qml/HistoryView.qml:18
 #, kde-format
 msgid "Clear history"
 msgstr "Vyprázdnit historii"
+
+#: qml/HistoryView.qml:51
+#, kde-format
+msgid "History is empty"
+msgstr "Historie je prázdná"
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:42+0000\n"
+"POT-Creation-Date: 2023-11-04 01:39+0000\n"
 "PO-Revision-Date: 2023-09-23 23:03+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -48,7 +48,7 @@ msgstr "© 2020-2022 Comunità KDE"
 msgid "Programmer"
 msgstr ""
 
-#: qml/CalculationPage.qml:26 qml/HistoryView.qml:13
+#: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
 msgid "History"
 msgstr "Cronologia"
@@ -68,15 +68,15 @@ msgstr ""
 msgid "Paste"
 msgstr ""
 
-#: qml/HistoryView.qml:17
-#, kde-format
-msgid "History is empty"
-msgstr "La cronologia è vuota"
-
-#: qml/HistoryView.qml:22
+#: qml/HistoryView.qml:18
 #, kde-format
 msgid "Clear history"
 msgstr "Cancella la cronologia"
+
+#: qml/HistoryView.qml:51
+#, kde-format
+msgid "History is empty"
+msgstr "La cronologia è vuota"
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format

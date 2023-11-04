@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:42+0000\n"
+"POT-Creation-Date: 2023-11-04 01:39+0000\n"
 "PO-Revision-Date: 2022-02-10 11:32+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: Hindi <kde-l10n-hi@kde.org>\n"
@@ -51,7 +51,7 @@ msgstr "© २०२०-२०२१ केडीई समुदाय"
 msgid "Programmer"
 msgstr ""
 
-#: qml/CalculationPage.qml:26 qml/HistoryView.qml:13
+#: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
 msgid "History"
 msgstr "इतिहास"
@@ -71,15 +71,15 @@ msgstr ""
 msgid "Paste"
 msgstr ""
 
-#: qml/HistoryView.qml:17
-#, kde-format
-msgid "History is empty"
-msgstr "इतिहास खाली है"
-
-#: qml/HistoryView.qml:22
+#: qml/HistoryView.qml:18
 #, kde-format
 msgid "Clear history"
 msgstr "इतिहास साफ करें"
+
+#: qml/HistoryView.qml:51
+#, kde-format
+msgid "History is empty"
+msgstr "इतिहास खाली है"
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, fuzzy, kde-format

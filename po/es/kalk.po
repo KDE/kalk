@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-01 01:42+0000\n"
+"POT-Creation-Date: 2023-11-04 01:39+0000\n"
 "PO-Revision-Date: 2023-11-01 22:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -50,7 +50,7 @@ msgstr "© 2020-2022 la Comunidad de KDE"
 msgid "Programmer"
 msgstr "Programador"
 
-#: qml/CalculationPage.qml:26 qml/HistoryView.qml:13
+#: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
 msgid "History"
 msgstr "Historial"
@@ -70,15 +70,15 @@ msgstr "Copiar"
 msgid "Paste"
 msgstr "Pegar"
 
-#: qml/HistoryView.qml:17
-#, kde-format
-msgid "History is empty"
-msgstr "El historial está vacío"
-
-#: qml/HistoryView.qml:22
+#: qml/HistoryView.qml:18
 #, kde-format
 msgid "Clear history"
 msgstr "Borrar el historial"
+
+#: qml/HistoryView.qml:51
+#, kde-format
+msgid "History is empty"
+msgstr "El historial está vacío"
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format
