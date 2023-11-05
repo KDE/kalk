@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 01:39+0000\n"
-"PO-Revision-Date: 2023-11-02 00:28+0100\n"
+"PO-Revision-Date: 2023-11-04 18:40+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -56,17 +56,17 @@ msgstr "Historial"
 #: qml/CalculationPage.qml:41
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Cor&tar"
 
 #: qml/CalculationPage.qml:48
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: qml/CalculationPage.qml:55
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Apegar"
 
 #: qml/HistoryView.qml:18
 #, kde-format
