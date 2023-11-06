@@ -45,7 +45,7 @@ void HistoryManager::save()
 {
     QJsonDocument doc;
     QJsonArray array;
-    for (const auto &record : qAsConst(m_historyList)) {
+    for (const auto &record : std::as_const(m_historyList)) {
         array.append(record);
     }
     doc.setArray(array);
