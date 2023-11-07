@@ -37,6 +37,20 @@ Kirigami.Page {
             }
         },
         Kirigami.Action {
+            icon.name: "edit-undo-symbolic"
+            text: i18n("Undo")
+            shortcut: "Ctrl+Z"
+            enabled: inputManager.canUndo
+            onTriggered: inputManager.undo()
+        },
+        Kirigami.Action {
+            icon.name: "edit-redo-symbolic"
+            text: i18n("Redo")
+            shortcut: "Ctrl+Shift+Z"
+            enabled: inputManager.canRedo
+            onTriggered: inputManager.redo()
+        },
+        Kirigami.Action {
             icon.name: "edit-cut"
             text: i18n("Cut")
             shortcut: "ctrl+X"
@@ -89,7 +103,15 @@ Kirigami.Page {
     }
 
     Keys.onPressed: event => {
-        if (event.matches(StandardKey.Cut)) {
+        if (event.matches(StandardKey.Undo)) {
+            inputManager.undo();
+            event.accepted = true;
+            return;
+        } else if (event.matches(StandardKey.Redo)) {
+            inputManager.redo();
+            event.accepted = true;
+            return;
+        } else if (event.matches(StandardKey.Cut)) {
             cut();
             event.accepted = true;
             return;
@@ -299,9 +321,9 @@ Kirigami.Page {
                         property string lastText
                         onTextChanged: {
                             if (text !== inputManager.expression) {
-                                const pasteText = text.replace(/,/g, "");
-                                inputManager.clear();
-                                inputManager.append(pasteText);
+                                const value = text;
+                                inputManager.clear(false);
+                                inputManager.append(value);
                             } else {
                                 cursorPosition = inputManager.cursorPosition;
                             }

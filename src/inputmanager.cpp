@@ -150,33 +150,14 @@ void InputManager::append(const QString &subexpression)
     }
     m_moveFromResult = false;
 
-    QString temp = m_input;
-    temp.insert(m_inputPosition, subexpression);
+    QString temp = subexpression;
     temp.remove(m_groupSeparator);
+    m_input.insert(m_inputPosition, temp);
+    m_inputPosition += temp.size();
 
-    // Call the corresponding parser based on the type of expression.
-    MathEngine * engineInstance = MathEngine::inst();
-    if (m_isBinaryMode) {
-        engineInstance->parseBinaryExpression(temp);
-    } else {
-        engineInstance->parse(temp);
-    }
+    calculate();
 
-    if (!MathEngine::inst()->error()) {
-        KNumber result = MathEngine::inst()->result();
-        m_output = result.toQString();
-        m_binaryResult = result.toBinaryString(0);
-        m_hexResult = result.toHexString(0);
-        m_input = temp;
-        m_inputPosition += subexpression.size();
-        m_expression = formatNumbers(m_input);
-        m_result = formatNumbers(m_output);
-
-        Q_EMIT resultChanged();
-        Q_EMIT binaryResultChanged();
-        Q_EMIT hexResultChanged();
-        Q_EMIT expressionChanged();
-    }
+    store();
 }
 
 void InputManager::backspace()
@@ -206,34 +187,9 @@ void InputManager::backspace()
             m_inputPosition--;
         }
 
-        m_expression = formatNumbers(m_input);
+        calculate();
 
-        Q_EMIT expressionChanged();
-
-        if (m_input.length() == 0) {
-            clear();
-            return;
-        }
-
-        // Call the corresponding parser based on the type of expression.
-        MathEngine * engineInstance = MathEngine::inst();
-        if (m_isBinaryMode) {
-            engineInstance->parseBinaryExpression(m_input);
-        } else {
-            engineInstance->parse(m_input);
-        }
-
-        if(!MathEngine::inst()->error())
-        {
-            KNumber result = MathEngine::inst()->result();
-            m_output = result.toQString();
-            m_binaryResult = result.toBinaryString(0);
-            m_hexResult = result.toHexString(0);
-            m_result = formatNumbers(m_output);
-            Q_EMIT resultChanged();
-            Q_EMIT binaryResultChanged();
-            Q_EMIT hexResultChanged();
-        }
+        store();
     }
 }
 
@@ -258,9 +214,11 @@ void InputManager::equal()
     Q_EMIT resultChanged();
     Q_EMIT binaryResultChanged();
     Q_EMIT hexResultChanged();
+
+    store();
 }
 
-void InputManager::clear()
+void InputManager::clear(bool save)
 {
     m_input.clear();
     m_output.clear();
@@ -274,6 +232,10 @@ void InputManager::clear()
     Q_EMIT resultChanged();
     Q_EMIT binaryResultChanged();
     Q_EMIT hexResultChanged();
+
+    if (save) {
+        store();
+    }
 }
 
 void InputManager::fromHistory(const QString &result)
@@ -292,6 +254,74 @@ void InputManager::fromHistory(const QString &result)
     Q_EMIT resultChanged();
     Q_EMIT binaryResultChanged();
     Q_EMIT hexResultChanged();
+}
+
+void InputManager::store()
+{
+    if (m_undoStack.size() > m_undoPos) {
+        m_undoStack.resize(m_undoPos);
+        m_undoStack.shrink_to_fit();
+    }
+
+    m_undoStack.push_back(m_input);
+    m_undoPos++;
+
+    Q_EMIT canUndoChanged();
+    Q_EMIT canRedoChanged();
+}
+
+void InputManager::undo()
+{
+    if (m_undoPos <= 0) {
+        return;
+    }
+
+    m_undoPos--;
+    if (m_undoPos >= 1) {
+        m_input = m_undoStack.at(m_undoPos - 1);
+        m_inputPosition += m_input.size() - m_undoStack.at(m_undoPos).size();
+    } else {
+        m_input = QString();
+    }
+
+    if (m_inputPosition > m_input.size()) {
+        m_inputPosition = m_input.size();
+    }
+
+    calculate();
+
+    Q_EMIT canUndoChanged();
+    Q_EMIT canRedoChanged();
+}
+
+void InputManager::redo()
+{
+    if (m_undoPos >= m_undoStack.size()) {
+        return;
+    }
+
+    m_inputPosition += m_undoStack.at(m_undoPos).size() - m_input.size();
+    m_input = m_undoStack.at(m_undoPos);
+    m_undoPos++;
+
+    if (m_inputPosition > m_input.size()) {
+        m_inputPosition = m_input.size();
+    }
+
+    calculate();
+
+    Q_EMIT canUndoChanged();
+    Q_EMIT canRedoChanged();
+}
+
+bool InputManager::canUndo()
+{
+    return m_undoPos > 0;
+}
+
+bool InputManager::canRedo()
+{
+    return m_undoPos < m_undoStack.size();
 }
 
 void InputManager::setBinaryMode(bool active) {
@@ -342,6 +372,36 @@ void InputManager::addNumberSeparators(QString &number)
         number = left + right;
     } else if (number.size() > 3) {
         number.replace(QRegularExpression(QStringLiteral(R"(\B(?=(\d{3})+(?!\d)))")), m_groupSeparator);
+    }
+}
+
+void InputManager::calculate()
+{
+    if (m_input.length() == 0) {
+        clear(false);
+        return;
+    }
+
+    m_expression = formatNumbers(m_input);
+    Q_EMIT expressionChanged();
+
+    // Call the corresponding parser based on the type of expression.
+    MathEngine *engineInstance = MathEngine::inst();
+    if (m_isBinaryMode) {
+        engineInstance->parseBinaryExpression(m_input);
+    } else {
+        engineInstance->parse(m_input);
+    }
+
+    if (!MathEngine::inst()->error()) {
+        KNumber result = MathEngine::inst()->result();
+        m_output = result.toQString();
+        m_binaryResult = result.toBinaryString(0);
+        m_hexResult = result.toHexString(0);
+        m_result = formatNumbers(m_output);
+        Q_EMIT resultChanged();
+        Q_EMIT binaryResultChanged();
+        Q_EMIT hexResultChanged();
     }
 }
 

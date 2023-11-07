@@ -17,6 +17,23 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
 
+    actions: [
+        Kirigami.Action {
+            icon.name: "edit-undo-symbolic"
+            text: i18n("Undo")
+            shortcut: "Ctrl+Z"
+            enabled: inputManager.canUndo
+            onTriggered: inputManager.undo()
+        },
+        Kirigami.Action {
+            icon.name: "edit-redo-symbolic"
+            text: i18n("Redo")
+            shortcut: "Ctrl+Shift+Z"
+            enabled: inputManager.canRedo
+            onTriggered: inputManager.redo()
+        }
+    ]
+
     property int yTranslate: 0
     property real mainOpacity: 1
 
@@ -25,6 +42,16 @@ Kirigami.Page {
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
     Keys.onPressed: event => {
+        if (event.matches(StandardKey.Undo)) {
+            inputManager.undo();
+            event.accepted = true;
+            return;
+        } else if (event.matches(StandardKey.Redo)) {
+            inputManager.redo();
+            event.accepted = true;
+            return;
+        }
+
         switch(event.key) {
         case Qt.Key_Delete:
         case Qt.Key_Backspace:
