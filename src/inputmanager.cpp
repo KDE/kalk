@@ -152,6 +152,19 @@ void InputManager::append(const QString &subexpression)
 
     QString temp = subexpression;
     temp.remove(m_groupSeparator);
+
+    // auto parentheses
+    if (temp == QStringLiteral("(  )")) {
+        temp = QStringLiteral("(");
+
+        if (m_input.size() > 0 && m_input.at(m_inputPosition - 1) != QLatin1Char('(')) {
+            QStringView left = m_input.left(m_inputPosition);
+            if (left.count(QStringLiteral("(")) > left.count(QStringLiteral(")"))) {
+                temp = QStringLiteral(")");
+            }
+        }
+    }
+
     m_input.insert(m_inputPosition, temp);
     m_inputPosition += temp.size();
 

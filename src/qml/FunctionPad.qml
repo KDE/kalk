@@ -22,7 +22,6 @@ GridLayout {
     NumberButton {text: "log(" ; display: "ln"; onClicked: text => pressed(text);}
     NumberButton {text: "log10("; display: "log10"; onClicked: text => pressed(text);}
     NumberButton {text: "log2("; display: "log2"; onClicked: text => pressed(text);}
-    NumberButton {text: "π" ; onClicked: text => pressed(text);}
     NumberButton {text: "e" ; onClicked: text => pressed(text);}
     NumberButton {text: "abs(" ; display: "abs"; onClicked: text => pressed(text);}
 }
