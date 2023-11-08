@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:39+0000\n"
+"POT-Creation-Date: 2023-11-08 08:49+0000\n"
 "PO-Revision-Date: 2023-11-02 05:26+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -49,22 +49,32 @@ msgstr "© 2020-2022 KDE-ის საზოგადოება"
 msgid "Programmer"
 msgstr "პროგრამისტი"
 
+#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
+#, kde-format
+msgid "Undo"
+msgstr ""
+
+#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:48
+#, kde-format
+msgid "Redo"
+msgstr ""
+
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
 msgid "History"
 msgstr "ისტორია"
 
-#: qml/CalculationPage.qml:41
+#: qml/CalculationPage.qml:55
 #, kde-format
 msgid "Cut"
 msgstr "ამოჭრა"
 
-#: qml/CalculationPage.qml:48
+#: qml/CalculationPage.qml:62
 #, kde-format
 msgid "Copy"
 msgstr "კოპირება"
 
-#: qml/CalculationPage.qml:55
+#: qml/CalculationPage.qml:69
 #, kde-format
 msgid "Paste"
 msgstr "ჩასმა"

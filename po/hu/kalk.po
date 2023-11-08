@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:39+0000\n"
+"POT-Creation-Date: 2023-11-08 08:49+0000\n"
 "PO-Revision-Date: 2020-12-29 14:55+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -50,22 +50,32 @@ msgstr "© A KDE közösség, 2020."
 msgid "Programmer"
 msgstr ""
 
+#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
+#, kde-format
+msgid "Undo"
+msgstr ""
+
+#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:48
+#, kde-format
+msgid "Redo"
+msgstr ""
+
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
 msgid "History"
 msgstr "Előzmények"
 
-#: qml/CalculationPage.qml:41
+#: qml/CalculationPage.qml:55
 #, kde-format
 msgid "Cut"
 msgstr ""
 
-#: qml/CalculationPage.qml:48
+#: qml/CalculationPage.qml:62
 #, kde-format
 msgid "Copy"
 msgstr ""
 
-#: qml/CalculationPage.qml:55
+#: qml/CalculationPage.qml:69
 #, kde-format
 msgid "Paste"
 msgstr ""
