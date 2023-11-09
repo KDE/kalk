@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-08 08:49+0000\n"
-"PO-Revision-Date: 2023-11-01 20:49+0200\n"
+"PO-Revision-Date: 2023-11-08 23:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -54,12 +54,12 @@ msgstr "Програміст"
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Скасувати"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:48
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Повторити"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
