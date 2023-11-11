@@ -51,12 +51,12 @@ msgstr "Programátor"
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Zpět"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:48
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Znovu"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
@@ -66,17 +66,17 @@ msgstr "Historie"
 #: qml/CalculationPage.qml:55
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Vyjmout"
 
 #: qml/CalculationPage.qml:62
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovat"
 
 #: qml/CalculationPage.qml:69
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Vložit"
 
 #: qml/HistoryView.qml:18
 #, kde-format

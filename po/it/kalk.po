@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-08 08:49+0000\n"
-"PO-Revision-Date: 2023-09-23 23:03+0200\n"
+"PO-Revision-Date: 2023-11-09 20:03+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -46,17 +46,17 @@ msgstr "© 2020-2022 Comunità KDE"
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "Programmatore"
 
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Annulla"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:48
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Rifai"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
@@ -66,17 +66,17 @@ msgstr "Cronologia"
 #: qml/CalculationPage.qml:55
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Taglia"
 
 #: qml/CalculationPage.qml:62
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Copia"
 
 #: qml/CalculationPage.qml:69
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Incolla"
 
 #: qml/HistoryView.qml:18
 #, kde-format
