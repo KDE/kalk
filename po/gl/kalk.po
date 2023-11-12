@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-08 08:49+0000\n"
-"PO-Revision-Date: 2023-10-30 18:16+0100\n"
+"PO-Revision-Date: 2023-11-11 14:10+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -51,12 +51,12 @@ msgstr "Programadora"
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Desfacer"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:48
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Refacer"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
 #, kde-format
@@ -66,17 +66,17 @@ msgstr "Historial"
 #: qml/CalculationPage.qml:55
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Cortar"
 
 #: qml/CalculationPage.qml:62
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: qml/CalculationPage.qml:69
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Pegar"
 
 #: qml/HistoryView.qml:18
 #, kde-format
