@@ -35,7 +35,6 @@ target_link_libraries(kalk PRIVATE
     Qt6::Qml
     Qt6::QuickControls2
     KF6::UnitConversion
-    KF6::ConfigCore
     KF6::I18n
     KF6::CoreAddons
     kalklib

@@ -75,7 +75,6 @@ ecm_setup_version(${PROJECT_VERSION}
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Widgets)
 find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS QuickCompiler)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
-    Config
     Kirigami2
     I18n
     CoreAddons
