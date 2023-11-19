@@ -36,10 +36,6 @@ const QString &InputManager::expression() const
 {
     return m_expression;
 }
-void InputManager::setExpression(const QString &expression)
-{
-    m_expression = expression;
-}
 
 const QString &InputManager::result() const
 {

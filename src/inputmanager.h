@@ -14,7 +14,7 @@ class QalculateEngine;
 class InputManager : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString expression READ expression WRITE setExpression NOTIFY expressionChanged)
+    Q_PROPERTY(QString expression READ expression NOTIFY expressionChanged)
     Q_PROPERTY(QString result READ result NOTIFY resultChanged)
     Q_PROPERTY(QString binaryResult READ binaryResult NOTIFY binaryResultChanged)
     Q_PROPERTY(QString hexResult READ hexResult NOTIFY hexResultChanged)
@@ -27,7 +27,6 @@ class InputManager : public QObject
 public:
     static InputManager *inst();
     const QString &expression() const;
-    void setExpression(const QString &expression);
     const QString &result() const;
     const QString &binaryResult() const;
     const QString &hexResult() const;
