@@ -48,6 +48,7 @@ public:
     void setBinaryMode(bool active);
     bool binaryMode();
     QString formatNumbers(const QString &text);
+    void replaceWithSuperscript(QString &text);
     void addNumberSeparators(QString &number);
     void calculate(bool exact = false, const int minExp = -1);
 

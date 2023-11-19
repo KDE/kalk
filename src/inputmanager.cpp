@@ -11,6 +11,8 @@
 #include <QLocale>
 #include <QRegularExpression>
 
+constexpr QStringView ZERO_WIDTH_SPACE = u"\u200B";
+
 InputManager::InputManager()
     : m_engine(QalculateEngine::inst())
 {
@@ -97,8 +99,16 @@ int InputManager::idealCursorPosition(int position) const
         }
     }
 
+    // position cursor ahead of zero width space
+    if (position > 1 && position < m_expression.size()) {
+        if (m_expression.at(position - 1) == ZERO_WIDTH_SPACE.toString()) {
+            position++;
+            return position;
+        }
+    }
+
     // position cursor around functions not between
-    QRegularExpression re(QStringLiteral(R"([^\d\+−\-×÷\!%π∫√∛,\^\(\) ]{2,})"));
+    QRegularExpression re(QStringLiteral(R"([^\d+−\-×÷!%π∫√∛ˆ,\^()ˆ⁰¹²³⁴⁵⁶⁷⁸⁹ ]{2,})"));
     QRegularExpressionMatch match = re.match(m_expression.mid(position - 1, 2));
     if (match.hasMatch()) {
         if (position == m_expression.size()) {
@@ -364,9 +374,30 @@ bool InputManager::binaryMode()
 
 QString InputManager::formatNumbers(const QString &text)
 {
+    QString temp = text;
+
+    // show exponents as superscripts
+    if (temp.contains(QStringLiteral("^"))) {
+        QRegularExpression re(QStringLiteral(R"((?<base>\d*\.?\d+\!?|\))?(?<exponent>\^-?[\d.]+(?!\!)))"));
+        QRegularExpressionMatchIterator i = re.globalMatch(temp);
+        while (i.hasNext()) {
+            QRegularExpressionMatch match = i.next();
+            QString base = match.captured(QStringLiteral("base"));
+            QString exponent = match.captured(QStringLiteral("exponent"));
+            if (!base.isEmpty()) {
+                exponent.replace(QStringLiteral("^"), ZERO_WIDTH_SPACE.toString());
+            }
+            replaceWithSuperscript(exponent);
+
+            // replace only the first occurence
+            size_t index = temp.indexOf(match.captured(0));
+            temp.replace(index, match.captured(0).size(), base + exponent);
+        }
+    }
+
     QString formatted;
     QString number;
-    for (const auto ch : text) {
+    for (const auto ch : temp) {
         if (ch.isDigit() || ch == m_decimalPoint || ch == FRACTION_SLASH.toString()) {
             number.append(ch);
         } else {
@@ -394,6 +425,23 @@ QString InputManager::formatNumbers(const QString &text)
     formatted.replace(QStringLiteral("log2"), QStringLiteral("log₂"));
 
     return formatted;
+}
+
+void InputManager::replaceWithSuperscript(QString &text)
+{
+    text.replace(QStringLiteral("^"), QStringLiteral("ˆ"));
+    text.replace(QStringLiteral("0"), QStringLiteral("⁰"));
+    text.replace(QStringLiteral("1"), QStringLiteral("¹"));
+    text.replace(QStringLiteral("2"), QStringLiteral("²"));
+    text.replace(QStringLiteral("3"), QStringLiteral("³"));
+    text.replace(QStringLiteral("4"), QStringLiteral("⁴"));
+    text.replace(QStringLiteral("5"), QStringLiteral("⁵"));
+    text.replace(QStringLiteral("6"), QStringLiteral("⁶"));
+    text.replace(QStringLiteral("7"), QStringLiteral("⁷"));
+    text.replace(QStringLiteral("8"), QStringLiteral("⁸"));
+    text.replace(QStringLiteral("9"), QStringLiteral("⁹"));
+    text.replace(QStringLiteral("−"), QStringLiteral("⁻"));
+    text.replace(QStringLiteral("-"), QStringLiteral("⁻"));
 }
 
 void InputManager::addNumberSeparators(QString &number)
