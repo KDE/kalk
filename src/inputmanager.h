@@ -33,7 +33,7 @@ public:
     bool moveFromResult() const;
     int getCursorPosition() const;
     void setCursorPosition(int position);
-    Q_INVOKABLE int idealCursorPosition(int position) const;
+    Q_INVOKABLE int idealCursorPosition(int position, int arrow = 0) const;
     Q_INVOKABLE void append(const QString &subexpression);
     Q_INVOKABLE void backspace();
     Q_INVOKABLE void equal();

@@ -156,7 +156,7 @@ Kirigami.Page {
         switch(event.key) {
           case Qt.Key_Delete:
               if (expressionRow.cursorPosition < expressionRow.length) {
-                  expressionRow.cursorPosition += 1;
+                  expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
                   inputManager.backspace();
               }
               break;
@@ -208,22 +208,11 @@ Kirigami.Page {
               break;
           case Qt.Key_Left:
               expressionRow.focus = true;
-              const idealPosLeft = inputManager.idealCursorPosition(expressionRow.cursorPosition - 1);
-              if (expressionRow.cursorPosition === idealPosLeft) {
-                  expressionRow.cursorPosition -= 2;
-              } else if (expressionRow.cursorPosition === idealPosLeft - 1) {
-                  expressionRow.cursorPosition -= 3;
-              } else {
-                  expressionRow.cursorPosition -= 1;
-              }
+              expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition - 1, -1);
               break;
           case Qt.Key_Right:
               expressionRow.focus = true;
-              if (expressionRow.cursorPosition === inputManager.idealCursorPosition(expressionRow.cursorPosition + 1)) {
-                  expressionRow.cursorPosition += 3;
-              } else {
-                  expressionRow.cursorPosition += 1;
-              }
+              expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
               break;
           case Qt.Key_Underscore: break;
           default:

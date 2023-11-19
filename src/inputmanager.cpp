@@ -85,12 +85,12 @@ void InputManager::setCursorPosition(int position)
     }
 }
 
-int InputManager::idealCursorPosition(int position) const
+int InputManager::idealCursorPosition(int position, int arrow) const
 {
     // position cursor ahead of group separator
     if (position > 1 && position < m_expression.size()) {
         if (m_expression.at(position - 1) == m_groupSeparator) {
-            position++;
+            arrow == -1 ? position-- : position++;
             return position;
         }
     }
@@ -98,7 +98,7 @@ int InputManager::idealCursorPosition(int position) const
     // position cursor ahead of zero width space
     if (position > 1 && position < m_expression.size()) {
         if (m_expression.at(position - 1) == ZERO_WIDTH_SPACE.toString()) {
-            position++;
+            arrow == -1 ? position-- : position++;
             return position;
         }
     }
@@ -114,30 +114,28 @@ int InputManager::idealCursorPosition(int position) const
         } else {
             // check nearest left
             int posLeft = position - 1;
-            while (posLeft > 0) {
-                if (m_expression.at(posLeft).isDigit()) {
-                    break;
-                } else if (m_expression.at(posLeft) == QLatin1Char('(')) {
+            while (posLeft >= 0) {
+                if (m_expression.at(posLeft).isDigit() || m_expression.at(posLeft).isSymbol() || m_expression.at(posLeft) == QLatin1Char('(')) {
                     posLeft++;
                     break;
+                } else if (posLeft == 0) {
+                    break;
+                } else {
+                    posLeft--;
                 }
-                posLeft--;
             }
 
             // check nearest right
             int posRight = position + 1;
             while (posRight < m_expression.size()) {
-                if (m_expression.at(posRight).isDigit()) {
-                    break;
-                } else if (m_expression.at(posRight) == QLatin1Char('(')) {
-                    posRight++;
+                if (m_expression.at(posRight).isDigit() || m_expression.at(posRight).isSymbol() || m_expression.at(posRight) == QLatin1Char('(')) {
                     break;
                 }
                 posRight++;
             }
 
             // prefer the closest side
-            if (position - posLeft < posRight - position) {
+            if (arrow != 1 && (position - posLeft < posRight - position || arrow == -1)) {
                 position -= position - posLeft;
             } else {
                 position += posRight - position;
