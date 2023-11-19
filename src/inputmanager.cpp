@@ -6,15 +6,14 @@
  */
 #include "inputmanager.h"
 #include "historymanager.h"
-#include "mathengine.h"
-#include <QDebug>
+#include "qalculateengine.h"
+
 #include <QLocale>
+#include <QRegularExpression>
 
 InputManager::InputManager()
+    : m_engine(QalculateEngine::inst())
 {
-
-    KNumber::setDefaultFloatOutput(true);
-
     QLocale locale;
     m_groupSeparator = locale.groupSeparator();
 
@@ -99,7 +98,7 @@ int InputManager::idealCursorPosition(int position) const
     }
 
     // position cursor around functions not between
-    QRegularExpression re(QStringLiteral(R"([^\d\+−×÷\!,\^\(\) ]{2,})"));
+    QRegularExpression re(QStringLiteral(R"([^\d\+−\-×÷\!%π∫√∛,\^\(\) ]{2,})"));
     QRegularExpressionMatch match = re.match(m_expression.mid(position - 1, 2));
     if (match.hasMatch()) {
         if (position == m_expression.size()) {
@@ -112,6 +111,9 @@ int InputManager::idealCursorPosition(int position) const
             while (posLeft > 0) {
                 if (m_expression.at(posLeft).isDigit()) {
                     break;
+                } else if (m_expression.at(posLeft) == QLatin1Char('(')) {
+                    posLeft++;
+                    break;
                 }
                 posLeft--;
             }
@@ -121,13 +123,16 @@ int InputManager::idealCursorPosition(int position) const
             while (posRight < m_expression.size()) {
                 if (m_expression.at(posRight).isDigit()) {
                     break;
+                } else if (m_expression.at(posRight) == QLatin1Char('(')) {
+                    posRight++;
+                    break;
                 }
                 posRight++;
             }
 
             // prefer the closest side
             if (position - posLeft < posRight - position) {
-                position -= position - posLeft - 1;
+                position -= position - posLeft;
             } else {
                 position += posRight - position;
             }
@@ -165,6 +170,11 @@ void InputManager::append(const QString &subexpression)
         }
     }
 
+    // prevent invalid duplicate operators
+    if (QStringLiteral("+×*÷/").contains(temp) && m_inputPosition > 0 && m_input.size() > 0 && m_input.at(m_inputPosition - 1) == temp) {
+        return;
+    }
+
     m_input.insert(m_inputPosition, temp);
     m_inputPosition += temp.size();
 
@@ -175,35 +185,32 @@ void InputManager::append(const QString &subexpression)
 
 void InputManager::backspace()
 {
-    if (m_inputPosition > 0) {
-        // delete entire function
-        QRegularExpression re(QStringLiteral(R"([^\d\+−×÷\!,\^ ]{2,})"));
-        QRegularExpressionMatch match = re.match(m_input.mid(m_inputPosition - 2, 2));
-        if (match.hasMatch()) {
-            // check backwards
-            int posBack = m_inputPosition - 2;
-            while (posBack >= 0) {
-                if (m_input.at(posBack).isDigit() || m_input.at(posBack) == QStringLiteral("(")) {
-                    break;
-                } else if (posBack > 0 && m_input.at(posBack - 1) == m_input.at(posBack)) {
-                    posBack--;
-                    break;
-                }
-                posBack--;
-            }
+    if (m_inputPosition < 1) {
+        return;
+    }
 
-            const int diff = m_inputPosition - posBack;
-            m_input.remove(m_inputPosition - diff + 1, diff - 1);
-            m_inputPosition = m_inputPosition - diff + 1;
-        } else {
-            m_input.remove(m_inputPosition - 1, 1);
-            m_inputPosition--;
+    // delete entire function
+    if (m_input.size() > 2) {
+        int posBack = m_inputPosition - 2;
+        while (posBack >= 0) {
+            if (m_input.at(posBack).isDigit() || m_input.at(posBack).isSymbol() || m_input.at(posBack).isPunct() || m_input.at(posBack).isSpace()
+                || m_input.at(posBack + 1) == m_input.at(posBack)) {
+                break;
+            }
+            posBack--;
         }
 
-        calculate();
-
-        store();
+        const int diff = m_inputPosition - posBack;
+        m_input.remove(m_inputPosition - diff + 1, diff - 1);
+        m_inputPosition = m_inputPosition - diff + 1;
+    } else {
+        m_input.remove(m_inputPosition - 1, 1);
+        m_inputPosition--;
     }
+
+    calculate();
+
+    store();
 }
 
 void InputManager::equal()
@@ -214,17 +221,26 @@ void InputManager::equal()
     }
     HistoryManager::inst()->addHistory(m_expression + QStringLiteral(" = ") + m_result);
 
-    m_input = m_output;
+    QString savedResult = m_isBinaryMode ? m_binaryResult : m_result;
+
+    if (m_isApproximate) {
+        // Show fraction representation of result
+        calculate(true);
+        m_input = QStringLiteral("(") + m_output + QStringLiteral(")");
+    } else {
+        m_input = m_output;
+        m_result.clear();
+        Q_EMIT resultChanged();
+    }
+
     m_output.clear();
-    m_expression = m_result;
-    m_result.clear();
+    m_expression = savedResult;
     m_binaryResult.clear();
     m_hexResult.clear();
 
     m_moveFromResult = true;
     m_inputPosition = m_input.size();
     Q_EMIT expressionChanged();
-    Q_EMIT resultChanged();
     Q_EMIT binaryResultChanged();
     Q_EMIT hexResultChanged();
 
@@ -351,11 +367,14 @@ QString InputManager::formatNumbers(const QString &text)
     QString formatted;
     QString number;
     for (const auto ch : text) {
-        if (ch.isDigit() || ch == m_decimalPoint) {
+        if (ch.isDigit() || ch == m_decimalPoint || ch == FRACTION_SLASH.toString()) {
             number.append(ch);
         } else {
+            // do not add number separators if contains fraction
             if (!number.isEmpty()) {
-                addNumberSeparators(number);
+                if (!number.contains(FRACTION_SLASH.toString())) {
+                    addNumberSeparators(number);
+                }
                 formatted.append(number);
                 number.clear();
             }
@@ -363,8 +382,11 @@ QString InputManager::formatNumbers(const QString &text)
         }
     }
 
+    // do not add number separators if contains fraction
     if (!number.isEmpty()) {
-        addNumberSeparators(number);
+        if (!number.contains(FRACTION_SLASH.toString())) {
+            addNumberSeparators(number);
+        }
         formatted.append(number);
     }
 
@@ -388,34 +410,30 @@ void InputManager::addNumberSeparators(QString &number)
     }
 }
 
-void InputManager::calculate()
+void InputManager::calculate(bool exact, const int minExp)
 {
     if (m_input.length() == 0) {
         clear(false);
         return;
     }
 
-    m_expression = formatNumbers(m_input);
+    m_expression = m_isBinaryMode ? m_input : formatNumbers(m_input);
     Q_EMIT expressionChanged();
 
-    // Call the corresponding parser based on the type of expression.
-    MathEngine *engineInstance = MathEngine::inst();
+    QString input = m_input.trimmed();
+    m_isApproximate = false;
     if (m_isBinaryMode) {
-        engineInstance->parseBinaryExpression(m_input);
-    } else {
-        engineInstance->parse(m_input);
-    }
-
-    if (!MathEngine::inst()->error()) {
-        KNumber result = MathEngine::inst()->result();
-        m_output = result.toQString();
-        m_binaryResult = result.toBinaryString(0);
-        m_hexResult = result.toHexString(0);
-        m_result = formatNumbers(m_output);
-        Q_EMIT resultChanged();
+        m_output = m_engine->evaluate(input, &m_isApproximate, 2, 10, exact, minExp);
+        m_binaryResult = m_engine->evaluate(input, &m_isApproximate, 2, 2, exact, minExp);
+        m_hexResult = m_engine->evaluate(input, &m_isApproximate, 2, 16, exact, minExp);
         Q_EMIT binaryResultChanged();
         Q_EMIT hexResultChanged();
+    } else {
+        m_output = m_engine->evaluate(input, &m_isApproximate, 10, 10, exact, minExp);
     }
+
+    m_result = formatNumbers(m_output);
+    Q_EMIT resultChanged();
 }
 
 #include "moc_inputmanager.cpp"

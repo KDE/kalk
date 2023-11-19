@@ -14,7 +14,7 @@ GridLayout {
     property bool pureNumber: false
     columns: pureNumber ? 3 : 4
 
-    NumberButton {text: "√(" ; display: "√"; onClicked: text => pressed(text); visible: !pureNumber}
+    NumberButton {text: "√" ; display: "√"; onClicked: text => pressed(text); visible: !pureNumber}
     NumberButton {text: "π" ; onClicked: text => pressed(text); visible: !pureNumber}
     NumberButton {text: "^" ; onClicked: text => pressed(text); visible: !pureNumber}
     NumberButton {text: "^2" ; display: "x²"; onClicked:text => pressed(text); visible: !pureNumber}

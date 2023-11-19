@@ -12,9 +12,6 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(kalk VERSION ${RELEASE_SERVICE_VERSION})
 
-find_package(BISON REQUIRED)
-find_package(FLEX REQUIRED)
-
 set(KF_MIN_VERSION "5.240.0")
 set(QT_MIN_VERSION "6.5.0")
 
@@ -29,30 +26,7 @@ include(FeatureSummary)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DQT_QML_DEBUG ")
 
 find_package(ECM ${KF_MIN_VERSION} REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake/modules)
-
-find_package(GMP)
-set_package_properties(GMP PROPERTIES
-    DESCRIPTION "The GNU Multiple Precision Arithmetic Library"
-    URL "https://gmplib.org/"
-    TYPE REQUIRED
-    PURPOSE "Required for building KCalc."
-)
-
-find_package(MPFR)
-set_package_properties(MPFR PROPERTIES
-    DESCRIPTION "The GNU Multiple Precision Floating-Point Reliable Library"
-    URL "https://www.mpfr.org/"
-    TYPE REQUIRED
-    PURPOSE "Required for building KCalc."
-)
-
-include(CheckTypeSize)
-include(CheckIncludeFiles)
-
-check_include_files(ieeefp.h     HAVE_IEEEFP_H)
-check_type_size("signed long"    SIZEOF_SIGNED_LONG)
-check_type_size("unsigned long"  SIZEOF_UNSIGNED_LONG)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 # only enable QML debugging on debug builds
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DQT_QML_DEBUG ")
@@ -72,22 +46,21 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
 
+find_package(PkgConfig REQUIRED)
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui QuickControls2 Widgets)
 find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE COMPONENTS QuickCompiler)
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
-    Kirigami2
+    Kirigami
     I18n
     CoreAddons
     UnitConversion
 )
+pkg_search_module(QALCULATE libqalculate>4.7.0 REQUIRED IMPORTED_TARGET)
 if (ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Svg)
     find_package(OpenSSL REQUIRED)
 endif()
 add_subdirectory(src)
-
-configure_file(config-kcalc.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kcalc.h)
-add_subdirectory(knumber)
 
 if(BUILD_TESTING)
    add_subdirectory(autotests)

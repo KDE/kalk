@@ -34,6 +34,7 @@ Kirigami.Page {
                     applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
                 };
                 functionDrawer.close();
+                outputScreen.forceActiveFocus();
             }
         },
         Kirigami.Action {
@@ -41,34 +42,49 @@ Kirigami.Page {
             text: i18n("Undo")
             shortcut: "Ctrl+Z"
             enabled: inputManager.canUndo
-            onTriggered: inputManager.undo()
+            onTriggered: {
+                inputManager.undo();
+                outputScreen.forceActiveFocus();
+            }
         },
         Kirigami.Action {
             icon.name: "edit-redo-symbolic"
             text: i18n("Redo")
             shortcut: "Ctrl+Shift+Z"
             enabled: inputManager.canRedo
-            onTriggered: inputManager.redo()
+            onTriggered: {
+                inputManager.redo();
+                outputScreen.forceActiveFocus();
+            }
         },
         Kirigami.Action {
             icon.name: "edit-cut"
             text: i18n("Cut")
             shortcut: "ctrl+X"
             enabled: expressionRow.selectedText
-            onTriggered: cut()
+            onTriggered: {
+                cut();
+                outputScreen.forceActiveFocus();
+            }
         },
         Kirigami.Action {
             icon.name: "edit-copy"
             text: i18n("Copy")
             shortcut: "ctrl+C"
             enabled: expressionRow.text || result.text
-            onTriggered: copy()
+            onTriggered: {
+                copy();
+                outputScreen.forceActiveFocus();
+            }
         },
         Kirigami.Action {
             icon.name: "edit-paste"
             text: i18n("Paste")
             shortcut: "ctrl+V"
-            onTriggered: paste()
+            onTriggered: {
+                paste();
+                outputScreen.forceActiveFocus();
+            }
         }
     ]
 
@@ -209,23 +225,9 @@ Kirigami.Page {
                   expressionRow.cursorPosition += 1;
               }
               break;
+          case Qt.Key_Underscore: break;
           default:
-            switch(event.text) {
-              case "⋅":
-              case "×":
-              case "*":
-                inputManager.append("×"); break;
-              case "∶":
-              case "∕":
-              case "÷":
-              case "/":
-                inputManager.append("÷"); break;
-              case "−":
-              case "-":
-                inputManager.append("-"); break;
-              case "+":
-                inputManager.append("+"); break;
-            }
+            inputManager.append(event.text);
         }
         event.accepted = true;
     }
@@ -451,7 +453,7 @@ Kirigami.Page {
                     property string expression: ""
                     id: inputPad
                     Layout.fillHeight: true
-                    Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.5
+                    Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.6
                     Layout.alignment: Qt.AlignLeft
 
                     NumberPad {
@@ -468,12 +470,14 @@ Kirigami.Page {
                             } else if (text == "=") {
                                 inputManager.equal();
                                 expressionRow.focus = false;
-                                resultFadeOutAnimation.start();
                             } else {
                                 inputManager.append(text);
                             }
                         }
-                        onClear: inputManager.clear()
+                        onClear: {
+                            inputManager.clear();
+                            resultFadeOutAnimation.start();
+                        }
                     }
 
                     // fast drop shadow
@@ -528,7 +532,7 @@ Kirigami.Page {
                             anchors.leftMargin: Kirigami.Units.largeSpacing
                             anchors.rightMargin: Kirigami.Units.largeSpacing
                             anchors.topMargin: Kirigami.Units.largeSpacing
-                            anchors.bottomMargin: parent.height / 4
+                            anchors.bottomMargin: Kirigami.Units.largeSpacing * 4
                             onPressed: text => {
                                 inputManager.append(text)
                                 functionDrawer.close()
@@ -553,7 +557,7 @@ Kirigami.Page {
                         anchors.leftMargin: Kirigami.Units.smallSpacing
                         anchors.rightMargin: Kirigami.Units.smallSpacing
                         anchors.topMargin: Kirigami.Units.largeSpacing
-                        anchors.bottomMargin: parent.height / 4
+                        anchors.bottomMargin: Kirigami.Units.smallSpacing
                         onPressed: text => inputManager.append(text)
                     }
                 }

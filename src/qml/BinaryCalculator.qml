@@ -270,7 +270,7 @@ Kirigami.Page {
                         inputManager.equal();
                         resultFadeOutAnimation.start();
                     } else {
-                        inputManager.append(text, true);
+                        inputManager.append(text);
                     }
                 }
                 onClear: inputManager.clear()

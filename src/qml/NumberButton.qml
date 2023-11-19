@@ -25,6 +25,7 @@ Item {
     property string text
     property string display: text
     property bool special: false
+    property bool down: false
     
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
@@ -63,7 +64,7 @@ Item {
             Rectangle {
                 anchors.fill: parent
                 radius: Kirigami.Units.smallSpacing
-                color: button.pressed ? root.buttonPressedColor :
+                color: button.pressed || root.down ? root.buttonPressedColor :
                 (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonHoveredColor : root.buttonColor)
                 border.color: button.pressed ? root.buttonBorderPressedColor :
                     (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonBorderHoveredColor : root.buttonBorderColor)

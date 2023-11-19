@@ -2,24 +2,20 @@
 # SPDX-FileCopyrightText: 2020 Han Young <hanyoung@protonmail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-bison_target(MyParser ${CMAKE_CURRENT_SOURCE_DIR}/mathengine/parser.yy ${CMAKE_CURRENT_BINARY_DIR}/parser.cc)
-flex_target(MyScanner ${CMAKE_CURRENT_SOURCE_DIR}/mathengine/scanner.ll ${CMAKE_CURRENT_BINARY_DIR}/scanner.cc)
-
 add_library(kalklib STATIC
     historymanager.cpp
     historymanager.h
     inputmanager.cpp
     inputmanager.h
-    mathengine.cpp
-    mathengine.h
-    mathengine/driver.cc
-    ${CMAKE_CURRENT_BINARY_DIR}/parser.cc
-    ${CMAKE_CURRENT_BINARY_DIR}/scanner.cc
+    qalculateengine.cpp
+    qalculateengine.h
 )
 
 target_link_libraries(kalklib
     Qt::Core
-    knumber)
+    KF6::I18n
+    PkgConfig::QALCULATE
+)
 
 add_executable(kalk
     main.cpp
@@ -27,8 +23,6 @@ add_executable(kalk
     unitmodel.h
     calculator.qrc
 )
-
-add_flex_bison_dependency(MyScanner MyParser)
 
 target_link_libraries(kalk PRIVATE
     Qt6::Core
@@ -38,11 +32,11 @@ target_link_libraries(kalk PRIVATE
     KF6::I18n
     KF6::CoreAddons
     kalklib
-    knumber)
+)
 
 if(ANDROID)
     target_link_libraries(kalk PRIVATE
-        KF6::Kirigami2
+        KF6::Kirigami
         Qt6::Svg
         OpenSSL::SSL
     )
@@ -61,9 +55,6 @@ else()
     target_link_libraries(kalk PRIVATE Qt6::Widgets)
 endif()
 
-
 target_include_directories(kalk PRIVATE ${CMAKE_BINARY_DIR})
-
-target_include_directories(kalklib PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mathengine)
 
 install(TARGETS kalk ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -10,6 +10,7 @@ Dependencies:
     'frameworks/kirigami': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kunitconversion': '@latest-kf6'
+    'third-party/libqalculate': '@latest'
 
 Options:
     cppcheck-arguments: '--enable=warning,style,performance --inline-suppr --suppress=passedByValue --suppress=nullPointer'

@@ -96,18 +96,13 @@ parts:
         - usr/share/metainfo/org.kde.kalk.appdata.xml
         plugin: cmake
         build-packages:
-        - libmpfr-dev
-        - libgmp-dev
-        - bison
-        - flex
-        - kirigami2-dev
+        - libqalculate
+        - kirigami-dev
         - libkf5doctools-dev
         stage-packages:
         - qml-module-org-kde-kirigami2
         - qml-module-qtfeedback
         - qml-module-qtquick-controls2
-        - libgmp10
-        - libmpfr6
         source: .
         source-type: local
         cmake-parameters:

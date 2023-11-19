@@ -9,6 +9,8 @@
 
 #include <QObject>
 
+class QalculateEngine;
+
 class InputManager : public QObject
 {
     Q_OBJECT
@@ -47,7 +49,7 @@ public:
     bool binaryMode();
     QString formatNumbers(const QString &text);
     void addNumberSeparators(QString &number);
-    void calculate();
+    void calculate(bool exact = false, const int minExp = -1);
 
 Q_SIGNALS:
     void expressionChanged();
@@ -73,4 +75,6 @@ private:
     QString m_decimalPoint;
     std::vector<QString> m_undoStack;
     size_t m_undoPos = 0;
+    QalculateEngine *m_engine;
+    bool m_isApproximate;
 };

@@ -30,10 +30,7 @@ Originally starting as a fork of [Liri calculator](https://github.com/lirios/cal
 * KUnitConversion
 * Kirigami
 * KConfig
-* GNU Bison
-* Flex
-* GMP
-* MPFR
+* libqalculate
 
 ## Building and Installing
 
