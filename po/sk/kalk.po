@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-08 08:49+0000\n"
+"POT-Creation-Date: 2023-11-20 02:00+0000\n"
 "PO-Revision-Date: 2022-04-18 17:53+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -25,35 +25,45 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "wizzardsk@gmail.com"
 
-#: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
+#: main.cpp:61 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
 #: qml/main.qml:113 qml/main.qml:119
 #, kde-format
 msgid "Calculator"
 msgstr "Kalkulačka"
 
-#: main.cpp:64
+#: main.cpp:63
 #, fuzzy, kde-format
 #| msgid "Calculator in Kirigami"
 msgid "Calculator for Plasma"
 msgstr "Kalkulačka v Kirigami"
 
-#: main.cpp:66
+#: main.cpp:65
 #, fuzzy, kde-format
 #| msgid "© 2020-2021 KDE Community"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2021 KDE komunita"
+
+#: qalculateengine.cpp:100
+#, kde-format
+msgid "warning"
+msgstr ""
+
+#: qalculateengine.cpp:100
+#, kde-format
+msgid "error"
+msgstr ""
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
 msgstr ""
 
-#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
+#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:42
 #, kde-format
 msgid "Undo"
 msgstr ""
 
-#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:48
+#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:52
 #, kde-format
 msgid "Redo"
 msgstr ""
@@ -63,17 +73,17 @@ msgstr ""
 msgid "History"
 msgstr "História"
 
-#: qml/CalculationPage.qml:55
+#: qml/CalculationPage.qml:62
 #, kde-format
 msgid "Cut"
 msgstr ""
 
-#: qml/CalculationPage.qml:62
+#: qml/CalculationPage.qml:72
 #, kde-format
 msgid "Copy"
 msgstr ""
 
-#: qml/CalculationPage.qml:69
+#: qml/CalculationPage.qml:82
 #, kde-format
 msgid "Paste"
 msgstr ""
