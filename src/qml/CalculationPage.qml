@@ -93,7 +93,7 @@ Kirigami.Page {
 
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     readonly property bool inPortrait: initialPage.width < initialPage.height
-    property int keypadHeight: initialPage.height * 0.7
+    property int keypadHeight: initialPage.height * 0.8
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
     function cut() {
@@ -300,7 +300,7 @@ Kirigami.Page {
                     Controls.TextArea {
                         id: expressionRow
                         activeFocusOnPress: false
-                        font.pointSize: outputScreen.flexPointSize
+                        font.pointSize: outputScreen.flexPointSize * (text.length * outputScreen.flexPointSize * 0.7 > outputScreen.width ? 0.7 : 1)
                         font.weight: Font.Light
                         text: inputManager.expression
                         color: Kirigami.Theme.disabledTextColor
@@ -385,7 +385,7 @@ Kirigami.Page {
                     Controls.TextArea {
                         id: result
                         activeFocusOnPress: false
-                        font.pointSize: Math.round(outputScreen.flexPointSize * 1.5)
+                        font.pointSize: Math.round(outputScreen.flexPointSize) * (text.length * outputScreen.flexPointSize > outputScreen.width ? 0.9 : 1.4)
                         font.weight: Font.Light
                         text: inputManager.result
                         background: Rectangle { color: "transparent" }
