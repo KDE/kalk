@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-20 02:00+0000\n"
-"PO-Revision-Date: 2023-11-08 10:16+0100\n"
+"PO-Revision-Date: 2023-11-20 10:00+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -49,12 +49,12 @@ msgstr "© 2020-2022 La comunitat KDE"
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "avís"
 
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "error"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
