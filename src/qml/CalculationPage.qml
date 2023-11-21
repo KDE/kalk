@@ -431,110 +431,62 @@ Kirigami.Page {
             RowLayout {
                 Layout.fillHeight: true
                 Layout.fillWidth: true
-                spacing: Kirigami.Units.gridUnit
-
-                onWidthChanged: {
-                    if (!functionDrawer.opened && inPortrait)
-                        drawerIndicator.x = this.width - drawerIndicator.width + drawerIndicator.radius;
-                }
+                spacing: 0
+                onWidthChanged: view.currentIndex = 0
 
                 Item {
-                    property string expression: ""
                     id: inputPad
                     Layout.fillHeight: true
                     Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.6
                     Layout.alignment: Qt.AlignLeft
 
-                    NumberPad {
-                        id: numberPad
+                    Controls.PageIndicator {
+                        id: indicator
+                        visible: view.interactive
+                        anchors.bottom: view.top
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        count: view.count
+                        currentIndex: view.currentIndex
+
+                        TapHandler {
+                            onTapped: view.currentIndex = !view.currentIndex
+                        }
+                    }
+
+                    Controls.SwipeView {
+                        id: view
                         anchors.fill: parent
-                        anchors.topMargin: Kirigami.Units.largeSpacing
-                        anchors.bottomMargin: Kirigami.Units.smallSpacing
-                        anchors.leftMargin: Kirigami.Units.smallSpacing
-                        anchors.rightMargin: inPortrait ? Kirigami.Units.gridUnit * 1.5 : 0 // for right side drawer indicator
-                        inPortrait: initialPage.inPortrait
-                        onPressed: text => {
-                            if (text == "DEL") {
-                                inputManager.backspace();
-                            } else if (text == "=") {
-                                inputManager.equal();
-                                expressionRow.focus = false;
-                            } else {
-                                inputManager.append(text);
+                        anchors.margins: Kirigami.Units.smallSpacing
+                        anchors.topMargin: inPortrait ? indicator.height + Kirigami.Units.smallSpacing : Kirigami.Units.largeSpacing
+                        currentIndex: 1
+                        interactive: inPortrait
+                        spacing: Kirigami.Units.smallSpacing
+
+                        NumberPad {
+                            id: numberPad
+                            inPortrait: initialPage.inPortrait
+                            onPressed: text => {
+                                if (text == "DEL") {
+                                    inputManager.backspace();
+                                } else if (text == "=") {
+                                    inputManager.equal();
+                                    expressionRow.focus = false;
+                                } else {
+                                    inputManager.append(text);
+                                }
+                            }
+                            onClear: {
+                                inputManager.clear();
+                                resultFadeOutAnimation.start();
                             }
                         }
-                        onClear: {
-                            inputManager.clear();
-                            resultFadeOutAnimation.start();
-                        }
-                    }
-
-                    // fast drop shadow
-                    RectangularGlow {
-                        visible: inPortrait
-                        anchors.rightMargin: 1
-                        anchors.fill: drawerIndicator
-                        glowRadius: 4
-                        spread: 0.2
-                        color: initialPage.dropShadowColor
-                    }
-
-                    Rectangle {
-                        id: drawerIndicator
-                        visible: inPortrait || functionDrawer.opened
-                        z: 1
-                        anchors.top: parent.top
-                        anchors.bottom: parent.bottom
-                        width: Kirigami.Units.gridUnit
-                        x: parent.width - this.width
-
-                        Kirigami.Theme.colorSet: Kirigami.Theme.View
-                        Kirigami.Theme.inherit: false
-                        color: Kirigami.Theme.backgroundColor
-
-                        Rectangle {
-                            anchors.centerIn: parent
-                            height: parent.height / 20
-                            width: parent.width / 4
-                            radius: 3
-                            color: Kirigami.Theme.textColor
-                        }
-                    }
-
-                    Controls.Drawer {
-                        id: functionDrawer
-                        parent: initialPage
-                        y: initialPage.height - inputPad.height
-                        x: initialPage.width // BUG: We can not stop drawer from covering history, when window is in landscape mode, by making its x to edge of initial page instead, as according to QT docs 'It is not possible to set the x-coordinate (or horizontal margins) of a drawer at the left or right window edge'
-                        height: inputPad.height
-                        width: initialPage.width * 0.8
-                        interactive: inPortrait || opened
-                        dragMargin: drawerIndicator.width
-                        edge: Qt.RightEdge
-                        dim: false
-                        onXChanged: drawerIndicator.x = this.x - drawerIndicator.width + drawerIndicator.radius;
-                        opacity: 1 // for plasma style
 
                         FunctionPad {
-                            anchors.fill: parent
-                            anchors.bottom: parent.Bottom
-                            anchors.leftMargin: Kirigami.Units.largeSpacing
-                            anchors.rightMargin: Kirigami.Units.largeSpacing
-                            anchors.topMargin: Kirigami.Units.largeSpacing
-                            anchors.bottomMargin: Kirigami.Units.largeSpacing * 4
-                            onPressed: text => {
-                                inputManager.append(text)
-                                functionDrawer.close()
-                            }
-                        }
-                        // for plasma style
-                        background: Rectangle {
-                            Kirigami.Theme.colorSet: Kirigami.Theme.View
-                            color: Kirigami.Theme.backgroundColor
-                            anchors.fill: parent
+                            onPressed: text => inputManager.append(text)
                         }
                     }
                 }
+
                 Item {
                     Layout.alignment:  Qt.AlignRight
                     Layout.fillHeight: true
