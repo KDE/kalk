@@ -172,6 +172,9 @@ void InputManager::append(const QString &subexpression)
                 temp = QStringLiteral(")");
             }
         }
+    } else if (temp == QStringLiteral("rand()")) {
+        bool isAprox = false;
+        temp = m_engine->evaluate(temp, &isAprox);
     }
 
     // prevent invalid duplicate operators

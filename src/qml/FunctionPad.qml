@@ -61,5 +61,10 @@ GridLayout {
     NumberButton {text: "abs(" ; display: "|𝑥|"; onClicked: text => pressed(text);}
     NumberButton {text: "factor(" ; display: "a×b"; onClicked: text => pressed(text);}
     NumberButton {text: " mod " ; display: "mod"; onClicked: text => pressed(text);}
+    NumberButton {text: "rand()" ; display: "rand"; onClicked: text => pressed(text);}
+
+    NumberButton {text: "root(;)"; display: "ⁿ√"; onClicked: text => pressed(text);}
+    NumberButton {text: "log(;)" ; display: "logₙ"; onClicked: text => pressed(text);}
     NumberButton {text: "∫(" ; display: "∫"; onClicked: text => pressed(text);}
+    NumberButton {text: "diff(" ; display: "d/dx"; onClicked: text => pressed(text);}
 }
