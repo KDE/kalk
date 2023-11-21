@@ -386,7 +386,7 @@ QString InputManager::formatNumbers(const QString &text)
 
     // show exponents as superscripts
     if (temp.contains(QStringLiteral("^"))) {
-        QRegularExpression re(QStringLiteral(R"((?<base>\d*\.?\d+\!?|\))?(?<exponent>\^-?[\d.]+(?!\!)))"));
+        QRegularExpression re(QStringLiteral(R"((?<base>\w+|\)|!|π|%)?(?<exponent>\^-?[\d.]+(?!\!)))"));
         QRegularExpressionMatchIterator i = re.globalMatch(temp);
         while (i.hasNext()) {
             QRegularExpressionMatch match = i.next();
