@@ -117,7 +117,7 @@ Kirigami.ApplicationWindow {
             
             SidebarButton {
                 text: i18n("Calculator")
-                icon.name: "format-number-percent"
+                icon.name: "accessories-calculator"
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
@@ -153,7 +153,7 @@ Kirigami.ApplicationWindow {
             
             SidebarButton {
                 text: i18n("Binary Calculator")
-                icon.name: "format-number-percent"
+                icon.name: "format-text-code"
                 Layout.fillWidth: true
                 Layout.minimumHeight: Kirigami.Units.gridUnit * 2
                 Layout.bottomMargin: Kirigami.Units.smallSpacing
