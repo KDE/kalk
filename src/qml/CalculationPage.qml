@@ -31,9 +31,8 @@ Kirigami.Page {
                     applicationWindow().pageStack.pop();
                 }
                 else {
-                    applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml");
+                    applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml", { historyIndex: inputManager.historyIndex });
                 };
-                functionDrawer.close();
                 outputScreen.forceActiveFocus();
             }
         },

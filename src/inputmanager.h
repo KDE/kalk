@@ -23,6 +23,7 @@ class InputManager : public QObject
     Q_PROPERTY(bool binaryMode READ binaryMode WRITE setBinaryMode)
     Q_PROPERTY(bool canUndo READ canUndo NOTIFY canUndoChanged)
     Q_PROPERTY(bool canRedo READ canRedo NOTIFY canRedoChanged)
+    Q_PROPERTY(int historyIndex READ historyIndex WRITE setHistoryIndex)
 
 public:
     static InputManager *inst();
@@ -38,6 +39,8 @@ public:
     Q_INVOKABLE void backspace();
     Q_INVOKABLE void equal();
     Q_INVOKABLE void clear(bool save = true);
+    Q_INVOKABLE void setHistoryIndex(const int &index);
+    int historyIndex() const;
     Q_INVOKABLE void fromHistory(const QString &result);
     void store();
     Q_INVOKABLE void undo();
@@ -77,4 +80,5 @@ private:
     size_t m_undoPos = 0;
     QalculateEngine *m_engine;
     bool m_isApproximate;
+    int m_historyIndex;
 };

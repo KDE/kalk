@@ -41,6 +41,14 @@ void HistoryManager::clearHistory()
     save();
 }
 
+void HistoryManager::deleteFromHistory(const int index)
+{
+    beginRemoveRows({}, index, index);
+    m_historyList.removeAt(index);
+    endRemoveRows();
+    save();
+}
+
 void HistoryManager::save()
 {
     QJsonDocument doc;

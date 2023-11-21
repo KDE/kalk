@@ -32,11 +32,14 @@ public:
     };
     void addHistory(const QString &string)
     {
+        beginInsertRows({}, m_historyList.count(), m_historyList.count());
         m_historyList.append(string);
+        endInsertRows();
+
         this->save();
-        Q_EMIT layoutChanged();
     };
     Q_INVOKABLE void clearHistory();
+    Q_INVOKABLE void deleteFromHistory(const int index);
 
 private:
     QList<QString> m_historyList;

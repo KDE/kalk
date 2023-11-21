@@ -231,6 +231,10 @@ void InputManager::equal()
         // Show fraction representation of result
         calculate(true);
         m_input = QStringLiteral("(") + m_output + QStringLiteral(")");
+        if (savedResult == m_result) {
+            m_result.clear();
+            Q_EMIT resultChanged();
+        }
     } else {
         m_input = m_output;
         m_result.clear();
@@ -269,6 +273,16 @@ void InputManager::clear(bool save)
     if (save) {
         store();
     }
+}
+
+void InputManager::setHistoryIndex(const int &index)
+{
+    m_historyIndex = index;
+}
+
+int InputManager::historyIndex() const
+{
+    return m_historyIndex;
 }
 
 void InputManager::fromHistory(const QString &result)
