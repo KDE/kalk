@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-20 02:00+0000\n"
+"POT-Creation-Date: 2023-11-22 01:37+0000\n"
 "PO-Revision-Date: 2023-11-08 12:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -60,45 +60,58 @@ msgstr ""
 msgid "Programmer"
 msgstr "Programador"
 
-#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:42
+#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
 msgstr "Deshacer"
 
-#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:52
+#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
 msgstr "Rehacer"
 
-#: qml/CalculationPage.qml:26 qml/HistoryView.qml:14
+#: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
 #, kde-format
 msgid "History"
 msgstr "Historial"
 
-#: qml/CalculationPage.qml:62
+#: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "Cortar"
 
-#: qml/CalculationPage.qml:72
+#: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
 msgstr "Copiar"
 
-#: qml/CalculationPage.qml:82
+#: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
 msgstr "Pegar"
 
-#: qml/HistoryView.qml:18
+#: qml/HistoryView.qml:29
 #, kde-format
 msgid "Clear history"
 msgstr "Borrar el historial"
 
-#: qml/HistoryView.qml:51
+#: qml/HistoryView.qml:133
 #, kde-format
 msgid "History is empty"
 msgstr "El historial está vacío"
+
+#: qml/HistoryView.qml:141
+#, fuzzy, kde-format
+#| msgid "Clear history"
+msgctxt "Delete all items from a list"
+msgid "Clear All History?"
+msgstr "Borrar el historial"
+
+#: qml/HistoryView.qml:142
+#, kde-format
+msgctxt "Deleted items cannot be recovered"
+msgid "This is permanent and cannot be undone"
+msgstr ""
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format
