@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2023-11-10 10:16+0100\n"
+"PO-Revision-Date: 2023-11-22 10:45+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -47,12 +47,12 @@ msgstr "© 2020-2022 Communitate de KDE"
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "aviso"
 
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "error"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
@@ -100,17 +100,16 @@ msgid "History is empty"
 msgstr "Chronologia es vacue"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Netta chronologia"
+msgstr "Netta omne chronologia?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Isto es permanente e nonpote esser annullate"
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format

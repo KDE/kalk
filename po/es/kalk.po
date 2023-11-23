@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2023-11-08 12:45+0100\n"
+"PO-Revision-Date: 2023-11-22 03:07+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -48,12 +48,12 @@ msgstr "© 2020-2022 la Comunidad de KDE"
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "advertencia"
 
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "error"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
@@ -101,17 +101,16 @@ msgid "History is empty"
 msgstr "El historial está vacío"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Borrar el historial"
+msgstr "¿Borrar todo el historial?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Esto es permanente y no se puede deshacer"
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format
