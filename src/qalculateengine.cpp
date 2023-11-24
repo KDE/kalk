@@ -112,3 +112,5 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
 
     return m_result;
 }
+
+#include "moc_qalculateengine.cpp"
