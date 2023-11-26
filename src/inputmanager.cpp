@@ -12,6 +12,8 @@
 #include <QRegularExpression>
 
 constexpr QStringView ZERO_WIDTH_SPACE = u"\u200B";
+constexpr QStringView LEFT = u"\u200C"; // ZERO WIDTH NON-JOINER
+constexpr QStringView RIGHT = u"\u200D"; // ZERO WIDTH JOINER
 
 InputManager::InputManager()
     : m_engine(QalculateEngine::inst())
@@ -87,6 +89,27 @@ void InputManager::setCursorPosition(int position)
 
 int InputManager::idealCursorPosition(int position, int arrow) const
 {
+    // position cursor around encoded expressions
+    int prevLeft = m_expression.lastIndexOf(LEFT.at(0), position - 1);
+    int nextRight = m_expression.indexOf(RIGHT.at(0), position);
+    if (position >= 0 && prevLeft >= 0 && nextRight >= 0) {
+        const int nextLeft = m_expression.indexOf(LEFT.at(0), position);
+        const int prevRight = m_expression.lastIndexOf(RIGHT.at(0), position - 1);
+
+        if (prevLeft > prevRight || (nextRight > nextLeft && nextLeft < position)) {
+            nextRight++;
+            const int spaces = m_expression.mid(position, nextRight - position).count(ZERO_WIDTH_SPACE.at(0));
+
+            if (arrow == -1 || (position - prevLeft < nextRight - position - spaces && arrow != 1)) {
+                position = prevLeft;
+            } else {
+                position = nextRight;
+            }
+
+            return position;
+        }
+    }
+
     // position cursor ahead of group separator
     if (position > 1 && position < m_expression.size()) {
         if (m_expression.at(position - 1) == m_groupSeparator) {
@@ -115,7 +138,8 @@ int InputManager::idealCursorPosition(int position, int arrow) const
             // check nearest left
             int posLeft = position - 1;
             while (posLeft >= 0) {
-                if (m_expression.at(posLeft).isDigit() || m_expression.at(posLeft).isSymbol() || m_expression.at(posLeft) == QLatin1Char('(')) {
+                if (m_expression.at(posLeft).isDigit() || m_expression.at(posLeft).isSymbol() || m_expression.at(posLeft) == QLatin1Char('(')
+                    || m_expression.at(posLeft) == RIGHT.at(0)) {
                     posLeft++;
                     break;
                 } else if (posLeft == 0) {
@@ -128,7 +152,8 @@ int InputManager::idealCursorPosition(int position, int arrow) const
             // check nearest right
             int posRight = position + 1;
             while (posRight < m_expression.size()) {
-                if (m_expression.at(posRight).isDigit() || m_expression.at(posRight).isSymbol() || m_expression.at(posRight) == QLatin1Char('(')) {
+                if (m_expression.at(posRight).isDigit() || m_expression.at(posRight).isSymbol() || m_expression.at(posRight) == QLatin1Char('(')
+                    || m_expression.at(posRight) == LEFT.at(0)) {
                     break;
                 }
                 posRight++;
@@ -148,8 +173,63 @@ int InputManager::idealCursorPosition(int position, int arrow) const
     return position;
 }
 
+int InputManager::addAdjacentParentheses(const int &side, QString &temp)
+{
+    bool add = false;
+    bool left = side == -1;
+    const QChar part = left ? temp.at(0) : temp.at(temp.size() - 1);
+    const QChar end = left ? m_input.at(m_inputPosition - 1) : m_input.at(m_inputPosition);
+    if (left) {
+        add = (m_input.size() > 0 && ((end == RIGHT.at(0) && (part.isDigit() || part == LEFT.at(0))) || (end.isDigit() && part == LEFT.at(0))));
+
+    } else {
+        add = (m_inputPosition < m_input.size() && ((end == LEFT.at(0) && (part.isDigit() || part == RIGHT.at(0))) || (end.isDigit() && part == RIGHT.at(0))));
+    }
+
+    if (!add) {
+        return 0;
+    }
+
+    temp = left ? QStringLiteral(")") + temp : temp + QStringLiteral("(");
+    int pos = left ? m_inputPosition - 1 : m_inputPosition;
+    const int adj = left ? 1 : 0;
+
+    if (m_input.at(pos).isDigit()) {
+        while ((pos >= 0 && pos < m_input.size()) && m_input.at(pos).isDigit()) {
+            pos = left ? pos - 1 : pos + 1;
+        }
+
+        m_input.insert(pos + adj, left ? QLatin1Char('(') : QLatin1Char(')'));
+    } else {
+        int countLeft = left ? 0 : 1;
+        int countRight = left ? 1 : 0;
+
+        while ((pos >= 0 && pos < m_input.size()) && countLeft != countRight) {
+            if (m_input.at(pos) == LEFT.at(0)) {
+                countLeft++;
+            } else if (m_input.at(pos) == RIGHT.at(0)) {
+                countRight++;
+            }
+            pos = left ? pos - 1 : pos + 1;
+        }
+
+        m_input.insert(pos + adj, left ? QLatin1Char('(') : QLatin1Char(')'));
+    }
+
+    if (left) {
+        m_inputPosition++;
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
 void InputManager::append(const QString &subexpression)
 {
+    if (m_inputPosition >= m_input.size()) {
+        m_inputPosition = m_input.size();
+    }
+
     // if expression was from result and input is numeric, clear expression
     if (m_moveFromResult && subexpression.size() == 1 && m_inputPosition == m_input.size()) {
         if(subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.'))
@@ -182,8 +262,34 @@ void InputManager::append(const QString &subexpression)
         return;
     }
 
+    // detect if aproximate value was pasted
+    if (temp.contains(QStringLiteral("…"))) {
+        // attempt to lookup original input encode stack
+        for (const auto &item : m_encodeStack) {
+            if (temp.contains(item.second)) {
+                temp.replace(item.second, item.first);
+            }
+        }
+
+        // lookup original input from history
+        if (temp.contains(QStringLiteral("…"))) {
+            QList<QString> test = HistoryManager::inst()->getHistory();
+            for (const auto &item : test) {
+                QStringList parts = item.split(QLatin1Char('='));
+                if (parts.size() > 3 && temp.contains(parts.at(3))) {
+                    addComponents(parts.at(2), parts.at(3));
+                    temp.replace(parts.at(3), parts.at(2));
+                }
+            }
+        }
+    }
+
+    // add parentheses around left/right sides of component if appending a digit or another component adjacent to it
+    addAdjacentParentheses(-1, temp);
+    int posAdjust = addAdjacentParentheses(1, temp);
+
     m_input.insert(m_inputPosition, temp);
-    m_inputPosition += temp.size();
+    m_inputPosition += temp.size() - posAdjust;
 
     calculate();
 
@@ -196,15 +302,30 @@ void InputManager::backspace()
         return;
     }
 
-    // delete entire function
     if (m_input.size() > 2) {
         int posBack = m_inputPosition - 2;
-        while (posBack >= 0) {
-            if (m_input.at(posBack).isDigit() || m_input.at(posBack).isSymbol() || m_input.at(posBack).isPunct() || m_input.at(posBack).isSpace()
-                || m_input.at(posBack + 1) == m_input.at(posBack)) {
-                break;
+
+        // delete entire component
+        if (m_input.at(posBack + 1) == RIGHT.at(0)) {
+            int countRight = 1;
+            int countLeft = 0;
+            while (posBack >= 0 && countRight != countLeft) {
+                if (m_input.at(posBack) == RIGHT.at(0)) {
+                    countRight++;
+                } else if (m_input.at(posBack) == LEFT.at(0)) {
+                    countLeft++;
+                }
+                posBack--;
             }
-            posBack--;
+        } else {
+            // delete entire function
+            while (posBack >= 0) {
+                if (m_input.at(posBack).isDigit() || m_input.at(posBack).isSymbol() || m_input.at(posBack).isPunct() || m_input.at(posBack).isSpace()
+                    || m_input.at(posBack + 1) == m_input.at(posBack) || m_input.at(posBack) == RIGHT.at(0)) {
+                    break;
+                }
+                posBack--;
+            }
         }
 
         const int diff = m_inputPosition - posBack;
@@ -226,19 +347,45 @@ void InputManager::equal()
         // if the output is empty, either the input is empty or user has pressed equal twice
         return;
     }
-    HistoryManager::inst()->addHistory(m_expression + QStringLiteral(" = ") + m_result);
 
-    QString savedResult = m_isBinaryMode ? m_binaryResult : m_result;
+    const QString savedResult = m_isBinaryMode ? m_binaryResult : m_result;
+    const QString equals = QStringLiteral("=");
 
     if (m_isApproximate) {
-        // Show fraction representation of result
-        calculate(true);
-        m_input = QStringLiteral("(") + m_output + QStringLiteral(")");
-        if (savedResult == m_result) {
-            m_result.clear();
-            Q_EMIT resultChanged();
+        QString expression = m_output.left(9) + QStringLiteral("…");
+
+        double outputNumeric = m_output.toDouble();
+        if (outputNumeric == 0.0) {
+            expression = m_output.left(6) + QStringLiteral("…") + m_output.right(3);
+        } else if (outputNumeric >= 10000000 || outputNumeric < 0.0001) {
+            // get pure Exponential Notation for very large and very small numbers
+            calculate(false, 1);
+            expression = m_output;
+            expression.replace(6, m_output.indexOf(QStringLiteral("E")) - 6, QStringLiteral("…"));
         }
+
+        const QString spacer = ZERO_WIDTH_SPACE.toString();
+        const size_t maxSize = std::max(m_input.size(), expression.size());
+        const QString input = LEFT.toString() + m_input + spacer.repeated(maxSize - m_input.size()) + RIGHT.toString();
+        expression = LEFT.toString() + expression + spacer.repeated(maxSize - expression.size()) + RIGHT.toString();
+        addComponents(input, expression);
+
+        // save the display values along with the original input
+        HistoryManager::inst()->addHistory(m_expression + equals + m_result + equals + input + equals + expression);
+        m_input = input;
+
+        // show fraction representation of result
+        calculate(true);
     } else {
+        double outputNumeric = m_output.toDouble();
+        if (outputNumeric != 0.0 && (outputNumeric >= 10000000 || outputNumeric < 0.0001)) {
+            // get pure Exponential Notation for very large and very small numbers
+            calculate(false, 1);
+            HistoryManager::inst()->addHistory(m_expression + equals + m_result + equals + m_input + equals + m_output);
+        } else {
+            HistoryManager::inst()->addHistory(m_expression + equals + m_result + equals + m_input);
+        }
+
         m_input = m_output;
         m_result.clear();
         Q_EMIT resultChanged();
@@ -288,22 +435,78 @@ int InputManager::historyIndex() const
     return m_historyIndex;
 }
 
-void InputManager::fromHistory(const QString &result)
+void InputManager::fromHistory(bool isResult, const QString &input, const QString &expression)
 {
-    m_input = result;
-    m_input.remove(m_groupSeparator);
-    m_output.clear();
-    m_expression = result;
-    m_result.clear();
-    m_binaryResult.clear();
-    m_hexResult.clear();
+    if (input.isEmpty() || input.indexOf(LEFT.at(0)) < 0) {
+        append(expression);
+        return;
+    }
 
-    m_moveFromResult = true;
-    m_inputPosition = m_input.size();
-    Q_EMIT expressionChanged();
-    Q_EMIT resultChanged();
-    Q_EMIT binaryResultChanged();
-    Q_EMIT hexResultChanged();
+    if (isResult) {
+        addComponents(input, expression);
+        append(input);
+        return;
+    }
+
+    QString value = input;
+
+    // remove outer left/right ends if input is composed of multiple components
+    if (value.count(LEFT.at(0)) > 1 && value.at(0) == LEFT.at(0) && value.at(value.size() - 1) == RIGHT.at(0)) {
+        value = value.mid(1, value.size() - 2);
+    }
+
+    // parse and add individual components
+    const std::vector<QString> inputs = parseComponents(value);
+    const std::vector<QString> expressions = parseComponents(expression);
+    if (expressions.size() > 0 && inputs.size() > 0) {
+        for (size_t n = 0; n < std::min(inputs.size(), expressions.size()); n++) {
+            addComponents(inputs.at(n), expressions.at(n));
+        }
+        append(value);
+    } else {
+        append(expression);
+    }
+}
+
+std::vector<QString> InputManager::parseComponents(const QString &text) const
+{
+    int countLeft = 0;
+    int countRight = 0;
+    QString item;
+    std::vector<QString> components;
+
+    for (const auto ch : text) {
+        if (ch == LEFT.at(0)) {
+            countLeft++;
+        } else if (ch == RIGHT.at(0)) {
+            countRight++;
+        }
+
+        if (countLeft > 0) {
+            item.append(ch);
+
+            if (countLeft == countRight) {
+                components.push_back(item);
+                item.clear();
+                countLeft = 0;
+                countRight = 0;
+            }
+        }
+    }
+
+    return components;
+}
+
+void InputManager::addComponents(const QString &input, const QString &expression)
+{
+    if (std::find_if(m_encodeStack.begin(),
+                     m_encodeStack.end(),
+                     [&](const auto &item) {
+                         return item.first == input;
+                     })
+        == m_encodeStack.cend()) {
+        m_encodeStack.push_back(std::make_pair(input, expression));
+    }
 }
 
 void InputManager::store()
@@ -381,6 +584,24 @@ void InputManager::setBinaryMode(bool active) {
 bool InputManager::binaryMode()
 {
     return m_isBinaryMode;
+}
+
+QString InputManager::encodeExpression(const QString &input) const
+{
+    QString expression = input;
+    const std::vector<QString> inputs = parseComponents(input);
+
+    // replace only first occurence of each component in expression
+    for (auto component : inputs) {
+        for (auto item : m_encodeStack) {
+            if (component == item.first) {
+                expression.replace(expression.indexOf(component), item.first.size(), item.second);
+                break;
+            }
+        }
+    }
+
+    return expression;
 }
 
 QString InputManager::formatNumbers(const QString &text)
@@ -476,10 +697,14 @@ void InputManager::calculate(bool exact, const int minExp)
         return;
     }
 
-    m_expression = m_isBinaryMode ? m_input : formatNumbers(m_input);
+    m_expression = m_isBinaryMode ? m_input : formatNumbers(encodeExpression(m_input));
     Q_EMIT expressionChanged();
 
     QString input = m_input.trimmed();
+    input.replace(ZERO_WIDTH_SPACE.toString(), QString());
+    input.replace(LEFT.at(0), QLatin1Char('('));
+    input.replace(RIGHT.at(0), QLatin1Char(')'));
+
     m_isApproximate = false;
     if (m_isBinaryMode) {
         m_output = m_engine->evaluate(input, &m_isApproximate, 2, 10, exact, minExp);

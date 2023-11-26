@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
                     focusPolicy: Qt.NoFocus
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(item.parts[0].trim());
+                        inputManager.fromHistory(false, item.parts[2] || "", contentItem.text);
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }
@@ -99,7 +99,7 @@ Kirigami.ScrollablePage {
                     focusPolicy: Qt.NoFocus
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(item.parts[1].trim());
+                        inputManager.fromHistory(true, item.parts[2] || "", item.parts[3] || contentItem.text);
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }

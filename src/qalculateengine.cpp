@@ -96,7 +96,7 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     std::string parsed;
     std::string result;
     AutomaticFractionFormat fracFormat = exact ? AUTOMATIC_FRACTION_OFF : AUTOMATIC_FRACTION_SINGLE;
-    AutomaticApproximation autoAprox = showAprox ? AUTOMATIC_APPROXIMATION_AUTO : AUTOMATIC_APPROXIMATION_SINGLE;
+    AutomaticApproximation autoAprox = exact ? AUTOMATIC_APPROXIMATION_OFF : AUTOMATIC_APPROXIMATION_SINGLE;
     bool is_comparison = false;
     result = CALCULATOR->calculateAndPrint(input, 2000, eo, po, fracFormat, autoAprox, &parsed, -1, &is_comparison, false);
     m_result = QString::fromStdString(result);
@@ -111,7 +111,7 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
         CALCULATOR->nextMessage();
     }
 
-    if (exact && m_result.contains(QStringLiteral(" ∕ "))) {
+    if (!showAprox && exact && m_result.contains(QStringLiteral(" ∕ "))) {
         m_result.replace(QStringLiteral(" ∕ "), FRACTION_SLASH.toString());
         m_result.replace(QStringLiteral(" + "), HAIR_SPACE.toString());
     }

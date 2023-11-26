@@ -41,7 +41,7 @@ public:
     Q_INVOKABLE void clear(bool save = true);
     Q_INVOKABLE void setHistoryIndex(const int &index);
     int historyIndex() const;
-    Q_INVOKABLE void fromHistory(const QString &result);
+    Q_INVOKABLE void fromHistory(bool isResult, const QString &input, const QString &expression);
     void store();
     Q_INVOKABLE void undo();
     Q_INVOKABLE void redo();
@@ -81,4 +81,9 @@ private:
     QalculateEngine *m_engine;
     bool m_isApproximate;
     int m_historyIndex;
+    std::vector<std::pair<QString, QString>> m_encodeStack;
+    std::vector<QString> parseComponents(const QString &text) const;
+    void addComponents(const QString &input, const QString &expression);
+    QString encodeExpression(const QString &input) const;
+    int addAdjacentParentheses(const int &side, QString &temp);
 };

@@ -155,7 +155,10 @@ Kirigami.Page {
         switch(event.key) {
           case Qt.Key_Delete:
               if (expressionRow.cursorPosition < expressionRow.length) {
-                  expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
+                  const posDelete = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
+                  expressionRow.lastPos = posDelete;
+                  expressionRow.cursorPosition = posDelete;
+                  inputManager.cursorPosition = posDelete;
                   inputManager.backspace();
               }
               break;
@@ -207,11 +210,17 @@ Kirigami.Page {
               break;
           case Qt.Key_Left:
               expressionRow.focus = true;
-              expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition - 1, -1);
+              const posLeft = inputManager.idealCursorPosition(expressionRow.cursorPosition - 1, -1);
+              expressionRow.lastPos = posLeft;
+              expressionRow.cursorPosition = posLeft;
+              inputManager.cursorPosition = posLeft;
               break;
           case Qt.Key_Right:
               expressionRow.focus = true;
-              expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
+              const posRight = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
+              expressionRow.lastPos = posRight;
+              expressionRow.cursorPosition = posRight;
+              inputManager.cursorPosition = posRight;
               break;
           case Qt.Key_Underscore: break;
           default:
@@ -318,9 +327,14 @@ Kirigami.Page {
                                 cursorPosition = inputManager.cursorPosition;
                             }
                         }
+                        property int lastPos
                         onCursorPositionChanged: {
                             if (lastText === text && selectedText === "") {
+                                if (cursorPosition === lastPos) {
+                                    return;
+                                }
                                 const pos = inputManager.idealCursorPosition(cursorPosition); // this only calculate the postion, doesn't modify inputManager in anyway
+                                lastPos = pos;
                                 cursorPosition = pos;
                                 inputManager.cursorPosition = pos;
                             } else {
