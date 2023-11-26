@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-27 00:52+0000\n"
-"PO-Revision-Date: 2023-11-19 03:44\n"
+"PO-Revision-Date: 2023-11-25 02:33\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -25,7 +25,7 @@ msgstr "KDE 中国, Tyson Tan, Wordless Echo"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org, tysontan@tysontan.com, wordless@echo.moe"
+msgstr "kde-china@kde.org, tds00@qq.com, wordless@echo.moe"
 
 #: main.cpp:63 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:111
 #: qml/main.qml:114 qml/main.qml:120
