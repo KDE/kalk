@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2023-11-08 22:49+0100\n"
+"PO-Revision-Date: 2023-11-26 01:13+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -49,12 +49,12 @@ msgstr "© 2020-2022 KDE komunitatea"
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "abisua"
 
 #: qalculateengine.cpp:100
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "errorea"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
@@ -102,17 +102,16 @@ msgid "History is empty"
 msgstr "Historia hutsik dago"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Garbitu historia"
+msgstr "Historia osoa garbitu?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Hori iraunkorra da eta ez dago atzera egiterik"
 
 #: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
 #, kde-format

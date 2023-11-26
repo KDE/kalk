@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-22 01:37+0000\n"
-"PO-Revision-Date: 2023-11-19 03:37\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -25,7 +25,7 @@ msgstr "KDE 中国, Tyson Tan, Wordless Echo"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kde-china@kde.org, tysontan@tysontan.com, wordless@echo.moe"
+msgstr "kde-china@kde.org, tds00@qq.com, wordless@echo.moe"
 
 #: main.cpp:61 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
 #: qml/main.qml:113 qml/main.qml:119
@@ -99,11 +99,10 @@ msgid "History is empty"
 msgstr "历史记录为空"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "清除历史记录"
+msgstr ""
 
 #: qml/HistoryView.qml:142
 #, kde-format
