@@ -264,17 +264,25 @@ void InputManager::append(const QString &subexpression)
 
     // detect if aproximate value was pasted
     if (temp.contains(QStringLiteral("…"))) {
-        // attempt to lookup original input encode stack
+        // add leading/ending component parts if missing
+        if (temp.at(0) != LEFT.at(0)) {
+            temp = LEFT.toString() + temp;
+        }
+        if (temp.at(temp.size() - 1) == QStringLiteral("…")) {
+            temp = temp + RIGHT.toString();
+        }
+
+        // attempt to lookup original input from encode stack
         for (const auto &item : m_encodeStack) {
             if (temp.contains(item.second)) {
                 temp.replace(item.second, item.first);
             }
         }
 
-        // lookup original input from history
+        // lookup original input from history if not found in encode stack
         if (temp.contains(QStringLiteral("…"))) {
-            QList<QString> test = HistoryManager::inst()->getHistory();
-            for (const auto &item : test) {
+            QList<QString> history = HistoryManager::inst()->getHistory();
+            for (const auto &item : history) {
                 QStringList parts = item.split(QLatin1Char('='));
                 if (parts.size() > 3 && temp.contains(parts.at(3))) {
                     addComponents(parts.at(2), parts.at(3));
@@ -352,22 +360,23 @@ void InputManager::equal()
     const QString equals = QStringLiteral("=");
 
     if (m_isApproximate) {
-        QString expression = m_output.left(9) + QStringLiteral("…");
+        const QString aprox = QStringLiteral("…");
+        QString expression = m_output.left(9) + aprox;
 
         double outputNumeric = m_output.toDouble();
         if (outputNumeric == 0.0) {
-            expression = m_output.left(6) + QStringLiteral("…") + m_output.right(3);
+            expression = m_output.left(6) + aprox + m_output.right(3);
         } else if (outputNumeric >= 10000000 || outputNumeric < 0.0001) {
             // get pure Exponential Notation for very large and very small numbers
             calculate(false, 1);
             expression = m_output;
-            expression.replace(6, m_output.indexOf(QStringLiteral("E")) - 6, QStringLiteral("…"));
+            expression.replace(6, m_output.indexOf(QStringLiteral("E")) - 6, aprox);
         }
 
         const QString spacer = ZERO_WIDTH_SPACE.toString();
         const size_t maxSize = std::max(m_input.size(), expression.size());
         const QString input = LEFT.toString() + m_input + spacer.repeated(maxSize - m_input.size()) + RIGHT.toString();
-        expression = LEFT.toString() + expression + spacer.repeated(maxSize - expression.size()) + RIGHT.toString();
+        expression = LEFT.toString() + expression.insert(expression.indexOf(aprox), spacer.repeated(maxSize - expression.size())) + RIGHT.toString();
         addComponents(input, expression);
 
         // save the display values along with the original input
