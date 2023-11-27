@@ -265,11 +265,11 @@ void InputManager::append(const QString &subexpression)
     // detect if aproximate value was pasted
     if (temp.contains(QStringLiteral("…"))) {
         // add leading/ending component parts if missing
-        if (temp.at(0) != LEFT.at(0)) {
-            temp = LEFT.toString() + temp;
-        }
         if (temp.at(temp.size() - 1) == QStringLiteral("…")) {
             temp = temp + RIGHT.toString();
+        }
+        if (temp.count(LEFT.at(0)) < temp.count(RIGHT.at(0))) {
+            temp = LEFT.toString() + temp;
         }
 
         // attempt to lookup original input from encode stack
