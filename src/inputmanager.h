@@ -83,7 +83,7 @@ private:
     int m_historyIndex;
     std::vector<std::pair<QString, QString>> m_encodeStack;
     std::vector<QString> parseComponents(const QString &text) const;
-    void addComponents(const QString &input, const QString &expression);
+    void addComponent(const QString &input, const QString &expression);
     QString encodeExpression(const QString &input) const;
     int addAdjacentParentheses(const int &side, QString &temp);
 };

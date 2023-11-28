@@ -285,7 +285,7 @@ void InputManager::append(const QString &subexpression)
             for (const auto &item : history) {
                 QStringList parts = item.split(QLatin1Char('='));
                 if (parts.size() > 3 && temp.contains(parts.at(3))) {
-                    addComponents(parts.at(2), parts.at(3));
+                    addComponent(parts.at(2), parts.at(3));
                     temp.replace(parts.at(3), parts.at(2));
                 }
             }
@@ -377,7 +377,7 @@ void InputManager::equal()
         const size_t maxSize = std::max(m_input.size(), expression.size());
         const QString input = LEFT.toString() + m_input + spacer.repeated(maxSize - m_input.size()) + RIGHT.toString();
         expression = LEFT.toString() + expression.insert(expression.indexOf(aprox), spacer.repeated(maxSize - expression.size())) + RIGHT.toString();
-        addComponents(input, expression);
+        addComponent(input, expression);
 
         // save the display values along with the original input
         HistoryManager::inst()->addHistory(m_expression + equals + m_result + equals + input + equals + expression);
@@ -452,7 +452,7 @@ void InputManager::fromHistory(bool isResult, const QString &input, const QStrin
     }
 
     if (isResult) {
-        addComponents(input, expression);
+        addComponent(input, expression);
         append(input);
         return;
     }
@@ -469,7 +469,7 @@ void InputManager::fromHistory(bool isResult, const QString &input, const QStrin
     const std::vector<QString> expressions = parseComponents(expression);
     if (expressions.size() > 0 && inputs.size() > 0) {
         for (size_t n = 0; n < std::min(inputs.size(), expressions.size()); n++) {
-            addComponents(inputs.at(n), expressions.at(n));
+            addComponent(inputs.at(n), expressions.at(n));
         }
         append(value);
     } else {
@@ -506,7 +506,7 @@ std::vector<QString> InputManager::parseComponents(const QString &text) const
     return components;
 }
 
-void InputManager::addComponents(const QString &input, const QString &expression)
+void InputManager::addComponent(const QString &input, const QString &expression)
 {
     if (std::find_if(m_encodeStack.begin(),
                      m_encodeStack.end(),
