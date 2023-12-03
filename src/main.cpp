@@ -23,6 +23,7 @@
 
 #include "historymanager.h"
 #include "inputmanager.h"
+#include "kalkconfig.h"
 #include "unitmodel.h"
 #include "version.h"
 
@@ -68,6 +69,7 @@ int main(int argc, char *argv[])
 
     parser.process(app);
 
+    qmlRegisterSingletonInstance("org.kde.kalk.config", 1, 0, "Config", KalkConfig::self());
     qmlRegisterSingletonType("org.kde.kalk", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
         return engine->toScriptValue(KAboutData::applicationData());
     });

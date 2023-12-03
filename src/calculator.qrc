@@ -17,5 +17,6 @@
         <file>qml/PortraitPad.qml</file>
         <file>qml/LandScapePad.qml</file>
         <file>qml/SidebarButton.qml</file>
+        <file>qml/SettingsPage.qml</file>
     </qresource>
 </RCC>

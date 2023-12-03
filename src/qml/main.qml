@@ -88,6 +88,13 @@ Kirigami.ApplicationWindow {
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                pagePool: mainPagePool
+                page: "qrc:/qml/SettingsPage.qml"
+                onTriggered: pageAnimation(pageItem())
+            },
+            Kirigami.PagePoolAction {
                 text: i18n("About")
                 icon.name: "help-about"
                 page: "qrc:/qml/AboutPage.qml"
@@ -173,6 +180,24 @@ Kirigami.ApplicationWindow {
             Kirigami.Separator { 
                 Layout.fillWidth: true 
                 Layout.margins: Kirigami.Units.smallSpacing
+            }
+
+            SidebarButton {
+                text: i18n("Settings")
+                icon.name: "settings-configure"
+                Layout.fillWidth: true
+                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
+                Layout.bottomMargin: Kirigami.Units.smallSpacing
+                checked: column.currentlyChecked === text
+                onClicked: {
+                    column.currentlyChecked = text;
+
+                    let page = mainPagePool.loadPage("qrc:/qml/SettingsPage.qml");
+                    while (pageStack.depth > 0) pageStack.pop();
+                    pageStack.push(page);
+                    pageAnimation(page);
+                    drawer.close();
+                }
             }
             
             SidebarButton {

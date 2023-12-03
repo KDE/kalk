@@ -14,8 +14,11 @@ add_library(kalklib STATIC
 target_link_libraries(kalklib
     Qt::Core
     KF6::I18n
+    KF6::ConfigGui
     PkgConfig::QALCULATE
 )
+
+kconfig_add_kcfg_files(kalklib GENERATE_MOC kalkconfig.kcfgc)
 
 add_executable(kalk
     main.cpp

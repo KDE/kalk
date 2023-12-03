@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2023 Michael Lang <criticaltemp@protonmail.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+File=kalkconfig.kcfg
+ClassName=KalkConfig
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
+Singleton=true

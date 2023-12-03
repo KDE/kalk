@@ -5,12 +5,19 @@
  */
 
 #include "qalculateengine.h"
+#include "kalkconfig.h"
 
 #include <libqalculate/Calculator.h>
 
 #include <QLocale>
 
 #include <KLocalizedString>
+
+constexpr std::array<ParsingMode, 5> PARSING_MODES = {PARSING_MODE_ADAPTIVE,
+                                                      PARSING_MODE_CONVENTIONAL,
+                                                      PARSING_MODE_IMPLICIT_MULTIPLICATION_FIRST,
+                                                      PARSING_MODE_CHAIN,
+                                                      PARSING_MODE_RPN};
 
 QalculateEngine::QalculateEngine()
 {
@@ -60,8 +67,8 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     eo.mixed_units_conversion = MIXED_UNITS_CONVERSION_NONE;
     eo.approximation = exact ? APPROXIMATION_EXACT : APPROXIMATION_TRY_EXACT;
     eo.parse_options.base = baseEval;
-    eo.parse_options.parsing_mode = PARSING_MODE_CONVENTIONAL;
-    eo.parse_options.angle_unit = ANGLE_UNIT_NONE;
+    eo.parse_options.parsing_mode = PARSING_MODES.at(KalkConfig::self()->parsingMode());
+    eo.parse_options.angle_unit = ANGLE_UNIT_CUSTOM;
     eo.parse_options.limit_implicit_multiplication = false;
     eo.parse_options.unknowns_enabled = false;
 
@@ -82,7 +89,8 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     po.preserve_format = false;
     po.restrict_to_parent_precision = true;
 
-    CALCULATOR->setPrecision(12);
+    CALCULATOR->setCustomAngleUnit(CALCULATOR->getActiveUnit(KalkConfig::self()->angleUnit().toStdString()));
+    CALCULATOR->setPrecision(KalkConfig::self()->precision());
 
     std::string input = CALCULATOR->unlocalizeExpression(expression.toStdString(), eo.parse_options);
     std::string parsed;

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+                          http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+<!--
+SPDX-FileCopyrightText: 2023 Michael Lang <criticaltemp@protonmail.com>
+SPDX-License-Identifier: LGPL-2.1-or-later
+-->
+    <kcfgfile name="kalk/kalkrc" />
+    <group name="General">
+        <entry name="Precision" type="Int">
+            <label>Default precision for approximate calculations.</label>
+            <default>12</default>
+        </entry>
+        <entry name="AngleUnit" type="String">
+            <label>Angle unit</label>
+            <default>Degrees</default>
+        </entry>
+        <entry name="ParsingMode" type="Enum">
+            <label>The evaluation order of expressions.</label>
+            <choices>
+                <choice name="Adaptive">
+                    <label>Adaptive</label>
+                </choice>
+                <choice name="Conventional">
+                    <label>Conventional</label>
+                </choice>
+                <choice name="Implicit">
+                    <label>Implicit first</label>
+                </choice>
+                <choice name="Chain">
+                    <label>Chain</label>
+                </choice>
+                <choice name="RPN">
+                    <label>RPN</label>
+                </choice>
+            </choices>
+            <default>Conventional</default>
+        </entry>
+    </group>
+</kcfg>

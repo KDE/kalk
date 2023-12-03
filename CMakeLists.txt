@@ -53,12 +53,14 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Kirigami
     I18n
     CoreAddons
+    Config
     UnitConversion
 )
 pkg_search_module(QALCULATE libqalculate>4.7.0 REQUIRED IMPORTED_TARGET)
 if (ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Svg)
     find_package(OpenSSL REQUIRED)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 endif()
 add_subdirectory(src)
 
