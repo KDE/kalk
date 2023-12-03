@@ -7,5 +7,8 @@ include:
       - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/linux-qt6.yml
       - /gitlab-templates/freebsd-qt6.yml
-      - /gitlab-templates/android-qt6.yml
+  # libqalculate is missing on Android currently
+  #    - /gitlab-templates/android-qt6.yml
+
+  # Missing KF6 runtime
   #    - /gitlab-templates/flatpak.yml
