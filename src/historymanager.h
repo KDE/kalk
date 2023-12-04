@@ -40,10 +40,6 @@ public:
     };
     Q_INVOKABLE void clearHistory();
     Q_INVOKABLE void deleteFromHistory(const int index);
-    QList<QString> getHistory()
-    {
-        return m_historyList;
-    };
 
 private:
     QList<QString> m_historyList;

@@ -57,7 +57,7 @@ Kirigami.ScrollablePage {
                 id: item
                 spacing: Kirigami.Units.smallSpacing
 
-                property var parts: model.display.split("=")
+                property var parts: model.display.split(" = ")
 
                 Button {
                     Layout.maximumWidth: listView.width / 2.5
@@ -65,7 +65,7 @@ Kirigami.ScrollablePage {
                     focusPolicy: Qt.NoFocus
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(false, item.parts[2] || "", contentItem.text);
+                        inputManager.fromHistory(item.parts[2] || item.parts[0]);
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }
@@ -75,7 +75,7 @@ Kirigami.ScrollablePage {
                             pointSize: listView.flexPointSize
                             weight: Font.Light
                         }
-                        text: item.parts[0].trim()
+                        text: item.parts[0]
                         elide: Text.ElideRight
                     }
 
@@ -99,7 +99,7 @@ Kirigami.ScrollablePage {
                     focusPolicy: Qt.NoFocus
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(true, item.parts[2] || "", item.parts[3] || contentItem.text);
+                        inputManager.fromHistory(item.parts[2] || item.parts[1], true);
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }
@@ -109,7 +109,7 @@ Kirigami.ScrollablePage {
                             pointSize: listView.flexPointSize
                             weight: Font.Light
                         }
-                        text: item.parts[1].trim()
+                        text: item.parts[1]
                         elide: Text.ElideRight
                     }
 

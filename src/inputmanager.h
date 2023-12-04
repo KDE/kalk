@@ -35,13 +35,13 @@ public:
     int getCursorPosition() const;
     void setCursorPosition(int position);
     Q_INVOKABLE int idealCursorPosition(int position, int arrow = 0) const;
-    Q_INVOKABLE void append(const QString &subexpression);
+    Q_INVOKABLE void append(const QString &subexpression, const QString &component = QString(), bool update = true);
     Q_INVOKABLE void backspace();
     Q_INVOKABLE void equal();
     Q_INVOKABLE void clear(bool save = true);
     Q_INVOKABLE void setHistoryIndex(const int &index);
     int historyIndex() const;
-    Q_INVOKABLE void fromHistory(bool isResult, const QString &input, const QString &expression);
+    Q_INVOKABLE void fromHistory(QString input, bool fromResult = false);
     void store();
     Q_INVOKABLE void undo();
     Q_INVOKABLE void redo();
@@ -53,6 +53,7 @@ public:
     void replaceWithSuperscript(QString &text);
     void addNumberSeparators(QString &number);
     void calculate(bool exact = false, const int minExp = -1);
+    void calculateAndUpdate(bool exact = false, const int minExp = -1);
 
 Q_SIGNALS:
     void expressionChanged();
@@ -66,8 +67,8 @@ Q_SIGNALS:
 private:
     InputManager();
     bool m_moveFromResult = false; // clear expression on none operator input
-    int m_inputPosition;
-    QString m_input;
+    size_t m_inputPosition = 0;
+    std::vector<std::pair<QString, QString>> m_input;
     QString m_output;
     QString m_expression;
     QString m_result;
@@ -76,14 +77,10 @@ private:
     bool m_isBinaryMode = false; // Changes the parser based on this variable
     QString m_groupSeparator;
     QString m_decimalPoint;
-    std::vector<QString> m_undoStack;
+    std::vector<std::vector<std::pair<QString, QString>>> m_undoStack;
     size_t m_undoPos = 0;
     QalculateEngine *m_engine;
     bool m_isApproximate;
+    QString formatApproximate(QString &input, QString &result);
     int m_historyIndex;
-    std::vector<std::pair<QString, QString>> m_encodeStack;
-    std::vector<QString> parseComponents(const QString &text) const;
-    void addComponent(const QString &input, const QString &expression);
-    QString encodeExpression(const QString &input) const;
-    int addAdjacentParentheses(const int &side, QString &temp);
 };

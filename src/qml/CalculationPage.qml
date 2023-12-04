@@ -320,11 +320,17 @@ Kirigami.Page {
                         property string lastText
                         onTextChanged: {
                             if (text !== inputManager.expression) {
-                                const value = text;
+                                let value = text;
                                 inputManager.clear(false);
-                                inputManager.append(value);
+                                const regexp = new RegExp("\u200B" + Qt.locale().groupSeparator, "g");
+                                value = value.replace(regexp, "");
+                                for (let i = 0; i < value.length; i++) {
+                                    inputManager.append(value.charAt(i), "", i == value.length - 1);
+                                }
+
                             } else {
-                                cursorPosition = inputManager.cursorPosition;
+                                lastPos = inputManager.cursorPosition
+                                cursorPosition = lastPos;
                             }
                         }
                         property int lastPos
@@ -353,6 +359,11 @@ Kirigami.Page {
                             }
                         }
                         onPressAndHold: {
+                            if (inputManager.moveFromResult) {
+                                selectAll();
+                                return;
+                            }
+
                             // use textEdit as a proxy to select
                             // replace separators with letters so are treated a single words
                             // replace symbols with spaces
