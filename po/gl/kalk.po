@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-22 01:37+0000\n"
+"POT-Creation-Date: 2023-12-04 01:39+0000\n"
 "PO-Revision-Date: 2023-11-23 17:20+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -27,28 +27,28 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.io"
 
-#: main.cpp:61 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:110
-#: qml/main.qml:113 qml/main.qml:119
+#: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:117
+#: qml/main.qml:120 qml/main.qml:126
 #, kde-format
 msgid "Calculator"
 msgstr "Calculadora"
 
-#: main.cpp:63
+#: main.cpp:64
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Calculadora para Plasma"
 
-#: main.cpp:65
+#: main.cpp:66
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 Comunidade KDE"
 
-#: qalculateengine.cpp:100
+#: qalculateengine.cpp:108
 #, kde-format
 msgid "warning"
 msgstr "aviso"
 
-#: qalculateengine.cpp:100
+#: qalculateengine.cpp:108
 #, kde-format
 msgid "error"
 msgstr "erro"
@@ -110,20 +110,61 @@ msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Isto é permanente, non se pode desfacer."
 
-#: qml/main.qml:77 qml/main.qml:137 qml/UnitConverter.qml:15
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
 #, kde-format
 msgid "Converter"
 msgstr "Convertedor"
 
-#: qml/main.qml:91 qml/main.qml:179
+#: qml/main.qml:91 qml/main.qml:186
+#, kde-format
+msgid "Settings"
+msgstr ""
+
+#: qml/main.qml:98 qml/main.qml:204
 #, kde-format
 msgid "About"
 msgstr "Sobre"
 
-#: qml/main.qml:155
+#: qml/main.qml:162
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Calculadora binaria"
+
+#: qml/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Settings"
+msgstr ""
+
+#: qml/SettingsPage.qml:26
+#, kde-format
+msgctxt "@label:spinbox digits of precision"
+msgid "Precision"
+msgstr ""
+
+#: qml/SettingsPage.qml:40
+#, kde-format
+msgctxt "@label:listbox trigonometric angle unit"
+msgid "Angle unit"
+msgstr ""
+
+#: qml/SettingsPage.qml:41
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Default angle unit for trigonometric functions."
+msgstr ""
+
+#: qml/SettingsPage.qml:54
+#, kde-format
+msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
+msgid "Parsing mode"
+msgstr ""
+
+#: qml/SettingsPage.qml:55
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Expression evaluation order."
+msgstr ""
 
 #: qml/UnitConverter.qml:65
 #, kde-format
