@@ -502,8 +502,12 @@ void InputManager::pasteValue(QString value)
 
     clear(false);
 
-    if (value == KalkConfig::self()->lastCopiedValue()) {
-        append(KalkConfig::self()->lastCopiedInput(), KalkConfig::self()->lastCopiedValue(), false);
+    QString copiedValue = KalkConfig::self()->lastCopiedValue();
+    if (value == copiedValue) {
+        QString copiedInput = KalkConfig::self()->lastCopiedInput();
+        copiedInput.replace(LEFT.at(0), QLatin1Char('('));
+        copiedInput.replace(RIGHT.at(0), QLatin1Char(')'));
+        append(KalkConfig::self()->lastCopiedInput(), formatApproximate(copiedInput, copiedValue), false);
         calculateAndUpdate();
         return;
     }
@@ -546,6 +550,18 @@ void InputManager::pasteValue(QString value)
 
 void InputManager::storeCopiedValue(const QString &value, bool partial)
 {
+    bool hasApproximate = false;
+    for (const auto &text : m_input) {
+        if (!text.second.isEmpty()) {
+            hasApproximate = true;
+            break;
+        }
+    }
+
+    if (!hasApproximate) {
+        return;
+    }
+
     KalkConfig::self()->setLastCopiedValue(value);
 
     QString input;
@@ -574,13 +590,13 @@ QString InputManager::formatApproximate(QString &input, QString &result)
 {
     const QString aprox = QStringLiteral("…");
     QString approximate = result.left(8) + aprox;
-    bool isApproximate = false;
 
     double outputNumeric = result.toDouble();
     if (outputNumeric == 0.0) {
         approximate = result.left(6) + aprox + result.right(3);
     } else if (outputNumeric >= 10000000 || outputNumeric < 0.0001) {
         // get pure Exponential Notation for very large and very small numbers
+        bool isApproximate = false;
         approximate = m_engine->evaluate(input, &isApproximate, 10, 10, false, 1);
         approximate.replace(6, approximate.indexOf(QStringLiteral("E")) - 6, aprox);
     }
