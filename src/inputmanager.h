@@ -49,6 +49,8 @@ public:
     bool canRedo();
     void setBinaryMode(bool active);
     bool binaryMode();
+    Q_INVOKABLE void pasteValue(QString value);
+    Q_INVOKABLE void storeCopiedValue(const QString &value, bool partial = false);
     QString formatNumbers(const QString &text);
     void replaceWithSuperscript(QString &text);
     void addNumberSeparators(QString &number);
@@ -82,5 +84,6 @@ private:
     QalculateEngine *m_engine;
     bool m_isApproximate;
     QString formatApproximate(QString &input, QString &result);
+    std::vector<QString> parseParts(const QString &text) const;
     int m_historyIndex;
 };

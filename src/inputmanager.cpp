@@ -6,6 +6,7 @@
  */
 #include "inputmanager.h"
 #include "historymanager.h"
+#include "kalkconfig.h"
 #include "qalculateengine.h"
 
 #include <QLocale>
@@ -306,8 +307,6 @@ void InputManager::equal()
 
 void InputManager::clear(bool save)
 {
-    m_inputPosition = 0;
-    m_input.clear();
     m_input.clear();
     m_output.clear();
     m_expression.clear();
@@ -350,8 +349,7 @@ void InputManager::fromHistory(QString input, bool fromResult)
         }
 
         if (isApproximate) {
-            QString expression = formatApproximate(val, output);
-            append(LEFT.toString() + input + RIGHT.toString(), expression);
+            append(LEFT.toString() + input + RIGHT.toString(), formatApproximate(val, output));
         } else {
             for (const auto &text : output) {
                 append(text, QString(), false);
@@ -364,34 +362,17 @@ void InputManager::fromHistory(QString input, bool fromResult)
         return;
     }
 
-    QString component;
-    int countLeft = 0;
-    int countRight = 0;
-    for (const auto &ch : input) {
-        if (ch == LEFT.at(0)) {
-            countLeft++;
-        } else if (ch == RIGHT.at(0)) {
-            countRight++;
-        }
-
-        if (countLeft > 0) {
-            component.append(ch);
-
-            if (countLeft == countRight) {
-                QString val = component;
-                val.replace(LEFT.at(0), QLatin1Char('('));
-                val.replace(RIGHT.at(0), QLatin1Char(')'));
-                bool isApproximate = false;
-                QString output = m_engine->evaluate(val, &isApproximate, 10, 10, false);
-                QString expression = formatApproximate(val, output);
-                append(component, expression, false);
-
-                countLeft = 0;
-                countRight = 0;
-                component.clear();
-            }
+    const std::vector<QString> parts = parseParts(input);
+    for (const auto &part : parts) {
+        if (part.at(0) == LEFT.at(0)) {
+            QString val = part;
+            val.replace(LEFT.at(0), QLatin1Char('('));
+            val.replace(RIGHT.at(0), QLatin1Char(')'));
+            bool isApproximate = false;
+            QString output = m_engine->evaluate(val, &isApproximate, 10, 10, false);
+            append(part, formatApproximate(val, output), false);
         } else {
-            append(QString(ch), QString(), false);
+            append(part, QString(), false);
         }
     }
 
@@ -476,6 +457,119 @@ bool InputManager::binaryMode()
     return m_isBinaryMode;
 }
 
+std::vector<QString> InputManager::parseParts(const QString &text) const
+{
+    int countLeft = 0;
+    int countRight = 0;
+    QString part;
+    std::vector<QString> parts;
+
+    for (const auto &ch : text) {
+        if (ch == LEFT.at(0)) {
+            countLeft++;
+        } else if (ch == RIGHT.at(0)) {
+            countRight++;
+        }
+
+        if (countLeft > 0) {
+            part.append(ch);
+
+            if (countLeft == countRight) {
+                parts.push_back(part);
+                part.clear();
+                countLeft = 0;
+                countRight = 0;
+            }
+        } else {
+            parts.push_back(ch);
+        }
+    }
+
+    return parts;
+}
+
+void InputManager::pasteValue(QString value)
+{
+    // add leading/ending component parts if missing
+    if (value.contains(QStringLiteral("…"))) {
+        if (value.at(value.size() - 1) == QStringLiteral("…")) {
+            value = value + RIGHT.toString();
+        }
+        if (value.count(LEFT.at(0)) < value.count(RIGHT.at(0))) {
+            value = LEFT.toString() + value;
+        }
+    }
+
+    clear(false);
+
+    if (value == KalkConfig::self()->lastCopiedValue()) {
+        append(KalkConfig::self()->lastCopiedInput(), KalkConfig::self()->lastCopiedValue(), false);
+        calculateAndUpdate();
+        return;
+    }
+
+    value.remove(m_groupSeparator);
+    const std::vector<QString> parts = parseParts(value);
+    const std::vector<QString> values = parseParts(KalkConfig::self()->lastCopiedValue());
+    const std::vector<QString> inputs = parseParts(KalkConfig::self()->lastCopiedInput());
+
+    for (auto part : parts) {
+        if (part.at(0) == LEFT.at(0)) {
+            size_t index = 0;
+            for (const auto &value : values) {
+                if (value == part) {
+                    if (index < inputs.size()) {
+                        append(inputs.at(index), value, false);
+                    }
+                    break;
+                }
+                index++;
+            }
+
+            if (index < values.size())
+                continue;
+
+            part.remove(QStringLiteral("…"));
+            part.remove(LEFT.at(0));
+            part.remove(RIGHT.at(0));
+
+            for (const auto &ch : part) {
+                append(ch, QString(), false);
+            }
+        } else {
+            append(part, QString(), false);
+        }
+    }
+
+    calculateAndUpdate();
+}
+
+void InputManager::storeCopiedValue(const QString &value, bool partial)
+{
+    KalkConfig::self()->setLastCopiedValue(value);
+
+    QString input;
+    if (partial) {
+        for (const auto &text : m_input) {
+            if (text.second == value) {
+                input = text.first;
+                break;
+            }
+        }
+
+        if (input.isEmpty()) {
+            input = value;
+        }
+    } else {
+        for (const auto &text : m_input) {
+            input.append(text.first);
+        }
+    }
+
+    KalkConfig::self()->setLastCopiedInput(input);
+    KalkConfig::self()->save();
+}
+
 QString InputManager::formatApproximate(QString &input, QString &result)
 {
     const QString aprox = QStringLiteral("…");
@@ -491,7 +585,7 @@ QString InputManager::formatApproximate(QString &input, QString &result)
         approximate.replace(6, approximate.indexOf(QStringLiteral("E")) - 6, aprox);
     }
 
-    return approximate;
+    return LEFT.toString() + approximate + RIGHT.toString();
 }
 
 QString InputManager::formatNumbers(const QString &text)

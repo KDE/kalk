@@ -97,6 +97,7 @@ Kirigami.Page {
 
     function cut() {
         if (expressionRow.selectedText) {
+            inputManager.storeCopiedValue(expressionRow.selectedText, expressionRow.selectedText.length != expressionRow.text.length);
             const pos = expressionRow.cursorPosition - expressionRow.selectedText.length;
             expressionRow.cut();
             expressionRow.cursorPosition = pos;
@@ -104,11 +105,14 @@ Kirigami.Page {
     }
     function copy() {
         if (expressionRow.selectedText) {
+            inputManager.storeCopiedValue(expressionRow.selectedText, expressionRow.selectedText.length != expressionRow.text.length);
             expressionRow.copy();
         } else if (result.selectedText) {
+            inputManager.storeCopiedValue(result.text);
             result.copy();
         } else {
             result.selectAll();
+            inputManager.storeCopiedValue(expressionRow.text);
             result.copy();
             result.deselect();
         }
@@ -320,14 +324,7 @@ Kirigami.Page {
                         property string lastText
                         onTextChanged: {
                             if (text !== inputManager.expression) {
-                                let value = text;
-                                inputManager.clear(false);
-                                const regexp = new RegExp("\u200B" + Qt.locale().groupSeparator, "g");
-                                value = value.replace(regexp, "");
-                                for (let i = 0; i < value.length; i++) {
-                                    inputManager.append(value.charAt(i), "", i == value.length - 1);
-                                }
-
+                                inputManager.pasteValue(text);
                             } else {
                                 lastPos = inputManager.cursorPosition
                                 cursorPosition = lastPos;
@@ -367,7 +364,7 @@ Kirigami.Page {
                             // use textEdit as a proxy to select
                             // replace separators with letters so are treated a single words
                             // replace symbols with spaces
-                            textEdit.text = inputManager.expression.replace(/[,\.\(\)]/g, "n").replace(/[\+\-×÷%\!\^]/g, " ");
+                            textEdit.text = inputManager.expression.replace(/[,.]/g, "n").replace(/[\+\-×÷%\!\^]/g, " ");
                             textEdit.cursorPosition = cursorPosition;
                             textEdit.selectWord();
                             select(textEdit.selectionStart, textEdit.selectionEnd);

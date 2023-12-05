@@ -34,5 +34,9 @@
             </choices>
             <default>Conventional</default>
         </entry>
+        <entry name="LastCopiedValue" type="String">
+        </entry>
+        <entry name="LastCopiedInput" type="String">
+        </entry>
     </group>
 </kcfg>
