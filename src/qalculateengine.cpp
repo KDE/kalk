@@ -105,8 +105,8 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     while (CALCULATOR->message()) {
         MessageType mtype = CALCULATOR->message()->type();
         if (mtype != MESSAGE_INFORMATION) {
-            QStringView type = mtype == MESSAGE_WARNING ? i18n("warning") : i18n("error");
-            qDebug() << type + QStringLiteral(": ") + QString::fromStdString(CALCULATOR->message()->message());
+            qDebug() << (mtype == MESSAGE_WARNING ? i18nc("@info:shell", "warning: ") : i18nc("@info:shell", "error: "))
+                    + QString::fromStdString(CALCULATOR->message()->message());
         }
         CALCULATOR->nextMessage();
     }
