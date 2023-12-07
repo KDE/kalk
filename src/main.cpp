@@ -32,7 +32,6 @@ Q_DECL_EXPORT
 #endif
 int main(int argc, char *argv[])
 {
-    QLocale::setDefault(QLocale(QStringLiteral("de_DE")));
     QCommandLineParser parser;
 
 #ifdef Q_OS_ANDROID
