@@ -55,7 +55,7 @@ Kirigami.ScrollablePage {
 
             contentItem: RowLayout {
                 id: item
-                spacing: Kirigami.Units.smallSpacing
+                spacing: 0
 
                 property var parts: model.display.split(" = ")
 
@@ -63,6 +63,7 @@ Kirigami.ScrollablePage {
                     Layout.maximumWidth: listView.width / 2.5
                     Layout.alignment:  Qt.AlignLeft
                     focusPolicy: Qt.NoFocus
+                    horizontalPadding: Kirigami.Units.smallSpacing
                     flat: true
                     onClicked: {
                         inputManager.fromHistory(item.parts[2] || item.parts[0]);
@@ -85,7 +86,7 @@ Kirigami.ScrollablePage {
                 }
 
                 Label {
-                    Layout.alignment:  Qt.AlignLeft
+                    Layout.alignment: Qt.AlignLeft
                     font {
                         pointSize: listView.flexPointSize
                         weight: Font.Light
@@ -97,6 +98,7 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     Layout.alignment:  Qt.AlignLeft
                     focusPolicy: Qt.NoFocus
+                    horizontalPadding: Kirigami.Units.smallSpacing
                     flat: true
                     onClicked: {
                         inputManager.fromHistory(item.parts[2] || item.parts[1], true);

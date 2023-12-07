@@ -7,6 +7,7 @@
 
 #pragma once
 
+#include <QLocale>
 #include <QObject>
 
 class QalculateEngine;
@@ -35,7 +36,7 @@ public:
     int getCursorPosition() const;
     void setCursorPosition(int position);
     Q_INVOKABLE int idealCursorPosition(int position, int arrow = 0) const;
-    Q_INVOKABLE void append(const QString &subexpression, const QString &component = QString(), bool update = true);
+    Q_INVOKABLE void append(QString subexpression, const QString &component = QString(), bool update = true);
     Q_INVOKABLE void backspace();
     Q_INVOKABLE void equal();
     Q_INVOKABLE void clear(bool save = true);
@@ -77,13 +78,14 @@ private:
     QString m_binaryResult;
     QString m_hexResult;
     bool m_isBinaryMode = false; // Changes the parser based on this variable
+    QLocale m_locale;
     QString m_groupSeparator;
     QString m_decimalPoint;
     std::vector<std::vector<std::pair<QString, QString>>> m_undoStack;
     size_t m_undoPos = 0;
     QalculateEngine *m_engine;
     bool m_isApproximate;
-    QString formatApproximate(QString &input, QString &result);
+    QString formatApproximate(const QString &input, const QString &result);
     std::vector<QString> parseParts(const QString &text) const;
     int m_historyIndex;
 };

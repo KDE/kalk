@@ -38,7 +38,7 @@ QalculateEngine *QalculateEngine::inst()
     return &singleton;
 }
 
-QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, const int baseEval, const int basePrint, bool exact, const int minExp)
+QString QalculateEngine::evaluate(QString expression, bool *isApproximate, const int baseEval, const int basePrint, bool exact, const int minExp)
 {
     CALCULATOR->abort();
 
@@ -55,6 +55,10 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
         return m_result;
     }
 
+    expression.replace(ZERO_WIDTH_SPACE.toString(), QString());
+    expression.replace(LEFT.at(0), QLatin1Char('('));
+    expression.replace(RIGHT.at(0), QLatin1Char(')'));
+    expression.replace(QLocale().decimalPoint(), QStringLiteral("."), Qt::CaseInsensitive);
     expression.replace(HAIR_SPACE.toString(), QStringLiteral(" + "));
     expression.replace(QStringLiteral("%%"), QStringLiteral("percentpercent"));
 
