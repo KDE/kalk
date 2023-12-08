@@ -245,11 +245,11 @@ void InputManager::equal()
     QString output = m_output;
     const QString result = m_isBinaryMode ? m_binaryResult : m_result;
     const bool isApproximate = m_isApproximate;
-    const double value = m_locale.toDouble(m_output.at(0) == QStringLiteral("−") ? QStringView(m_output).sliced(1, m_output.size() - 2) : m_output);
+    const double value = m_locale.toDouble(m_output.at(0) == QStringLiteral("−") ? QStringView(m_output).sliced(1) : m_output);
 
     // get exact representation
     QString exactResult;
-    if (isApproximate || (value != 0.0 && value < 1.0)) {
+    if ((isApproximate && !m_output.contains(QStringLiteral("±"))) || (!isApproximate && value != 0.0 && output.contains(m_decimalPoint))) {
         calculate(true);
         exactResult = formatNumbers(m_output);
     }
@@ -267,18 +267,27 @@ void InputManager::equal()
 
     if (isApproximate) {
         append(LEFT.toString() + input + RIGHT.toString(), formatApproximate(input, output), false);
+        m_result = exactResult;
 
-        // do not show exact result if approximation is just an exceeding of precision
-        calculate(false, 1);
-        if (m_output != output) {
-            m_result = exactResult;
+        // do not show exact result if it just repeats the input
+        QStringList parts = m_output.remove(QStringLiteral(")")).split(QStringLiteral(" "));
+        int count = 0;
+
+        for (const auto &part : parts) {
+            if (input.contains(part) || part.size() == 1) {
+                count++;
+            }
+        }
+
+        if (count == parts.size()) {
+            m_result.clear();
         }
     } else {
         for (const auto &text : output) {
             append(text, QString(), false);
         }
 
-        if (value != 0.0 && value < 1.0) {
+        if (!isApproximate && value != 0.0 && output.contains(m_decimalPoint)) {
             m_result = exactResult;
         }
     }
@@ -579,7 +588,7 @@ void InputManager::storeCopiedValue(const QString &value, bool partial)
 
 QString InputManager::formatApproximate(const QString &input, const QString &result)
 {
-    const double value = m_locale.toDouble(result.at(0) == QStringLiteral("−") ? QStringView(result).sliced(1, result.size() - 2) : result);
+    const double value = m_locale.toDouble(result.at(0) == QStringLiteral("−") ? QStringView(result).sliced(1) : result);
     QString approximate;
 
     if (value == 0.0) {

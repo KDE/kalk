@@ -47,7 +47,7 @@ QString QalculateEngine::evaluate(QString expression, bool *isApproximate, const
     }
 
     // do not need to evalulate if the expression is just a number or if expression is incomplete
-    if (baseEval == 10 && expression.toDouble() != 0 && !expression.contains(QStringLiteral("E"), Qt::CaseInsensitive)) {
+    if (baseEval == 10 && QLocale().toDouble(expression) != 0 && !expression.contains(QStringLiteral("E"), Qt::CaseInsensitive)) {
         m_result = QString();
         return m_result;
     } else if (QStringLiteral("(√∛").contains(expression.right(1))) {
@@ -58,11 +58,7 @@ QString QalculateEngine::evaluate(QString expression, bool *isApproximate, const
     expression.replace(ZERO_WIDTH_SPACE.toString(), QString());
     expression.replace(LEFT.at(0), QLatin1Char('('));
     expression.replace(RIGHT.at(0), QLatin1Char(')'));
-    expression.replace(QLocale().decimalPoint(), QStringLiteral("."), Qt::CaseInsensitive);
-    expression.replace(HAIR_SPACE.toString(), QStringLiteral(" + "));
     expression.replace(QStringLiteral("%%"), QStringLiteral("percentpercent"));
-
-    const bool showAprox = expression.contains(QStringLiteral("∫")) || expression.contains(QStringLiteral("integra"), Qt::CaseInsensitive);
 
     EvaluationOptions eo;
     eo.auto_post_conversion = POST_CONVERSION_BEST;
@@ -89,7 +85,7 @@ QString QalculateEngine::evaluate(QString expression, bool *isApproximate, const
     po.min_exp = minExp;
     po.multiplication_sign = MULTIPLICATION_SIGN_X;
     po.division_sign = DIVISION_SIGN_DIVISION_SLASH;
-    po.improve_division_multipliers = showAprox;
+    po.improve_division_multipliers = expression.contains(QStringLiteral("∫")) || expression.contains(QStringLiteral("integra"), Qt::CaseInsensitive);
     po.preserve_format = false;
     po.restrict_to_parent_precision = true;
 
@@ -115,7 +111,7 @@ QString QalculateEngine::evaluate(QString expression, bool *isApproximate, const
         CALCULATOR->nextMessage();
     }
 
-    if (!showAprox && exact && m_result.contains(QStringLiteral(" ∕ "))) {
+    if (m_result.contains(QStringLiteral(" ∕ ")) && m_result.count(QStringLiteral(" + ")) <= 1) {
         m_result.replace(QStringLiteral(" ∕ "), FRACTION_SLASH.toString());
         m_result.replace(QStringLiteral(" + "), HAIR_SPACE.toString());
     }
