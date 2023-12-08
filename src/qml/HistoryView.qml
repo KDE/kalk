@@ -66,7 +66,7 @@ Kirigami.ScrollablePage {
                     horizontalPadding: Kirigami.Units.smallSpacing
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(item.parts[2] || item.parts[0]);
+                        inputManager.fromHistory(item.parts[2] === undefined ? item.parts[0].replace(/,/g, "") : item.parts[2]);
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }
@@ -101,7 +101,7 @@ Kirigami.ScrollablePage {
                     horizontalPadding: Kirigami.Units.smallSpacing
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(item.parts[2] || item.parts[1], true);
+                        inputManager.fromHistory(item.parts[2] === undefined ? item.parts[1].replace(/,/g, "") : item.parts[2], true);
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }
