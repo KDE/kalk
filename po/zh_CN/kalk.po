@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-04 01:39+0000\n"
-"PO-Revision-Date: 2023-11-25 02:26\n"
+"PO-Revision-Date: 2023-12-09 09:25\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -46,27 +46,27 @@ msgstr "© 2020-2022 KDE Community"
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "警告"
 
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "错误"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "程序员"
 
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "撤销"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "重做"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
 #, kde-format
@@ -76,17 +76,17 @@ msgstr "历史记录"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "剪切"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "粘贴"
 
 #: qml/HistoryView.qml:29
 #, kde-format
@@ -102,13 +102,13 @@ msgstr "历史记录为空"
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr ""
+msgstr "清除所有历史记录吗？"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "此操作是永久性的，无法撤销"
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
 #, kde-format
@@ -118,7 +118,7 @@ msgstr "转换器"
 #: qml/main.qml:91 qml/main.qml:186
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: qml/main.qml:98 qml/main.qml:204
 #, kde-format
@@ -134,37 +134,37 @@ msgstr "二进制计算器"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: qml/SettingsPage.qml:26
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "精度"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "角度单位"
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "三角函数的默认角度单位。"
 
 #: qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "解析模式"
 
 #: qml/SettingsPage.qml:55
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "表达式评估顺序。"
 
 #: qml/UnitConverter.qml:65
 #, kde-format
