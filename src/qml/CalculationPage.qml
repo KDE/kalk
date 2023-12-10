@@ -436,7 +436,7 @@ Kirigami.Page {
                 Item {
                     id: inputPad
                     Layout.fillHeight: true
-                    Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width * 0.6
+                    Layout.preferredWidth: inPortrait ? initialPage.width : initialPage.width >= initialPage.height * 1.6 ? initialPage.width * 0.5 : initialPage.width * 0.6
                     Layout.alignment: Qt.AlignLeft
 
                     Controls.PageIndicator {

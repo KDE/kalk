@@ -9,7 +9,9 @@ import QtQuick.Layouts 1.1
 GridLayout {
     id: functionPad
     signal pressed(string text)
-    columns: 4
+    columns: root.width >= root.height * 1.6 ? 6 : 4
+    rows: root.width >= root.height * 1.6 ? 4 : 6
+    flow: root.width >= root.height * 1.6 ? GridLayout.TopToBottom : GridLayout.LeftToRight
     rowSpacing: Kirigami.Units.smallSpacing
     columnSpacing: Kirigami.Units.smallSpacing
 
