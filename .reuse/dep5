@@ -5,3 +5,7 @@ Source: https://invent.kde.org/plasma-mobile/kalk
 Files: android/res/drawable/kalk.png kalk.png logo.png org.kde.kalk.svg
 Copyright: 2021 Manuel Jesús de la Fuente <m@nueljl.in>
 License: CC-BY-4.0
+
+Files: src/kalkconfig.kcfg
+Copyright: 2023 Michael Lang <criticaltemp@protonmail.com>
+License: BSD-2-Clause
