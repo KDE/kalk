@@ -195,18 +195,16 @@ void InputManager::append(QString subexpression, const QString &component, bool 
         const QChar part = subexpression.at(0);
         const QChar end = m_input.at(m_inputPosition - 1).first.at(m_input.at(m_inputPosition - 1).first.size() - 1);
         if ((end == RIGHT.at(0) && (part.isDigit() || part == LEFT.at(0))) || (end.isDigit() && part == LEFT.at(0))) {
-            m_input.insert(std::next(m_input.cbegin(), m_inputPosition - 1), std::make_pair(QStringLiteral("("), QString()));
-            m_inputPosition++;
-            m_input.insert(std::next(m_input.cbegin(), m_inputPosition), std::make_pair(QStringLiteral(")"), QString()));
-            m_inputPosition++;
+            m_input.insert(std::next(m_input.cbegin(), m_inputPosition++ - 1), {QStringLiteral("("), QString()});
+            m_input.insert(std::next(m_input.cbegin(), m_inputPosition++), {QStringLiteral(")"), QString()});
         }
     }
     if (m_inputPosition < m_input.size()) {
         const QChar part = subexpression.at(subexpression.size() - 1);
         const QChar end = m_input.at(m_inputPosition).first.at(0);
         if ((end == LEFT.at(0) && (part.isDigit() || part == RIGHT.at(0))) || (end.isDigit() && part == RIGHT.at(0))) {
-            m_input.insert(std::next(m_input.cbegin(), m_inputPosition + 1), std::make_pair(QStringLiteral(")"), QString()));
-            m_input.insert(std::next(m_input.cbegin(), m_inputPosition), std::make_pair(QStringLiteral("("), QString()));
+            m_input.insert(std::next(m_input.cbegin(), m_inputPosition + 1), {QStringLiteral(")"), QString()});
+            m_input.insert(std::next(m_input.cbegin(), m_inputPosition), {QStringLiteral("("), QString()});
         }
     }
 
@@ -214,7 +212,7 @@ void InputManager::append(QString subexpression, const QString &component, bool 
     if (it > m_input.cend()) {
         return;
     }
-    m_input.insert(it, std::make_pair(subexpression, component));
+    m_input.insert(it, {subexpression, component});
     m_inputPosition++;
 
     if (update) {
