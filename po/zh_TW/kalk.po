@@ -4,170 +4,172 @@
 # This file is distributed under the same license as the kalk package.
 # Automatically generated, 2022.
 #
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-04 01:39+0000\n"
-"PO-Revision-Date: 2022-06-02 00:47+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-12-19 18:30+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "mail@kisaragi-hiu.com"
 
 #: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:117
 #: qml/main.qml:120 qml/main.qml:126
 #, kde-format
 msgid "Calculator"
-msgstr ""
+msgstr "計算機"
 
 #: main.cpp:64
 #, kde-format
 msgid "Calculator for Plasma"
-msgstr ""
+msgstr "Plasma 用的計算機"
 
 #: main.cpp:66
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr ""
+msgstr "© 2020-2022 KDE 社群"
 
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "警告"
 
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "錯誤"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "程式設計"
 
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "復原"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "重做"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "歷史"
 
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "剪下"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "貼上"
 
 #: qml/HistoryView.qml:29
 #, kde-format
 msgid "Clear history"
-msgstr ""
+msgstr "清除歷史"
 
 #: qml/HistoryView.qml:133
 #, kde-format
 msgid "History is empty"
-msgstr ""
+msgstr "歷史紀錄是空的"
 
 #: qml/HistoryView.qml:141
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr ""
+msgstr "清除所有歷史?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "這個動作是永久的，將無法復原"
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
 #, kde-format
 msgid "Converter"
-msgstr ""
+msgstr "轉換器"
 
 #: qml/main.qml:91 qml/main.qml:186
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: qml/main.qml:98 qml/main.qml:204
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "關於"
 
 #: qml/main.qml:162
 #, kde-format
 msgid "Binary Calculator"
-msgstr ""
+msgstr "二進制計算機"
 
 #: qml/SettingsPage.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: qml/SettingsPage.qml:26
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "精確度"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "角度單位"
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "三角函數的預設角度單位。"
 
 #: qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "剖析模式"
 
 #: qml/SettingsPage.qml:55
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "算式計算順序。"
 
 #: qml/UnitConverter.qml:65
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "分類"
