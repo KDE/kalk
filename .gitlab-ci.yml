@@ -16,5 +16,5 @@ flatpak:
     - git clone https://invent.kde.org/sysadmin/ci-utilities.git --depth=1
     - git clone https://invent.kde.org/sysadmin/ci-notary-service.git --depth=1
     - flatpak --user remote-add kde-runtime-nightly https://dl.flathub.org/repo/flathub.flatpakrepo
-    - flatpak --user install -y org.kde.Platform//6.6-kf6preview
+    #- flatpak --user install -y org.kde.Platform//6.6-kf6preview
     - flatpak --user install -y org.kde.Sdk//6.6-kf6preview
