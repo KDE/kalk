@@ -7,8 +7,12 @@ include:
       - /gitlab-templates/reuse-lint.yml
       - /gitlab-templates/linux-qt6.yml
       - /gitlab-templates/freebsd-qt6.yml
+      - /gitlab-templates/flatpak.yml
   # libqalculate is missing on Android currently
   #    - /gitlab-templates/android-qt6.yml
 
-  # Missing KF6 runtime
-  #    - /gitlab-templates/flatpak.yml
+flatpak:
+  before_script:
+    - git clone https://invent.kde.org/sysadmin/ci-utilities.git --depth=1
+    - git clone https://invent.kde.org/sysadmin/ci-notary-service.git --depth=1
+    - flatpak --user install -y https://cdn.kde.org/flatpak/kde-runtime-nightly/org.kde.Sdk.flatpakref
