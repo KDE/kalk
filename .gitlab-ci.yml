@@ -4,9 +4,9 @@
 include:
   - project: sysadmin/ci-utilities
     file:
-      - /gitlab-templates/reuse-lint.yml
-      - /gitlab-templates/linux-qt6.yml
-      - /gitlab-templates/freebsd-qt6.yml
+      #- /gitlab-templates/reuse-lint.yml
+      #- /gitlab-templates/linux-qt6.yml
+      #- /gitlab-templates/freebsd-qt6.yml
       - /gitlab-templates/flatpak.yml
   # libqalculate is missing on Android currently
   #    - /gitlab-templates/android-qt6.yml
@@ -17,4 +17,4 @@ flatpak:
     - git clone https://invent.kde.org/sysadmin/ci-notary-service.git --depth=1
     - flatpak --user remote-add kde-runtime-nightly https://dl.flathub.org/repo/flathub.flatpakrepo
     #- flatpak --user install -y org.kde.Platform//6.6-kf6preview
-    - flatpak --user install -y kde-runtime-nightly org.kde.Sdk//6.6-kf6preview
+    - flatpak --user install -y kde-runtime-nightly runtime/org.kde.Sdk/x86_64/6.6-kf6preview
