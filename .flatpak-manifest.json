@@ -1,7 +1,7 @@
 {
     "id": "org.kde.kalk",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "6.6-kf6preview",
     "sdk": "org.kde.Sdk",
     "command": "kalk",
     "tags": ["nightly"],
@@ -14,20 +14,20 @@
     ],
     "modules": [
         {
-            "name": "kf5feedback",
+            "name": "kf6feedback",
             "buildsystem": "cmake-ninja",
             "sources": [
                 {
                     "type": "git",
                     "url": "https://invent.kde.org/jbbgameich/qtfeedback/",
-                    "branch": "kf5"
+                    "branch": "qt6"
                 }
             ]
         },
         {
             "name": "kalk",
             "buildsystem": "cmake-ninja",
-            "config-opts": ["-DBUILD_TESTING=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DQt5Feedback_DIR=/app/lib/cmake/Qt5Feedback"],
+            "config-opts": ["-DBUILD_TESTING=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DQt6Feedback_DIR=/app/lib/cmake/Qt6Feedback"],
             "builddir": true,
             "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]
         }
