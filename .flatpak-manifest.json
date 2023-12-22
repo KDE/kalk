@@ -12,18 +12,7 @@
         "--socket=fallback-x11",
         "--device=dri"
     ],
-    "modules": [
-        {
-            "name": "kf6feedback",
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://invent.kde.org/jbbgameich/qtfeedback/",
-                    "branch": "qt6"
-                }
-            ]
-        },
+    "modules":
         {
             "name": "kalk",
             "buildsystem": "cmake-ninja",
