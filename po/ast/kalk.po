@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-04 01:39+0000\n"
-"PO-Revision-Date: 2023-11-04 18:40+0100\n"
+"PO-Revision-Date: 2023-12-12 00:59+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
-"Language-Team: \n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
 "Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,7 +51,7 @@ msgstr ""
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "error"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
@@ -99,11 +99,10 @@ msgid "History is empty"
 msgstr "L'historial ta baleru"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Borrar l'historial"
+msgstr "¿Quies borrar tol historial?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
