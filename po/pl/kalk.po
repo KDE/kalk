@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-04 01:39+0000\n"
-"PO-Revision-Date: 2023-11-11 14:06+0100\n"
+"PO-Revision-Date: 2023-12-23 14:05+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -47,12 +47,12 @@ msgstr "© 2020-2022 Społeczność KDE"
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "ostrzeżenie"
 
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "błąd"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
@@ -100,17 +100,16 @@ msgid "History is empty"
 msgstr "Historia jest pusta"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Wyczyść historię"
+msgstr "Wyczyścić całą historię?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "To jest trwałe i niemożliwe do wycofania"
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
 #, kde-format
@@ -120,7 +119,7 @@ msgstr "Przekształcacz"
 #: qml/main.qml:91 qml/main.qml:186
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: qml/main.qml:98 qml/main.qml:204
 #, kde-format
@@ -136,37 +135,37 @@ msgstr "Kalkulator dwójkowy"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: qml/SettingsPage.qml:26
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "Precyzja"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "Jednostka kątowa"
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "Domyślna jednostka kąta dla funkcji trygonometrycznych."
 
 #: qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "Tryb przetwarzania"
 
 #: qml/SettingsPage.qml:55
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "Kolejność obliczania wyrażeń."
 
 #: qml/UnitConverter.qml:65
 #, kde-format
