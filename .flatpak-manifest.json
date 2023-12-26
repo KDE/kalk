@@ -14,6 +14,15 @@
     ],
     "modules": [
         {
+            "name": "qalculate",
+            "buildsystem": "autotools",
+            "sources": {
+                "type": "archive",
+                "url": "https://github.com/Qalculate/libqalculate/releases/download/v4.9.0/libqalculate-4.9.0.tar.gz",
+                "sha256": "6130ed28f7fb8688bccede4f3749b7f75e4a000b8080840794969d21d1c1bf0f"
+            }
+        },
+        {
             "name": "kalk",
             "buildsystem": "cmake-ninja",
             "config-opts": ["-DBUILD_TESTING=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DQt6Feedback_DIR=/app/lib/cmake/Qt6Feedback"],
