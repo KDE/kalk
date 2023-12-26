@@ -25,6 +25,22 @@
             ]
         },
         {
+		    "name": "mpfr",
+		    "buildsystem": "autotools",
+		    "config-opts": [
+                "--enable-static",
+                "--disable-shared",
+                "CFLAGS=-fPIC"
+		    ],
+		    "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.inria.fr/mpfr/mpfr.git",
+                    "tag": "4.2.1"
+                }
+		    ]
+		},
+        {
             "name": "qalculate",
             "buildsystem": "autotools",
             "sources": [
