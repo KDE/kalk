@@ -9,6 +9,4 @@ include:
       - /gitlab-templates/freebsd-qt6.yml
   # libqalculate is missing on Android currently
   #    - /gitlab-templates/android-qt6.yml
-
-  # Missing KF6 runtime
-  #    - /gitlab-templates/flatpak.yml
+      - /gitlab-templates/flatpak.yml

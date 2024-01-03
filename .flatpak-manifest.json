@@ -1,7 +1,7 @@
 {
     "id": "org.kde.kalk",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "6.6-kf6preview",
     "sdk": "org.kde.Sdk",
     "command": "kalk",
     "tags": ["nightly"],
@@ -14,22 +14,49 @@
     ],
     "modules": [
         {
-            "name": "kf5feedback",
-            "buildsystem": "cmake-ninja",
+            "name": "intltool",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+                    "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+                }
+            ]
+        },
+        {
+            "name": "mpfr",
+	    "buildsystem": "autotools",
+            "config-opts": [
+                "--enable-static",
+                "--disable-shared",
+                "CFLAGS=-fPIC"
+            ],
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://invent.kde.org/jbbgameich/qtfeedback/",
-                    "branch": "kf5"
+                    "url": "https://gitlab.inria.fr/mpfr/mpfr.git",
+                    "tag": "4.2.1"
+                }
+            ]
+        },
+        {
+            "name": "libqalculate",
+            "buildsystem": "autotools",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/Qalculate/libqalculate/releases/download/v4.9.0/libqalculate-4.9.0.tar.gz",
+                    "sha256": "6130ed28f7fb8688bccede4f3749b7f75e4a000b8080840794969d21d1c1bf0f"
                 }
             ]
         },
         {
             "name": "kalk",
             "buildsystem": "cmake-ninja",
-            "config-opts": ["-DBUILD_TESTING=OFF", "-DCMAKE_BUILD_TYPE=Release", "-DQt5Feedback_DIR=/app/lib/cmake/Qt5Feedback"],
+            "config-opts": ["-DBUILD_TESTING=OFF"],
             "builddir": true,
-            "sources": [ { "type": "dir", "path": ".", "skip": [".git"] } ]
+            "sources": [ { "type": "dir", "path": "." } ]
         }
     ]
 }
