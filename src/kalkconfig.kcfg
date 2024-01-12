@@ -9,30 +9,13 @@
             <label>Default precision for approximate calculations.</label>
             <default>12</default>
         </entry>
-        <entry name="AngleUnit" type="String">
+        <entry name="AngleUnit" type="Int">
             <label>Angle unit</label>
-            <default>Degrees</default>
+            <default>1</default>
         </entry>
-        <entry name="ParsingMode" type="Enum">
+        <entry name="ParsingMode" type="Int">
             <label>The evaluation order of expressions.</label>
-            <choices>
-                <choice name="Adaptive">
-                    <label>Adaptive</label>
-                </choice>
-                <choice name="Conventional">
-                    <label>Conventional</label>
-                </choice>
-                <choice name="Implicit">
-                    <label>Implicit first</label>
-                </choice>
-                <choice name="Chain">
-                    <label>Chain</label>
-                </choice>
-                <choice name="RPN">
-                    <label>RPN</label>
-                </choice>
-            </choices>
-            <default>Conventional</default>
+            <default>1</default>
         </entry>
     </group>
 </kcfg>

@@ -13,6 +13,7 @@
 
 #include <KLocalizedString>
 
+constexpr std::array<QStringView, 6> ANGLE_UNITS = {u"Radians", u"Degrees", u"Gradians", u"Arcminute", u"Arcsecond", u"Turn"};
 constexpr std::array<ParsingMode, 5> PARSING_MODES = {PARSING_MODE_ADAPTIVE,
                                                       PARSING_MODE_CONVENTIONAL,
                                                       PARSING_MODE_IMPLICIT_MULTIPLICATION_FIRST,
@@ -89,7 +90,7 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     po.preserve_format = false;
     po.restrict_to_parent_precision = true;
 
-    CALCULATOR->setCustomAngleUnit(CALCULATOR->getActiveUnit(KalkConfig::self()->angleUnit().toStdString()));
+    CALCULATOR->setCustomAngleUnit(CALCULATOR->getActiveUnit(ANGLE_UNITS.at(KalkConfig::self()->angleUnit()).toUtf8().constData()));
     CALCULATOR->setPrecision(KalkConfig::self()->precision());
 
     std::string input = CALCULATOR->unlocalizeExpression(expression.toStdString(), eo.parse_options);

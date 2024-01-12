@@ -39,10 +39,17 @@ FormCard.FormCardPage {
             id: angleUnit
             text: i18nc("@label:listbox trigonometric angle unit", "Angle unit")
             description: applicationWindow().width >= 250 ? i18nc("@info:whatsthis", "Default angle unit for trigonometric functions.") : ""
-            currentIndex: model.indexOf(Config.angleUnit)
-            model: ["Radians", "Degrees", "Gradians", "Arcminute", "Arcsecond", "Turn"]
+            currentIndex: Config.angleUnit
+            model: [
+                i18nc("@item:inlistbox Angle unit", "Radians"),
+                i18nc("@item:inlistbox Angle unit", "Degrees"),
+                i18nc("@item:inlistbox Angle unit", "Gradians"),
+                i18nc("@item:inlistbox Angle unit", "Arcminute"),
+                i18nc("@item:inlistbox Angle unit", "Arcsecond"),
+                i18nc("@item:inlistbox Angle unit", "Turn")
+            ]
             onCurrentValueChanged: {
-                Config.angleUnit = currentValue;
+                Config.angleUnit = currentIndex;
                 Config.save();
             }
         }
@@ -54,7 +61,12 @@ FormCard.FormCardPage {
             text: i18nc("@label:listbox control how expressions are parsed (read/interpreted)", "Parsing mode")
             description: applicationWindow().width >= 250 ? i18nc("@info:whatsthis", "Expression evaluation order.") : ""
             currentIndex: Config.parsingMode
-            model: ["Adaptive", "Conventional", "Implicit first", "Chain"]
+            model: [
+                i18nc("@item:inlistbox Parsing mode", "Adaptive"),
+                i18nc("@item:inlistbox Parsing mode", "Conventional"),
+                i18nc("@item:inlistbox Parsing mode", "Implicit first"),
+                i18nc("@item:inlistbox Parsing mode", "Chain")
+            ]
             onCurrentValueChanged: {
                 Config.parsingMode = currentIndex;
                 Config.save();
