@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-04 01:39+0000\n"
+"POT-Creation-Date: 2024-01-13 00:40+0000\n"
 "PO-Revision-Date: 2023-12-04 08:33+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -46,12 +46,12 @@ msgstr "Калькулятор для Плазми"
 msgid "© 2020-2022 KDE Community"
 msgstr "© Спільнота KDE, 2020–2022"
 
-#: qalculateengine.cpp:108
+#: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
 msgstr "попередження"
 
-#: qalculateengine.cpp:108
+#: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
 msgstr "помилка"
@@ -157,25 +157,83 @@ msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "Типова одиниця кутів для тригонометричних функцій."
 
-#: qml/SettingsPage.qml:54
+#: qml/SettingsPage.qml:44
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Radians"
+msgstr ""
+
+#: qml/SettingsPage.qml:45
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Degrees"
+msgstr ""
+
+#: qml/SettingsPage.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Gradians"
+msgstr ""
+
+#: qml/SettingsPage.qml:47
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcminute"
+msgstr ""
+
+#: qml/SettingsPage.qml:48
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcsecond"
+msgstr ""
+
+#: qml/SettingsPage.qml:49
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Turn"
+msgstr ""
+
+#: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "Режим обробки"
 
-#: qml/SettingsPage.qml:55
+#: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "Порядок обчислення виразів."
 
+#: qml/SettingsPage.qml:65
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Adaptive"
+msgstr ""
+
+#: qml/SettingsPage.qml:66
+#, fuzzy, kde-format
+#| msgid "Conversion"
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Conventional"
+msgstr "Перетворення"
+
+#: qml/SettingsPage.qml:67
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Implicit first"
+msgstr ""
+
+#: qml/SettingsPage.qml:68
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Chain"
+msgstr ""
+
 #: qml/UnitConverter.qml:65
 #, kde-format
 msgid "Category"
 msgstr "Категорія"
-
-#~ msgid "Conversion"
-#~ msgstr "Перетворення"
 
 #~ msgid "Swap"
 #~ msgstr "Резервна пам'ять"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-04 01:39+0000\n"
+"POT-Creation-Date: 2024-01-13 00:40+0000\n"
 "PO-Revision-Date: 2023-12-08 19:15+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -43,12 +43,12 @@ msgstr "Kalkulilo por Plasma"
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 KDE-Komunumo"
 
-#: qalculateengine.cpp:108
+#: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
 msgstr "averto"
 
-#: qalculateengine.cpp:108
+#: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
 msgstr "eraro"
@@ -154,17 +154,77 @@ msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "Defaŭlta angul-unuo por trigonometriaj funkcioj."
 
-#: qml/SettingsPage.qml:54
+#: qml/SettingsPage.qml:44
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Radians"
+msgstr ""
+
+#: qml/SettingsPage.qml:45
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Degrees"
+msgstr ""
+
+#: qml/SettingsPage.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Gradians"
+msgstr ""
+
+#: qml/SettingsPage.qml:47
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcminute"
+msgstr ""
+
+#: qml/SettingsPage.qml:48
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcsecond"
+msgstr ""
+
+#: qml/SettingsPage.qml:49
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Turn"
+msgstr ""
+
+#: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "Analiza reĝimo"
 
-#: qml/SettingsPage.qml:55
+#: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "Ordo de esprimtaksado."
+
+#: qml/SettingsPage.qml:65
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Adaptive"
+msgstr ""
+
+#: qml/SettingsPage.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Conventional"
+msgstr ""
+
+#: qml/SettingsPage.qml:67
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Implicit first"
+msgstr ""
+
+#: qml/SettingsPage.qml:68
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Chain"
+msgstr ""
 
 #: qml/UnitConverter.qml:65
 #, kde-format
