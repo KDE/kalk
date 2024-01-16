@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kalk package.
-# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-13 00:40+0000\n"
-"PO-Revision-Date: 2023-12-05 08:06+0100\n"
+"PO-Revision-Date: 2024-01-15 19:31+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -158,37 +158,37 @@ msgstr "Unidade angular predeterminada para as funcións trigonométricas."
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "Radiáns"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "Graos"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "Gradiáns"
 
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "Minuto de acto"
 
 #: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "Segundo de arco"
 
 #: qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "Xiro"
 
 #: qml/SettingsPage.qml:61
 #, kde-format
@@ -206,26 +206,25 @@ msgstr "Orde de avaliación das expresións."
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "Adaptábel"
 
 #: qml/SettingsPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Conversion"
+#, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr "Conversión"
+msgstr "Convencional"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "Primeiro o implícito"
 
 #: qml/SettingsPage.qml:68
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "Cadea"
 
 #: qml/UnitConverter.qml:65
 #, kde-format
