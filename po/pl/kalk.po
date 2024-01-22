@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-13 00:40+0000\n"
-"PO-Revision-Date: 2023-12-23 14:05+0100\n"
-"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmai.com>\n"
+"PO-Revision-Date: 2024-01-21 08:20+0100\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -159,37 +159,37 @@ msgstr "Domyślna jednostka kąta dla funkcji trygonometrycznych."
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "Radiany"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "Stopnie"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "Gradiany"
 
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "Minuta kątowa"
 
 #: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "Sekunda kątowa"
 
 #: qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "Obrót"
 
 #: qml/SettingsPage.qml:61
 #, kde-format
@@ -207,26 +207,25 @@ msgstr "Kolejność obliczania wyrażeń."
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "Dostosowujący się"
 
 #: qml/SettingsPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Conversion"
+#, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr "Przekształcenie"
+msgstr "Zwykły"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "Najpierw jednoznaczne"
 
 #: qml/SettingsPage.qml:68
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "Łańcuch"
 
 #: qml/UnitConverter.qml:65
 #, kde-format
