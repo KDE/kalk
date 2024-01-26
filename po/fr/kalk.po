@@ -1,11 +1,11 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Xavier Besnard <xavier.besnard@kde.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-13 00:40+0000\n"
-"PO-Revision-Date: 2023-12-20 09:41+0100\n"
+"PO-Revision-Date: 2024-01-23 14:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -156,37 +156,37 @@ msgstr "Unité d'angle par défaut pour les fonctions trigonométriques."
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "Radians"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "Degrés"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "Gradians"
 
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "Minute d'arc"
 
 #: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "Seconde d'arc"
 
 #: qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "Basculer"
 
 #: qml/SettingsPage.qml:61
 #, kde-format
@@ -204,26 +204,25 @@ msgstr "Ordre d'évaluation des expressions"
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "Adaptatif"
 
 #: qml/SettingsPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Conversion"
+#, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr "Conversion"
+msgstr "Conventionnelle"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "Implicite tout d'abord"
 
 #: qml/SettingsPage.qml:68
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "Chaîne"
 
 #: qml/UnitConverter.qml:65
 #, kde-format
