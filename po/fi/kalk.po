@@ -1,31 +1,33 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 # Tommi Nieminen <translator@legisign.org>, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
+# SPDX-FileCopyrightText: 2024 Lasse Liehu <lasse.liehu@iki.fi>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-04 01:39+0000\n"
-"PO-Revision-Date: 2023-10-12 18:07+0300\n"
-"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"PO-Revision-Date: 2024-01-31 01:07+0200\n"
+"Last-Translator: Lasse Liehu <lasse.liehu@iki.fi>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tommi Nieminen"
+msgstr "Tommi Nieminen. Kimmo Kujansuu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "translator@legisign.org"
+msgstr "translator@legisign.org, mrkujansuu@gmail.com"
 
 #: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:117
 #: qml/main.qml:120 qml/main.qml:126
@@ -41,32 +43,32 @@ msgstr "Laskin Plasmaan"
 #: main.cpp:66
 #, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© 2020–2022 KDE-yhteisö"
+msgstr "© 2020–2024 KDE-yhteisö"
 
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "varoitus"
 
 #: qalculateengine.cpp:108
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "virhe"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "Ohjelmoija"
 
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Kumoa"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Uudelleen"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
 #, kde-format
@@ -76,17 +78,17 @@ msgstr "Historia"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Leikkaa"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopioi"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Liitä"
 
 #: qml/HistoryView.qml:29
 #, kde-format
@@ -99,17 +101,16 @@ msgid "History is empty"
 msgstr "Historia on tyhjä"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Tyhjennä historia"
+msgstr "Tyhjennä koko historia?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Tämä tyhjentää pysyvästi, eikä sitä voi kumota"
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
 #, kde-format
@@ -119,7 +120,7 @@ msgstr "Muunnin"
 #: qml/main.qml:91 qml/main.qml:186
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Asetukset"
 
 #: qml/main.qml:98 qml/main.qml:204
 #, kde-format
@@ -135,37 +136,37 @@ msgstr "Binaarilaskin"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Asetukset"
 
 #: qml/SettingsPage.qml:26
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "Tarkkuus"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "Kulman yksikkö"
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "Oletuskulmayksikkö trigonometrisille funktioille."
 
 #: qml/SettingsPage.qml:54
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "Jäsennystila"
 
 #: qml/SettingsPage.qml:55
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "Lausekkeen arviointijärjestys."
 
 #: qml/UnitConverter.qml:65
 #, kde-format
