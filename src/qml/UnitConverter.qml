@@ -232,6 +232,7 @@ Kirigami.Page {
             ListView {
                 id: listview
                 model: unitModel
+                clip: true
                 delegate: Controls.RadioDelegate {
                     width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
                     text: modelData
