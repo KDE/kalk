@@ -99,11 +99,10 @@ msgid "History is empty"
 msgstr "Historie je prázdná"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Vyprázdnit historii"
+msgstr ""
 
 #: qml/HistoryView.qml:142
 #, kde-format
