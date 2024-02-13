@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-13 00:40+0000\n"
-"PO-Revision-Date: 2023-01-23 20:22+0400\n"
+"PO-Revision-Date: 2024-02-12 14:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -47,27 +47,27 @@ msgstr "© 2020-2022 مجتمع كِيدِي"
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "تحذير"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "خطأ"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "المبرمج"
 
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "تراجع"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "كرّر"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
 #, kde-format
@@ -77,17 +77,17 @@ msgstr "التاريخ"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "قصّ"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "انسخ"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "ألصق"
 
 #: qml/HistoryView.qml:29
 #, kde-format
@@ -100,17 +100,16 @@ msgid "History is empty"
 msgstr "التاريخ فارغ"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "امحُ التاريخ"
+msgstr "امسح كل التأريخ؟"
 
 #: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "هذا لا يمكن التراجع عنه"
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
 #, kde-format
@@ -120,7 +119,7 @@ msgstr "محول"
 #: qml/main.qml:91 qml/main.qml:186
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "إعدادات"
 
 #: qml/main.qml:98 qml/main.qml:204
 #, kde-format
@@ -136,103 +135,102 @@ msgstr "حاسبة ثنائية"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "إعدادات"
 
 #: qml/SettingsPage.qml:26
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "الدقّة"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "وحدة الزاوية"
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "وحدة الزاوية الافتراضية للدوال المثلثية."
 
 #: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "راديان"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "درجة"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "جراديان"
 
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "دقيقة قوسية"
 
 #: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "ثانية قوسية"
 
 #: qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "دورة"
 
 #: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "نمط التحليل"
 
 #: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "ترتيب تقييم التعبير."
 
 #: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "متكيف"
 
 #: qml/SettingsPage.qml:66
-#, fuzzy, kde-format
-#| msgid "Conversion"
+#, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr "تحويل"
+msgstr "تقليدي"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "الضمني أولا"
 
 #: qml/SettingsPage.qml:68
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "سلسلة"
 
 #: qml/UnitConverter.qml:65
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "الفئة"
 
 #~ msgid "Swap"
 #~ msgstr "بدّل"
