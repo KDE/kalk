@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
 # Kristóf Kiszel <kiszel.kristof@gmail.com>, 2020.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-04 01:39+0000\n"
-"PO-Revision-Date: 2020-12-29 14:55+0100\n"
-"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-02-13 11:43+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.03.70\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -25,7 +26,7 @@ msgstr "Kiszel Kristóf"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kiszel.kristof@gmail.com"
+msgstr "ulysses@fsf.hu"
 
 #: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:117
 #: qml/main.qml:120 qml/main.qml:126
@@ -34,16 +35,14 @@ msgid "Calculator"
 msgstr "Számológép"
 
 #: main.cpp:64
-#, fuzzy, kde-format
-#| msgid "Calculator in Kirigami"
+#, kde-format
 msgid "Calculator for Plasma"
-msgstr "Számológép Kirigamiban"
+msgstr "Számológép a Plasmához"
 
 #: main.cpp:66
-#, fuzzy, kde-format
-#| msgid "© 2020 KDE Community"
+#, kde-format
 msgid "© 2020-2022 KDE Community"
-msgstr "© A KDE közösség, 2020."
+msgstr "© A KDE közösség, 2020-2022."
 
 #: qalculateengine.cpp:108
 #, kde-format
@@ -101,11 +100,10 @@ msgid "History is empty"
 msgstr "Nincsenek előzmények"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Előzmények törlése"
+msgstr "Minden előzményt töröl?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
@@ -114,8 +112,7 @@ msgid "This is permanent and cannot be undone"
 msgstr ""
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
 msgstr "Átváltó"
 
@@ -130,10 +127,9 @@ msgid "About"
 msgstr "Névjegy"
 
 #: qml/main.qml:162
-#, fuzzy, kde-format
-#| msgid "Calculator"
+#, kde-format
 msgid "Binary Calculator"
-msgstr "Számológép"
+msgstr "Bináris számológép"
 
 #: qml/SettingsPage.qml:18
 #, kde-format
