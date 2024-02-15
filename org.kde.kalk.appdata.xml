@@ -142,6 +142,7 @@
     <p xml:lang="fr">Kalk est une calculatrice universelle conçue pour Plasma.</p>
     <p xml:lang="gl">Kalk é unha calculadora converxente para Plasma.</p>
     <p xml:lang="hi">कल्क प्लाज़्मा के लिए एक अभिसृत गणक है।</p>
+    <p xml:lang="hu">A Kalk egy konvergens számológép a Plasmához.</p>
     <p xml:lang="ia">Kalk es un calculator convergente per Plasma</p>
     <p xml:lang="id">Kalk adalah kalkulator yang konvergen untuk Plasma.</p>
     <p xml:lang="it">Kalk è una semplice calcolatrice per Plasma.</p>
@@ -181,6 +182,7 @@
       <caption xml:lang="fr">Page de la calculatrice</caption>
       <caption xml:lang="gl">Páxina de calculadora</caption>
       <caption xml:lang="hi">गणक पृष्ठ</caption>
+      <caption xml:lang="hu">Számológép oldal</caption>
       <caption xml:lang="ia">Pagina de Calculator</caption>
       <caption xml:lang="id">Halaman Kalkulator</caption>
       <caption xml:lang="it">Pagina della calcolatrice</caption>
