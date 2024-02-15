@@ -9,6 +9,8 @@ import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
+import org.kde.kirigamiaddons.components as Components
+import org.kde.kirigamiaddons.delegates as Delegates
 
 Kirigami.Page {
     id: unitConverter
@@ -221,33 +223,32 @@ Kirigami.Page {
         anchors.fill: parent
     }
 
-    Controls.Dialog {
+    Components.BottomDrawer {
         id: categories
-        modal: true
-        focus: true
-        width: Math.min(parent.width, 400)
-        x: parent.width / 2 - width / 2
 
-        contentItem: Controls.ScrollView {
-            ListView {
-                id: listview
-                model: unitModel
-                clip: true
-                delegate: Controls.RadioDelegate {
-                    width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
-                    text: modelData
-                    checked: index === unitModel.currentIndex
-                    onClicked: {
-                        category.text = text;
-                        unitModel.currentIndex = index;
-                        categories.close();
-                    }
+        height: unitConverter.height - Kirigami.Units.gridUnit * 5
+        parent: applicationWindow().overlay
+
+
+
+
+        ListView {
+            id: listview
+            model: unitModel
+            clip: true
+            delegate: Controls.RadioDelegate {
+                width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
+                text: modelData
+                checked: index === unitModel.currentIndex
+                onClicked: {
+                    category.text = text;
+                    unitModel.currentIndex = index;
+                    categories.close();
                 }
-
-                Component.onCompleted: category.text = listview.currentItem.text
             }
 
-            Component.onCompleted: background.visible = true
+            Component.onCompleted: category.text = listview.currentItem.text
+
         }
     }
 }
