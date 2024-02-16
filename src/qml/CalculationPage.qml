@@ -258,6 +258,8 @@ Kirigami.Page {
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
+            Kirigami.Theme.colorSet: Kirigami.Theme.View
+            Kirigami.Theme.inherit: false
             color: Kirigami.Theme.backgroundColor
             implicitHeight: outputScreen.height
         }
