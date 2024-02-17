@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:40+0000\n"
+"POT-Creation-Date: 2024-02-17 00:40+0000\n"
 "PO-Revision-Date: 2024-01-14 18:57+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -113,7 +113,7 @@ msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "這個動作是永久的，將無法復原"
 
-#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:17
 #, kde-format
 msgid "Converter"
 msgstr "轉換器"
@@ -229,7 +229,7 @@ msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "立即計算（連鎖）"
 
-#: qml/UnitConverter.qml:65
+#: qml/UnitConverter.qml:67
 #, kde-format
 msgid "Category"
 msgstr "分類"

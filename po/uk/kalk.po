@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:40+0000\n"
+"POT-Creation-Date: 2024-02-17 00:40+0000\n"
 "PO-Revision-Date: 2024-01-13 09:46+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -113,7 +113,7 @@ msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Наслідки цієї дії є остаточними, їх не можна скасувати"
 
-#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:17
 #, kde-format
 msgid "Converter"
 msgstr "Засіб перетворення"
@@ -229,7 +229,7 @@ msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "Ланцюговий"
 
-#: qml/UnitConverter.qml:65
+#: qml/UnitConverter.qml:67
 #, kde-format
 msgid "Category"
 msgstr "Категорія"

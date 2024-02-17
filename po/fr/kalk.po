@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-13 00:40+0000\n"
+"POT-Creation-Date: 2024-02-17 00:40+0000\n"
 "PO-Revision-Date: 2024-01-23 14:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -108,7 +108,7 @@ msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Ceci est définitif et ne peut être annulé."
 
-#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:15
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:17
 #, kde-format
 msgid "Converter"
 msgstr "Convertisseur"
@@ -224,7 +224,7 @@ msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "Chaîne"
 
-#: qml/UnitConverter.qml:65
+#: qml/UnitConverter.qml:67
 #, kde-format
 msgid "Category"
 msgstr "Catégorie"
