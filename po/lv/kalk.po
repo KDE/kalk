@@ -1,0 +1,233 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kalk package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-02-17 00:40+0000\n"
+"PO-Revision-Date: 2024-02-19 20:24+0200\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 23.08.4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Toms Trasūns"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "toms.trasuns@posteo.net"
+
+#: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:117
+#: qml/main.qml:120 qml/main.qml:126
+#, kde-format
+msgid "Calculator"
+msgstr "Kalkulotors"
+
+#: main.cpp:64
+#, kde-format
+msgid "Calculator for Plasma"
+msgstr "Kalkulators „Plasma“ darbvirsmai"
+
+#: main.cpp:66
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020–2022 KDE kopiena"
+
+#: qalculateengine.cpp:109
+#, kde-format
+msgid "warning"
+msgstr "uzmanību"
+
+#: qalculateengine.cpp:109
+#, kde-format
+msgid "error"
+msgstr "kļūda"
+
+#: qml/BinaryCalculator.qml:13 qml/main.qml:84
+#, kde-format
+msgid "Programmer"
+msgstr "Programmētājs"
+
+#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
+#, kde-format
+msgid "Undo"
+msgstr "Atsaukt"
+
+#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
+#, kde-format
+msgid "Redo"
+msgstr "Atatsaukt"
+
+#: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
+#, kde-format
+msgid "History"
+msgstr "Vēsture"
+
+#: qml/CalculationPage.qml:61
+#, kde-format
+msgid "Cut"
+msgstr "Izgriezt"
+
+#: qml/CalculationPage.qml:71
+#, kde-format
+msgid "Copy"
+msgstr "Kopēt"
+
+#: qml/CalculationPage.qml:81
+#, kde-format
+msgid "Paste"
+msgstr "Ielīmēt"
+
+#: qml/HistoryView.qml:29
+#, kde-format
+msgid "Clear history"
+msgstr "Notīrīt vēsturi"
+
+#: qml/HistoryView.qml:133
+#, kde-format
+msgid "History is empty"
+msgstr "Vēsture ir notīrīta"
+
+#: qml/HistoryView.qml:141
+#, kde-format
+msgctxt "Delete all items from a list"
+msgid "Clear All History?"
+msgstr "Vai notīrīt visu vēsturi?"
+
+#: qml/HistoryView.qml:142
+#, kde-format
+msgctxt "Deleted items cannot be recovered"
+msgid "This is permanent and cannot be undone"
+msgstr "Šo darbību nevarēs atsaukt"
+
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:17
+#, kde-format
+msgid "Converter"
+msgstr "Pārveidotājs"
+
+#: qml/main.qml:91 qml/main.qml:186
+#, kde-format
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#: qml/main.qml:98 qml/main.qml:204
+#, kde-format
+msgid "About"
+msgstr "Par"
+
+#: qml/main.qml:162
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Binārais kalkulators"
+
+#: qml/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Iestatījumi"
+
+#: qml/SettingsPage.qml:26
+#, kde-format
+msgctxt "@label:spinbox digits of precision"
+msgid "Precision"
+msgstr "Precizitāte"
+
+#: qml/SettingsPage.qml:40
+#, kde-format
+msgctxt "@label:listbox trigonometric angle unit"
+msgid "Angle unit"
+msgstr "Leņķa vienība"
+
+#: qml/SettingsPage.qml:41
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Default angle unit for trigonometric functions."
+msgstr "Noklusējuma leņķa vienība trigonometrijas funkcijām"
+
+#: qml/SettingsPage.qml:44
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Radians"
+msgstr "Radiāni"
+
+#: qml/SettingsPage.qml:45
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Degrees"
+msgstr "Grādi"
+
+#: qml/SettingsPage.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Gradians"
+msgstr "Goni"
+
+#: qml/SettingsPage.qml:47
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcminute"
+msgstr "Loka minūte"
+
+#: qml/SettingsPage.qml:48
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcsecond"
+msgstr "Loka sekunde"
+
+#: qml/SettingsPage.qml:49
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Turn"
+msgstr "Apgrieziens"
+
+#: qml/SettingsPage.qml:61
+#, kde-format
+msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
+msgid "Parsing mode"
+msgstr "Parsēšanas režīms"
+
+#: qml/SettingsPage.qml:62
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Expression evaluation order."
+msgstr "Izteiksmes izvērtēšanas kārtība."
+
+#: qml/SettingsPage.qml:65
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Adaptive"
+msgstr "Adaptīva"
+
+#: qml/SettingsPage.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Conventional"
+msgstr "Konvencionāla"
+
+#: qml/SettingsPage.qml:67
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Implicit first"
+msgstr "Implicītā vispirms"
+
+#: qml/SettingsPage.qml:68
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Chain"
+msgstr "Ķēde"
+
+#: qml/UnitConverter.qml:67
+#, kde-format
+msgid "Category"
+msgstr "Kategorija"
