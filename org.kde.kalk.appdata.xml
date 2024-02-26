@@ -32,6 +32,7 @@
   <name xml:lang="it">Calcolatrice</name>
   <name xml:lang="ka">კალკულატორი</name>
   <name xml:lang="ko">계산기</name>
+  <name xml:lang="lv">Kalkulators</name>
   <name xml:lang="nl">Rekenmachine</name>
   <name xml:lang="nn">Kalkulator</name>
   <name xml:lang="pa">ਕੈਲਕੂਲੇਟਰ</name>
@@ -70,6 +71,7 @@
   <summary xml:lang="it">Una calcolatrice ricca di funzionalità</summary>
   <summary xml:lang="ka">მრავალფუნქციური კალკულატორი</summary>
   <summary xml:lang="ko">다기능 계산기</summary>
+  <summary xml:lang="lv">Iespējām bagāts kalkulators</summary>
   <summary xml:lang="nl">Een rekenmachine rijk aan mogelijkheden</summary>
   <summary xml:lang="nn">Funksjonsrik kalkulator</summary>
   <summary xml:lang="pa">ਫ਼ੀਚਰ ਭਰਪੂਰ ਕੈਲਕੂਲੇਟਰ</summary>
@@ -109,6 +111,7 @@
   <developer_name xml:lang="it">© 2020 La comunità KDE</developer_name>
   <developer_name xml:lang="ka">KDE-ის საზოგადოება</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
+  <developer_name xml:lang="lv">KDE kopiena</developer_name>
   <developer_name xml:lang="nl">KDE-gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
   <developer_name xml:lang="pa">ਕੇਡੀਈ ਕਮਿਊਨਟੀ</developer_name>
@@ -148,6 +151,7 @@
     <p xml:lang="it">Kalk è una semplice calcolatrice per Plasma.</p>
     <p xml:lang="ka">Kalc-ი Plasma-ის კალკულატორია.</p>
     <p xml:lang="ko">Kalk는 Plasma용 다기능 계산기입니다.</p>
+    <p xml:lang="lv">„Kalk“ ir konverģents kalkulators „Plasma“ darbvirsmai</p>
     <p xml:lang="nl">Kalk is een convergente rekenmachine voor Plasma.</p>
     <p xml:lang="nn">Kalk er ein kalkulator for Plasma, tilpassa ulike typar brukarflater.</p>
     <p xml:lang="pl">Kalk jest spójnym kalkulatorem dla Plazmy.</p>
@@ -188,6 +192,7 @@
       <caption xml:lang="it">Pagina della calcolatrice</caption>
       <caption xml:lang="ka">კალკულატორის გვერდი</caption>
       <caption xml:lang="ko">계산기 페이지</caption>
+      <caption xml:lang="lv">Kalkulatora lapa</caption>
       <caption xml:lang="nl">Rekenmachinepagina</caption>
       <caption xml:lang="nn">Kalkulatorside</caption>
       <caption xml:lang="pl">Strona kalkulatora</caption>
