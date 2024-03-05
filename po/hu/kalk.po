@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-17 00:40+0000\n"
-"PO-Revision-Date: 2024-02-13 11:43+0100\n"
+"PO-Revision-Date: 2024-03-04 21:21+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -47,27 +47,27 @@ msgstr "© A KDE közösség, 2020-2022."
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "figyelmeztetés"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "hiba"
 
 #: qml/BinaryCalculator.qml:13 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "Programozó"
 
 #: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Visszavonás"
 
 #: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Újra"
 
 #: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
 #, kde-format
@@ -77,17 +77,17 @@ msgstr "Előzmények"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Kivágás"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Másolás"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Beillesztés"
 
 #: qml/HistoryView.qml:29
 #, kde-format
@@ -109,7 +109,7 @@ msgstr "Minden előzményt töröl?"
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Ez végleges és nem vonható vissza"
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:17
 #, kde-format
@@ -119,7 +119,7 @@ msgstr "Átváltó"
 #: qml/main.qml:91 qml/main.qml:186
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
 #: qml/main.qml:98 qml/main.qml:204
 #, kde-format
@@ -135,25 +135,25 @@ msgstr "Bináris számológép"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Beállítások"
 
 #: qml/SettingsPage.qml:26
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "Pontosság"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "Szögmértékegység"
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "A trigonometriai függvények alapértelmezett szögmértékegysége."
 
 #: qml/SettingsPage.qml:44
 #, kde-format
@@ -195,13 +195,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "Feldolgozási mód"
 
 #: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "Kifejezés-kiértékelési sorrend."
 
 #: qml/SettingsPage.qml:65
 #, kde-format
@@ -231,7 +231,7 @@ msgstr ""
 #: qml/UnitConverter.qml:67
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Kategória"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Számológép a Kirigamival építve."
