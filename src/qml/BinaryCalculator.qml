@@ -4,7 +4,6 @@
 import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
-import Qt5Compat.GraphicalEffects
 import org.kde.kirigami as Kirigami
 
 Kirigami.Page {
@@ -110,15 +109,7 @@ Kirigami.Page {
             Layout.alignment: Qt.AlignTop
             Layout.preferredHeight: initialPage.screenHeight
             
-            // top panel drop shadow
-            RectangularGlow {
-                anchors.fill: topPanelBackground
-                anchors.topMargin: 1
-                glowRadius: 4
-                spread: 0.2
-                color: dropShadowColor
-            }
-            Rectangle {
+            Kirigami.ShadowedRectangle {
                 id: topPanelBackground
                 anchors.top: parent.top
                 anchors.left: parent.left
@@ -127,6 +118,11 @@ Kirigami.Page {
                 Kirigami.Theme.inherit: false
                 color: Kirigami.Theme.backgroundColor
                 implicitHeight: outputScreen.height
+                shadow {
+                    yOffset: 1
+                    size: 4
+                    color: dropShadowColor
+                }
             }
             
             Column {

@@ -8,7 +8,6 @@ import QtQuick
 import QtQuick.Layouts
 import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
-import Qt5Compat.GraphicalEffects
 import org.kde.kirigamiaddons.components as Components
 import org.kde.kirigamiaddons.delegates as Delegates
 
@@ -84,17 +83,7 @@ Kirigami.Page {
         opacity: mainOpacity
         transform: Translate { y: yTranslate }
         
-        // top panel drop shadow
-        RectangularGlow {
-            anchors.fill: topPanelBackground
-            anchors.topMargin: 1
-            z: -2
-            glowRadius: 4
-            spread: 0.2
-            color: dropShadowColor
-        }
-        
-        Rectangle {
+        Kirigami.ShadowedRectangle {
             id: topPanelBackground
             z: -1
             Kirigami.Theme.colorSet: Kirigami.Theme.View
@@ -104,6 +93,11 @@ Kirigami.Page {
             anchors.right: parent.right
             anchors.top: parent.top
             implicitHeight: topPanel.height
+            shadow {
+                yOffset: 1
+                size: 4
+                color: dropShadowColor
+            }
         }
         
         ColumnLayout {
