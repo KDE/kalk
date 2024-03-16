@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-17 00:40+0000\n"
+"POT-Creation-Date: 2024-03-16 00:41+0000\n"
 "PO-Revision-Date: 2021-01-20 21:43-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:117
+#: main.cpp:62 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:117
 #: qml/main.qml:120 qml/main.qml:126
 #, kde-format
 msgid "Calculator"
@@ -55,37 +55,37 @@ msgstr ""
 msgid "error"
 msgstr ""
 
-#: qml/BinaryCalculator.qml:13 qml/main.qml:84
+#: qml/BinaryCalculator.qml:12 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
 msgstr ""
 
-#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
+#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
 #, kde-format
 msgid "Undo"
 msgstr ""
 
-#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
+#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
 #, kde-format
 msgid "Redo"
 msgstr ""
 
-#: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:15
 #, kde-format
 msgid "History"
 msgstr "ਅਤੀਤ"
 
-#: qml/CalculationPage.qml:61
+#: qml/CalculationPage.qml:60
 #, kde-format
 msgid "Cut"
 msgstr ""
 
-#: qml/CalculationPage.qml:71
+#: qml/CalculationPage.qml:70
 #, kde-format
 msgid "Copy"
 msgstr ""
 
-#: qml/CalculationPage.qml:81
+#: qml/CalculationPage.qml:80
 #, kde-format
 msgid "Paste"
 msgstr ""
@@ -113,7 +113,7 @@ msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr ""
 
-#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:17
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
 #, fuzzy, kde-format
 #| msgid "Convertor"
 msgid "Converter"
@@ -232,7 +232,7 @@ msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr ""
 
-#: qml/UnitConverter.qml:67
+#: qml/UnitConverter.qml:66
 #, kde-format
 msgid "Category"
 msgstr ""

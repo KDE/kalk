@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-17 00:40+0000\n"
+"POT-Creation-Date: 2024-03-16 00:41+0000\n"
 "PO-Revision-Date: 2024-01-13 15:55+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "antonibella5@yahoo.com"
 
-#: main.cpp:62 qml/CalculationPage.qml:17 qml/main.qml:70 qml/main.qml:117
+#: main.cpp:62 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:117
 #: qml/main.qml:120 qml/main.qml:126
 #, kde-format
 msgid "Calculator"
@@ -56,37 +56,37 @@ msgstr "avís"
 msgid "error"
 msgstr "error"
 
-#: qml/BinaryCalculator.qml:13 qml/main.qml:84
+#: qml/BinaryCalculator.qml:12 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
 msgstr "Programador"
 
-#: qml/BinaryCalculator.qml:23 qml/CalculationPage.qml:41
+#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
 #, kde-format
 msgid "Undo"
 msgstr "Desfés"
 
-#: qml/BinaryCalculator.qml:30 qml/CalculationPage.qml:51
+#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
 #, kde-format
 msgid "Redo"
 msgstr "Refés"
 
-#: qml/CalculationPage.qml:26 qml/HistoryView.qml:15
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:15
 #, kde-format
 msgid "History"
 msgstr "Historial"
 
-#: qml/CalculationPage.qml:61
+#: qml/CalculationPage.qml:60
 #, kde-format
 msgid "Cut"
 msgstr "Retalla"
 
-#: qml/CalculationPage.qml:71
+#: qml/CalculationPage.qml:70
 #, kde-format
 msgid "Copy"
 msgstr "Copia"
 
-#: qml/CalculationPage.qml:81
+#: qml/CalculationPage.qml:80
 #, kde-format
 msgid "Paste"
 msgstr "Enganxa"
@@ -113,7 +113,7 @@ msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Això és permanent i no es podrà desfer"
 
-#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:17
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Convertidor"
@@ -229,7 +229,7 @@ msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "Cadena"
 
-#: qml/UnitConverter.qml:67
+#: qml/UnitConverter.qml:66
 #, kde-format
 msgid "Category"
 msgstr "Categoria"
