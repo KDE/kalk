@@ -25,6 +25,7 @@
   <name xml:lang="fi">Laskin</name>
   <name xml:lang="fr">Calculatrice</name>
   <name xml:lang="gl">Calculadora</name>
+  <name xml:lang="he">מחשבון</name>
   <name xml:lang="hi">गणक</name>
   <name xml:lang="hu">Számológép</name>
   <name xml:lang="ia">Calculator</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="fi">Monipuolinen laskin</summary>
   <summary xml:lang="fr">Une calculatrice avec de nombreuses fonctionnalités.</summary>
   <summary xml:lang="gl">Unha calculadora con moitas funcionalidades</summary>
+  <summary xml:lang="he">מחשבון עתיר תכונות</summary>
   <summary xml:lang="hi">एक सुविधा संपन्न गणक</summary>
   <summary xml:lang="hu">Funkciógazdag számológép</summary>
   <summary xml:lang="ia">Un Calculator ric de  characteristicas</summary>
@@ -107,6 +109,7 @@
     <p xml:lang="fi">Kalk on mukautuva laskin Plasmaan.</p>
     <p xml:lang="fr">Kalk est une calculatrice universelle conçue pour Plasma.</p>
     <p xml:lang="gl">Kalk é unha calculadora converxente para Plasma.</p>
+    <p xml:lang="he">המחשבון Kalk הוא מחשבון אחוד לפלזמה.</p>
     <p xml:lang="hi">कल्क प्लाज़्मा के लिए एक अभिसृत गणक है।</p>
     <p xml:lang="hu">A Kalk egy konvergens számológép a Plasmához.</p>
     <p xml:lang="ia">Kalk es un calculator convergente per Plasma</p>
@@ -148,6 +151,7 @@
       <caption xml:lang="fi">Laskinsivu</caption>
       <caption xml:lang="fr">Page de la calculatrice</caption>
       <caption xml:lang="gl">Páxina de calculadora</caption>
+      <caption xml:lang="he">עמוד מחשבון</caption>
       <caption xml:lang="hi">गणक पृष्ठ</caption>
       <caption xml:lang="hu">Számológép oldal</caption>
       <caption xml:lang="ia">Pagina de Calculator</caption>
