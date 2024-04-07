@@ -1,0 +1,232 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kalk package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-16 00:41+0000\n"
+"PO-Revision-Date: 2024-04-06 15:33+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: main.cpp:62 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:117
+#: qml/main.qml:120 qml/main.qml:126
+#, kde-format
+msgid "Calculator"
+msgstr "מחשבון"
+
+#: main.cpp:64
+#, kde-format
+msgid "Calculator for Plasma"
+msgstr "מחשבון לפלזמה"
+
+#: main.cpp:66
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020‏-2022 קהילת KDE"
+
+#: qalculateengine.cpp:109
+#, kde-format
+msgid "warning"
+msgstr "אזהרה"
+
+#: qalculateengine.cpp:109
+#, kde-format
+msgid "error"
+msgstr "שגיאה"
+
+#: qml/BinaryCalculator.qml:12 qml/main.qml:84
+#, kde-format
+msgid "Programmer"
+msgstr "מתכנת"
+
+#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
+#, kde-format
+msgid "Undo"
+msgstr "החזרה"
+
+#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
+#, kde-format
+msgid "Redo"
+msgstr "ביצוע חוזר"
+
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:15
+#, kde-format
+msgid "History"
+msgstr "היסטוריה"
+
+#: qml/CalculationPage.qml:60
+#, kde-format
+msgid "Cut"
+msgstr "גזירה"
+
+#: qml/CalculationPage.qml:70
+#, kde-format
+msgid "Copy"
+msgstr "העתקה"
+
+#: qml/CalculationPage.qml:80
+#, kde-format
+msgid "Paste"
+msgstr "הדבקה"
+
+#: qml/HistoryView.qml:29
+#, kde-format
+msgid "Clear history"
+msgstr "פינוי ההיסטוריה"
+
+#: qml/HistoryView.qml:133
+#, kde-format
+msgid "History is empty"
+msgstr "ההיסטוריה ריקה"
+
+#: qml/HistoryView.qml:141
+#, kde-format
+msgctxt "Delete all items from a list"
+msgid "Clear All History?"
+msgstr "לפנות את כל ההיסטוריה?"
+
+#: qml/HistoryView.qml:142
+#, kde-format
+msgctxt "Deleted items cannot be recovered"
+msgid "This is permanent and cannot be undone"
+msgstr "מדובר בפעולה בלתי הפיכה"
+
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
+#, kde-format
+msgid "Converter"
+msgstr "ממיר"
+
+#: qml/main.qml:91 qml/main.qml:186
+#, kde-format
+msgid "Settings"
+msgstr "הגדרות"
+
+#: qml/main.qml:98 qml/main.qml:204
+#, kde-format
+msgid "About"
+msgstr "על אודות"
+
+#: qml/main.qml:162
+#, kde-format
+msgid "Binary Calculator"
+msgstr "מחשבון בינרי"
+
+#: qml/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "הגדרות"
+
+#: qml/SettingsPage.qml:26
+#, kde-format
+msgctxt "@label:spinbox digits of precision"
+msgid "Precision"
+msgstr "דיוק"
+
+#: qml/SettingsPage.qml:40
+#, kde-format
+msgctxt "@label:listbox trigonometric angle unit"
+msgid "Angle unit"
+msgstr "יחידת זווית"
+
+#: qml/SettingsPage.qml:41
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Default angle unit for trigonometric functions."
+msgstr "יחידת זווית כברירת מחדל לפונקציות טריגונומטריות."
+
+#: qml/SettingsPage.qml:44
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Radians"
+msgstr "רדיאנים"
+
+#: qml/SettingsPage.qml:45
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Degrees"
+msgstr "מעלות"
+
+#: qml/SettingsPage.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Gradians"
+msgstr "גרדיאנים"
+
+#: qml/SettingsPage.qml:47
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcminute"
+msgstr "דקת קשת"
+
+#: qml/SettingsPage.qml:48
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcsecond"
+msgstr "שניית קשת"
+
+#: qml/SettingsPage.qml:49
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Turn"
+msgstr "פנייה"
+
+#: qml/SettingsPage.qml:61
+#, kde-format
+msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
+msgid "Parsing mode"
+msgstr "מצב פענוח"
+
+#: qml/SettingsPage.qml:62
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Expression evaluation order."
+msgstr "סדר חישוב הביטויים."
+
+#: qml/SettingsPage.qml:65
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Adaptive"
+msgstr "מסתגל"
+
+#: qml/SettingsPage.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Conventional"
+msgstr "מסורתי"
+
+#: qml/SettingsPage.qml:67
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Implicit first"
+msgstr "מרומזים תחילה"
+
+#: qml/SettingsPage.qml:68
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Chain"
+msgstr "שרשור"
+
+#: qml/UnitConverter.qml:66
+#, kde-format
+msgid "Category"
+msgstr "קטגוריה"
