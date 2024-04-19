@@ -23,13 +23,13 @@ public:
     {
         Q_UNUSED(parent)
         return m_historyList.count();
-    };
+    }
     QVariant data(const QModelIndex &index, int role) const override
     {
         Q_UNUSED(index)
         Q_UNUSED(role)
         return m_historyList.at(index.row());
-    };
+    }
     void addHistory(const QString &string)
     {
         beginInsertRows({}, m_historyList.count(), m_historyList.count());
@@ -37,7 +37,7 @@ public:
         endInsertRows();
 
         this->save();
-    };
+    }
     Q_INVOKABLE void clearHistory();
     Q_INVOKABLE void deleteFromHistory(const int index);
 
