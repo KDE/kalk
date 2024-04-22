@@ -13,7 +13,5 @@ Dependencies:
     'third-party/libqalculate': '@latest'
 
 Options:
-    cppcheck-arguments: '--enable=warning,style,performance --inline-suppr --suppress=passedByValue --suppress=nullPointer'
-
-Options:
+  cppcheck-arguments: '--enable=warning,style,performance --inline-suppr --suppress=passedByValue --suppress=nullPointer'
   require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
