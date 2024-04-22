@@ -14,3 +14,6 @@ Dependencies:
 
 Options:
     cppcheck-arguments: '--enable=warning,style,performance --inline-suppr --suppress=passedByValue --suppress=nullPointer'
+
+Options:
+  require-passing-tests-on: ['Linux', 'FreeBSD', 'Windows']
