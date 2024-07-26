@@ -12,8 +12,8 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(kalk VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF_MIN_VERSION "5.240.0")
-set(QT_MIN_VERSION "6.5.0")
+set(KF_MIN_VERSION "6.3.0")
+set(QT_MIN_VERSION "6.7.0")
 
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
     message(FATAL_ERROR "This application requires an out of source build. Please
@@ -40,6 +40,7 @@ include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
+include(ECMDeprecationSettings)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KALK
@@ -61,6 +62,11 @@ if (ANDROID)
     find_package(OpenSSL REQUIRED)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 endif()
+
+ecm_set_disabled_deprecation_versions(QT 6.7
+    KF 6.4.0
+)
+
 add_subdirectory(src)
 
 if(BUILD_TESTING)
