@@ -109,7 +109,7 @@ msgstr "Netta omne chronologia?"
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr "Isto es permanente e nonpote esser annullate"
+msgstr "Isto es permanente e non pote esser annullate"
 
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
 #, kde-format
