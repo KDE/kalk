@@ -3,7 +3,7 @@
 
 Dependencies:
 
-- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Android/Qt6']
+- 'on': ['Linux/Qt', 'FreeBSD/Qt', 'Android/Qt']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kcoreaddons': '@latest-kf6'
@@ -12,7 +12,7 @@ Dependencies:
     'frameworks/kunitconversion': '@latest-kf6'
     'third-party/libqalculate': '@latest'
 
-- 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
+- 'on': ['Linux/Qt', 'FreeBSD/Qt']
   'require':
     'frameworks/qqc2-desktop-style': '@latest-kf6'
 
