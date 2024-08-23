@@ -1,0 +1,232 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kalk package.
+#
+# SPDX-FileCopyrightText: 2024 rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>
+msgid ""
+msgstr ""
+"Project-Id-Version: kalk\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-16 00:41+0000\n"
+"PO-Revision-Date: 2024-08-22 14:14+0200\n"
+"Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.05.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Rasmus Rosendahl-Kaa"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "rasmus@rosendahl-kaa.name"
+
+#: main.cpp:62 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:117
+#: qml/main.qml:120 qml/main.qml:126
+#, kde-format
+msgid "Calculator"
+msgstr "Lommeregner"
+
+#: main.cpp:64
+#, kde-format
+msgid "Calculator for Plasma"
+msgstr "Lommeregner for Plasma"
+
+#: main.cpp:66
+#, kde-format
+msgid "© 2020-2022 KDE Community"
+msgstr "© 2020-2022 KDE Community"
+
+#: qalculateengine.cpp:109
+#, kde-format
+msgid "warning"
+msgstr "advarsel"
+
+#: qalculateengine.cpp:109
+#, kde-format
+msgid "error"
+msgstr "error"
+
+#: qml/BinaryCalculator.qml:12 qml/main.qml:84
+#, kde-format
+msgid "Programmer"
+msgstr "Programmør"
+
+#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
+#, kde-format
+msgid "Undo"
+msgstr "Fortryd"
+
+#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
+#, kde-format
+msgid "Redo"
+msgstr "Gendan"
+
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:15
+#, kde-format
+msgid "History"
+msgstr "Historik"
+
+#: qml/CalculationPage.qml:60
+#, kde-format
+msgid "Cut"
+msgstr "Klip"
+
+#: qml/CalculationPage.qml:70
+#, kde-format
+msgid "Copy"
+msgstr "Kopiér"
+
+#: qml/CalculationPage.qml:80
+#, kde-format
+msgid "Paste"
+msgstr "Indsæt"
+
+#: qml/HistoryView.qml:29
+#, kde-format
+msgid "Clear history"
+msgstr "Ryd historik"
+
+#: qml/HistoryView.qml:133
+#, kde-format
+msgid "History is empty"
+msgstr "Historik er tom"
+
+#: qml/HistoryView.qml:141
+#, kde-format
+msgctxt "Delete all items from a list"
+msgid "Clear All History?"
+msgstr "Ryd al historik?"
+
+#: qml/HistoryView.qml:142
+#, kde-format
+msgctxt "Deleted items cannot be recovered"
+msgid "This is permanent and cannot be undone"
+msgstr "Dette er permanent og kan ikke fortrydes"
+
+#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
+#, kde-format
+msgid "Converter"
+msgstr "Konverter"
+
+#: qml/main.qml:91 qml/main.qml:186
+#, kde-format
+msgid "Settings"
+msgstr "Indstillinger"
+
+#: qml/main.qml:98 qml/main.qml:204
+#, kde-format
+msgid "About"
+msgstr "Om"
+
+#: qml/main.qml:162
+#, kde-format
+msgid "Binary Calculator"
+msgstr "Binær lommeregner"
+
+#: qml/SettingsPage.qml:18
+#, kde-format
+msgctxt "@title:window"
+msgid "Settings"
+msgstr "Indstillinger"
+
+#: qml/SettingsPage.qml:26
+#, kde-format
+msgctxt "@label:spinbox digits of precision"
+msgid "Precision"
+msgstr "Præcision"
+
+#: qml/SettingsPage.qml:40
+#, kde-format
+msgctxt "@label:listbox trigonometric angle unit"
+msgid "Angle unit"
+msgstr "Vinkelenhed"
+
+#: qml/SettingsPage.qml:41
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Default angle unit for trigonometric functions."
+msgstr "Standard vinkelenhed for trigonometriske funktioner."
+
+#: qml/SettingsPage.qml:44
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Radians"
+msgstr "Radianer"
+
+#: qml/SettingsPage.qml:45
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Degrees"
+msgstr "Grader"
+
+#: qml/SettingsPage.qml:46
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Gradians"
+msgstr "Gradianer"
+
+#: qml/SettingsPage.qml:47
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcminute"
+msgstr "Bueminut"
+
+#: qml/SettingsPage.qml:48
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Arcsecond"
+msgstr "Buesekund"
+
+#: qml/SettingsPage.qml:49
+#, kde-format
+msgctxt "@item:inlistbox Angle unit"
+msgid "Turn"
+msgstr "Tørn"
+
+#: qml/SettingsPage.qml:61
+#, kde-format
+msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
+msgid "Parsing mode"
+msgstr "Fortolkningstilstand"
+
+#: qml/SettingsPage.qml:62
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Expression evaluation order."
+msgstr "Udtrykkets evalueringsrækkefølge."
+
+#: qml/SettingsPage.qml:65
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Adaptive"
+msgstr "Adaptiv"
+
+#: qml/SettingsPage.qml:66
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Conventional"
+msgstr "Konventionel"
+
+#: qml/SettingsPage.qml:67
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Implicit first"
+msgstr "Implicit først"
+
+#: qml/SettingsPage.qml:68
+#, kde-format
+msgctxt "@item:inlistbox Parsing mode"
+msgid "Chain"
+msgstr "Kæde"
+
+#: qml/UnitConverter.qml:66
+#, kde-format
+msgid "Category"
+msgstr "Kategori"
