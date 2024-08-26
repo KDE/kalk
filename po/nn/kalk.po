@@ -103,7 +103,6 @@ msgstr "Loggen er tom"
 
 #: qml/HistoryView.qml:141
 #, fuzzy, kde-format
-#| msgid "Clear history"
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Tøm loggen"
