@@ -1,13 +1,12 @@
 # Translation of kalk to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2021, 2022, 2023.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:41+0000\n"
-"PO-Revision-Date: 2023-02-09 21:44+0100\n"
+"PO-Revision-Date: 2024-09-25 19:31+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -15,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -49,27 +48,27 @@ msgstr "© 2020–2022 KDE-fellesskapet"
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "åtvaring"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "feil"
 
 #: qml/BinaryCalculator.qml:12 qml/main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "Programmerar"
 
 #: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Angra"
 
 #: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Gjer om"
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:15
 #, kde-format
@@ -79,17 +78,17 @@ msgstr "Logg"
 #: qml/CalculationPage.qml:60
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Klipp ut"
 
 #: qml/CalculationPage.qml:70
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopier"
 
 #: qml/CalculationPage.qml:80
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Lim inn"
 
 #: qml/HistoryView.qml:29
 #, kde-format
@@ -102,10 +101,10 @@ msgid "History is empty"
 msgstr "Loggen er tom"
 
 #: qml/HistoryView.qml:141
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Tøm loggen"
+msgstr "Tømma heile loggen?"
 
 #: qml/HistoryView.qml:142
 #, kde-format
@@ -122,7 +121,7 @@ msgstr "Omrekning"
 #: qml/main.qml:91 qml/main.qml:186
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Innstillingar"
 
 #: qml/main.qml:98 qml/main.qml:204
 #, kde-format
@@ -138,55 +137,55 @@ msgstr "Binærkalkulator"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Innstillingar"
 
 #: qml/SettingsPage.qml:26
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "Presisjon"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "Vinkeleining"
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "Standard vinkeleining for trigonometriske funksjonar."
 
 #: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "Radianar"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "Gradar"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "Gradianar"
 
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "Bogeminutt"
 
 #: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "Bogesekund"
 
 #: qml/SettingsPage.qml:49
 #, kde-format
@@ -210,13 +209,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "Adaptiv"
 
 #: qml/SettingsPage.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr ""
+msgstr "Tradisjonell"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
@@ -233,4 +232,4 @@ msgstr ""
 #: qml/UnitConverter.qml:66
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Kategori"
