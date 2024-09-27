@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:41+0000\n"
-"PO-Revision-Date: 2024-09-25 19:31+0200\n"
+"PO-Revision-Date: 2024-09-26 18:48+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -110,7 +110,7 @@ msgstr "Tømma heile loggen?"
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Dette er for alltid og kan ikkje angrast."
 
 # Omrekning mellom ulike einingar (lengd, areal, valuta osv.).
 #: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
@@ -187,23 +187,25 @@ msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
 msgstr "Bogesekund"
 
+# https://en.wikipedia.org/wiki/Turn_(angle)
+# https://snl.no/vinding
 #: qml/SettingsPage.qml:49
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "Vindingar"
 
 #: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "Tolkemodus"
 
 #: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "Evalueringsrekkjefølgje for uttrykk."
 
 #: qml/SettingsPage.qml:65
 #, kde-format
@@ -221,13 +223,13 @@ msgstr "Tradisjonell"
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "Implisitt først"
 
 #: qml/SettingsPage.qml:68
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "Kjeda"
 
 #: qml/UnitConverter.qml:66
 #, kde-format
