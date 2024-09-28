@@ -10,6 +10,7 @@ Dependencies:
     'frameworks/kirigami': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kunitconversion': '@latest-kf6'
+    'libraries/kirigami-addons': '@latest-kf6'
     'third-party/libqalculate': '@latest'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6']
