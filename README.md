@@ -13,24 +13,27 @@ Originally starting as a fork of [Liri calculator](https://github.com/lirios/cal
 ## Features
 * Basic calculation
 * History
-* Unit conversion 
+* Unit conversion
 * Currency conversion
 * Binary calculation
 
 ## Links
-* Project page: https://invent.kde.org/plasma-mobile/kalk
+* App page: https://apps.kde.org/kalk
+* Project page: https://invent.kde.org/utilities/kalk
 * Issues: https://bugs.kde.org/enter_bug.cgi?product=Kalk
 * Development channel: https://matrix.to/#/#plasmamobile:matrix.org
 
 ## Dependencies
-* Qt5 
-* Qt5 Feedback
-* Cmake
+* Qt6
+* CMake
 * KI18n
 * KUnitConversion
 * Kirigami
+* Kirigami Add-ons
 * KConfig
 * libqalculate
+
+See the top level CMakeLists.txt file for more dependencies.
 
 ## Building and Installing
 
@@ -41,7 +44,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/path/to/prefix -G Ninja .. # add -DCMAKE_BUILD_TYP
 ninja install # use sudo if necessary
 ```
 
-Replace `/path/to/prefix` to your installation prefix.
+Replace `/path/to/prefix` with your installation prefix.
 Default is `/usr/local`.
 
 ## Licensing
