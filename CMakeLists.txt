@@ -63,8 +63,8 @@ if (ANDROID)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 endif()
 
-ecm_set_disabled_deprecation_versions(QT 6.7
-    KF 6.4.0
+ecm_set_disabled_deprecation_versions(QT 6.8
+    KF 6.7.0
 )
 
 add_subdirectory(src)
