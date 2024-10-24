@@ -30,6 +30,14 @@ Kirigami.ApplicationWindow {
     Kirigami.PagePool {
         id: mainPagePool
     }
+
+    Connections {
+        target: InputManager
+
+        function addHistory(entry: string): void {
+            HistoryManager.addHistory(entry);
+        }
+    }
     
     // page switch animation
     NumberAnimation {
@@ -70,13 +78,13 @@ Kirigami.ApplicationWindow {
                 text: i18n("Calculator")
                 icon.name: "accessories-calculator"
                 pagePool: mainPagePool
-                page: "qrc:/qml/CalculationPage.qml"
+                page: Qt.resolvedUrl("CalculationPage.qml")
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Converter")
                 icon.name: "gtk-convert"
-                page: "qrc:/qml/UnitConverter.qml"
+                page: Qt.resolvedUrl("UnitConverter.qml")
                 pagePool: mainPagePool
                 onTriggered: pageAnimation(pageItem())
             },
@@ -84,21 +92,22 @@ Kirigami.ApplicationWindow {
                 text: i18n("Programmer")
                 icon.name: "format-text-code"
                 pagePool: mainPagePool
-                page: "qrc:/qml/BinaryCalculator.qml"
+                page: Qt.resolvedUrl("BinaryCalculator.qml")
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Settings")
                 icon.name: "settings-configure"
                 pagePool: mainPagePool
-                page: "qrc:/qml/SettingsPage.qml"
+                page: Qt.resolvedUrl("SettingsPage.qml")
                 onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("About")
                 icon.name: "help-about"
-                page: "qrc:/qml/AboutPage.qml"
                 pagePool: mainPagePool
+                page: Qt.resolvedUrl("AboutPage.qml")
+                onTriggered: pageAnimation(pageItem())
             }
         ]
         
@@ -132,7 +141,7 @@ Kirigami.ApplicationWindow {
                 onClicked: {
                     column.currentlyChecked = text;
                     
-                    let page = mainPagePool.loadPage("qrc:/qml/CalculationPage.qml");
+                    let page = mainPagePool.loadPage(Qt.resolvedUrl("CalculationPage.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
                     pageAnimation(page);
@@ -150,7 +159,7 @@ Kirigami.ApplicationWindow {
                 onClicked: {
                     column.currentlyChecked = text;
                     
-                    let page = mainPagePool.loadPage("qrc:/qml/UnitConverter.qml");
+                    let page = mainPagePool.loadPage(Qt.resolvedUrl("UnitConverter.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
                     pageAnimation(page);
@@ -168,7 +177,7 @@ Kirigami.ApplicationWindow {
                 onClicked: {
                     column.currentlyChecked = text;
                     
-                    let page = mainPagePool.loadPage("qrc:/qml/BinaryCalculator.qml");
+                    let page = mainPagePool.loadPage(Qt.resolvedUrl("BinaryCalculator.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
                     pageAnimation(page);
@@ -192,7 +201,7 @@ Kirigami.ApplicationWindow {
                 onClicked: {
                     column.currentlyChecked = text;
 
-                    let page = mainPagePool.loadPage("qrc:/qml/SettingsPage.qml");
+                    let page = mainPagePool.loadPage(Qt.resolvedUrl("SettingsPage.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
                     pageAnimation(page);
@@ -209,8 +218,7 @@ Kirigami.ApplicationWindow {
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
-                    
-                    let page = mainPagePool.loadPage("qrc:/qml/AboutPage.qml")
+                    let page = mainPagePool.loadPage(Qt.resolvedUrl("AboutPage.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
                     pageAnimation(page);
@@ -220,5 +228,5 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    pageStack.initialPage: mainPagePool.loadPage("qrc:/qml/CalculationPage.qml")
+    pageStack.initialPage: mainPagePool.loadPage(Qt.resolvedUrl("CalculationPage.qml"))
 }

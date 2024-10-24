@@ -7,7 +7,9 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <QDebug>
-UnitModel::UnitModel()
+
+UnitModel::UnitModel(QObject *parent)
+    : QAbstractListModel(parent)
 {
     connect(this, &UnitModel::unitIndexChanged, this, &UnitModel::calculateResult);
     connect(this, &UnitModel::valueChanged, this, &UnitModel::calculateResult);
@@ -24,6 +26,9 @@ UnitModel::UnitModel()
         m_units.push_back(unit.symbol());
     }
 }
+
+UnitModel::~UnitModel() = default;
+
 QVariant UnitModel::data(const QModelIndex &index, int role) const
 {
     Q_UNUSED(role)

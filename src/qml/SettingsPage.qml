@@ -12,7 +12,6 @@ import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
 
 import org.kde.kalk
-import org.kde.kalk.config
 
 FormCard.FormCardPage {
     title: i18nc("@title:window", "Settings")
@@ -24,12 +23,12 @@ FormCard.FormCardPage {
         FormCard.FormSpinBoxDelegate {
             id: precision
             label: i18nc("@label:spinbox digits of precision", "Precision")
-            value: Config.precision
+            value: KalkConfig.precision
             from: 1
             to: 1000000
             onValueChanged: {
-                Config.precision = value;
-                Config.save();
+                KalkConfig.precision = value;
+                KalkConfig.save();
             }
         }
 
@@ -39,7 +38,7 @@ FormCard.FormCardPage {
             id: angleUnit
             text: i18nc("@label:listbox trigonometric angle unit", "Angle unit")
             description: applicationWindow().width >= 250 ? i18nc("@info:whatsthis", "Default angle unit for trigonometric functions.") : ""
-            currentIndex: Config.angleUnit
+            currentIndex: KalkConfig.angleUnit
             model: [
                 i18nc("@item:inlistbox Angle unit", "Radians"),
                 i18nc("@item:inlistbox Angle unit", "Degrees"),
@@ -49,8 +48,8 @@ FormCard.FormCardPage {
                 i18nc("@item:inlistbox Angle unit", "Turn")
             ]
             onCurrentValueChanged: {
-                Config.angleUnit = currentIndex;
-                Config.save();
+                KalkConfig.angleUnit = currentIndex;
+                KalkConfig.save();
             }
         }
 
@@ -60,7 +59,7 @@ FormCard.FormCardPage {
             id: parsingMode
             text: i18nc("@label:listbox control how expressions are parsed (read/interpreted)", "Parsing mode")
             description: applicationWindow().width >= 250 ? i18nc("@info:whatsthis", "Expression evaluation order.") : ""
-            currentIndex: Config.parsingMode
+            currentIndex: KalkConfig.parsingMode
             model: [
                 i18nc("@item:inlistbox Parsing mode", "Adaptive"),
                 i18nc("@item:inlistbox Parsing mode", "Conventional"),
@@ -68,8 +67,8 @@ FormCard.FormCardPage {
                 i18nc("@item:inlistbox Parsing mode", "Chain")
             ]
             onCurrentValueChanged: {
-                Config.parsingMode = currentIndex;
-                Config.save();
+                KalkConfig.parsingMode = currentIndex;
+                KalkConfig.save();
             }
         }
     }

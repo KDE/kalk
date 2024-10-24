@@ -8,12 +8,16 @@
 #pragma once
 
 #include <QObject>
+#include <qqmlregistration.h>
 
 class QalculateEngine;
 
 class InputManager : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString expression READ expression NOTIFY expressionChanged)
     Q_PROPERTY(QString result READ result NOTIFY resultChanged)
     Q_PROPERTY(QString binaryResult READ binaryResult NOTIFY binaryResultChanged)
@@ -26,7 +30,9 @@ class InputManager : public QObject
     Q_PROPERTY(int historyIndex READ historyIndex WRITE setHistoryIndex)
 
 public:
-    static InputManager *inst();
+    explicit InputManager(QObject *parent = nullptr);
+    ~InputManager();
+
     const QString &expression() const;
     const QString &result() const;
     const QString &binaryResult() const;
@@ -62,9 +68,9 @@ Q_SIGNALS:
     void cursorPositionChanged();
     void canUndoChanged();
     void canRedoChanged();
+    void addHistory(const QString &history);
 
 private:
-    InputManager();
     bool m_moveFromResult = false; // clear expression on none operator input
     int m_inputPosition;
     QString m_input;

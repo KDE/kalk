@@ -21,11 +21,9 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 
-#include "historymanager.h"
-#include "inputmanager.h"
-#include "kalkconfig.h"
-#include "unitmodel.h"
 #include "version.h"
+
+using namespace Qt::StringLiterals;
 
 #ifdef Q_OS_ANDROID
 Q_DECL_EXPORT
@@ -54,10 +52,6 @@ int main(int argc, char *argv[])
     parser.addVersionOption();
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
-    engine.rootContext()->setContextProperty(QStringLiteral("historyManager"), HistoryManager::inst());
-    engine.rootContext()->setContextProperty(QStringLiteral("inputManager"), InputManager::inst());
-    engine.rootContext()->setContextProperty(QStringLiteral("unitModel"), UnitModel::inst());
-    
     KAboutData aboutData(QStringLiteral("kalk"), 
                          i18n("Calculator"), 
                          QStringLiteral(KALK_VERSION_STRING), 
@@ -69,17 +63,13 @@ int main(int argc, char *argv[])
 
     parser.process(app);
 
-    qmlRegisterSingletonInstance("org.kde.kalk.config", 1, 0, "Config", KalkConfig::self());
-    qmlRegisterSingletonType("org.kde.kalk", 1, 0, "About", [](QQmlEngine *engine, QJSEngine *) -> QJSValue {
-        return engine->toScriptValue(KAboutData::applicationData());
-    });
 #ifdef QT_DEBUG
     engine.rootContext()->setContextProperty(QStringLiteral("debug"), true);
 #else
     engine.rootContext()->setContextProperty(QStringLiteral("debug"), false);
 #endif
     // load main ui
-    engine.load(QUrl(QStringLiteral("qrc:/qml/main.qml")));
+    engine.loadFromModule(u"org.kde.kalk"_s, u"Main"_s);
 
     // required for X11
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.kde.kalk")));

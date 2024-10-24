@@ -12,7 +12,8 @@
 #include <QJsonObject>
 #include <QStandardPaths>
 
-HistoryManager::HistoryManager()
+HistoryManager::HistoryManager(QObject *parent)
+    : QAbstractListModel(parent)
 {
     // create cache location if it does not exist, and load cache
     QDir dir(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QStringLiteral("/kalk"));
@@ -30,6 +31,8 @@ HistoryManager::HistoryManager()
         }
     }
 }
+
+HistoryManager::~HistoryManager() = default;
 
 void HistoryManager::clearHistory()
 {

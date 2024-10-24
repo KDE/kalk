@@ -21,15 +21,15 @@ Kirigami.Page {
             icon.name: "edit-undo-symbolic"
             text: i18n("Undo")
             shortcut: "Ctrl+Z"
-            enabled: inputManager.canUndo
-            onTriggered: inputManager.undo()
+            enabled: InputManager.canUndo
+            onTriggered: InputManager.undo()
         },
         Kirigami.Action {
             icon.name: "edit-redo-symbolic"
             text: i18n("Redo")
             shortcut: "Ctrl+Shift+Z"
-            enabled: inputManager.canRedo
-            onTriggered: inputManager.redo()
+            enabled: InputManager.canRedo
+            onTriggered: InputManager.redo()
         }
     ]
 
@@ -42,11 +42,11 @@ Kirigami.Page {
 
     Keys.onPressed: event => {
         if (event.matches(StandardKey.Undo)) {
-            inputManager.undo();
+            InputManager.undo();
             event.accepted = true;
             return;
         } else if (event.matches(StandardKey.Redo)) {
-            inputManager.redo();
+            InputManager.redo();
             event.accepted = true;
             return;
         }
@@ -54,38 +54,38 @@ Kirigami.Page {
         switch(event.key) {
         case Qt.Key_Delete:
         case Qt.Key_Backspace:
-            inputManager.backspace(); break;
+            InputManager.backspace(); break;
         case Qt.Key_0:
-            inputManager.append("0"); break;
+            InputManager.append("0"); break;
         case Qt.Key_1:
-            inputManager.append("1"); break;
+            InputManager.append("1"); break;
         case Qt.Key_Plus:
-            inputManager.append("+"); break;
+            InputManager.append("+"); break;
         case Qt.Key_Minus:
-            inputManager.append("-"); break;
+            InputManager.append("-"); break;
         case Qt.Key_Asterisk:
-            inputManager.append("*"); break;
+            InputManager.append("*"); break;
         case Qt.Key_Slash:
-            inputManager.append("/"); break;
+            InputManager.append("/"); break;
         case Qt.Key_Ampersand:
-            inputManager.append("&"); break;
+            InputManager.append("&"); break;
         case Qt.Key_Bar:
-            inputManager.append("|"); break;
+            InputManager.append("|"); break;
         case Qt.Key_AsciiCircum:
-            inputManager.append("^"); break;
+            InputManager.append("^"); break;
         case Qt.Key_Period:
-            inputManager.append("."); break;
+            InputManager.append("."); break;
         case Qt.Key_Equal:
         case Qt.Key_Return:
         case Qt.Key_Enter:
-            inputManager.equal(); break;
+            InputManager.equal(); break;
         }
         event.accepted = true;
     }
 
     onIsCurrentPageChanged: {
-        if (!inputManager.binaryMode)
-            inputManager.binaryMode = true
+        if (!InputManager.binaryMode)
+            InputManager.binaryMode = true
     }
     
     background: Rectangle {
@@ -143,7 +143,7 @@ Kirigami.Page {
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: initialPage.screenHeight * 0.1 / 1.5
                         font.weight: Font.Light
-                        text: inputManager.expression
+                        text: InputManager.expression
                         color: Kirigami.Theme.disabledTextColor
                     }
                     onContentWidthChanged: {
@@ -164,7 +164,7 @@ Kirigami.Page {
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: initialPage.screenHeight * 0.1
                         font.weight: Font.Light
-                        text: inputManager.binaryResult
+                        text: InputManager.binaryResult
                         onTextChanged: resultFadeInAnimation.start()
                         Controls.Label {
                             visible: parent.text.length
@@ -190,7 +190,7 @@ Kirigami.Page {
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: initialPage.screenHeight * 0.1
                         font.weight: Font.Light
-                        text: inputManager.result
+                        text: InputManager.result
                         onTextChanged: resultFadeInAnimation.start()
                         Controls.Label {
                             visible: parent.text.length
@@ -216,7 +216,7 @@ Kirigami.Page {
                         horizontalAlignment: Text.AlignRight
                         font.pointSize: initialPage.screenHeight * 0.1
                         font.weight: Font.Light
-                        text: inputManager.hexResult
+                        text: InputManager.hexResult
                         onTextChanged: resultFadeInAnimation.start()
                         Controls.Label {
                             visible: parent.text.length
@@ -263,15 +263,15 @@ Kirigami.Page {
                 // anchors.rightMargin: Kirigami.Units.gridUnit * 1.5
                 onPressed: text => {
                     if (text === "DEL") {
-                        inputManager.backspace();
+                        InputManager.backspace();
                     } else if (text === "=") {
-                        inputManager.equal();
+                        InputManager.equal();
                         resultFadeOutAnimation.start();
                     } else {
-                        inputManager.append(text);
+                        InputManager.append(text);
                     }
                 }
-                onClear: inputManager.clear()
+                onClear: InputManager.clear()
             }
         }
     }

@@ -9,6 +9,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.delegates as Delegates
+import org.kde.kalk
 
 Kirigami.ScrollablePage {
     id: page
@@ -20,7 +21,7 @@ Kirigami.ScrollablePage {
         target: pageStack
         function onCurrentItemChanged () {
             const index = listView.atYEnd ? 0 : listView.indexAt(listView.contentX, listView.contentY)
-            inputManager.setHistoryIndex(index);
+            InputManager.setHistoryIndex(index);
         }
     }
 
@@ -44,7 +45,7 @@ Kirigami.ScrollablePage {
         }
 
         currentIndex: -1
-        model: historyManager
+        model: HistoryManager
         delegate: Delegates.RoundedItemDelegate {
             id: historyDelegate
 
@@ -65,7 +66,7 @@ Kirigami.ScrollablePage {
                     focusPolicy: Qt.NoFocus
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(item.parts[0].trim());
+                        InputManager.fromHistory(item.parts[0].trim());
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }
@@ -99,7 +100,7 @@ Kirigami.ScrollablePage {
                     focusPolicy: Qt.NoFocus
                     flat: true
                     onClicked: {
-                        inputManager.fromHistory(item.parts[1].trim());
+                        InputManager.fromHistory(item.parts[1].trim());
                         if (applicationWindow().pageStack.visibleItems.length === 1) {
                             applicationWindow().pageStack.pop();
                         }
@@ -121,7 +122,7 @@ Kirigami.ScrollablePage {
                 Button {
                     Layout.alignment:  Qt.AlignRight
                     icon.name: "delete"
-                    onClicked: historyManager.deleteFromHistory(model.index);
+                    onClicked: HistoryManager.deleteFromHistory(model.index);
                     focusPolicy: Qt.NoFocus
                     flat: true
                 }
@@ -141,7 +142,7 @@ Kirigami.ScrollablePage {
         title: i18nc("Delete all items from a list", "Clear All History?")
         subtitle: i18nc("Deleted items cannot be recovered", "This is permanent and cannot be undone")
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-        onAccepted: historyManager.clearHistory();
+        onAccepted: HistoryManager.clearHistory();
         onRejected: close()
     }
 }

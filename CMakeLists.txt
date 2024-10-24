@@ -41,6 +41,7 @@ include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 include(KDEGitCommitHooks)
 include(ECMDeprecationSettings)
+include(ECMQmlModule)
 
 ecm_setup_version(${PROJECT_VERSION}
     VARIABLE_PREFIX KALK
@@ -56,6 +57,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Config
     UnitConversion
 )
+qt_policy(SET QTP0001 NEW)
 pkg_search_module(QALCULATE libqalculate>4.7.0 REQUIRED IMPORTED_TARGET)
 if (ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Svg)

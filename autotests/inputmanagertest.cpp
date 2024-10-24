@@ -15,6 +15,9 @@ private Q_SLOTS:
     void testMultiplication();
     void testDivision();
     void testNonIntegerDivision();
+
+private:
+    InputManager m_inputManager;
 };
 
 #ifndef Q_OS_WIN
@@ -34,59 +37,60 @@ void InputManagerTest::init()
             exit(0);
         }
     }
-    InputManager::inst()->clear();
+
+    m_inputManager.clear();
 }
 
 void InputManagerTest::testAddition()
 {
-    InputManager::inst()->append(QStringLiteral("4"));
-    InputManager::inst()->append(QStringLiteral("+"));
-    InputManager::inst()->append(QStringLiteral("2"));
-    QCOMPARE(InputManager::inst()->result(), QStringLiteral("6"));
-    InputManager::inst()->equal();
-    InputManager::inst()->append(QStringLiteral("+"));
-    InputManager::inst()->append(QStringLiteral("3"));
-    QCOMPARE(InputManager::inst()->result(), QStringLiteral("9"));
+    m_inputManager.append(QStringLiteral("4"));
+    m_inputManager.append(QStringLiteral("+"));
+    m_inputManager.append(QStringLiteral("2"));
+    QCOMPARE(m_inputManager.result(), QStringLiteral("6"));
+    m_inputManager.equal();
+    m_inputManager.append(QStringLiteral("+"));
+    m_inputManager.append(QStringLiteral("3"));
+    QCOMPARE(m_inputManager.result(), QStringLiteral("9"));
 }
 
 void InputManagerTest::testMultiplication()
 {
-    InputManager::inst()->append(QStringLiteral("4"));
-    InputManager::inst()->append(QStringLiteral("*"));
-    InputManager::inst()->append(QStringLiteral("2"));
-    QCOMPARE(InputManager::inst()->result(), QStringLiteral("8"));
-    InputManager::inst()->equal();
-    InputManager::inst()->append(QStringLiteral("*"));
-    InputManager::inst()->append(QStringLiteral("7"));
-    QCOMPARE(InputManager::inst()->result(), QStringLiteral("56"));
+    m_inputManager.append(QStringLiteral("4"));
+    m_inputManager.append(QStringLiteral("*"));
+    m_inputManager.append(QStringLiteral("2"));
+    QCOMPARE(m_inputManager.result(), QStringLiteral("8"));
+    m_inputManager.equal();
+    m_inputManager.append(QStringLiteral("*"));
+    m_inputManager.append(QStringLiteral("7"));
+    QCOMPARE(m_inputManager.result(), QStringLiteral("56"));
 }
 
 void InputManagerTest::testDivision()
 {
-    InputManager::inst()->append(QStringLiteral("70"));
-    InputManager::inst()->append(QStringLiteral("÷"));
-    InputManager::inst()->append(QStringLiteral("5"));
-    QCOMPARE(InputManager::inst()->result(), QStringLiteral("14"));
-    InputManager::inst()->equal();
-    InputManager::inst()->append(QStringLiteral("*"));
-    InputManager::inst()->append(QStringLiteral("5"));
-    QCOMPARE(InputManager::inst()->result(), QStringLiteral("70"));
+    m_inputManager.append(QStringLiteral("70"));
+    m_inputManager.append(QStringLiteral("÷"));
+    m_inputManager.append(QStringLiteral("5"));
+    QCOMPARE(m_inputManager.result(), QStringLiteral("14"));
+    m_inputManager.equal();
+    m_inputManager.append(QStringLiteral("*"));
+    m_inputManager.append(QStringLiteral("5"));
+    QCOMPARE(m_inputManager.result(), QStringLiteral("70"));
 }
 
 void InputManagerTest::testNonIntegerDivision()
 {
-    InputManager::inst()->append(QStringLiteral("70"));
-    InputManager::inst()->append(QStringLiteral("÷"));
-    InputManager::inst()->append(QStringLiteral("9"));
+    m_inputManager.append(QStringLiteral("70"));
+    m_inputManager.append(QStringLiteral("÷"));
+    m_inputManager.append(QStringLiteral("9"));
     if (QStringLiteral(LANG) == QStringLiteral("C")) {
-        QVERIFY(InputManager::inst()->result().startsWith(QStringLiteral("7.77777")));
+        QVERIFY(m_inputManager.result().startsWith(QStringLiteral("7.77777")));
     } else {
-        QVERIFY(InputManager::inst()->result().startsWith(QStringLiteral("7,77777")));
+        QVERIFY(m_inputManager.result().startsWith(QStringLiteral("7,77777")));
     }
-    InputManager::inst()->equal();
-    InputManager::inst()->append(QStringLiteral("*"));
-    InputManager::inst()->append(QStringLiteral("9"));
-    QCOMPARE(InputManager::inst()->result(), QStringLiteral("70"));
+    m_inputManager.equal();
+    m_inputManager.append(QStringLiteral("*"));
+    m_inputManager.append(QStringLiteral("9"));
+    QCOMPARE(m_inputManager.result(), QStringLiteral("70"));
 }
 
 QTEST_GUILESS_MAIN(InputManagerTest)

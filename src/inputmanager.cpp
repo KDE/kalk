@@ -13,8 +13,9 @@
 
 constexpr QStringView ZERO_WIDTH_SPACE = u"\u200B";
 
-InputManager::InputManager()
-    : m_engine(QalculateEngine::inst())
+InputManager::InputManager(QObject *parent)
+    : QObject(parent)
+    , m_engine(QalculateEngine::inst())
 {
     QLocale locale;
     m_groupSeparator = locale.groupSeparator();
@@ -26,11 +27,7 @@ InputManager::InputManager()
     m_decimalPoint = locale.decimalPoint();
 }
 
-InputManager *InputManager::inst()
-{
-    static InputManager singleton;
-    return &singleton;
-}
+InputManager::~InputManager() = default;
 
 const QString &InputManager::expression() const
 {
@@ -226,7 +223,7 @@ void InputManager::equal()
         // if the output is empty, either the input is empty or user has pressed equal twice
         return;
     }
-    HistoryManager::inst()->addHistory(m_expression + QStringLiteral(" = ") + m_result);
+    Q_EMIT addHistory(m_expression + QStringLiteral(" = ") + m_result);
 
     QString savedResult = m_isBinaryMode ? m_binaryResult : m_result;
 

@@ -30,7 +30,7 @@ Kirigami.Page {
                     applicationWindow().pageStack.pop();
                 }
                 else {
-                    applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml", { historyIndex: inputManager.historyIndex });
+                    applicationWindow().pageStack.push("qrc:/qml/HistoryView.qml", { historyIndex: InputManager.historyIndex });
                 };
                 outputScreen.forceActiveFocus();
             }
@@ -39,9 +39,9 @@ Kirigami.Page {
             icon.name: "edit-undo-symbolic"
             text: i18n("Undo")
             shortcut: "Ctrl+Z"
-            enabled: inputManager.canUndo
+            enabled: InputManager.canUndo
             onTriggered: {
-                inputManager.undo();
+                InputManager.undo();
                 outputScreen.forceActiveFocus();
             }
         },
@@ -49,9 +49,9 @@ Kirigami.Page {
             icon.name: "edit-redo-symbolic"
             text: i18n("Redo")
             shortcut: "Ctrl+Shift+Z"
-            enabled: inputManager.canRedo
+            enabled: InputManager.canRedo
             onTriggered: {
-                inputManager.redo();
+                InputManager.redo();
                 outputScreen.forceActiveFocus();
             }
         },
@@ -118,11 +118,11 @@ Kirigami.Page {
 
     Keys.onPressed: event => {
         if (event.matches(StandardKey.Undo)) {
-            inputManager.undo();
+            InputManager.undo();
             event.accepted = true;
             return;
         } else if (event.matches(StandardKey.Redo)) {
-            inputManager.redo();
+            InputManager.redo();
             event.accepted = true;
             return;
         } else if (event.matches(StandardKey.Cut)) {
@@ -154,75 +154,75 @@ Kirigami.Page {
         switch(event.key) {
           case Qt.Key_Delete:
               if (expressionRow.cursorPosition < expressionRow.length) {
-                  expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
-                  inputManager.backspace();
+                  expressionRow.cursorPosition = InputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
+                  InputManager.backspace();
               }
               break;
           case Qt.Key_Backspace:
-              inputManager.backspace(); break;
+              InputManager.backspace(); break;
           case Qt.Key_0:
-              inputManager.append("0"); break;
+              InputManager.append("0"); break;
           case Qt.Key_1:
-              inputManager.append("1"); break;
+              InputManager.append("1"); break;
           case Qt.Key_2:
-              inputManager.append("2"); break;
+              InputManager.append("2"); break;
           case Qt.Key_3:
-              inputManager.append("3"); break;
+              InputManager.append("3"); break;
           case Qt.Key_4:
-              inputManager.append("4"); break;
+              InputManager.append("4"); break;
           case Qt.Key_5:
-              inputManager.append("5"); break;
+              InputManager.append("5"); break;
           case Qt.Key_6:
-              inputManager.append("6"); break;
+              InputManager.append("6"); break;
           case Qt.Key_7:
-              inputManager.append("7"); break;
+              InputManager.append("7"); break;
           case Qt.Key_8:
-              inputManager.append("8"); break;
+              InputManager.append("8"); break;
           case Qt.Key_9:
-              inputManager.append("9"); break;
+              InputManager.append("9"); break;
           case Qt.Key_Plus:
-              inputManager.append("+"); break;
+              InputManager.append("+"); break;
           case Qt.Key_Minus:
-              inputManager.append("-"); break;
+              InputManager.append("-"); break;
           case Qt.Key_Asterisk:
-              inputManager.append("×"); break;
+              InputManager.append("×"); break;
           case Qt.Key_Slash:
-              inputManager.append("÷"); break;
+              InputManager.append("÷"); break;
           case Qt.Key_AsciiCircum:
-              inputManager.append("^"); break;
+              InputManager.append("^"); break;
           case Qt.Key_Period:
-              inputManager.append("."); break;
+              InputManager.append("."); break;
           case Qt.Key_ParenLeft:
-              inputManager.append("("); break;
+              InputManager.append("("); break;
           case Qt.Key_ParenRight:
-              inputManager.append(")"); break;
+              InputManager.append(")"); break;
           case Qt.Key_Comma:
-              inputManager.append(","); break;
+              InputManager.append(","); break;
           case Qt.Key_Equal:
           case Qt.Key_Return:
           case Qt.Key_Enter:
-              inputManager.equal();
+              InputManager.equal();
               expressionRow.focus = false;
               break;
           case Qt.Key_Left:
               expressionRow.focus = true;
-              expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition - 1, -1);
+              expressionRow.cursorPosition = InputManager.idealCursorPosition(expressionRow.cursorPosition - 1, -1);
               break;
           case Qt.Key_Right:
               expressionRow.focus = true;
-              expressionRow.cursorPosition = inputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
+              expressionRow.cursorPosition = InputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
               break;
           case Qt.Key_Underscore: break;
           default:
-            inputManager.append(event.text);
+            InputManager.append(event.text);
         }
         event.accepted = true;
     }
 
     // Changes the current mode of the backend to non-binary
     onIsCurrentPageChanged: {
-        if (inputManager.binaryMode)
-            inputManager.binaryMode = false
+        if (InputManager.binaryMode)
+            InputManager.binaryMode = false
     }
 
     background: Rectangle {
@@ -296,7 +296,7 @@ Kirigami.Page {
                         activeFocusOnPress: false
                         font.pointSize: outputScreen.flexPointSize * (text.length * outputScreen.flexPointSize * 0.7 > outputScreen.width ? 0.7 : 1)
                         font.weight: Font.Light
-                        text: inputManager.expression
+                        text: InputManager.expression
                         color: Kirigami.Theme.disabledTextColor
                         background: Rectangle { color: "transparent" }
                         padding: 0
@@ -305,19 +305,19 @@ Kirigami.Page {
 
                         property string lastText
                         onTextChanged: {
-                            if (text !== inputManager.expression) {
+                            if (text !== InputManager.expression) {
                                 const value = text;
-                                inputManager.clear(false);
-                                inputManager.append(value);
+                                InputManager.clear(false);
+                                InputManager.append(value);
                             } else {
-                                cursorPosition = inputManager.cursorPosition;
+                                cursorPosition = InputManager.cursorPosition;
                             }
                         }
                         onCursorPositionChanged: {
                             if (lastText === text && selectedText === "") {
-                                const pos = inputManager.idealCursorPosition(cursorPosition); // this only calculate the postion, doesn't modify inputManager in anyway
+                                const pos = InputManager.idealCursorPosition(cursorPosition); // this only calculate the postion, doesn't modify InputManager in anyway
                                 cursorPosition = pos;
-                                inputManager.cursorPosition = pos;
+                                InputManager.cursorPosition = pos;
                             } else {
                                 lastText = text;
                             }
@@ -337,7 +337,7 @@ Kirigami.Page {
                             // use textEdit as a proxy to select
                             // replace separators with letters so are treated a single words
                             // replace symbols with spaces
-                            textEdit.text = inputManager.expression.replace(/[,\.\(\)]/g, "n").replace(/[\+\-×÷%\!\^]/g, " ");
+                            textEdit.text = InputManager.expression.replace(/[,\.\(\)]/g, "n").replace(/[\+\-×÷%\!\^]/g, " ");
                             textEdit.cursorPosition = cursorPosition;
                             textEdit.selectWord();
                             select(textEdit.selectionStart, textEdit.selectionEnd);
@@ -351,9 +351,9 @@ Kirigami.Page {
                     onContentWidthChanged: {
                         if (contentWidth > width) {
                             // keep flickable at start if coming from result
-                            if (inputManager.moveFromResult) {
+                            if (InputManager.moveFromResult) {
                                 contentX = 0;
-                            } else if (inputManager.cursorPosition < expressionRow.positionAt(contentX + width, height / 2)) {
+                            } else if (InputManager.cursorPosition < expressionRow.positionAt(contentX + width, height / 2)) {
                                 // do nothing
                             } else {
                                 contentX = contentWidth - width;
@@ -381,7 +381,7 @@ Kirigami.Page {
                         activeFocusOnPress: false
                         font.pointSize: Math.round(outputScreen.flexPointSize) * (text.length * outputScreen.flexPointSize > outputScreen.width ? 0.9 : 1.4)
                         font.weight: Font.Light
-                        text: inputManager.result
+                        text: InputManager.result
                         background: Rectangle { color: "transparent" }
                         padding: 0
                         selectByMouse: false
@@ -461,22 +461,22 @@ Kirigami.Page {
                             inPortrait: initialPage.inPortrait
                             onPressed: text => {
                                 if (text == "DEL") {
-                                    inputManager.backspace();
+                                    InputManager.backspace();
                                 } else if (text == "=") {
-                                    inputManager.equal();
+                                    InputManager.equal();
                                     expressionRow.focus = false;
                                 } else {
-                                    inputManager.append(text);
+                                    InputManager.append(text);
                                 }
                             }
                             onClear: {
-                                inputManager.clear();
+                                InputManager.clear();
                                 resultFadeOutAnimation.start();
                             }
                         }
 
                         FunctionPad {
-                            onPressed: text => inputManager.append(text)
+                            onPressed: text => InputManager.append(text)
                         }
                     }
                 }
@@ -493,7 +493,7 @@ Kirigami.Page {
                         anchors.rightMargin: Kirigami.Units.smallSpacing
                         anchors.topMargin: Kirigami.Units.largeSpacing
                         anchors.bottomMargin: Kirigami.Units.smallSpacing
-                        onPressed: text => inputManager.append(text)
+                        onPressed: text => InputManager.append(text)
                     }
                 }
             }

@@ -7,14 +7,40 @@ add_library(kalklib STATIC
     historymanager.h
     inputmanager.cpp
     inputmanager.h
+    unitmodel.cpp
+    unitmodel.h
     qalculateengine.cpp
     qalculateengine.h
 )
 
-target_link_libraries(kalklib
+ecm_add_qml_module(kalklib
+    URI "org.kde.kalk"
+    GENERATE_PLUGIN_SOURCE
+)
+
+ecm_target_qml_sources(kalklib SOURCES
+    qml/Main.qml
+    qml/AboutPage.qml
+    qml/NumberPad.qml
+    qml/HistoryView.qml
+    qml/NumberButton.qml
+    qml/CalculationPage.qml
+    qml/FunctionPad.qml
+    qml/BinaryCalculator.qml
+    qml/BinaryPad.qml
+    qml/UnitConverter.qml
+    qml/PortraitPad.qml
+    qml/LandScapePad.qml
+    qml/SidebarButton.qml
+    qml/SettingsPage.qml
+)
+
+target_link_libraries(kalklib PUBLIC
     Qt::Core
+    Qt::Qml
     KF6::I18n
     KF6::ConfigGui
+    KF6::UnitConversion
     PkgConfig::QALCULATE
 )
 
@@ -22,19 +48,16 @@ kconfig_add_kcfg_files(kalklib GENERATE_MOC kalkconfig.kcfgc)
 
 add_executable(kalk
     main.cpp
-    unitmodel.cpp
-    unitmodel.h
-    calculator.qrc
 )
 
 target_link_libraries(kalk PRIVATE
     Qt6::Core
     Qt6::Qml
     Qt6::QuickControls2
-    KF6::UnitConversion
     KF6::I18n
     KF6::CoreAddons
     kalklib
+    kalklibplugin
 )
 
 if(ANDROID)

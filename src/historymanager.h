@@ -8,17 +8,19 @@
 
 #include <QAbstractListModel>
 #include <QObject>
+#include <qqmlregistration.h>
 
 class HistoryManager : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_SINGLETON
+
     Q_PROPERTY(QString expression WRITE addHistory)
 public:
-    static HistoryManager *inst()
-    {
-        static HistoryManager singleton;
-        return &singleton;
-    }
+    explicit HistoryManager(QObject *parent = nullptr);
+    ~HistoryManager();
+
     int rowCount(const QModelIndex &parent) const override
     {
         Q_UNUSED(parent)
@@ -44,5 +46,4 @@ public:
 private:
     QList<QString> m_historyList;
     void save();
-    HistoryManager();
 };

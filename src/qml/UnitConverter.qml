@@ -55,7 +55,7 @@ Kirigami.Page {
         case Qt.Key_Equal:
         case Qt.Key_Return:
         case Qt.Key_Enter:
-            inputManager.equal(); break;
+            InputManager.equal(); break;
         }
         event.accepted = true;
     }
@@ -119,11 +119,11 @@ Kirigami.Page {
                         Layout.maximumHeight: unitConverter.screenHeight * 0.5
                         wrap: false
                         
-                        model: unitModel.typeList
-                        currentIndex: unitModel.fromUnitIndex
+                        model: UnitModel.typeList
+                        currentIndex: UnitModel.fromUnitIndex
                         delegate: delegateComponent
                         onCurrentIndexChanged: {
-                            unitModel.fromUnitIndex = currentIndex;
+                            UnitModel.fromUnitIndex = currentIndex;
                         }
                     }
                     
@@ -145,11 +145,11 @@ Kirigami.Page {
                         Layout.maximumHeight: unitConverter.screenHeight * 0.5
                         wrap: false
                         
-                        model: unitModel.typeList
-                        currentIndex: unitModel.toUnitIndex
+                        model: UnitModel.typeList
+                        currentIndex: UnitModel.toUnitIndex
                         delegate: delegateComponent
                         onCurrentIndexChanged: {
-                            unitModel.toUnitIndex = currentIndex;
+                            UnitModel.toUnitIndex = currentIndex;
                         }
                     }
                 }
@@ -166,7 +166,7 @@ Kirigami.Page {
                     Controls.Label {
                         Layout.fillWidth: true
                         font.pointSize: flexPointSize
-                        text: unitModel.value
+                        text: UnitModel.value
                         color: Kirigami.Theme.textColor
                         horizontalAlignment: Text.AlignHCenter
                     }
@@ -183,7 +183,7 @@ Kirigami.Page {
                     Controls.Label {
                         Layout.fillWidth: true
                         font.pointSize: flexPointSize
-                        text: unitModel.result
+                        text: UnitModel.result
                         color: Kirigami.Theme.textColor
                         horizontalAlignment: Text.AlignHCenter
                     }
@@ -198,13 +198,13 @@ Kirigami.Page {
                 pureNumber: true
                 onPressed: text => {
                     if (text === "DEL") {
-                        unitModel.value = unitModel.value.slice(0, unitModel.value.length - 1);
+                        UnitModel.value = UnitModel.value.slice(0, UnitModel.value.length - 1);
                     } else {
-                        unitModel.value += text;
+                        UnitModel.value += text;
                     }
                 }
                 onClear: {
-                    unitModel.value = "";
+                    UnitModel.value = "";
                 }
             }
         }
@@ -225,26 +225,22 @@ Kirigami.Page {
         height: unitConverter.height - Kirigami.Units.gridUnit * 5
         parent: applicationWindow().overlay
 
-
-
-
         ListView {
             id: listview
-            model: unitModel
+            model: UnitModel
             clip: true
             delegate: Controls.RadioDelegate {
                 width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
                 text: modelData
-                checked: index === unitModel.currentIndex
+                checked: index === UnitModel.currentIndex
                 onClicked: {
                     category.text = text;
-                    unitModel.currentIndex = index;
+                    UnitModel.currentIndex = index;
                     categories.close();
                 }
             }
 
             Component.onCompleted: category.text = listview.currentItem.text
-
         }
     }
 }
