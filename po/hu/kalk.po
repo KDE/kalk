@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:41+0000\n"
+"POT-Creation-Date: 2024-10-25 00:42+0000\n"
 "PO-Revision-Date: 2024-05-18 14:23+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@fsf.hu"
 
-#: main.cpp:62 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:117
-#: qml/main.qml:120 qml/main.qml:126
+#: main.cpp:56 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
+#: qml/Main.qml:129 qml/Main.qml:135
 #, kde-format
 msgid "Calculator"
 msgstr "Számológép"
 
-#: main.cpp:64
+#: main.cpp:58
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Számológép a Plasmához"
 
-#: main.cpp:66
+#: main.cpp:60
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© A KDE közösség, 2020-2022."
@@ -54,7 +54,7 @@ msgstr "figyelmeztetés"
 msgid "error"
 msgstr "hiba"
 
-#: qml/BinaryCalculator.qml:12 qml/main.qml:84
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:92
 #, kde-format
 msgid "Programmer"
 msgstr "Programozó"
@@ -69,7 +69,7 @@ msgstr "Visszavonás"
 msgid "Redo"
 msgstr "Újra"
 
-#: qml/CalculationPage.qml:25 qml/HistoryView.qml:15
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
 #, kde-format
 msgid "History"
 msgstr "Előzmények"
@@ -89,139 +89,139 @@ msgstr "Másolás"
 msgid "Paste"
 msgstr "Beillesztés"
 
-#: qml/HistoryView.qml:29
+#: qml/HistoryView.qml:30
 #, kde-format
 msgid "Clear history"
 msgstr "Előzmények törlése"
 
-#: qml/HistoryView.qml:133
+#: qml/HistoryView.qml:134
 #, kde-format
 msgid "History is empty"
 msgstr "Nincsenek előzmények"
 
-#: qml/HistoryView.qml:141
+#: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Minden előzményt töröl?"
 
-#: qml/HistoryView.qml:142
+#: qml/HistoryView.qml:143
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Ez végleges és nem vonható vissza"
 
-#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
+#: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Átváltó"
 
-#: qml/main.qml:91 qml/main.qml:186
+#: qml/Main.qml:99 qml/Main.qml:195
 #, kde-format
 msgid "Settings"
 msgstr "Beállítások"
 
-#: qml/main.qml:98 qml/main.qml:204
+#: qml/Main.qml:106 qml/Main.qml:213
 #, kde-format
 msgid "About"
 msgstr "Névjegy"
 
-#: qml/main.qml:162
+#: qml/Main.qml:171
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Bináris számológép"
 
-#: qml/SettingsPage.qml:18
+#: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: qml/SettingsPage.qml:26
+#: qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
 msgstr "Pontosság"
 
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:39
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
 msgstr "Szögmértékegység"
 
-#: qml/SettingsPage.qml:41
+#: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "A trigonometriai függvények alapértelmezett szögmértékegysége."
 
-#: qml/SettingsPage.qml:44
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
 msgstr "Radián"
 
-#: qml/SettingsPage.qml:45
+#: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
 msgstr "Fok"
 
-#: qml/SettingsPage.qml:46
+#: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
 msgstr "Gradián"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
 msgstr "Szögperc"
 
-#: qml/SettingsPage.qml:48
+#: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
 msgstr "Szögmásodperc"
 
-#: qml/SettingsPage.qml:49
+#: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
 msgstr "Kör"
 
-#: qml/SettingsPage.qml:61
+#: qml/SettingsPage.qml:60
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "Feldolgozási mód"
 
-#: qml/SettingsPage.qml:62
+#: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "Kifejezés-kiértékelési sorrend."
 
-#: qml/SettingsPage.qml:65
+#: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
 msgstr "Adaptív"
 
-#: qml/SettingsPage.qml:66
+#: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
 msgstr "Hagyományos"
 
-#: qml/SettingsPage.qml:67
+#: qml/SettingsPage.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
 msgstr "Implicit először"
 
-#: qml/SettingsPage.qml:68
+#: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"

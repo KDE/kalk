@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:41+0000\n"
+"POT-Creation-Date: 2024-10-25 00:42+0000\n"
 "PO-Revision-Date: 2024-01-15 19:31+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.io"
 
-#: main.cpp:62 qml/CalculationPage.qml:16 qml/main.qml:70 qml/main.qml:117
-#: qml/main.qml:120 qml/main.qml:126
+#: main.cpp:56 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
+#: qml/Main.qml:129 qml/Main.qml:135
 #, kde-format
 msgid "Calculator"
 msgstr "Calculadora"
 
-#: main.cpp:64
+#: main.cpp:58
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Calculadora para Plasma"
 
-#: main.cpp:66
+#: main.cpp:60
 #, kde-format
 msgid "© 2020-2022 KDE Community"
 msgstr "© 2020-2022 Comunidade KDE"
@@ -53,7 +53,7 @@ msgstr "aviso"
 msgid "error"
 msgstr "erro"
 
-#: qml/BinaryCalculator.qml:12 qml/main.qml:84
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:92
 #, kde-format
 msgid "Programmer"
 msgstr "Programadora"
@@ -68,7 +68,7 @@ msgstr "Desfacer"
 msgid "Redo"
 msgstr "Refacer"
 
-#: qml/CalculationPage.qml:25 qml/HistoryView.qml:15
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
 #, kde-format
 msgid "History"
 msgstr "Historial"
@@ -88,139 +88,139 @@ msgstr "Copiar"
 msgid "Paste"
 msgstr "Pegar"
 
-#: qml/HistoryView.qml:29
+#: qml/HistoryView.qml:30
 #, kde-format
 msgid "Clear history"
 msgstr "Eliminar o historial"
 
-#: qml/HistoryView.qml:133
+#: qml/HistoryView.qml:134
 #, kde-format
 msgid "History is empty"
 msgstr "O historial está baleiro"
 
-#: qml/HistoryView.qml:141
+#: qml/HistoryView.qml:142
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Quere borrar o historial?"
 
-#: qml/HistoryView.qml:142
+#: qml/HistoryView.qml:143
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Isto é permanente, non se pode desfacer."
 
-#: qml/main.qml:77 qml/main.qml:144 qml/UnitConverter.qml:16
+#: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Convertedor"
 
-#: qml/main.qml:91 qml/main.qml:186
+#: qml/Main.qml:99 qml/Main.qml:195
 #, kde-format
 msgid "Settings"
 msgstr "Configuración"
 
-#: qml/main.qml:98 qml/main.qml:204
+#: qml/Main.qml:106 qml/Main.qml:213
 #, kde-format
 msgid "About"
 msgstr "Sobre"
 
-#: qml/main.qml:162
+#: qml/Main.qml:171
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Calculadora binaria"
 
-#: qml/SettingsPage.qml:18
+#: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuración"
 
-#: qml/SettingsPage.qml:26
+#: qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
 msgstr "Precisión"
 
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:39
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
 msgstr "Unidade dos ángulos"
 
-#: qml/SettingsPage.qml:41
+#: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "Unidade angular predeterminada para as funcións trigonométricas."
 
-#: qml/SettingsPage.qml:44
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
 msgstr "Radiáns"
 
-#: qml/SettingsPage.qml:45
+#: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
 msgstr "Graos"
 
-#: qml/SettingsPage.qml:46
+#: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
 msgstr "Gradiáns"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
 msgstr "Minuto de acto"
 
-#: qml/SettingsPage.qml:48
+#: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
 msgstr "Segundo de arco"
 
-#: qml/SettingsPage.qml:49
+#: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
 msgstr "Xiro"
 
-#: qml/SettingsPage.qml:61
+#: qml/SettingsPage.qml:60
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "Modo de análise"
 
-#: qml/SettingsPage.qml:62
+#: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "Orde de avaliación das expresións."
 
-#: qml/SettingsPage.qml:65
+#: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
 msgstr "Adaptábel"
 
-#: qml/SettingsPage.qml:66
+#: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
 msgstr "Convencional"
 
-#: qml/SettingsPage.qml:67
+#: qml/SettingsPage.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
 msgstr "Primeiro o implícito"
 
-#: qml/SettingsPage.qml:68
+#: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
