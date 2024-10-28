@@ -149,8 +149,7 @@ void InputManager::append(const QString &subexpression)
 {
     // if expression was from result and input is numeric, clear expression
     if (m_moveFromResult && subexpression.size() == 1 && m_inputPosition == m_input.size()) {
-        if(subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.'))
-        {
+        if (subexpression.at(0).isDigit() || subexpression.at(0) == QLatin1Char('.')) {
             m_input.clear();
         }
     }
@@ -371,7 +370,8 @@ bool InputManager::canRedo()
     return m_undoPos < m_undoStack.size();
 }
 
-void InputManager::setBinaryMode(bool active) {
+void InputManager::setBinaryMode(bool active)
+{
     m_isBinaryMode = active;
     clear();
 }

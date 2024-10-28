@@ -17,12 +17,12 @@ UnitModel::UnitModel(QObject *parent)
     const auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
 
     m_unitIDs.resize(units.size());
-    std::transform(units.begin(), units.end(), m_unitIDs.begin(),
-        [](const KUnitConversion::Unit &unit){ return unit.id(); });
+    std::transform(units.begin(), units.end(), m_unitIDs.begin(), [](const KUnitConversion::Unit &unit) {
+        return unit.id();
+    });
 
     m_units.reserve(units.size());
-    for(const auto &unit : units)
-    {
+    for (const auto &unit : units) {
         m_units.push_back(unit.symbol());
     }
 }
@@ -54,10 +54,9 @@ void UnitModel::setValue(QString value)
 }
 void UnitModel::setCurrentIndex(int i)
 {
-    if(i < 0 || i > static_cast<int>(categoryAndEnum.size()))
+    if (i < 0 || i > static_cast<int>(categoryAndEnum.size()))
         return;
-    if(m_currentIndex != i)
-    {
+    if (m_currentIndex != i) {
         m_units.clear();
         m_currentIndex = i;
         m_value.clear();
@@ -67,12 +66,12 @@ void UnitModel::setCurrentIndex(int i)
         const auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
 
         m_unitIDs.resize(units.size());
-        std::transform(units.begin(), units.end(), m_unitIDs.begin(),
-            [](const KUnitConversion::Unit &unit){ return unit.id(); });
+        std::transform(units.begin(), units.end(), m_unitIDs.begin(), [](const KUnitConversion::Unit &unit) {
+            return unit.id();
+        });
 
         m_units.reserve(units.size());
-        for(const auto &unit : units)
-        {
+        for (const auto &unit : units) {
             m_units.push_back(unit.symbol());
         }
 
@@ -95,47 +94,45 @@ void UnitModel::setToUnitIndex(int i)
 }
 void UnitModel::calculateResult()
 {
-    if(m_value.size())
-    {
+    if (m_value.size()) {
         auto units = KUnitConversion::Converter().category(std::get<1>(categoryAndEnum.at(m_currentIndex))).units();
 
-        if(m_fromUnitIndex < 0 || m_toUnitIndex < 0 || m_fromUnitIndex > units.size() || m_toUnitIndex > units.size())
+        if (m_fromUnitIndex < 0 || m_toUnitIndex < 0 || m_fromUnitIndex > units.size() || m_toUnitIndex > units.size())
             return;
 
         auto from = KUnitConversion::Value(m_value.toDouble(), units.at(m_fromUnitIndex));
-        m_result = KUnitConversion::Converter().convert(from,units.at(m_toUnitIndex)).toString();
+        m_result = KUnitConversion::Converter().convert(from, units.at(m_toUnitIndex)).toString();
         qDebug() << m_result;
-    } else
-    {
+    } else {
         m_result.clear();
     }
     Q_EMIT resultChanged();
 }
-const std::vector<std::tuple<QString, KUnitConversion::CategoryId>> UnitModel::categoryAndEnum =
-{{QStringLiteral("Acceleration"), KUnitConversion::AccelerationCategory},
- {QStringLiteral("Angle"), KUnitConversion::AngleCategory},
- {QStringLiteral("Area"), KUnitConversion::AreaCategory},
- {QStringLiteral("Binary Data"), KUnitConversion::BinaryDataCategory},
- {QStringLiteral("Currency"), KUnitConversion::CurrencyCategory},
- {QStringLiteral("Density"), KUnitConversion::DensityCategory},
- {QStringLiteral("Electrical Current"), KUnitConversion::ElectricalCurrentCategory},
- {QStringLiteral("Electrical Resistance"), KUnitConversion::ElectricalResistanceCategory},
- {QStringLiteral("Energy"), KUnitConversion::EnergyCategory},
- {QStringLiteral("Force"), KUnitConversion::ForceCategory},
- {QStringLiteral("Frequency"), KUnitConversion::FrequencyCategory},
- {QStringLiteral("Fuel Efficiency"), KUnitConversion::FuelEfficiencyCategory},
- {QStringLiteral("Length"), KUnitConversion::LengthCategory},
- {QStringLiteral("Mass"), KUnitConversion::MassCategory},
- {QStringLiteral("Permeability"), KUnitConversion::PermeabilityCategory},
- {QStringLiteral("Power"), KUnitConversion::PowerCategory},
- {QStringLiteral("Pressure"), KUnitConversion::PressureCategory},
- {QStringLiteral("Temperature"), KUnitConversion::TemperatureCategory},
- {QStringLiteral("Thermal Conductivity"), KUnitConversion::ThermalConductivityCategory},
- {QStringLiteral("Thermal Flux"), KUnitConversion::ThermalFluxCategory},
- {QStringLiteral("Thermal Generation"), KUnitConversion::ThermalGenerationCategory},
- {QStringLiteral("Time"), KUnitConversion::TimeCategory},
- {QStringLiteral("Velocity"), KUnitConversion::VelocityCategory},
- {QStringLiteral("Volume"), KUnitConversion::VolumeCategory},
- {QStringLiteral("Voltage"), KUnitConversion::VoltageCategory}};
+const std::vector<std::tuple<QString, KUnitConversion::CategoryId>> UnitModel::categoryAndEnum = {
+    {QStringLiteral("Acceleration"), KUnitConversion::AccelerationCategory},
+    {QStringLiteral("Angle"), KUnitConversion::AngleCategory},
+    {QStringLiteral("Area"), KUnitConversion::AreaCategory},
+    {QStringLiteral("Binary Data"), KUnitConversion::BinaryDataCategory},
+    {QStringLiteral("Currency"), KUnitConversion::CurrencyCategory},
+    {QStringLiteral("Density"), KUnitConversion::DensityCategory},
+    {QStringLiteral("Electrical Current"), KUnitConversion::ElectricalCurrentCategory},
+    {QStringLiteral("Electrical Resistance"), KUnitConversion::ElectricalResistanceCategory},
+    {QStringLiteral("Energy"), KUnitConversion::EnergyCategory},
+    {QStringLiteral("Force"), KUnitConversion::ForceCategory},
+    {QStringLiteral("Frequency"), KUnitConversion::FrequencyCategory},
+    {QStringLiteral("Fuel Efficiency"), KUnitConversion::FuelEfficiencyCategory},
+    {QStringLiteral("Length"), KUnitConversion::LengthCategory},
+    {QStringLiteral("Mass"), KUnitConversion::MassCategory},
+    {QStringLiteral("Permeability"), KUnitConversion::PermeabilityCategory},
+    {QStringLiteral("Power"), KUnitConversion::PowerCategory},
+    {QStringLiteral("Pressure"), KUnitConversion::PressureCategory},
+    {QStringLiteral("Temperature"), KUnitConversion::TemperatureCategory},
+    {QStringLiteral("Thermal Conductivity"), KUnitConversion::ThermalConductivityCategory},
+    {QStringLiteral("Thermal Flux"), KUnitConversion::ThermalFluxCategory},
+    {QStringLiteral("Thermal Generation"), KUnitConversion::ThermalGenerationCategory},
+    {QStringLiteral("Time"), KUnitConversion::TimeCategory},
+    {QStringLiteral("Velocity"), KUnitConversion::VelocityCategory},
+    {QStringLiteral("Volume"), KUnitConversion::VolumeCategory},
+    {QStringLiteral("Voltage"), KUnitConversion::VoltageCategory}};
 
 #include "moc_unitmodel.cpp"

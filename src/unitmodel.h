@@ -60,7 +60,7 @@ public:
     void setCurrentIndex(int i);
     void setFromUnitIndex(int i);
     void setToUnitIndex(int i);
-    
+
 Q_SIGNALS:
     void typeListChanged();
     void valueChanged();
