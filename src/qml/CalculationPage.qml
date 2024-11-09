@@ -152,6 +152,8 @@ Kirigami.Page {
         }
 
         switch(event.key) {
+          case Qt.Key_Escape:
+              InputManager.clear(false); break;
           case Qt.Key_Delete:
               if (expressionRow.cursorPosition < expressionRow.length) {
                   expressionRow.cursorPosition = InputManager.idealCursorPosition(expressionRow.cursorPosition + 1, 1);
