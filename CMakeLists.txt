@@ -20,8 +20,6 @@ if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
         create a separate build directory.")
 endif()
 
-include(FeatureSummary)
-
 # only enable QML debugging on debug builds
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DQT_QML_DEBUG ")
 

@@ -3,7 +3,7 @@
 
 Dependencies:
 
-- 'on': ['Linux', 'FreeBSD', 'Android']
+- 'on': ['Linux', 'FreeBSD', 'Android', 'Windows']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kcoreaddons': '@latest-kf6'
