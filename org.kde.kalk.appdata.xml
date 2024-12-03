@@ -201,6 +201,7 @@
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?product=Kalk</url>
   <url type="vcs-browser">https://invent.kde.org/utilities/kalk</url>
   <releases>
+    <release version="24.12.0" date="2024-12-12"/>
     <release version="24.08.3" date="2024-11-07"/>
     <release version="24.08.2" date="2024-10-10"/>
     <release version="24.08.1" date="2024-09-12"/>
