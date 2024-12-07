@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# Olesya Gerasimenko <translation-team@basealt.ru>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Olesya Gerasimenko <translation-team@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-25 00:42+0000\n"
-"PO-Revision-Date: 2023-04-21 14:58+0300\n"
+"PO-Revision-Date: 2024-12-06 15:00+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -47,27 +47,27 @@ msgstr "© Сообщество KDE, 2020-2022"
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "предупреждение"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "ошибка"
 
 #: qml/BinaryCalculator.qml:12 qml/Main.qml:92
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "Программатор"
 
 #: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Отменить"
 
 #: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Повторить"
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
 #, kde-format
@@ -77,17 +77,17 @@ msgstr "Журнал"
 #: qml/CalculationPage.qml:60
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "Вырезать"
 
 #: qml/CalculationPage.qml:70
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Копировать"
 
 #: qml/CalculationPage.qml:80
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Вставить"
 
 #: qml/HistoryView.qml:30
 #, kde-format
@@ -100,17 +100,16 @@ msgid "History is empty"
 msgstr "Журнал пуст"
 
 #: qml/HistoryView.qml:142
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Очистить журнал"
+msgstr "Очистить весь журнал?"
 
 #: qml/HistoryView.qml:143
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Это действие невозможно отменить"
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
@@ -120,7 +119,7 @@ msgstr "Средство преобразования"
 #: qml/Main.qml:99 qml/Main.qml:195
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Параметры"
 
 #: qml/Main.qml:106 qml/Main.qml:213
 #, kde-format
@@ -136,103 +135,102 @@ msgstr "Двоичный калькулятор"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Настройка"
 
 #: qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "Точность"
 
 #: qml/SettingsPage.qml:39
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "Единицы измерения угла"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "Единицы измерения угла по умолчанию для тригонометрических функций."
 
 #: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "Радианы"
 
 #: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "Градусы"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "Градианы"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "Минуты дуги"
 
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "Секунды дуги"
 
 #: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "Обороты"
 
 #: qml/SettingsPage.qml:60
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "Режим обработки"
 
 #: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "Порядок вычисления выражений."
 
 #: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "Адаптивный"
 
 #: qml/SettingsPage.qml:65
-#, fuzzy, kde-format
-#| msgid "Conversion"
+#, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr "Преобразование"
+msgstr "Конвенциональный"
 
 #: qml/SettingsPage.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "Сначала неявные"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "Цепочка"
 
 #: qml/UnitConverter.qml:66
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 #~ msgid "Swap"
 #~ msgstr "Рокировка"
