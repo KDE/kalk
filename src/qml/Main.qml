@@ -4,12 +4,12 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import QtQuick 2.7
-import QtQuick.Layouts 1.1
-import QtQuick.Controls 2.15 as Controls
-import Qt.labs.platform 1.0
-import Qt.labs.settings 1.0
-import org.kde.kirigami 2.13 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as Controls
+import Qt.labs.platform
+import Qt.labs.settings
+import org.kde.kirigami as Kirigami
 
 Kirigami.ApplicationWindow {
     id: root

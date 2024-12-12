@@ -3,10 +3,10 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-import QtQuick 2.0
-import org.kde.kirigami 2.13 as Kirigami
-import QtQuick.Layouts 1.1
-import QtQml 2.15
+import QtQuick
+import org.kde.kirigami as Kirigami
+import QtQuick.Layouts
+import QtQml
 
 GridLayout {
     signal pressed(string text)
