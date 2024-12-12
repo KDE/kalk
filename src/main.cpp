@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
                          QStringLiteral(KALK_VERSION_STRING),
                          i18n("Calculator for Plasma"),
                          KAboutLicense::GPL,
-                         i18n("© 2020-2022 KDE Community"));
+                         i18n("© 2020-2024 KDE Community"));
     aboutData.setBugAddress("https://bugs.kde.org/describecomponents.cgi?product=kalk");
     KAboutData::setApplicationData(aboutData);
 
