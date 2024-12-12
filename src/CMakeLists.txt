@@ -39,6 +39,7 @@ target_link_libraries(kalklib PUBLIC
     Qt::Core
     Qt::Qml
     KF6::I18n
+    KF6::I18nQml
     KF6::ConfigGui
     KF6::UnitConversion
     PkgConfig::QALCULATE

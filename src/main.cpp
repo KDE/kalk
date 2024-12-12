@@ -6,7 +6,6 @@
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QIcon>
-#include <QObject>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include <QQuickStyle>
@@ -18,7 +17,7 @@
 #endif
 
 #include <KAboutData>
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 
 #include "version.h"
@@ -50,7 +49,7 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("kalk"));
     parser.addVersionOption();
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
 
     KAboutData aboutData(QStringLiteral("kalk"),
                          i18n("Calculator"),

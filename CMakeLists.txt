@@ -12,7 +12,7 @@ set(RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_
 
 project(kalk VERSION ${RELEASE_SERVICE_VERSION})
 
-set(KF_MIN_VERSION "6.3.0")
+set(KF_MIN_VERSION "6.8.0")
 set(QT_MIN_VERSION "6.7.0")
 
 if("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
@@ -62,7 +62,7 @@ if (ANDROID)
 endif()
 
 ecm_set_disabled_deprecation_versions(QT 6.8
-    KF 6.7.0
+    KF ${KF_MIN_VERSION}
 )
 
 add_subdirectory(src)
