@@ -45,7 +45,7 @@ target_link_libraries(kalklib PUBLIC
     PkgConfig::QALCULATE
 )
 
-kconfig_add_kcfg_files(kalklib GENERATE_MOC kalkconfig.kcfgc)
+kconfig_target_kcfg_file(kalklib FILE kalkconfig.kcfg CLASS_NAME KalkConfig MUTATORS DEFAULT_VALUE_GETTERS GENERATE_PROPERTIES GENERATE_MOC PARENT_IN_CONSTRUCTOR SINGLETON QML_REGISTRATION)
 
 add_executable(kalk
     main.cpp
