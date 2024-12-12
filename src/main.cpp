@@ -63,11 +63,6 @@ int main(int argc, char *argv[])
 
     parser.process(app);
 
-#ifdef QT_DEBUG
-    engine.rootContext()->setContextProperty(QStringLiteral("debug"), true);
-#else
-    engine.rootContext()->setContextProperty(QStringLiteral("debug"), false);
-#endif
     // load main ui
     engine.loadFromModule(u"org.kde.kalk"_s, u"Main"_s);
 
