@@ -43,6 +43,7 @@
   <name xml:lang="pt-BR">Calculadora</name>
   <name xml:lang="ro">Calculator</name>
   <name xml:lang="ru">Калькулятор</name>
+  <name xml:lang="sa">गणकम्</name>
   <name xml:lang="sk">Kalkulačka</name>
   <name xml:lang="sl">Kalkulator</name>
   <name xml:lang="sv">Räknare</name>
@@ -84,6 +85,7 @@
   <summary xml:lang="pt-BR">Uma calculadora cheia de recursos</summary>
   <summary xml:lang="ro">Calculator cu multe funcții</summary>
   <summary xml:lang="ru">Калькулятор с широкими возможностями</summary>
+  <summary xml:lang="sa">एकः विशेषतासमृद्धः गणकः</summary>
   <summary xml:lang="sk">Kalkulačka plná funkcií</summary>
   <summary xml:lang="sl">Kalkulator z veliko možnostmi</summary>
   <summary xml:lang="sv">En funktionsrik räknare</summary>
@@ -127,6 +129,7 @@
     <p xml:lang="pt">O Kalk é uma calculadora convergente para o Plasma.</p>
     <p xml:lang="pt-BR">Kalk é uma calculadora convergente para o Plasma.</p>
     <p xml:lang="ru">Kalk — мощный калькулятор для Plasma.</p>
+    <p xml:lang="sa">कल्कः प्लाज्मायाः कृते अभिसरणगणकः अस्ति ।</p>
     <p xml:lang="sk">Kalk je silná kalkulačka pre Plasma.</p>
     <p xml:lang="sl">Kalk je konvergenten kalkulator za Plasmo.</p>
     <p xml:lang="sv">Kalk är en konvergent räknare för Plasma.</p>
@@ -170,6 +173,7 @@
       <caption xml:lang="pt">Página da Calculadora</caption>
       <caption xml:lang="pt-BR">Página da calculadora</caption>
       <caption xml:lang="ru">Страница калькулятора</caption>
+      <caption xml:lang="sa">गणक पृष्ठ</caption>
       <caption xml:lang="sk">Strana kalkulačky</caption>
       <caption xml:lang="sl">Stran kalkulatorja</caption>
       <caption xml:lang="sv">Räknarsida</caption>
