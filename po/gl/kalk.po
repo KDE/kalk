@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-25 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:57+0000\n"
 "PO-Revision-Date: 2024-01-15 19:31+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -27,20 +27,21 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.io"
 
-#: main.cpp:56 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
+#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
 #: qml/Main.qml:129 qml/Main.qml:135
 #, kde-format
 msgid "Calculator"
 msgstr "Calculadora"
 
-#: main.cpp:58
+#: main.cpp:57
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Calculadora para Plasma"
 
-#: main.cpp:60
-#, kde-format
-msgid "© 2020-2022 KDE Community"
+#: main.cpp:59
+#, fuzzy, kde-format
+#| msgid "© 2020-2022 KDE Community"
+msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2022 Comunidade KDE"
 
 #: qalculateengine.cpp:109

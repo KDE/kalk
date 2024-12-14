@@ -1,109 +1,108 @@
-# translation of kalk.po to Slovak
-# Roman Paholík <wizzardsk@gmail.com>, 2020, 2022.
+# Sanskrit translations for kalk package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kalk package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-14 00:57+0000\n"
-"PO-Revision-Date: 2022-04-18 17:53+0200\n"
-"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
-"Language-Team: Slovak <kde-sk@linux.sk>\n"
-"Language: sk\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Roman Paholík"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "wizzardsk@gmail.com"
+msgstr ""
 
 #: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
 #: qml/Main.qml:129 qml/Main.qml:135
 #, kde-format
 msgid "Calculator"
-msgstr "Kalkulačka"
+msgstr "गणकम्"
 
 #: main.cpp:57
-#, fuzzy, kde-format
-#| msgid "Calculator in Kirigami"
+#, kde-format
 msgid "Calculator for Plasma"
-msgstr "Kalkulačka v Kirigami"
+msgstr "प्लाज्मा कृते गणकयंत्रम्"
 
 #: main.cpp:59
 #, fuzzy, kde-format
-#| msgid "© 2020-2021 KDE Community"
+#| msgid "© 2020-2022 KDE Community"
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2021 KDE komunita"
+msgstr "© 2020-2022 केडीई समुदाय"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "चेतवानी"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "त्रुटि"
 
 #: qml/BinaryCalculator.qml:12 qml/Main.qml:92
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "प्रोग्रामर"
 
 #: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "पूर्ववत"
 
 #: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "पुनः करो"
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
 #, kde-format
 msgid "History"
-msgstr "História"
+msgstr "इतिहास"
 
 #: qml/CalculationPage.qml:60
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "छिन्न"
 
 #: qml/CalculationPage.qml:70
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "प्रतिलिपि"
 
 #: qml/CalculationPage.qml:80
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "चिनोतु"
 
 #: qml/HistoryView.qml:30
 #, kde-format
 msgid "Clear history"
-msgstr "Vyčistiť históriu"
+msgstr "इतिहासं स्पष्टं कुरुत"
 
 #: qml/HistoryView.qml:134
 #, kde-format
 msgid "History is empty"
-msgstr "História je prázdna"
+msgstr "इतिहासः शून्यः अस्ति"
 
 #: qml/HistoryView.qml:142
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "Vyčistiť históriu"
+msgstr ""
 
 #: qml/HistoryView.qml:143
 #, kde-format
@@ -112,31 +111,30 @@ msgid "This is permanent and cannot be undone"
 msgstr ""
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
-msgstr "Konvertor"
+msgstr "परिवर्तक"
 
 #: qml/Main.qml:99 qml/Main.qml:195
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "सेटिंग्स्"
 
 #: qml/Main.qml:106 qml/Main.qml:213
 #, kde-format
 msgid "About"
-msgstr "O aplikácii"
+msgstr "विषये"
 
 #: qml/Main.qml:171
 #, kde-format
 msgid "Binary Calculator"
-msgstr "Binárna kalkulačka"
+msgstr "द्विचक्रीय गणक"
 
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "सेटिंग्स्"
 
 #: qml/SettingsPage.qml:25
 #, kde-format
@@ -211,11 +209,10 @@ msgid "Adaptive"
 msgstr ""
 
 #: qml/SettingsPage.qml:65
-#, fuzzy, kde-format
-#| msgid "Conversion"
+#, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr "Prevod"
+msgstr ""
 
 #: qml/SettingsPage.qml:66
 #, kde-format
@@ -232,28 +229,4 @@ msgstr ""
 #: qml/UnitConverter.qml:66
 #, kde-format
 msgid "Category"
-msgstr ""
-
-#~ msgid "Swap"
-#~ msgstr "Odkladací priestor"
-
-#~ msgid "Calculator built with Kirigami."
-#~ msgstr "Kalkulačka vytvorená s Kirigami."
-
-#~ msgid "© 2020 Plasma Development Team"
-#~ msgstr "© 2010-2019 Vývojový tím Plasma"
-
-#~ msgid "Han Young"
-#~ msgstr "Han Young"
-
-#~ msgid "cahfofpai"
-#~ msgstr "cahfofpai"
-
-#~ msgid "From: "
-#~ msgstr "Od:"
-
-#~ msgid "To: "
-#~ msgstr "Pre: "
-
-#~ msgid "Units Converter"
-#~ msgstr "Konvertor jednotiek"
+msgstr "कोटी"
