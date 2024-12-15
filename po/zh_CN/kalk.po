@@ -39,10 +39,9 @@ msgid "Calculator for Plasma"
 msgstr "为 Plasma 设计的计算器程序"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 KDE Community"
+msgstr ""
 
 #: qalculateengine.cpp:109
 #, kde-format
