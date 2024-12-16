@@ -188,7 +188,7 @@ msgstr "角秒"
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "转"
 
 #: qml/SettingsPage.qml:60
 #, kde-format
@@ -206,25 +206,25 @@ msgstr "表达式评估顺序。"
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "自适应"
 
 #: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr ""
+msgstr "常规"
 
 #: qml/SettingsPage.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "隐式第一"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "链式"
 
 #: qml/UnitConverter.qml:66
 #, kde-format
