@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-14 00:57+0000\n"
-"PO-Revision-Date: 2024-01-13 09:04+0100\n"
+"PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -39,10 +39,9 @@ msgid "Calculator for Plasma"
 msgstr "Kalkulilo por Plasma"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020-2022 KDE-Komunumo"
+msgstr "© 2020-2024 KDE-Komunumo"
 
 #: qalculateengine.cpp:109
 #, kde-format
