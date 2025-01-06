@@ -42,7 +42,6 @@ msgstr "Kalkulator for Plasma"
 
 #: main.cpp:59
 #, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020–2022 KDE-fellesskapet"
 
