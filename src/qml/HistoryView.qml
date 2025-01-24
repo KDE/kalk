@@ -72,10 +72,8 @@ Kirigami.ScrollablePage {
                         }
                     }
                     contentItem: Label {
-                        font {
-                            pointSize: listView.flexPointSize
-                            weight: Font.Light
-                        }
+                        font.weight: Font.Light
+                        font.pointSize: listView.flexPointSize || Kirigami.Theme.defaultFont.pointSize
                         text: item.parts[0].trim()
                         elide: Text.ElideRight
                     }
@@ -87,10 +85,8 @@ Kirigami.ScrollablePage {
 
                 Label {
                     Layout.alignment:  Qt.AlignLeft
-                    font {
-                        pointSize: listView.flexPointSize
-                        weight: Font.Light
-                    }
+                    font.weight: Font.Light
+                    font.pointSize: listView.flexPointSize || Kirigami.Theme.defaultFont.pointSize
                     text: "="
                 }
 
@@ -106,10 +102,8 @@ Kirigami.ScrollablePage {
                         }
                     }
                     contentItem: Label {
-                        font {
-                            pointSize: listView.flexPointSize
-                            weight: Font.Light
-                        }
+                        font.weight: Font.Light
+                        font.pointSize: listView.flexPointSize || Kirigami.Theme.defaultFont.pointSize
                         text: item.parts[1].trim()
                         elide: Text.ElideRight
                     }
@@ -137,12 +131,36 @@ Kirigami.ScrollablePage {
         }
     }
 
-    Kirigami.PromptDialog {
+    Kirigami.Dialog {
         id: promptDialog
         title: i18nc("Delete all items from a list", "Clear All History?")
-        subtitle: i18nc("Deleted items cannot be recovered", "This is permanent and cannot be undone")
-        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-        onAccepted: HistoryManager.clearHistory();
-        onRejected: close()
+        preferredWidth: Kirigami.Units.gridUnit * 16
+
+        ColumnLayout {
+            spacing: Kirigami.Units.largeSpacing
+
+            Kirigami.Heading {
+                Layout.fillWidth: true
+                text: i18nc("Deleted items cannot be recovered", "This is permanent and cannot be undone")
+                level: 2
+                wrapMode: Text.WordWrap
+            }
+        }
+
+        customFooterActions: [
+            Kirigami.Action {
+                text: i18n("Cancel")
+                icon.name: "dialog-cancel"
+                onTriggered: promptDialog.close()
+            },
+            Kirigami.Action {
+                text: i18n("Clear")
+                icon.name: "edit-clear-history"
+                onTriggered: {
+                    HistoryManager.clearHistory();
+                    promptDialog.close();
+                }
+            }
+        ]
     }
 }

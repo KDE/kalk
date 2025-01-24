@@ -30,7 +30,8 @@ Kirigami.Page {
                     applicationWindow().pageStack.pop();
                 }
                 else {
-                    applicationWindow().pageStack.push(Qt.createComponent("org.kde.kalk", "HistoryView"), { historyIndex: InputManager.historyIndex });
+                    let page = mainPagePool.loadPage(Qt.resolvedUrl("HistoryView.qml"));
+                    applicationWindow().pageStack.push(page, { historyIndex: InputManager.historyIndex });
                 };
                 outputScreen.forceActiveFocus();
             }
