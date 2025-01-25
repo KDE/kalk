@@ -32,7 +32,7 @@ public:
         Q_UNUSED(role)
         return m_historyList.at(index.row());
     }
-    void addHistory(const QString &string)
+    Q_INVOKABLE void addHistory(const QString &string)
     {
         beginInsertRows({}, m_historyList.count(), m_historyList.count());
         m_historyList.append(string);

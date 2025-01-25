@@ -34,7 +34,7 @@ Kirigami.ApplicationWindow {
     Connections {
         target: InputManager
 
-        function addHistory(entry: string): void {
+        function onAddHistory(entry: string): void {
             HistoryManager.addHistory(entry);
         }
     }
