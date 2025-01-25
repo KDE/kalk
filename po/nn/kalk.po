@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 00:57+0000\n"
+"POT-Creation-Date: 2025-01-25 00:43+0000\n"
 "PO-Revision-Date: 2024-09-26 18:48+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -60,12 +60,12 @@ msgstr "feil"
 msgid "Programmer"
 msgstr "Programmerar"
 
-#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
+#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
 msgstr "Angra"
 
-#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
+#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
 msgstr "Gjer om"
@@ -75,17 +75,17 @@ msgstr "Gjer om"
 msgid "History"
 msgstr "Logg"
 
-#: qml/CalculationPage.qml:60
+#: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "Klipp ut"
 
-#: qml/CalculationPage.qml:70
+#: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
 msgstr "Kopier"
 
-#: qml/CalculationPage.qml:80
+#: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
 msgstr "Lim inn"
@@ -95,22 +95,32 @@ msgstr "Lim inn"
 msgid "Clear history"
 msgstr "Tøm loggen"
 
-#: qml/HistoryView.qml:134
+#: qml/HistoryView.qml:128
 #, kde-format
 msgid "History is empty"
 msgstr "Loggen er tom"
 
-#: qml/HistoryView.qml:142
+#: qml/HistoryView.qml:136
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Tømma heile loggen?"
 
-#: qml/HistoryView.qml:143
+#: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Dette er for alltid og kan ikkje angrast."
+
+#: qml/HistoryView.qml:152
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: qml/HistoryView.qml:157
+#, kde-format
+msgid "Clear"
+msgstr ""
 
 # Omrekning mellom ulike einingar (lengd, areal, valuta osv.).
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16

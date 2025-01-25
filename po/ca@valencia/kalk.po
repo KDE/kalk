@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 00:57+0000\n"
+"POT-Creation-Date: 2025-01-25 00:43+0000\n"
 "PO-Revision-Date: 2024-12-14 08:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -61,12 +61,12 @@ msgstr "error"
 msgid "Programmer"
 msgstr "Programador"
 
-#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
+#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
 msgstr "Desfés"
 
-#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
+#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
 msgstr "Refés"
@@ -76,17 +76,17 @@ msgstr "Refés"
 msgid "History"
 msgstr "Historial"
 
-#: qml/CalculationPage.qml:60
+#: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "Retalla"
 
-#: qml/CalculationPage.qml:70
+#: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
 msgstr "Copia"
 
-#: qml/CalculationPage.qml:80
+#: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
 msgstr "Apega"
@@ -96,22 +96,32 @@ msgstr "Apega"
 msgid "Clear history"
 msgstr "Neteja l'historial"
 
-#: qml/HistoryView.qml:134
+#: qml/HistoryView.qml:128
 #, kde-format
 msgid "History is empty"
 msgstr "L'historial està buit"
 
-#: qml/HistoryView.qml:142
+#: qml/HistoryView.qml:136
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Voleu netejar tot l'historial?"
 
-#: qml/HistoryView.qml:143
+#: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Açò és permanent i no es podrà desfer"
+
+#: qml/HistoryView.qml:152
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: qml/HistoryView.qml:157
+#, kde-format
+msgid "Clear"
+msgstr ""
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
