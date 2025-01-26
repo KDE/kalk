@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-25 00:43+0000\n"
-"PO-Revision-Date: 2024-12-15 06:31+0100\n"
+"PO-Revision-Date: 2025-01-25 02:57+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -114,12 +114,12 @@ msgstr "ეს მუდმივია შეუქცევადია"
 #: qml/HistoryView.qml:152
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "გაწმენდა"
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
