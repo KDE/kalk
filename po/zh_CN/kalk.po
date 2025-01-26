@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-25 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 02:35+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -58,12 +58,12 @@ msgstr "错误"
 msgid "Programmer"
 msgstr "程序员"
 
-#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:40
+#: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
 msgstr "撤销"
 
-#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:50
+#: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
 msgstr "重做"
@@ -73,17 +73,17 @@ msgstr "重做"
 msgid "History"
 msgstr "历史记录"
 
-#: qml/CalculationPage.qml:60
+#: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
 msgstr "剪切"
 
-#: qml/CalculationPage.qml:70
+#: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
 msgstr "复制"
 
-#: qml/CalculationPage.qml:80
+#: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
 msgstr "粘贴"
@@ -93,22 +93,32 @@ msgstr "粘贴"
 msgid "Clear history"
 msgstr "清除历史记录"
 
-#: qml/HistoryView.qml:134
+#: qml/HistoryView.qml:128
 #, kde-format
 msgid "History is empty"
 msgstr "历史记录为空"
 
-#: qml/HistoryView.qml:142
+#: qml/HistoryView.qml:136
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "清除所有历史记录吗？"
 
-#: qml/HistoryView.qml:143
+#: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "此操作是永久性的，无法撤销"
+
+#: qml/HistoryView.qml:152
+#, kde-format
+msgid "Cancel"
+msgstr ""
+
+#: qml/HistoryView.qml:157
+#, kde-format
+msgid "Clear"
+msgstr ""
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
