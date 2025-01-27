@@ -113,12 +113,12 @@ msgstr "此操作是永久性的，无法撤销"
 #: qml/HistoryView.qml:152
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "清除"
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
