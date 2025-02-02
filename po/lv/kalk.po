@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-25 00:43+0000\n"
-"PO-Revision-Date: 2024-02-19 20:24+0200\n"
+"PO-Revision-Date: 2025-01-30 16:08+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,10 +40,9 @@ msgid "Calculator for Plasma"
 msgstr "Kalkulators „Plasma“ darbvirsmai"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020–2022 KDE kopiena"
+msgstr "© 2020—2024 KDE kopiena"
 
 #: qalculateengine.cpp:109
 #, kde-format
@@ -115,12 +114,12 @@ msgstr "Šo darbību nevarēs atsaukt"
 #: qml/HistoryView.qml:152
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Atcelt"
 
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "Notīrīt"
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
