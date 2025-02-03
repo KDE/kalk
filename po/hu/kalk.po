@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-25 00:43+0000\n"
-"PO-Revision-Date: 2025-01-26 21:06+0100\n"
+"PO-Revision-Date: 2025-02-02 14:53+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -40,10 +40,9 @@ msgid "Calculator for Plasma"
 msgstr "Számológép a Plasmához"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2022 KDE Community"
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© A KDE közösség, 2020-2022."
+msgstr "© A KDE közösség, 2020-2024."
 
 #: qalculateengine.cpp:109
 #, kde-format
