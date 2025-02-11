@@ -113,12 +113,12 @@ msgstr "Toto je permanentní a nelze to vrátit."
 #: qml/HistoryView.qml:152
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "Vyprázdnit"
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
