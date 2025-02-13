@@ -228,7 +228,7 @@ msgstr "常规"
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr "隐式第一"
+msgstr "隐式优先"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
