@@ -5,7 +5,7 @@
 name: kalk
 confinement: strict
 grade: stable
-base: core22
+base: core24
 adopt-info: kalk
 apps:
   kalk:
@@ -14,27 +14,44 @@ apps:
     common-id: org.kde.kalk.desktop
     desktop: usr/share/applications/org.kde.kalk.desktop
     command: usr/bin/kalk
-    plugs:
-      - audio-record
+    environment:
+      XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
 slots:
   session-dbus-interface:
     interface: dbus
     name: org.kde.kalk
     bus: session
-package-repositories:
-  - type: apt
-    components:
-      - main
-    suites:
-      - jammy
-    key-id: 444DABCF3667D0283F894EDDE6D4736255751E5D
-    url: http://origin.archive.neon.kde.org/user
-    key-server: keyserver.ubuntu.com
 parts:
+  libqalculate:
+    plugin: autotools
+    source: https://github.com/Qalculate/libqalculate/releases/download/v5.5.0/libqalculate-5.5.0.tar.gz
+    autotools-configure-parameters:
+      - --prefix=/usr
+    build-packages:
+      - autotools-dev
+      - intltool
+      - libgmp-dev
+      - libmpfr-dev
+      - libcurl4-openssl-dev
+      - libicu-dev
+      - icu-devtools
+      - libxml2-dev
+    stage-packages:
+      - libgmp10
+      - libmpfr6
+      - libcurl4t64
+      - libicu74
+      - libxml2
   kalk:
+    after:
+      - libqalculate
     parse-info:
       - usr/share/metainfo/org.kde.kalk.appdata.xml
     plugin: cmake
+    build-packages:
+      - libxkbcommon-dev
+    stage-packages:
+      - libxkbcommon0
     source: .
     source-type: local
     cmake-parameters:
@@ -54,6 +71,9 @@ parts:
       - -DCMAKE_INSTALL_LIBDIR=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
       - --log-level=STATUS
       - -DCMAKE_LIBRARY_PATH=lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR
+    build-environment: &build-environment
+      - LD_LIBRARY_PATH: >
+          "/snap/mesa-2404/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:$CRAFT_STAGE/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR:/snap/kde-qt6-core24-sdk/current/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libproxy:$LD_LIBRARY_PATH"
     prime:
       - -usr/lib/*/cmake/*
       - -usr/include/*
@@ -63,16 +83,25 @@ parts:
       - -usr/lib/gcc/$CRAFT_ARCH_TRIPLET_BUILD_FOR/6.0.0
       - -usr/lib/aspell/*
       - -usr/share/lintian
+  gpu-2404:
+    after: [kalk]
+    source: https://github.com/canonical/gpu-snap.git
+    plugin: dump
+    override-prime: |
+      craftctl default
+      ${CRAFT_PART_SRC}/bin/gpu-2404-cleanup mesa-2404
+    prime:
+      - bin/gpu-2404-wrapper
   cleanup:
     after:
       - kalk
     plugin: nil
     build-snaps:
-      - core22
-      - kf6-core22
+      - core24
+      - kf6-core24
     override-prime: |
       set -eux
-      for snap in "core22" "kf6-core22"; do
+      for snap in "core24" "kf6-core24"; do
           cd "/snap/$snap/current" && find . -type f,l -exec rm -rf "${CRAFT_PRIME}/{}" \;
       done
 
