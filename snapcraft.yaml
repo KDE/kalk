@@ -16,11 +16,6 @@ apps:
     command: usr/bin/kalk
     environment:
       XDG_DATA_DIRS: "$XDG_DATA_DIRS:$SNAP/usr/share"
-slots:
-  session-dbus-interface:
-    interface: dbus
-    name: org.kde.kalk
-    bus: session
 parts:
   libqalculate:
     plugin: autotools
@@ -104,4 +99,3 @@ parts:
       for snap in "core24" "kf6-core24"; do
           cd "/snap/$snap/current" && find . -type f,l -exec rm -rf "${CRAFT_PRIME}/{}" \;
       done
-
