@@ -2,12 +2,13 @@
 # This file is distributed under the same license as the kalk package.
 #
 # SPDX-FileCopyrightText: 2025 Sohrab Behdani <behdanisohrab@gmail.com>
+# SPDX-FileCopyrightText: 2025 farzamv <farzam.valizadeh.2020@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-25 00:43+0000\n"
-"PO-Revision-Date: 2025-07-21 11:01+0330\n"
+"PO-Revision-Date: 2025-07-22 09:28+0330\n"
 "Last-Translator: Sohrab Behdani <behdanisohrab@gmail.com>\n"
 "Language-Team: fa\n"
 "Language: fa\n"
@@ -20,223 +21,223 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "فرزام ولیزاده"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "farzam.valizadeh.2020@gmail.com"
 
 #: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
 #: qml/Main.qml:129 qml/Main.qml:135
 #, kde-format
 msgid "Calculator"
-msgstr ""
+msgstr "ماشین‌حساب"
 
 #: main.cpp:57
 #, kde-format
 msgid "Calculator for Plasma"
-msgstr ""
+msgstr "ماشین‌حساب برای پلاسما"
 
 #: main.cpp:59
 #, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr ""
+msgstr "©  ۲۰۲۰-۲۰۲۴ جامعه کی‌دی‌ای"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "هشدار"
 
 #: qalculateengine.cpp:109
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "خطا"
 
 #: qml/BinaryCalculator.qml:12 qml/Main.qml:92
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "برنامه‌نویس"
 
 #: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "برگردان"
 
 #: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "از نو"
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
 #, kde-format
 msgid "History"
-msgstr ""
+msgstr "تاریخچه"
 
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Cut"
-msgstr ""
+msgstr "برش"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "رونوشت"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "جای‌گذاری"
 
 #: qml/HistoryView.qml:30
 #, kde-format
 msgid "Clear history"
-msgstr ""
+msgstr "پاک‌سازی تاریخچه"
 
 #: qml/HistoryView.qml:128
 #, kde-format
 msgid "History is empty"
-msgstr ""
+msgstr "هیچ سابقه‌ای نیست"
 
 #: qml/HistoryView.qml:136
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr ""
+msgstr "حذف تمام تاریخچه"
 
 #: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "این تغییر برگشت‌ناپذیر است"
 
 #: qml/HistoryView.qml:152
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "لغو"
 
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "پاک کردن"
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
-msgstr ""
+msgstr "مبدل"
 
 #: qml/Main.qml:99 qml/Main.qml:195
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "تنظیمات"
 
 #: qml/Main.qml:106 qml/Main.qml:213
 #, kde-format
 msgid "About"
-msgstr ""
+msgstr "درباره"
 
 #: qml/Main.qml:171
 #, kde-format
 msgid "Binary Calculator"
-msgstr ""
+msgstr "ماشین‌حساب دودویی"
 
 #: qml/SettingsPage.qml:17
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "تنظیمات"
 
 #: qml/SettingsPage.qml:25
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "دقت"
 
 #: qml/SettingsPage.qml:39
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "واحد زاویه"
 
 #: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "واحد پیش‌فرض زاویه برای توابع مثلثاتی"
 
 #: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "رادیان"
 
 #: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "درجه"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "گرادیان"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "دقیقه قوسی"
 
 #: qml/SettingsPage.qml:47
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "ثانیه قوسی"
 
 #: qml/SettingsPage.qml:48
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "دور"
 
 #: qml/SettingsPage.qml:60
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "حالت تجزیه"
 
 #: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "ترتیب محاسبه عبارت‌ها"
 
 #: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "سازگار"
 
 #: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
-msgstr ""
+msgstr "مرسوم"
 
 #: qml/SettingsPage.qml:66
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "ضمنی در اولویت"
 
 #: qml/SettingsPage.qml:67
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "زنجیره‌ای"
 
 #: qml/UnitConverter.qml:66
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "دسته بندی"
