@@ -23,6 +23,7 @@
   <name xml:lang="eo">Calculator</name>
   <name xml:lang="es">Calculadora</name>
   <name xml:lang="eu">Kalkulagailua</name>
+  <name xml:lang="fa">ماشین حساب</name>
   <name xml:lang="fi">Laskin</name>
   <name xml:lang="fr">Calculatrice</name>
   <name xml:lang="gl">Calculadora</name>
@@ -65,6 +66,7 @@
   <summary xml:lang="eo">Multkapabla kalkulilo</summary>
   <summary xml:lang="es">Una calculadora con numerosas funciones</summary>
   <summary xml:lang="eu">Ezaugarritan aberatsa den kalkulagailua bat</summary>
+  <summary xml:lang="fa">ماشین‌حساب</summary>
   <summary xml:lang="fi">Monipuolinen laskin</summary>
   <summary xml:lang="fr">Une calculatrice avec de nombreuses fonctionnalités.</summary>
   <summary xml:lang="gl">Unha calculadora con moitas funcionalidades</summary>
@@ -111,6 +113,7 @@
     <p xml:lang="eo">Kalk estas konverĝa kalkulilopor Plasma.</p>
     <p xml:lang="es">Kalk es una calculadora convergente para Plasma.</p>
     <p xml:lang="eu">Kalk, Plasmarako kalkulagailu konbergente bat da.</p>
+    <p xml:lang="fa">ماشین‌حساب یکپارچه برای پلاسما</p>
     <p xml:lang="fi">Kalk on mukautuva laskin Plasmaan.</p>
     <p xml:lang="fr">Kalk est une calculatrice universelle conçue pour Plasma.</p>
     <p xml:lang="gl">Kalk é unha calculadora converxente para Plasma.</p>
@@ -155,6 +158,7 @@
       <caption xml:lang="eo">Kalkulila Paĝo</caption>
       <caption xml:lang="es">Página de la calculadora</caption>
       <caption xml:lang="eu">Kalkulagailu-orria</caption>
+      <caption xml:lang="fa">صفحه ماشین‌حساب</caption>
       <caption xml:lang="fi">Laskinsivu</caption>
       <caption xml:lang="fr">Page de la calculatrice</caption>
       <caption xml:lang="gl">Páxina de calculadora</caption>
