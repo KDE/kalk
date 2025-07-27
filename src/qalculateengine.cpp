@@ -43,6 +43,11 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
 {
     CALCULATOR->abort();
 
+    const QChar decimalPoint = QLocale().decimalPoint().at(0);
+    if (decimalPoint != QLatin1Char('.')) {
+        expression.replace(decimalPoint, QLatin1Char('.'));
+    }
+
     if (QStringLiteral("+−-×÷/^").contains(expression.right(1))) {
         expression.truncate(expression.size() - 1);
     }
@@ -117,7 +122,7 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
         m_result.replace(QStringLiteral(" + "), HAIR_SPACE.toString());
     }
 
-    m_result.replace(QLatin1Char('.'), QLocale().decimalPoint(), Qt::CaseInsensitive);
+    m_result.replace(QLatin1Char('.'), decimalPoint, Qt::CaseInsensitive);
 
     return m_result;
 }
