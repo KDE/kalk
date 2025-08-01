@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:47+0000\n"
 "PO-Revision-Date: 2023-01-18 13:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -40,12 +40,12 @@ msgstr "Calculadora do Plasma"
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2022 da Comunidade do KDE"
 
-#: qalculateengine.cpp:109
+#: qalculateengine.cpp:114
 #, kde-format
 msgid "warning"
 msgstr ""
 
-#: qalculateengine.cpp:109
+#: qalculateengine.cpp:114
 #, kde-format
 msgid "error"
 msgstr ""

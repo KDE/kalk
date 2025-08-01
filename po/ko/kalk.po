@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:47+0000\n"
 "PO-Revision-Date: 2025-04-06 22:15+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -43,12 +43,12 @@ msgstr "Plasma용 계산기"
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2024 KDE Community"
 
-#: qalculateengine.cpp:109
+#: qalculateengine.cpp:114
 #, kde-format
 msgid "warning"
 msgstr "경고"
 
-#: qalculateengine.cpp:109
+#: qalculateengine.cpp:114
 #, kde-format
 msgid "error"
 msgstr "오류"
