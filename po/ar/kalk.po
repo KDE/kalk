@@ -103,7 +103,7 @@ msgstr "التاريخ فارغ"
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
-msgstr "امسح كل التأريخ؟"
+msgstr "امحُ كل التأريخ؟"
 
 #: qml/HistoryView.qml:144
 #, kde-format
@@ -119,7 +119,7 @@ msgstr "ألغِ"
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr "امسح"
+msgstr "امحُ"
 
 #: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
 #, kde-format
