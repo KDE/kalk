@@ -163,7 +163,7 @@ msgstr "وحدة الزاوية"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr "وحدة الزاوية الافتراضية للدوال المثلثية."
+msgstr "وحدة الزاوية المبدئية للدوال المثلثية."
 
 #: qml/SettingsPage.qml:43
 #, kde-format
