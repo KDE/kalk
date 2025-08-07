@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-25 00:43+0000\n"
+"POT-Creation-Date: 2025-08-07 02:42+0000\n"
 "PO-Revision-Date: 2022-04-18 17:53+0200\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -43,12 +43,12 @@ msgstr "Kalkulačka v Kirigami"
 msgid "© 2020-2024 KDE Community"
 msgstr "© 2020-2021 KDE komunita"
 
-#: qalculateengine.cpp:109
+#: qalculateengine.cpp:114
 #, kde-format
 msgid "warning"
 msgstr ""
 
-#: qalculateengine.cpp:109
+#: qalculateengine.cpp:114
 #, kde-format
 msgid "error"
 msgstr ""
