@@ -50,7 +50,6 @@
   <name xml:lang="sv">Räknare</name>
   <name xml:lang="tr">Hesap Makinesi</name>
   <name xml:lang="uk">Калькулятор</name>
-  <name xml:lang="x-test">xxCalculatorxx</name>
   <name xml:lang="zh-CN">计算器</name>
   <name xml:lang="zh-TW">計算機</name>
   <summary>A feature rich calculator</summary>
@@ -93,7 +92,6 @@
   <summary xml:lang="sv">En funktionsrik räknare</summary>
   <summary xml:lang="tr">Çok Özellikli Hesap Makinesi</summary>
   <summary xml:lang="uk">Калькулятор із широкими можливостями</summary>
-  <summary xml:lang="x-test">xxA feature rich calculatorxx</summary>
   <summary xml:lang="zh-CN">一款功能丰富的计算器</summary>
   <summary xml:lang="zh-TW">功能豐富的計算機</summary>
   <developer id="kde.org">
@@ -138,7 +136,6 @@
     <p xml:lang="sv">Kalk är en konvergent räknare för Plasma.</p>
     <p xml:lang="tr">Kalk, Plasma için yakınsak bir hesap makinesidir.</p>
     <p xml:lang="uk">Kalk — потужний калькулятор для Плазми.</p>
-    <p xml:lang="x-test">xxKalk is a convergent calculator for Plasma.xx</p>
     <p xml:lang="zh-CN">Kalk 是 Plasma 的桌面与移动设备通用计算器。</p>
     <p xml:lang="zh-TW">Kalk 是一個 Plasma 用的跨平台計算機。</p>
   </description>
@@ -183,7 +180,6 @@
       <caption xml:lang="sv">Räknarsida</caption>
       <caption xml:lang="tr">Hesap Makinesi Sayfası</caption>
       <caption xml:lang="uk">Сторінка «Калькулятора»</caption>
-      <caption xml:lang="x-test">xxCalculator Pagexx</caption>
       <caption xml:lang="zh-CN">计算器页面</caption>
       <caption xml:lang="zh-TW">計算機頁面</caption>
       <image>https://cdn.kde.org/screenshots/kalk/kalk.png</image>
