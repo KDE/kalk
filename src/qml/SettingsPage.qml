@@ -16,9 +16,6 @@ import org.kde.kalk
 FormCard.FormCardPage {
     title: i18nc("@title:window", "Settings")
 
-    property int yTranslate: 0
-    property real mainOpacity: 1
-
     FormCard.FormCard {
         FormCard.FormSpinBoxDelegate {
             id: precision

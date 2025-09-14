@@ -19,8 +19,6 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
 
-    property int yTranslate: 0
-    property real mainOpacity: 1
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int screenHeight: unitConverter.height * 0.5
     property int flexPointSize: Math.max(Math.min(screenHeight / 14, width / 24), Kirigami.Theme.defaultFont.pointSize - 3)
@@ -77,12 +75,10 @@ Kirigami.Page {
             font.pointSize: flexPointSize
         }
     }
-    
+
     Item {
         anchors.fill: parent
-        opacity: mainOpacity
-        transform: Translate { y: yTranslate }
-        
+
         Kirigami.ShadowedRectangle {
             id: topPanelBackground
             z: -1
@@ -99,11 +95,11 @@ Kirigami.Page {
                 color: dropShadowColor
             }
         }
-        
+
         ColumnLayout {
             anchors.fill: parent
             spacing: 0
-            
+
             ColumnLayout {
                 id: topPanel
                 Layout.fillWidth: true
@@ -111,14 +107,14 @@ Kirigami.Page {
                 RowLayout {
                     Layout.fillHeight: true
                     Layout.fillWidth: true
-                    
+
                     Controls.Tumbler {
                         id: fromTumbler
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         Layout.maximumHeight: unitConverter.screenHeight * 0.5
                         wrap: false
-                        
+
                         model: UnitModel.typeList
                         currentIndex: UnitModel.fromUnitIndex
                         delegate: delegateComponent
@@ -126,7 +122,7 @@ Kirigami.Page {
                             UnitModel.fromUnitIndex = currentIndex;
                         }
                     }
-                    
+
                     Controls.ToolButton {
                         icon.name: "gtk-convert"
                         icon.height: unitConverter.screenHeight * 0.15
@@ -137,14 +133,14 @@ Kirigami.Page {
                             toTumbler.currentIndex = tmp;
                         }
                     }
-                    
+
                     Controls.Tumbler {
                         id: toTumbler
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         Layout.maximumHeight: unitConverter.screenHeight * 0.5
                         wrap: false
-                        
+
                         model: UnitModel.typeList
                         currentIndex: UnitModel.toUnitIndex
                         delegate: delegateComponent
@@ -153,11 +149,11 @@ Kirigami.Page {
                         }
                     }
                 }
-                
+
                 Kirigami.Separator {
                     Layout.fillWidth: true
                 }
-                
+
                 GridLayout {
                     columns: unitConverter.width > unitConverter.height ? 3 : 1
                     Layout.fillWidth: true
@@ -209,10 +205,8 @@ Kirigami.Page {
             }
         }
     }
-    
+
     background: Rectangle {
-        opacity: mainOpacity
-        
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor

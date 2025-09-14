@@ -21,12 +21,12 @@ Kirigami.ApplicationWindow {
     height: 450
     readonly property int columnWidth: Kirigami.Units.gridUnit * 13
     wideScreen: width > columnWidth * 3
-    
+
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
     pageStack.popHiddenPages: true
-    
+
     Kirigami.PagePool {
         id: mainPagePool
     }
@@ -38,7 +38,7 @@ Kirigami.ApplicationWindow {
             HistoryManager.addHistory(entry);
         }
     }
-    
+
     // page switch animation
     NumberAnimation {
         id: anim
@@ -54,23 +54,13 @@ Kirigami.ApplicationWindow {
         duration: Kirigami.Units.longDuration * 3
         easing.type: Easing.OutQuint
     }
-    
-    function pageAnimation(page) {
-        // page switch animation
-        yAnim.target = page;
-        yAnim.properties = "yTranslate";
-        anim.target = page;
-        anim.properties = "mainOpacity";
-        yAnim.restart();
-        anim.restart();
-    }
 
     globalDrawer: Kirigami.OverlayDrawer {
         id: drawer
         width: 300
         height: root.height
         enabled: Kirigami.Settings.isMobile
-        
+
         // for desktop menu
         property bool isMenu: true
         property list<QtObject> actions: [
@@ -79,58 +69,53 @@ Kirigami.ApplicationWindow {
                 icon.name: "accessories-calculator"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("CalculationPage.qml")
-                onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Converter")
                 icon.name: "gtk-convert"
                 page: Qt.resolvedUrl("UnitConverter.qml")
                 pagePool: mainPagePool
-                onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Programmer")
                 icon.name: "format-text-code"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("BinaryCalculator.qml")
-                onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("Settings")
                 icon.name: "settings-configure"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("SettingsPage.qml")
-                onTriggered: pageAnimation(pageItem())
             },
             Kirigami.PagePoolAction {
                 text: i18n("About")
                 icon.name: "help-about"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("AboutPage.qml")
-                onTriggered: pageAnimation(pageItem())
             }
         ]
-        
+
         // for mobile sidebar
         handleClosedIcon.source: null
         handleOpenIcon.source: null
-        
+
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
-        
+
         contentItem: ColumnLayout {
             id: column
             spacing: 0
-            
+
             // allows for lazy loading of pages compared to using a binding
             property string currentlyChecked: i18n("Calculator")
-            
+
             Kirigami.Heading {
                 text: i18n("Calculator")
                 type: Kirigami.Heading.Secondary
                 Layout.margins: Kirigami.Units.gridUnit
             }
-            
+
             SidebarButton {
                 text: i18n("Calculator")
                 icon.name: "accessories-calculator"
@@ -140,15 +125,14 @@ Kirigami.ApplicationWindow {
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
-                    
+
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("CalculationPage.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
-                    pageAnimation(page);
                     drawer.close();
                 }
             }
-            
+
             SidebarButton {
                 text: i18n("Converter")
                 icon.name: "gtk-convert"
@@ -158,15 +142,14 @@ Kirigami.ApplicationWindow {
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
-                    
+
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("UnitConverter.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
-                    pageAnimation(page);
                     drawer.close();
                 }
             }
-            
+
             SidebarButton {
                 text: i18n("Binary Calculator")
                 icon.name: "format-text-code"
@@ -176,18 +159,17 @@ Kirigami.ApplicationWindow {
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
-                    
+
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("BinaryCalculator.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
-                    pageAnimation(page);
                     drawer.close();
                 }
             }
-            
+
             Item { Layout.fillHeight: true }
-            Kirigami.Separator { 
-                Layout.fillWidth: true 
+            Kirigami.Separator {
+                Layout.fillWidth: true
                 Layout.margins: Kirigami.Units.smallSpacing
             }
 
@@ -204,11 +186,10 @@ Kirigami.ApplicationWindow {
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("SettingsPage.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
-                    pageAnimation(page);
                     drawer.close();
                 }
             }
-            
+
             SidebarButton {
                 text: i18n("About")
                 icon.name: "help-about"
@@ -221,7 +202,6 @@ Kirigami.ApplicationWindow {
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("AboutPage.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
-                    pageAnimation(page);
                     drawer.close();
                 }
             }

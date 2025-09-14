@@ -33,9 +33,6 @@ Kirigami.Page {
         }
     ]
 
-    property int yTranslate: 0
-    property real mainOpacity: 1
-
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     property int keypadHeight: initialPage.height * 3 / 7
     property int screenHeight: initialPage.height - initialPage.keypadHeight
@@ -87,28 +84,25 @@ Kirigami.Page {
         if (!InputManager.binaryMode)
             InputManager.binaryMode = true
     }
-    
+
     background: Rectangle {
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
         anchors.fill: parent
-        opacity: mainOpacity
     }
-    
+
     ColumnLayout {
         anchors.fill: parent
-        opacity: mainOpacity
-        transform: Translate { y: yTranslate }
         spacing: 0
-        
+
         Item {
             id: outputScreen
             z: 1
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignTop
             Layout.preferredHeight: initialPage.screenHeight
-            
+
             Kirigami.ShadowedRectangle {
                 id: topPanelBackground
                 anchors.top: parent.top
@@ -124,13 +118,13 @@ Kirigami.Page {
                     color: dropShadowColor
                 }
             }
-            
+
             Column {
                 id: outputColumn
                 anchors.fill: parent
                 anchors.margins: Kirigami.Units.largeSpacing
                 spacing: initialPage.screenHeight / 8
-                
+
                 Flickable {
                     anchors.right: parent.right
                     height: initialPage.screenHeight / 8
@@ -151,7 +145,7 @@ Kirigami.Page {
                             contentX = contentWidth - width;
                     }
                 }
-                
+
                 Flickable {
                     anchors.right: parent.right
                     height: initialPage.screenHeight / 8
@@ -177,7 +171,7 @@ Kirigami.Page {
                         }
                     }
                 }
-                
+
                 Flickable {
                     anchors.right: parent.right
                     height: initialPage.screenHeight / 8
@@ -203,7 +197,7 @@ Kirigami.Page {
                         }
                     }
                 }
-                
+
                 Flickable {
                     anchors.right: parent.right
                     height: initialPage.screenHeight / 8
@@ -246,7 +240,7 @@ Kirigami.Page {
                 }
             }
         }
-        
+
         // Binary Input Pad
         Item {
             property string expression: ""
@@ -254,7 +248,7 @@ Kirigami.Page {
             Layout.fillHeight: true
             Layout.preferredWidth: initialPage.width
             Layout.alignment: Qt.AlignLeft
-            
+
             BinaryPad {
                 id: binaryPad
                 anchors.fill: parent

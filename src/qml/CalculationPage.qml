@@ -87,9 +87,6 @@ Kirigami.Page {
         }
     ]
 
-    property int yTranslate: 0
-    property real mainOpacity: 1
-
     property color dropShadowColor: Qt.darker(Kirigami.Theme.backgroundColor, 1.15)
     readonly property bool inPortrait: initialPage.width < initialPage.height
     property int keypadHeight: initialPage.height * 0.8
@@ -229,8 +226,6 @@ Kirigami.Page {
     }
 
     background: Rectangle {
-        opacity: mainOpacity
-
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
         color: Kirigami.Theme.backgroundColor
@@ -239,12 +234,9 @@ Kirigami.Page {
 
     Item {
         anchors.fill: parent
-        opacity: mainOpacity
-        transform: Translate { y: yTranslate }
 
         Kirigami.ShadowedRectangle {
             id: topPanelBackground
-            opacity: mainOpacity
 
             anchors.top: parent.top
             anchors.left: parent.left
@@ -261,8 +253,6 @@ Kirigami.Page {
         }
 
         ColumnLayout {
-            opacity: mainOpacity
-            transform: Translate { y: yTranslate }
             anchors.fill: parent
             spacing: 0
 
