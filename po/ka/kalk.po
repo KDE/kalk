@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:47+0000\n"
+"POT-Creation-Date: 2025-09-15 00:45+0000\n"
 "PO-Revision-Date: 2025-01-25 02:57+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,8 +28,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
-#: qml/Main.qml:129 qml/Main.qml:135
+#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:68 qml/Main.qml:111
+#: qml/Main.qml:114 qml/Main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "კალკულატორი"
@@ -54,7 +54,7 @@ msgstr "გაფრთხილება"
 msgid "error"
 msgstr "შეცდომა"
 
-#: qml/BinaryCalculator.qml:12 qml/Main.qml:92
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:80
 #, kde-format
 msgid "Programmer"
 msgstr "პროგრამისტი"
@@ -121,22 +121,22 @@ msgstr "გაუქმება"
 msgid "Clear"
 msgstr "გაწმენდა"
 
-#: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
+#: qml/Main.qml:74 qml/Main.qml:137 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "გადამყვანი"
 
-#: qml/Main.qml:99 qml/Main.qml:195
+#: qml/Main.qml:86 qml/Main.qml:177
 #, kde-format
 msgid "Settings"
 msgstr "მორგება"
 
-#: qml/Main.qml:106 qml/Main.qml:213
+#: qml/Main.qml:92 qml/Main.qml:194
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
 
-#: qml/Main.qml:171
+#: qml/Main.qml:154
 #, kde-format
 msgid "Binary Calculator"
 msgstr "ბინარული კალკულატორი"
@@ -147,97 +147,97 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "მორგება"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
 msgstr "სიზუსტე"
 
-#: qml/SettingsPage.qml:39
+#: qml/SettingsPage.qml:36
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
 msgstr "კუთხის ერთეული"
 
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:37
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "ტრიგონომეტრიული ფუნქციების კუთხის ნაგულისხმევი ერთეული."
 
-#: qml/SettingsPage.qml:43
+#: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
 msgstr "რადიანები"
 
-#: qml/SettingsPage.qml:44
+#: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
 msgstr "გრადუსი"
 
-#: qml/SettingsPage.qml:45
+#: qml/SettingsPage.qml:42
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
 msgstr "გრადიანები"
 
-#: qml/SettingsPage.qml:46
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
 msgstr "არკწუთი"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
 msgstr "არკწამი"
 
-#: qml/SettingsPage.qml:48
+#: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
 msgstr "გრუპეტო"
 
-#: qml/SettingsPage.qml:60
+#: qml/SettingsPage.qml:57
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "ანალიზის რეჟიმი"
 
-#: qml/SettingsPage.qml:61
+#: qml/SettingsPage.qml:58
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "გამოსახულებების შეფასების მიმდევრობა."
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
 msgstr "შეგუებადი"
 
-#: qml/SettingsPage.qml:65
+#: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
 msgstr "მიღებული"
 
-#: qml/SettingsPage.qml:66
+#: qml/SettingsPage.qml:63
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
 msgstr "არაცხადი პირველი1"
 
-#: qml/SettingsPage.qml:67
+#: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "ჯაჭვი"
 
-#: qml/UnitConverter.qml:66
+#: qml/UnitConverter.qml:64
 #, kde-format
 msgid "Category"
 msgstr "კატეგორია"

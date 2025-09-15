@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:47+0000\n"
+"POT-Creation-Date: 2025-09-15 00:45+0000\n"
 "PO-Revision-Date: 2025-01-26 10:10+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -25,8 +25,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xavier.besnard@kde.org"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:78 qml/Main.qml:126
-#: qml/Main.qml:129 qml/Main.qml:135
+#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:68 qml/Main.qml:111
+#: qml/Main.qml:114 qml/Main.qml:120
 #, kde-format
 msgid "Calculator"
 msgstr "Calculatrice"
@@ -51,7 +51,7 @@ msgstr "Avertissement"
 msgid "error"
 msgstr "Erreur"
 
-#: qml/BinaryCalculator.qml:12 qml/Main.qml:92
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:80
 #, kde-format
 msgid "Programmer"
 msgstr "Programmeur"
@@ -118,22 +118,22 @@ msgstr "Annuler"
 msgid "Clear"
 msgstr "Effacer"
 
-#: qml/Main.qml:85 qml/Main.qml:153 qml/UnitConverter.qml:16
+#: qml/Main.qml:74 qml/Main.qml:137 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Convertisseur"
 
-#: qml/Main.qml:99 qml/Main.qml:195
+#: qml/Main.qml:86 qml/Main.qml:177
 #, kde-format
 msgid "Settings"
 msgstr "Configuration"
 
-#: qml/Main.qml:106 qml/Main.qml:213
+#: qml/Main.qml:92 qml/Main.qml:194
 #, kde-format
 msgid "About"
 msgstr "À propos"
 
-#: qml/Main.qml:171
+#: qml/Main.qml:154
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Calculatrice basique"
@@ -144,97 +144,97 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configuration"
 
-#: qml/SettingsPage.qml:25
+#: qml/SettingsPage.qml:22
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
 msgstr "Précision"
 
-#: qml/SettingsPage.qml:39
+#: qml/SettingsPage.qml:36
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
 msgstr "Unité d'angle"
 
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:37
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "Unité d'angle par défaut pour les fonctions trigonométriques."
 
-#: qml/SettingsPage.qml:43
+#: qml/SettingsPage.qml:40
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
 msgstr "Radians"
 
-#: qml/SettingsPage.qml:44
+#: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
 msgstr "Degrés"
 
-#: qml/SettingsPage.qml:45
+#: qml/SettingsPage.qml:42
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
 msgstr "Grades"
 
-#: qml/SettingsPage.qml:46
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
 msgstr "Minute d'arc"
 
-#: qml/SettingsPage.qml:47
+#: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
 msgstr "Seconde d'arc"
 
-#: qml/SettingsPage.qml:48
+#: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
 msgstr "Basculer"
 
-#: qml/SettingsPage.qml:60
+#: qml/SettingsPage.qml:57
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "Analyse du mode"
 
-#: qml/SettingsPage.qml:61
+#: qml/SettingsPage.qml:58
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "Ordre d'évaluation des expressions"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:61
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
 msgstr "Adaptatif"
 
-#: qml/SettingsPage.qml:65
+#: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
 msgstr "Conventionnelle"
 
-#: qml/SettingsPage.qml:66
+#: qml/SettingsPage.qml:63
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
 msgstr "Implicite tout d'abord"
 
-#: qml/SettingsPage.qml:67
+#: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "Chaîne"
 
-#: qml/UnitConverter.qml:66
+#: qml/UnitConverter.qml:64
 #, kde-format
 msgid "Category"
 msgstr "Catégorie"
