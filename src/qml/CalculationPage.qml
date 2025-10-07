@@ -191,7 +191,7 @@ Kirigami.Page {
           case Qt.Key_AsciiCircum:
               InputManager.append("^"); break;
           case Qt.Key_Period:
-              InputManager.append("."); break;
+              InputManager.append(Qt.locale().decimalPoint); break;
           case Qt.Key_ParenLeft:
               InputManager.append("("); break;
           case Qt.Key_ParenRight:
