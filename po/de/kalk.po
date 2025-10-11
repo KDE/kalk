@@ -1,10 +1,9 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalk package.
-# Burkhard Lück <lueck@hube-lueck.de>, 2020, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2022.
+# SPDX-FileCopyrightText: 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2022 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023, 2025 Frank Steinmetzger <dev-kde@felsenfleischer.de>
 # SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
