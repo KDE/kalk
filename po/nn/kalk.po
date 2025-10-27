@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-15 00:45+0000\n"
-"PO-Revision-Date: 2024-09-26 18:48+0200\n"
+"PO-Revision-Date: 2025-10-26 13:35+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -41,9 +41,9 @@ msgid "Calculator for Plasma"
 msgstr "Kalkulator for Plasma"
 
 #: main.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgid "© 2020-2024 KDE Community"
-msgstr "© 2020–2022 KDE-fellesskapet"
+msgstr "© 2020–2024 KDE-fellesskapet"
 
 #: qalculateengine.cpp:114
 #, kde-format
@@ -115,12 +115,12 @@ msgstr "Dette er for alltid og kan ikkje angrast."
 #: qml/HistoryView.qml:152
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "Tøm"
 
 # Omrekning mellom ulike einingar (lengd, areal, valuta osv.).
 #: qml/Main.qml:74 qml/Main.qml:137 qml/UnitConverter.qml:16
