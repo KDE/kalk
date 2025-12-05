@@ -27,7 +27,7 @@ Kirigami.ApplicationWindow {
     pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
     pageStack.popHiddenPages: true
 
-    Kirigami.PagePool {
+    property var mainPagePool: Kirigami.PagePool {
         id: mainPagePool
     }
 
@@ -55,14 +55,13 @@ Kirigami.ApplicationWindow {
         easing.type: Easing.OutQuint
     }
 
-    globalDrawer: Kirigami.OverlayDrawer {
+    globalDrawer: Kirigami.GlobalDrawer {
         id: drawer
-        width: 300
+        width: 250
         height: root.height
-        enabled: Kirigami.Settings.isMobile
 
         // for desktop menu
-        property bool isMenu: true
+        isMenu: !Kirigami.Settings.isMobile
         property list<QtObject> actions: [
             Kirigami.PagePoolAction {
                 text: i18n("Calculator")
@@ -87,18 +86,8 @@ Kirigami.ApplicationWindow {
                 icon.name: "settings-configure"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("SettingsPage.qml")
-            },
-            Kirigami.PagePoolAction {
-                text: i18n("About")
-                icon.name: "help-about"
-                pagePool: mainPagePool
-                page: Qt.resolvedUrl("AboutPage.qml")
             }
         ]
-
-        // for mobile sidebar
-        handleClosedIcon.source: null
-        handleOpenIcon.source: null
 
         Kirigami.Theme.colorSet: Kirigami.Theme.Window
         Kirigami.Theme.inherit: false
@@ -108,20 +97,25 @@ Kirigami.ApplicationWindow {
             spacing: 0
 
             // allows for lazy loading of pages compared to using a binding
-            property string currentlyChecked: i18n("Calculator")
+            property string currentlyChecked: calculatorButton.text
 
-            Kirigami.Heading {
-                text: i18n("Calculator")
-                type: Kirigami.Heading.Secondary
-                Layout.margins: Kirigami.Units.gridUnit
+            Kirigami.AbstractApplicationHeader {
+                Layout.fillWidth: true
+
+                contentItem: Kirigami.Heading {
+                    anchors.fill: parent
+                    anchors.margins: Kirigami.Units.largeSpacing
+                    verticalAlignment: Text.AlignVCenter
+                    text: i18n("Calculator")
+                }
             }
 
-            SidebarButton {
+            Kirigami.NavigationTabButton {
+                id: calculatorButton
                 text: i18n("Calculator")
                 icon.name: "accessories-calculator"
+                display: Kirigami.NavigationTabButton.TextBesideIcon
                 Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
@@ -133,12 +127,11 @@ Kirigami.ApplicationWindow {
                 }
             }
 
-            SidebarButton {
+            Kirigami.NavigationTabButton {
                 text: i18n("Converter")
                 icon.name: "gtk-convert"
+                display: Kirigami.NavigationTabButton.TextBesideIcon
                 Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
@@ -150,12 +143,11 @@ Kirigami.ApplicationWindow {
                 }
             }
 
-            SidebarButton {
+            Kirigami.NavigationTabButton {
                 text: i18n("Binary Calculator")
                 icon.name: "format-text-code"
+                display: Kirigami.NavigationTabButton.TextBesideIcon
                 Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
@@ -170,36 +162,20 @@ Kirigami.ApplicationWindow {
             Item { Layout.fillHeight: true }
             Kirigami.Separator {
                 Layout.fillWidth: true
-                Layout.margins: Kirigami.Units.smallSpacing
+                Layout.leftMargin: Kirigami.Units.smallSpacing
+                Layout.rightMargin: Kirigami.Units.smallSpacing
             }
 
-            SidebarButton {
+            Kirigami.NavigationTabButton {
                 text: i18n("Settings")
                 icon.name: "settings-configure"
+                display: Kirigami.NavigationTabButton.TextBesideIcon
                 Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
                 checked: column.currentlyChecked === text
                 onClicked: {
                     column.currentlyChecked = text;
 
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("SettingsPage.qml"));
-                    while (pageStack.depth > 0) pageStack.pop();
-                    pageStack.push(page);
-                    drawer.close();
-                }
-            }
-
-            SidebarButton {
-                text: i18n("About")
-                icon.name: "help-about"
-                Layout.fillWidth: true
-                Layout.minimumHeight: Kirigami.Units.gridUnit * 2
-                Layout.bottomMargin: Kirigami.Units.smallSpacing
-                checked: column.currentlyChecked === text
-                onClicked: {
-                    column.currentlyChecked = text;
-                    let page = mainPagePool.loadPage(Qt.resolvedUrl("AboutPage.qml"));
                     while (pageStack.depth > 0) pageStack.pop();
                     pageStack.push(page);
                     drawer.close();
