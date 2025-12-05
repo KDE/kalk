@@ -17,6 +17,7 @@ FormCard.FormCardPage {
     title: i18nc("@title:window", "Settings")
 
     FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
         FormCard.FormSpinBoxDelegate {
             id: precision
             label: i18nc("@label:spinbox digits of precision", "Precision")
@@ -66,6 +67,19 @@ FormCard.FormCardPage {
             onCurrentValueChanged: {
                 KalkConfig.parsingMode = currentIndex;
                 KalkConfig.save();
+            }
+        }
+    }
+
+    FormCard.FormCard {
+        Layout.topMargin: Kirigami.Units.gridUnit
+
+        FormCard.FormButtonDelegate {
+            text: i18n("About")
+            icon.name: "help-about"
+            onClicked: {
+                let page = applicationWindow().mainPagePool.loadPage(Qt.resolvedUrl("AboutPage.qml"));
+                applicationWindow().pageStack.push(page);
             }
         }
     }

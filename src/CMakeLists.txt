@@ -31,7 +31,6 @@ ecm_target_qml_sources(kalklib SOURCES
     qml/UnitConverter.qml
     qml/PortraitPad.qml
     qml/LandScapePad.qml
-    qml/SidebarButton.qml
     qml/SettingsPage.qml
 )
 
