@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:42+0000\n"
+"POT-Creation-Date: 2025-12-07 02:41+0000\n"
 "PO-Revision-Date: 2025-01-25 06:33+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -30,8 +30,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:68 qml/Main.qml:111
-#: qml/Main.qml:114 qml/Main.qml:120
+#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:67 qml/Main.qml:109
+#: qml/Main.qml:115
 #, kde-format
 msgid "Calculator"
 msgstr "Kalkulagailua"
@@ -56,7 +56,7 @@ msgstr "abisua"
 msgid "error"
 msgstr "errorea"
 
-#: qml/BinaryCalculator.qml:12 qml/Main.qml:80
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:79
 #, kde-format
 msgid "Programmer"
 msgstr "Programatzailea"
@@ -123,22 +123,17 @@ msgstr "Utzi"
 msgid "Clear"
 msgstr "Garbitu"
 
-#: qml/Main.qml:74 qml/Main.qml:137 qml/UnitConverter.qml:16
+#: qml/Main.qml:73 qml/Main.qml:131 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Bihurtzailea"
 
-#: qml/Main.qml:86 qml/Main.qml:177
+#: qml/Main.qml:85 qml/Main.qml:170
 #, kde-format
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: qml/Main.qml:92 qml/Main.qml:194
-#, kde-format
-msgid "About"
-msgstr "Honi buruz"
-
-#: qml/Main.qml:154
+#: qml/Main.qml:147
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Kalkulagailu bitarra"
@@ -149,91 +144,91 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Ezarpenak"
 
-#: qml/SettingsPage.qml:22
+#: qml/SettingsPage.qml:23
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
 msgstr "Doitasuna"
 
-#: qml/SettingsPage.qml:36
+#: qml/SettingsPage.qml:37
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
 msgstr "Angelu-unitatea"
 
-#: qml/SettingsPage.qml:37
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "Funtzio trigonometrikoetarako angelu-unitate lehenetsia."
 
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
 msgstr "Radianak"
 
-#: qml/SettingsPage.qml:41
+#: qml/SettingsPage.qml:42
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
 msgstr "Graduak"
 
-#: qml/SettingsPage.qml:42
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
 msgstr "Gradu ehundarrak"
 
-#: qml/SettingsPage.qml:43
+#: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
 msgstr "Arku-minutu"
 
-#: qml/SettingsPage.qml:44
+#: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
 msgstr "Arku-segundo"
 
-#: qml/SettingsPage.qml:45
+#: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
 msgstr "Bira"
 
-#: qml/SettingsPage.qml:57
+#: qml/SettingsPage.qml:58
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "Azterketa sintaktiko modua"
 
-#: qml/SettingsPage.qml:58
+#: qml/SettingsPage.qml:59
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "Adierazpena ebaluatzeko ordena."
 
-#: qml/SettingsPage.qml:61
+#: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
 msgstr "Moldakorra"
 
-#: qml/SettingsPage.qml:62
+#: qml/SettingsPage.qml:63
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
 msgstr "Konbentzionala"
 
-#: qml/SettingsPage.qml:63
+#: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
 msgstr "Lehenik inplizitua"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
@@ -243,6 +238,9 @@ msgstr "Katea"
 #, kde-format
 msgid "Category"
 msgstr "Kategoria"
+
+#~ msgid "About"
+#~ msgstr "Honi buruz"
 
 #~ msgid "Swap"
 #~ msgstr "Trukatzea"

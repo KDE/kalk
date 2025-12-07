@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:42+0000\n"
+"POT-Creation-Date: 2025-12-07 02:41+0000\n"
 "PO-Revision-Date: 2025-02-06 00:26-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -31,8 +31,8 @@ msgstr ""
 "elchevive@opensuse.org, geraldosimiao@fedoraproject.org, "
 "guimarcalsilva@gmail.com"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:68 qml/Main.qml:111
-#: qml/Main.qml:114 qml/Main.qml:120
+#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:67 qml/Main.qml:109
+#: qml/Main.qml:115
 #, kde-format
 msgid "Calculator"
 msgstr "Calculadora"
@@ -57,7 +57,7 @@ msgstr "aviso"
 msgid "error"
 msgstr "erro"
 
-#: qml/BinaryCalculator.qml:12 qml/Main.qml:80
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:79
 #, kde-format
 msgid "Programmer"
 msgstr "Programador"
@@ -124,22 +124,17 @@ msgstr "Cancelar"
 msgid "Clear"
 msgstr "Limpar"
 
-#: qml/Main.qml:74 qml/Main.qml:137 qml/UnitConverter.qml:16
+#: qml/Main.qml:73 qml/Main.qml:131 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Conversor"
 
-#: qml/Main.qml:86 qml/Main.qml:177
+#: qml/Main.qml:85 qml/Main.qml:170
 #, kde-format
 msgid "Settings"
 msgstr "Configurações"
 
-#: qml/Main.qml:92 qml/Main.qml:194
-#, kde-format
-msgid "About"
-msgstr "Sobre"
-
-#: qml/Main.qml:154
+#: qml/Main.qml:147
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Calculadora binária"
@@ -150,91 +145,91 @@ msgctxt "@title:window"
 msgid "Settings"
 msgstr "Configurações"
 
-#: qml/SettingsPage.qml:22
+#: qml/SettingsPage.qml:23
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
 msgstr "Precisão"
 
-#: qml/SettingsPage.qml:36
+#: qml/SettingsPage.qml:37
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
 msgstr "Unidade de ângulo"
 
-#: qml/SettingsPage.qml:37
+#: qml/SettingsPage.qml:38
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
 msgstr "Unidade angular padrão para as funções trigonométricas."
 
-#: qml/SettingsPage.qml:40
+#: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
 msgstr "Radianos"
 
-#: qml/SettingsPage.qml:41
+#: qml/SettingsPage.qml:42
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
 msgstr "Graus"
 
-#: qml/SettingsPage.qml:42
+#: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
 msgstr "Gradianos"
 
-#: qml/SettingsPage.qml:43
+#: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
 msgstr "Minuto de arco"
 
-#: qml/SettingsPage.qml:44
+#: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
 msgstr "Segundo de arco"
 
-#: qml/SettingsPage.qml:45
+#: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
 msgstr "Volta"
 
-#: qml/SettingsPage.qml:57
+#: qml/SettingsPage.qml:58
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
 msgstr "Modo de análise"
 
-#: qml/SettingsPage.qml:58
+#: qml/SettingsPage.qml:59
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
 msgstr "Ordem de avaliação da expressão."
 
-#: qml/SettingsPage.qml:61
+#: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
 msgstr "Adaptativo"
 
-#: qml/SettingsPage.qml:62
+#: qml/SettingsPage.qml:63
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
 msgstr "Convencional"
 
-#: qml/SettingsPage.qml:63
+#: qml/SettingsPage.qml:64
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
 msgstr "Implícito primeiro"
 
-#: qml/SettingsPage.qml:64
+#: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
@@ -244,6 +239,9 @@ msgstr "Corrente"
 #, kde-format
 msgid "Category"
 msgstr "Categoria"
+
+#~ msgid "About"
+#~ msgstr "Sobre"
 
 #~ msgid "Swap"
 #~ msgstr "Trocar"
