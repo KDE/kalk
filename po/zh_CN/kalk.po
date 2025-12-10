@@ -235,6 +235,3 @@ msgstr "链式"
 #, kde-format
 msgid "Category"
 msgstr "类别"
-
-#~ msgid "About"
-#~ msgstr "关于"
