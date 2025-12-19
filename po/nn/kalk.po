@@ -240,6 +240,3 @@ msgstr "Kjeda"
 #, kde-format
 msgid "Category"
 msgstr "Kategori"
-
-#~ msgid "About"
-#~ msgstr "Om"
