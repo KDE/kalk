@@ -238,6 +238,3 @@ msgstr "Cadena"
 #, kde-format
 msgid "Category"
 msgstr "Categoria"
-
-#~ msgid "About"
-#~ msgstr "Quant a la"
