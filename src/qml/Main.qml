@@ -24,7 +24,7 @@ Kirigami.ApplicationWindow {
 
     pageStack.globalToolBar.canContainHandles: true
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.ToolBar
-    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton;
+    pageStack.globalToolBar.showNavigationButtons: Kirigami.ApplicationHeaderStyle.ShowBackButton
     pageStack.popHiddenPages: true
 
     property var mainPagePool: Kirigami.PagePool {
@@ -61,6 +61,9 @@ Kirigami.ApplicationWindow {
         height: root.height
 
         // for desktop menu
+        Controls.ActionGroup {
+            id: desktopMenuGroup
+        }
         isMenu: !Kirigami.Settings.isMobile
         property list<QtObject> actions: [
             Kirigami.PagePoolAction {
@@ -68,24 +71,28 @@ Kirigami.ApplicationWindow {
                 icon.name: "accessories-calculator"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("CalculationPage.qml")
+                Controls.ActionGroup.group: desktopMenuGroup
             },
             Kirigami.PagePoolAction {
                 text: i18n("Converter")
                 icon.name: "gtk-convert"
                 page: Qt.resolvedUrl("UnitConverter.qml")
                 pagePool: mainPagePool
+                Controls.ActionGroup.group: desktopMenuGroup
             },
             Kirigami.PagePoolAction {
                 text: i18n("Programmer")
                 icon.name: "format-text-code"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("BinaryCalculator.qml")
+                Controls.ActionGroup.group: desktopMenuGroup
             },
             Kirigami.PagePoolAction {
                 text: i18n("Settings")
                 icon.name: "settings-configure"
                 pagePool: mainPagePool
                 page: Qt.resolvedUrl("SettingsPage.qml")
+                Controls.ActionGroup.group: desktopMenuGroup
             }
         ]
 
@@ -121,7 +128,8 @@ Kirigami.ApplicationWindow {
                     column.currentlyChecked = text;
 
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("CalculationPage.qml"));
-                    while (pageStack.depth > 0) pageStack.pop();
+                    while (pageStack.depth > 0)
+                        pageStack.pop();
                     pageStack.push(page);
                     drawer.close();
                 }
@@ -137,7 +145,8 @@ Kirigami.ApplicationWindow {
                     column.currentlyChecked = text;
 
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("UnitConverter.qml"));
-                    while (pageStack.depth > 0) pageStack.pop();
+                    while (pageStack.depth > 0)
+                        pageStack.pop();
                     pageStack.push(page);
                     drawer.close();
                 }
@@ -153,13 +162,16 @@ Kirigami.ApplicationWindow {
                     column.currentlyChecked = text;
 
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("BinaryCalculator.qml"));
-                    while (pageStack.depth > 0) pageStack.pop();
+                    while (pageStack.depth > 0)
+                        pageStack.pop();
                     pageStack.push(page);
                     drawer.close();
                 }
             }
 
-            Item { Layout.fillHeight: true }
+            Item {
+                Layout.fillHeight: true
+            }
             Kirigami.Separator {
                 Layout.fillWidth: true
                 Layout.leftMargin: Kirigami.Units.smallSpacing
@@ -176,7 +188,8 @@ Kirigami.ApplicationWindow {
                     column.currentlyChecked = text;
 
                     let page = mainPagePool.loadPage(Qt.resolvedUrl("SettingsPage.qml"));
-                    while (pageStack.depth > 0) pageStack.pop();
+                    while (pageStack.depth > 0)
+                        pageStack.pop();
                     pageStack.push(page);
                     drawer.close();
                 }
