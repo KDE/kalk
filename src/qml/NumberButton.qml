@@ -25,10 +25,10 @@ Item {
     property string display: text
     property bool special: false
     property bool down: false
-    
+
     Kirigami.Theme.colorSet: Kirigami.Theme.View
     Kirigami.Theme.inherit: false
-    
+
     property color baseColor: Kirigami.Theme.highlightColor
     property color buttonColor: Kirigami.Theme.backgroundColor
     property color buttonHoveredColor: Kirigami.Theme.alternateBackgroundColor
@@ -59,17 +59,34 @@ Item {
             radius: Kirigami.Units.smallSpacing
             color: Kirigami.Theme.backgroundColor
 
+
             // actual background fill
             Rectangle {
+                id: bgRect
                 anchors.fill: parent
                 radius: Kirigami.Units.smallSpacing
-                color: button.pressed || root.down ? root.buttonPressedColor :
-                (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonHoveredColor : root.buttonColor)
-                border.color: button.pressed ? root.buttonBorderPressedColor :
-                    (hoverHandler.hovered && !Kirigami.Settings.isMobile ? root.buttonBorderHoveredColor : root.buttonBorderColor)
-
-                Behavior on color { ColorAnimation { duration: 50 } }
-                Behavior on border.color { ColorAnimation { duration: 50 } }
+                color: root.buttonColor
+                border.color: root.buttonBorderColor
+                states: [
+                    State{
+                        name: "pressed"
+                        when: button.pressed || root.down
+                        PropertyChanges {
+                            bgRect.color: root.buttonPressedColor
+                            bgRect.border.color:buttonBorderPressedColor
+                        }
+                    },
+                    State {
+                        name: "hovered"
+                         when: hoverHandler.hovered &&!Kirigami.Settings.isMobile
+                        PropertyChanges {
+                            bgRect.color: root.buttonHoveredColor
+                            bgRect.border.color: root.buttonBorderHoveredColor
+                        }
+                    }]
+                transitions: [
+                    Transition { ColorAnimation { duration: 50 } }
+                ]
             }
 
             // small box shadow
@@ -84,7 +101,6 @@ Item {
                 radius: Kirigami.Units.smallSpacing
             }
         }
-
         contentItem: Item {
             anchors.centerIn: parent
 
