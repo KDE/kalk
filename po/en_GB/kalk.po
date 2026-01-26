@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-26 00:46+0000\n"
 "PO-Revision-Date: 2024-05-23 19:45+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -27,8 +27,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "steve.allewell@gmail.com"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:67 qml/Main.qml:109
-#: qml/Main.qml:115
+#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
+#: qml/Main.qml:122
 #, kde-format
 msgid "Calculator"
 msgstr "Calculator"
@@ -54,7 +54,7 @@ msgstr "warning"
 msgid "error"
 msgstr "error"
 
-#: qml/BinaryCalculator.qml:12 qml/Main.qml:79
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:84
 #, kde-format
 msgid "Programmer"
 msgstr "Programmer"
@@ -121,17 +121,17 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: qml/Main.qml:73 qml/Main.qml:131 qml/UnitConverter.qml:16
+#: qml/Main.qml:77 qml/Main.qml:139 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Converter"
 
-#: qml/Main.qml:85 qml/Main.qml:170
+#: qml/Main.qml:91 qml/Main.qml:182
 #, kde-format
 msgid "Settings"
 msgstr "Settings"
 
-#: qml/Main.qml:147
+#: qml/Main.qml:156
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Binary Calculator"

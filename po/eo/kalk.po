@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-26 00:46+0000\n"
 "PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -27,8 +27,8 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "olivermkellogg@gmail.com"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:67 qml/Main.qml:109
-#: qml/Main.qml:115
+#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
+#: qml/Main.qml:122
 #, kde-format
 msgid "Calculator"
 msgstr "Kalkulilo"
@@ -53,7 +53,7 @@ msgstr "averto"
 msgid "error"
 msgstr "eraro"
 
-#: qml/BinaryCalculator.qml:12 qml/Main.qml:79
+#: qml/BinaryCalculator.qml:12 qml/Main.qml:84
 #, kde-format
 msgid "Programmer"
 msgstr "Programisto"
@@ -120,17 +120,17 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: qml/Main.qml:73 qml/Main.qml:131 qml/UnitConverter.qml:16
+#: qml/Main.qml:77 qml/Main.qml:139 qml/UnitConverter.qml:16
 #, kde-format
 msgid "Converter"
 msgstr "Konvertilo"
 
-#: qml/Main.qml:85 qml/Main.qml:170
+#: qml/Main.qml:91 qml/Main.qml:182
 #, kde-format
 msgid "Settings"
 msgstr "Agordoj"
 
-#: qml/Main.qml:147
+#: qml/Main.qml:156
 #, kde-format
 msgid "Binary Calculator"
 msgstr "Duuma Kalkulilo"
