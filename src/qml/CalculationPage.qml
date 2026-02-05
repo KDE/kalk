@@ -57,22 +57,22 @@ Kirigami.Page {
             }
         },
         Kirigami.Action {
-            icon.name: "edit-cut"
-            text: i18n("Cut")
-            shortcut: "ctrl+X"
-            enabled: expressionRow.selectedText
+            icon.name: "edit-copy-input"
+            text: i18n("Copy Input")
+            shortcut: "ctrl+shift+c"
+            enabled: expressionRow.text
             onTriggered: {
-                cut();
+                copyInput();
                 outputScreen.forceActiveFocus();
             }
         },
         Kirigami.Action {
-            icon.name: "edit-copy"
-            text: i18n("Copy")
+            icon.name: "edit-copy-result"
+            text: i18n("Copy Result")
             shortcut: "ctrl+C"
-            enabled: expressionRow.text || result.text
+            enabled: result.text
             onTriggered: {
-                copy();
+                copyResult();
                 outputScreen.forceActiveFocus();
             }
         },
@@ -92,24 +92,18 @@ Kirigami.Page {
     property int keypadHeight: initialPage.height * 0.8
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
-    function cut() {
-        if (expressionRow.selectedText) {
-            const pos = expressionRow.cursorPosition - expressionRow.selectedText.length;
-            expressionRow.cut();
-            expressionRow.cursorPosition = pos;
-        }
+    function copyInput() {
+        expressionRow.selectAll();
+        expressionRow.copy();
+        expressionRow.deselect();
     }
-    function copy() {
-        if (expressionRow.selectedText) {
-            expressionRow.copy();
-        } else if (result.selectedText) {
-            result.copy();
-        } else {
-            result.selectAll();
-            result.copy();
-            result.deselect();
-        }
+
+    function copyResult() {
+        result.selectAll();
+        result.copy();
+        result.deselect();
     }
+
     function paste() {
         expressionRow.paste();
     }
@@ -123,14 +117,16 @@ Kirigami.Page {
             InputManager.redo();
             event.accepted = true;
             return;
-        } else if (event.matches(StandardKey.Cut)) {
-            cut();
+        }  else if ((event.modifiers & Qt.ControlModifier)
+            && (event.modifiers & Qt.ShiftModifier)
+            && (event.key == Qt.Key_C)) {
+            copyInput();
             event.accepted = true;
-            return;
+            return ;
         } else if (event.matches(StandardKey.Copy)) {
-            copy();
+            copyResult();
             event.accepted = true;
-            return;
+            return ;
         } else if (event.matches(StandardKey.Paste)) {
             paste();
             event.accepted = true;
