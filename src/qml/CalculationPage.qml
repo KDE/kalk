@@ -283,9 +283,8 @@ Kirigami.Page {
                         id: expressionRow
                         activeFocusOnPress: false
                         font.pointSize: outputScreen.flexPointSize * (text.length * outputScreen.flexPointSize * 0.7 > outputScreen.width ? 0.7 : 1)
-                        font.weight: Font.Light
+                        font.weight: Font.ExtraLight
                         text: InputManager.expression
-                        color: Kirigami.Theme.disabledTextColor
                         background: Rectangle { color: "transparent" }
                         padding: 0
                         selectByMouse: false
@@ -368,7 +367,6 @@ Kirigami.Page {
                         id: result
                         activeFocusOnPress: false
                         font.pointSize: Math.round(outputScreen.flexPointSize) * (text.length * outputScreen.flexPointSize > outputScreen.width ? 0.9 : 1.4)
-                        font.weight: Font.Light
                         text: InputManager.result
                         background: Rectangle { color: "transparent" }
                         padding: 0

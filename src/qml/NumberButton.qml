@@ -59,7 +59,6 @@ Item {
             radius: Kirigami.Units.smallSpacing
             color: Kirigami.Theme.backgroundColor
 
-
             // actual background fill
             Rectangle {
                 id: bgRect
@@ -103,34 +102,32 @@ Item {
         }
         contentItem: Item {
             anchors.centerIn: parent
-
-            Controls.Label {
-                id: label
-                anchors.centerIn: parent
-                visible: root.display !== "⌫" // not backspace icon
-
-                font.pointSize: Math.max(Math.min(Math.round(parent.height * 0.27), Math.round(parent.width * 0.27)), 10)
-                font.weight: Font.DemiBold
-                text: root.display
-                opacity: special ? 0.4 : 0.9
-                horizontalAlignment: Text.AlignHCenter
-                color: root.buttonTextColor
-            }
             Kirigami.Icon {
                 visible: root.display === "⌫" // backspace icon
                 source: "edit-clear"
                 anchors.centerIn: parent
-                opacity: special ? 0.6 : 1.0
+                opacity: root.special ? 0.7 : 1.0
                 implicitWidth: Math.round(parent.height * 0.3)
                 implicitHeight: width
             }
-        }
-
-        onPressedChanged: {
-            if (pressed) {
-                //vibrate.start();
+            Controls.Label {
+                id: label
+                anchors.centerIn: parent
+                visible: root.display !== "⌫" // buttons that aren't backspace icon
+                font.pointSize: Math.max(Math.min(Math.round(parent.height * 0.27), Math.round(parent.width * 0.27)), 10)
+                font.weight: root.special ? Font.Normal : Font.DemiBold
+                opacity: root.special? 0.75 : 1.0
+                text: root.display
+                horizontalAlignment: Text.AlignHCenter
+                color: root.buttonTextColor
             }
         }
+
+        // onPressedChanged: {
+            // if (pressed) {
+                //vibrate.start();
+            // }
+        // }
 
         onClicked: root.clicked(root.text)
         onPressAndHold: root.longClicked()
