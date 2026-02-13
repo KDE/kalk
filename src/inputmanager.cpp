@@ -33,10 +33,18 @@ const QString &InputManager::expression() const
 {
     return m_expression;
 }
+const QString &InputManager::rawExpression() const
+{
+    return m_input;
+}
 
 const QString &InputManager::result() const
 {
     return m_result;
+}
+const QString &InputManager::rawResult() const
+{
+    return m_output;
 }
 
 const QString &InputManager::binaryResult() const

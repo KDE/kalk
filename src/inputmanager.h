@@ -19,7 +19,9 @@ class InputManager : public QObject
     QML_SINGLETON
 
     Q_PROPERTY(QString expression READ expression NOTIFY expressionChanged)
+    Q_PROPERTY(QString rawExpression READ rawExpression NOTIFY expressionChanged)
     Q_PROPERTY(QString result READ result NOTIFY resultChanged)
+    Q_PROPERTY(QString rawResult READ rawResult NOTIFY resultChanged)
     Q_PROPERTY(QString binaryResult READ binaryResult NOTIFY binaryResultChanged)
     Q_PROPERTY(QString hexResult READ hexResult NOTIFY hexResultChanged)
     Q_PROPERTY(bool moveFromResult READ moveFromResult NOTIFY resultChanged)
@@ -34,7 +36,9 @@ public:
     ~InputManager();
 
     const QString &expression() const;
+    const QString &rawExpression() const;
     const QString &result() const;
+    const QString &rawResult() const;
     const QString &binaryResult() const;
     const QString &hexResult() const;
     bool moveFromResult() const;

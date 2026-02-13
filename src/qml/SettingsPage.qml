@@ -69,6 +69,18 @@ FormCard.FormCardPage {
                 KalkConfig.save();
             }
         }
+        FormCard.FormDelegateSeparator { above: parsingMode; below: copyWithSeparators }
+
+        FormCard.FormSwitchDelegate {
+            id: copyWithSeparators
+            text: i18nc("@label:checkbox", "Copy with separators")
+            description: applicationWindow().width >= 250 ? i18nc("@info:whatsthis", "Include thousand separators when copying numbers.") : ""
+            checked: KalkConfig.copyWithSeparators
+            onCheckedChanged: {
+                KalkConfig.copyWithSeparators = checked;
+                KalkConfig.save();
+            }
+        }
     }
 
     FormCard.FormCard {

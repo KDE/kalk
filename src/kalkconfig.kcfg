@@ -17,5 +17,9 @@
             <label>The evaluation order of expressions.</label>
             <default>1</default>
         </entry>
+        <entry name="copyWithSeparators" type="Bool">
+            <label>Include thousand separators when copying numbers</label>
+            <default>true</default>
+    </entry>
     </group>
 </kcfg>

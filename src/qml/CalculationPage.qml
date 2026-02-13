@@ -93,15 +93,17 @@ Kirigami.Page {
     property int screenHeight: initialPage.height - initialPage.keypadHeight
 
     function copyInput() {
-        expressionRow.selectAll();
-        expressionRow.copy();
-        expressionRow.deselect();
+        textEdit.text = KalkConfig.copyWithSeparators ? InputManager.expression: InputManager.rawExpression;
+        textEdit.selectAll();
+        textEdit.copy();
+        textEdit.deselect();
     }
 
     function copyResult() {
-        result.selectAll();
-        result.copy();
-        result.deselect();
+        textEdit.text = KalkConfig.copyWithSeparators ? InputManager.result : InputManager.rawResult;
+        textEdit.selectAll();
+        textEdit.copy();
+        textEdit.deselect();
     }
 
     function paste() {
