@@ -252,19 +252,27 @@
       <description>
         <ul>
           <li>Show decimal separator according to locale</li>
+          <li xml:lang="ar">إظهار الفاصلة العشرية وفقًا للمحلية</li>
           <li xml:lang="ca">Mostra el separador decimal d'acord amb la configuració regional</li>
+          <li xml:lang="ca-valencia">Mostra el separador decimal d'acord amb la configuració regional</li>
           <li xml:lang="es">Mostrar el separador decimal según la configuración regional</li>
           <li xml:lang="he">הצגת מפריד עשרוני לפי ההגדרות המקומיות</li>
           <li xml:lang="ka">წილადის გამყოფის ჩვენება ლოკალის მიხედვით</li>
           <li xml:lang="pt-BR">Exibe separador decimal de acordo com a localidade</li>
+          <li xml:lang="ru">Вид десятичного разделителя в соответствии с региональными настройками;</li>
           <li xml:lang="sl">Prikaži decimalno ločilo glede na lokalne jezikovne nastavitve</li>
+          <li xml:lang="zh-CN">根据区域设置显示十进制分隔符</li>
           <li>Fix bug preventing input of comma</li>
+          <li xml:lang="ar">إصلاح علة تمنع إدخال الفاصلة</li>
           <li xml:lang="ca">Correcció d'un error que impedeix la introducció de coma</li>
+          <li xml:lang="ca-valencia">Correcció d'un error que impedix la introducció de coma</li>
           <li xml:lang="es">Se ha corregido un error que impedía la entrada de comas.</li>
           <li xml:lang="he">תוקנה תקלה שמונעת קלט של פסיק</li>
           <li xml:lang="ka">გასწორდა შეცდომა, რომლის გამოც მძიმეს ვერ შეიყვანდით</li>
           <li xml:lang="pt-BR">Corrigido bug que impedia a inserção de vírgula</li>
+          <li xml:lang="ru">Исправлена ошибка, препятствующая вводу запятой;</li>
           <li xml:lang="sl">Popravljena napaka, ki je preprečevala vnos vejice</li>
+          <li xml:lang="zh-CN">修复妨碍输入逗号的程序缺陷</li>
         </ul>
       </description>
     </release>
@@ -273,10 +281,14 @@
       <description>
         <ul>
           <li>General bugfixing and code quality improvements</li>
+          <li xml:lang="ar">إصلاح علل عامة وتحسينات في جودة الشفرة</li>
           <li xml:lang="ca">Correcció general d'errors i millores en la qualitat del codi</li>
+          <li xml:lang="ca-valencia">Correcció general d'errors i millores en la qualitat del codi</li>
           <li xml:lang="ka">კოდის რეფაქტორინგი და მომხმარებლის ინტერფეისის გაუმჯობესებები</li>
           <li xml:lang="pt-BR">Correção geral de erros e melhorias na qualidade do código</li>
+          <li xml:lang="ru">Исправление ошибок и улучшение качества кода;</li>
           <li xml:lang="sl">Splošno odpravljanje napak in izboljšave kakovosti kode</li>
+          <li xml:lang="zh-CN">常规程序缺陷修复和代码质量改进</li>
         </ul>
       </description>
     </release>
@@ -285,18 +297,26 @@
       <description>
         <ul>
           <li>Rearrange trigonometric functions to be together</li>
+          <li xml:lang="ar">إعادة ترتيب الدوال المثلثية لتكون معًا</li>
           <li xml:lang="ca">Reordena les funcions trigonomètriques perquè estiguin juntes</li>
+          <li xml:lang="ca-valencia">Reordena les funcions trigonomètriques perquè estiguen juntes</li>
           <li xml:lang="he">סידור הפונקציות הטריגונומטריות מחדש כדי שתהיינה יחד</li>
           <li xml:lang="ka">ტრიგონომეტრიული ფუნქციების ერთად დალაგება</li>
           <li xml:lang="pt-BR">Reorganização das funções trigonométricas para que fiquem juntas</li>
+          <li xml:lang="ru">Изменено расположение тригонометрических функций, чтобы они располагались рядом;</li>
           <li xml:lang="sl">Preureditve trigonometričnih funkcij, da so skupaj</li>
+          <li xml:lang="zh-CN">重新排列三角函数以一起使用</li>
           <li>Various user-interface improvements</li>
+          <li xml:lang="ar">تحسينات متنوعة في واجهة المستخدم</li>
           <li xml:lang="ca">Diverses millores de la interfície d'usuari</li>
+          <li xml:lang="ca-valencia">Diverses millores de la interfície d'usuari</li>
           <li xml:lang="es">Varias mejoras de la interfaz de usuario</li>
           <li xml:lang="he">מגוון שיפורי ממשק משתמש</li>
           <li xml:lang="ka">ინტერფეისის სხვადასხვა ნაწილის გაუმჯობესება</li>
           <li xml:lang="pt-BR">Diversas melhorias na interface do usuário</li>
+          <li xml:lang="ru">Различные улучшения пользовательского интерфейса;</li>
           <li xml:lang="sl">Različne izboljšave uporabniškega vmesnika</li>
+          <li xml:lang="zh-CN">各种用户界面改进</li>
         </ul>
       </description>
     </release>
@@ -304,11 +324,15 @@
       <description>
         <ul>
           <li>Rework sidebar design</li>
+          <li xml:lang="ar">إعادة صياغة تصميم الشريط الجانبي</li>
           <li xml:lang="ca">Refà el disseny de la barra lateral</li>
+          <li xml:lang="ca-valencia">Refà el disseny de la barra lateral</li>
           <li xml:lang="he">עבודה מחודשת על עיצוב סרגל הצד</li>
           <li xml:lang="ka">გადამუშავდა გვერდითი პანელის დიზაინი</li>
           <li xml:lang="pt-BR">Reformulação do design da barra lateral</li>
+          <li xml:lang="ru">Изменён дизайн боковой панели;</li>
           <li xml:lang="sl">Preoblikovana zasnova stranske vrstice</li>
+          <li xml:lang="zh-CN">重新设计侧边栏</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
@@ -322,60 +346,96 @@
     <release version="21.06" date="2021-06-10">
       <description>
         <p>Changes:</p>
+        <p xml:lang="ar">التغييرات:</p>
         <p xml:lang="ca">Canvis:</p>
+        <p xml:lang="ca-valencia">Canvis:</p>
         <p xml:lang="es">Cambios:</p>
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="ka">ცვლილებები:</p>
         <p xml:lang="pt-BR">Alterações:</p>
+        <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sl">Spremembe:</p>
+        <p xml:lang="zh-CN">更改：</p>
         <ul>
           <li>Updated the application icon</li>
+          <li xml:lang="ar">حُدّثت أيقونة التطبيق</li>
           <li xml:lang="ca">Actualitza la icona de l'aplicació</li>
+          <li xml:lang="ca-valencia">Actualitza la icona de l'aplicació</li>
           <li xml:lang="es">Se ha actualizado el icono de la aplicación</li>
           <li xml:lang="he">סמל היישום התעדכן</li>
           <li xml:lang="ka">განახლდა აპლიკაციის ხატულა</li>
           <li xml:lang="pt-BR">Ícone do aplicativo atualizado</li>
+          <li xml:lang="ru">Обновлён значок приложения;</li>
           <li xml:lang="sl">Posodobljena ikona aplikacije</li>
+          <li xml:lang="zh-CN">更新应用程序图标</li>
           <li>Added support for parentheses keyboard input</li>
+          <li xml:lang="ar">أُضيف دعم لإدخال الأقواس عبر لوحة المفاتيح</li>
           <li xml:lang="ca">Afegeix la implementació d'entrada de teclat dels parèntesis</li>
+          <li xml:lang="ca-valencia">Afig la implementació d'entrada de teclat dels parèntesis</li>
           <li xml:lang="he">נוספה תמיכה בסוגריים דרך קלט מקלדת</li>
           <li xml:lang="ka">დაემატა ფრჩხილების კლავიატურით შეყვანის მხარდაჭერა</li>
           <li xml:lang="pt-BR">Adicionado suporte para inserção de parênteses pelo teclado</li>
+          <li xml:lang="ru">Добавлена поддержка ввода скобок с клавиатуры;</li>
           <li xml:lang="sl">Dodana podpora za vnos oklepajev s tipkovnico</li>
+          <li xml:lang="zh-CN">添加对圆括号键盘输入的支持</li>
           <li>Fixed the calculator drawer opening when the application opens</li>
+          <li xml:lang="ar">أُصلح فتح درج الحاسبة عند فتح التطبيق</li>
           <li xml:lang="ca">Corregeix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
+          <li xml:lang="ca-valencia">Corregix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
           <li xml:lang="ka">გამოსწორდა კალკულატორის უჯრის გახსნა აპლიკაციის გაშვებისას</li>
           <li xml:lang="pt-BR">Corrigido o problema que fazia com que a gaveta da calculadora abrisse ao iniciar o aplicativo</li>
+          <li xml:lang="ru">Исправлено открытие панели калькулятора при запуске приложения;</li>
           <li xml:lang="sl">Odpravljena napaka, zaradi katere se je predal kalkulatorja odpiral ob odprtju aplikacije.</li>
+          <li xml:lang="zh-CN">修复应用程序打开时的计算器抽屉打开</li>
           <li>Changed backspace icon to use a proper system icon instead of a font provided one</li>
+          <li xml:lang="ar">غُيّرت أيقونة مسافة للخلف لتستخدم أيقونة نظام مناسبة بدلًا من تلك التي يوفرها الخط</li>
           <li xml:lang="ca">Canvia la icona de retrocés per a utilitzar una icona de sistema adequada en lloc de la proporcionada a la lletra</li>
+          <li xml:lang="ca-valencia">Canvia la icona de retrocés per a utilitzar una icona de sistema adequada en lloc de la proporcionada a la lletra</li>
           <li xml:lang="ka">შეიცვალა backspace-ის ხატულა, რომ გამოიყენოს სწორი სისტემური ხატულა ფონტის მიერ გადმოცემულის მაგიერ</li>
           <li xml:lang="pt-BR">Alterado o ícone da tecla Backspace para usar um ícone apropriado do sistema em vez de um fornecido pela fonte</li>
+          <li xml:lang="ru">Изменён значок клавиши «Backspace» на системный вместо предоставленного шрифтом;</li>
           <li xml:lang="sl">Ikona za brisanje je bila spremenjena tako, da namesto ikone s priloženo pisavo uporablja ustrezno sistemsko ikono</li>
+          <li xml:lang="zh-CN">回退图标使用合适的系统图标而不是通过字体提供的版本</li>
           <li>Added keyboard support to unit converter</li>
+          <li xml:lang="ar">أُضيف دعم لوحة المفاتيح لمحولة الوحدات</li>
           <li xml:lang="ca">Afegeix la implementació del teclat al convertidor d'unitats</li>
+          <li xml:lang="ca-valencia">Afig la implementació del teclat al convertidor d'unitats</li>
           <li xml:lang="he">נוספה תמיכה במקלדת בממיר היחידות</li>
           <li xml:lang="ka">ერთეულების გარდამქმნელს დაემატა კლავიატურის მხარდაჭერა</li>
           <li xml:lang="pt-BR">Adicionado suporte para teclado ao conversor de unidades</li>
+          <li xml:lang="ru">Добавлена поддержка клавиатуры в конвертере единиц измерения;</li>
           <li xml:lang="sl">Dodana podpora za tipkovnico za pretvornik enot</li>
+          <li xml:lang="zh-CN">添加单位转换器的键盘支持</li>
           <li>Fixed page change animation for binary calculator</li>
+          <li xml:lang="ar">أُصلحت حركة تغيير الصفحة للحاسبة الثنائية</li>
           <li xml:lang="ca">Corregeix l'animació del canvi de pàgina de la calculadora binària</li>
+          <li xml:lang="ca-valencia">Corregix l'animació del canvi de pàgina de la calculadora binària</li>
           <li xml:lang="he">תוקנה הנפשת החלפת עמוד במחשבון הבינרי</li>
           <li xml:lang="ka">გამოსწორდა გვერდის შეცვლის ანიმაცია ბინარული კალკულატორისთვის</li>
           <li xml:lang="pt-BR">Correção da animação de mudança de página para a calculadora binária</li>
+          <li xml:lang="ru">Исправлена анимация переключения страниц для двоичного калькулятора;</li>
           <li xml:lang="sl">Popravljena animacija menjave strani za binarni kalkulator</li>
+          <li xml:lang="zh-CN">修复二进制计算器的换页动画</li>
           <li>Enabled qml debugging when compiled in debug mode</li>
+          <li xml:lang="ar">فُعّل تنقيح qml عند التجميع في وضع التنقيح</li>
           <li xml:lang="ca">Activa la depuració del QML quan es compila en mode de depuració</li>
+          <li xml:lang="ca-valencia">Activa la depuració de QML quan es compila en mode de depuració</li>
           <li xml:lang="he">הופעל ניפוי שגיאות ב־qml כשבוצע הידור במצב ניפוי שגיאות</li>
           <li xml:lang="ka">ჩაირთო QML-ის გამართვა გამართვის რეჟიმში აგებისას</li>
           <li xml:lang="pt-BR">Ativada a depuração do QML quando compilado no modo de depuração</li>
+          <li xml:lang="ru">Включена отладка QML при компиляции в режиме отладки;</li>
           <li xml:lang="sl">Omogočeno odpravljanje napak qml pri prevajanju v načinu za odpravljanje napak</li>
+          <li xml:lang="zh-CN">在调试模式下编译时启用 QML 调试</li>
           <li>Added ability to recognize the decimal separator in other locales</li>
+          <li xml:lang="ar">أُضيفت القدرة على التعرف على الفاصلة العشرية في المحليات الأخرى</li>
           <li xml:lang="ca">Afegeix la capacitat de reconèixer el separador decimal en altres configuracions regionals</li>
+          <li xml:lang="ca-valencia">Afig la capacitat de reconéixer el separador decimal en altres configuracions regionals</li>
           <li xml:lang="he">נוספה היכולת לזהות את המפריד העשרוני בהגדרות מקומיות אחרות</li>
           <li xml:lang="ka">დაემატა სხვა ლოკალებში ათწილადის გამყოფის ამოცნობის შესაძლებლობა</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de reconhecer o separador decimal em outras localidades</li>
+          <li xml:lang="ru">Добавлено распознавание десятичного разделителя в других языковых стандартах;</li>
           <li xml:lang="sl">Dodana možnost prepoznavanja decimalnega ločila v drugih jezikovnih okoljih</li>
+          <li xml:lang="zh-CN">新增在其他区域设置中识别小数分隔符的能力</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/06/10/plasma-mobile-update-june/</url>
