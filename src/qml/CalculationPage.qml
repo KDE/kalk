@@ -302,7 +302,7 @@ Kirigami.Page {
                         }
                         onCursorPositionChanged: {
                             if (lastText === text && selectedText === "") {
-                                const pos = InputManager.idealCursorPosition(cursorPosition); // this only calculate the postion, doesn't modify InputManager in anyway
+                                const pos = InputManager.idealCursorPosition(cursorPosition); // this only calculates the position, doesn't modify InputManager in any way
                                 cursorPosition = pos;
                                 InputManager.cursorPosition = pos;
                             } else {

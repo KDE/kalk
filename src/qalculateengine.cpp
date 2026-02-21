@@ -52,7 +52,7 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
         expression.truncate(expression.size() - 1);
     }
 
-    // do not need to evalulate if the expression is just a number or if expression is incomplete
+    // do not need to evaluate if the expression is just a number or if expression is incomplete
     if (baseEval == 10 && expression.toDouble() != 0 && !expression.contains(QStringLiteral("E"), Qt::CaseInsensitive)) {
         m_result = QString();
         return m_result;
@@ -64,7 +64,7 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     expression.replace(HAIR_SPACE.toString(), QStringLiteral(" + "));
     expression.replace(QStringLiteral("%%"), QStringLiteral("percentpercent"));
 
-    const bool showAprox = expression.contains(QStringLiteral("∫")) || expression.contains(QStringLiteral("integra"), Qt::CaseInsensitive);
+    const bool showApprox = expression.contains(QStringLiteral("∫")) || expression.contains(QStringLiteral("integra"), Qt::CaseInsensitive);
 
     EvaluationOptions eo;
     eo.auto_post_conversion = POST_CONVERSION_BEST;
@@ -91,7 +91,7 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     po.min_exp = minExp;
     po.multiplication_sign = MULTIPLICATION_SIGN_X;
     po.division_sign = DIVISION_SIGN_DIVISION_SLASH;
-    po.improve_division_multipliers = showAprox;
+    po.improve_division_multipliers = showApprox;
     po.preserve_format = false;
     po.restrict_to_parent_precision = true;
 
@@ -102,9 +102,9 @@ QString QalculateEngine::evaluate(QString &expression, bool *isApproximate, cons
     std::string parsed;
     std::string result;
     AutomaticFractionFormat fracFormat = exact ? AUTOMATIC_FRACTION_OFF : AUTOMATIC_FRACTION_SINGLE;
-    AutomaticApproximation autoAprox = showAprox ? AUTOMATIC_APPROXIMATION_AUTO : AUTOMATIC_APPROXIMATION_SINGLE;
+    AutomaticApproximation autoApprox = showApprox ? AUTOMATIC_APPROXIMATION_AUTO : AUTOMATIC_APPROXIMATION_SINGLE;
     bool is_comparison = false;
-    result = CALCULATOR->calculateAndPrint(input, 2000, eo, po, fracFormat, autoAprox, &parsed, -1, &is_comparison, false);
+    result = CALCULATOR->calculateAndPrint(input, 2000, eo, po, fracFormat, autoApprox, &parsed, -1, &is_comparison, false);
     m_result = QString::fromStdString(result);
     qDebug() << QString::fromStdString(parsed) << (*isApproximate ? "≈" : "=") << m_result;
 

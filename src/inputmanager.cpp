@@ -169,8 +169,8 @@ void InputManager::append(const QString &subexpression)
             }
         }
     } else if (temp == QStringLiteral("rand()")) {
-        bool isAprox = false;
-        temp = m_engine->evaluate(temp, &isAprox);
+        bool isApprox = false;
+        temp = m_engine->evaluate(temp, &isApprox);
     }
 
     // prevent invalid duplicate operators
@@ -397,7 +397,7 @@ QString InputManager::formatNumbers(const QString &text)
             }
             replaceWithSuperscript(exponent);
 
-            // replace only the first occurence
+            // replace only the first occurrence
             size_t index = temp.indexOf(match.captured(0));
             temp.replace(index, match.captured(0).size(), base + exponent);
         }
