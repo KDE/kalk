@@ -287,6 +287,7 @@
           <li xml:lang="ca">Correcció general d'errors i millores en la qualitat del codi</li>
           <li xml:lang="ca-valencia">Correcció general d'errors i millores en la qualitat del codi</li>
           <li xml:lang="es">Corrección de errores generales y mejoras en la calidad del código.</li>
+          <li xml:lang="he">תיקון תקלות כללים ושיפורי איכות קוד</li>
           <li xml:lang="ia">Melioramento general de qualitate de codice e correctiones de faltas</li>
           <li xml:lang="pt-BR">Correção geral de erros e melhorias na qualidade do código</li>
           <li xml:lang="ru">Исправление ошибок и улучшение качества кода;</li>
@@ -396,6 +397,7 @@
           <li xml:lang="ca">Corregeix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
           <li xml:lang="ca-valencia">Corregix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
           <li xml:lang="es">Se ha corregido la apertura del cajón de la calculadora cuando se abre la aplicación.</li>
+          <li xml:lang="he">תוקנה פתיחת מגירת הדפדפן כשהיישום מופעל</li>
           <li xml:lang="ia">Corrigite que le designator de calculator aperi quando le application se aperi</li>
           <li xml:lang="pt-BR">Corrigido o problema que fazia com que a gaveta da calculadora abrisse ao iniciar o aplicativo</li>
           <li xml:lang="ru">Исправлено открытие панели калькулятора при запуске приложения;</li>
@@ -407,6 +409,7 @@
           <li xml:lang="ca">Canvia la icona de retrocés per a utilitzar una icona de sistema adequada en lloc de la proporcionada a la lletra</li>
           <li xml:lang="ca-valencia">Canvia la icona de retrocés per a utilitzar una icona de sistema adequada en lloc de la proporcionada a la lletra</li>
           <li xml:lang="es">Se ha modificado el icono de retroceso para usar un icono del sistema adecuado en lugar de uno proporcionado por una fuente.</li>
+          <li xml:lang="he">הסמל של המחיקה (backspace) השתנה כך שישתמש בסמל המערכת המתאים במקום בסמל שמגיע מגופן</li>
           <li xml:lang="ia">Cambiate icone de retro-spatio per usr un proprie icone de systema in loco de lo fornite ab un font</li>
           <li xml:lang="pt-BR">Alterado o ícone da tecla Backspace para usar um ícone apropriado do sistema em vez de um fornecido pela fonte</li>
           <li xml:lang="ru">Изменён значок клавиши «Backspace» на системный вместо предоставленного шрифтом;</li>
