@@ -472,7 +472,6 @@ Kirigami.Page {
                     visible: !inPortrait
                     FunctionPad {
                         anchors.fill: parent
-                        anchors.bottom: parent.Bottom
                         anchors.leftMargin: Kirigami.Units.smallSpacing
                         anchors.rightMargin: Kirigami.Units.smallSpacing
                         anchors.topMargin: Kirigami.Units.largeSpacing
