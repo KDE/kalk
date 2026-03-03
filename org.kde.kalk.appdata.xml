@@ -268,6 +268,7 @@
           <li xml:lang="tr">Show decimal separator according to locale</li>
           <li xml:lang="uk">Показ десяткового роздільника відповідно до локалі</li>
           <li xml:lang="zh-CN">根据区域设置显示十进制分隔符</li>
+          <li xml:lang="zh-TW">依地域顯示小數分隔字元</li>
           <li>Fix bug preventing input of comma</li>
           <li xml:lang="ar">إصلاح علة تمنع إدخال الفاصلة</li>
           <li xml:lang="ca">Correcció d'un error que impedeix la introducció de coma</li>
@@ -284,6 +285,7 @@
           <li xml:lang="tr">Fix bug preventing input of comma</li>
           <li xml:lang="uk">Виправлено ваду, яка заважала введенню коми</li>
           <li xml:lang="zh-CN">修复妨碍输入逗号的程序缺陷</li>
+          <li xml:lang="zh-TW">修正無法輸入逗號的錯誤</li>
         </ul>
       </description>
     </release>
@@ -307,6 +309,7 @@
           <li xml:lang="tr">General bugfixing and code quality improvements</li>
           <li xml:lang="uk">Загальне виправлення вад та удосконалення якості коду</li>
           <li xml:lang="zh-CN">常规程序缺陷修复和代码质量改进</li>
+          <li xml:lang="zh-TW">一般改進與程式碼品質改善</li>
         </ul>
       </description>
     </release>
@@ -330,6 +333,7 @@
           <li xml:lang="tr">Rearrange trigonometric functions to be together</li>
           <li xml:lang="uk">Тригонометричні функції зібрано разом</li>
           <li xml:lang="zh-CN">重新排列三角函数以一起使用</li>
+          <li xml:lang="zh-TW">重新排列三角函數功能讓它們在一起</li>
           <li>Various user-interface improvements</li>
           <li xml:lang="ar">تحسينات متنوعة في واجهة المستخدم</li>
           <li xml:lang="ca">Diverses millores de la interfície d'usuari</li>
@@ -346,6 +350,7 @@
           <li xml:lang="tr">Various user-interface improvements</li>
           <li xml:lang="uk">Різноманітні удосконалення інтерфейсу користувача</li>
           <li xml:lang="zh-CN">各种用户界面改进</li>
+          <li xml:lang="zh-TW">諸多使用者介面改進</li>
         </ul>
       </description>
     </release>
@@ -368,6 +373,7 @@
           <li xml:lang="tr">Rework sidebar design</li>
           <li xml:lang="uk">Перероблено дизайн бічної панелі</li>
           <li xml:lang="zh-CN">重新设计侧边栏</li>
+          <li xml:lang="zh-TW">重新設計側邊欄</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/12/07/plasma-mobile-gear-21-12/</url>
@@ -396,6 +402,7 @@
         <p xml:lang="tr">Changes:</p>
         <p xml:lang="uk">Зміни:</p>
         <p xml:lang="zh-CN">更改：</p>
+        <p xml:lang="zh-TW">變更：</p>
         <ul>
           <li>Updated the application icon</li>
           <li xml:lang="ar">حُدّثت أيقونة التطبيق</li>
@@ -413,6 +420,7 @@
           <li xml:lang="tr">Updated the application icon</li>
           <li xml:lang="uk">Оновлено піктограму програми</li>
           <li xml:lang="zh-CN">更新应用程序图标</li>
+          <li xml:lang="zh-TW">更新應用程式圖示</li>
           <li>Added support for parentheses keyboard input</li>
           <li xml:lang="ar">أُضيف دعم لإدخال الأقواس عبر لوحة المفاتيح</li>
           <li xml:lang="ca">Afegeix la implementació d'entrada de teclat dels parèntesis</li>
@@ -429,6 +437,7 @@
           <li xml:lang="tr">Added support for parentheses keyboard input</li>
           <li xml:lang="uk">Додано підтримку введення дужок з клавіатури</li>
           <li xml:lang="zh-CN">添加对圆括号键盘输入的支持</li>
+          <li xml:lang="zh-TW">新增括號鍵盤輸入的支援</li>
           <li>Fixed the calculator drawer opening when the application opens</li>
           <li xml:lang="ar">أُصلح فتح درج الحاسبة عند فتح التطبيق</li>
           <li xml:lang="ca">Corregeix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
@@ -445,6 +454,7 @@
           <li xml:lang="tr">Fixed the calculator drawer opening when the application opens</li>
           <li xml:lang="uk">Виправлено відкриття панелі калькулятора при відкритті вікна програми</li>
           <li xml:lang="zh-CN">修复应用程序打开时的计算器抽屉打开</li>
+          <li xml:lang="zh-TW">修正應用程式開啟時也跟著開啟計算機抽屜的問題</li>
           <li>Changed backspace icon to use a proper system icon instead of a font provided one</li>
           <li xml:lang="ar">غُيّرت أيقونة مسافة للخلف لتستخدم أيقونة نظام مناسبة بدلًا من تلك التي يوفرها الخط</li>
           <li xml:lang="ca">Canvia la icona de retrocés per a utilitzar una icona de sistema adequada en lloc de la proporcionada a la lletra</li>
@@ -461,6 +471,7 @@
           <li xml:lang="tr">Changed backspace icon to use a proper system icon instead of a font provided one</li>
           <li xml:lang="uk">Змінено піктограму витирання введеного так, щоб використовувалася належна піктограма з системи, а не піктограма, яку надано шрифтом</li>
           <li xml:lang="zh-CN">回退图标使用合适的系统图标而不是通过字体提供的版本</li>
+          <li xml:lang="zh-TW">用正確的系統圖示顯示退格鍵而非使用字型所提供的圖示</li>
           <li>Added keyboard support to unit converter</li>
           <li xml:lang="ar">أُضيف دعم لوحة المفاتيح لمحولة الوحدات</li>
           <li xml:lang="ca">Afegeix la implementació del teclat al convertidor d'unitats</li>
@@ -477,6 +488,7 @@
           <li xml:lang="tr">Added keyboard support to unit converter</li>
           <li xml:lang="uk">Додано підтримку введення з клавіатури на панелі перетворення одиниць</li>
           <li xml:lang="zh-CN">添加单位转换器的键盘支持</li>
+          <li xml:lang="zh-TW">讓單位轉換器支援鍵盤</li>
           <li>Fixed page change animation for binary calculator</li>
           <li xml:lang="ar">أُصلحت حركة تغيير الصفحة للحاسبة الثنائية</li>
           <li xml:lang="ca">Corregeix l'animació del canvi de pàgina de la calculadora binària</li>
@@ -493,6 +505,7 @@
           <li xml:lang="tr">Fixed page change animation for binary calculator</li>
           <li xml:lang="uk">Виправлено анімацію зміни сторінок для двійкового калькулятора</li>
           <li xml:lang="zh-CN">修复二进制计算器的换页动画</li>
+          <li xml:lang="zh-TW">修正二進制計算機的頁面變更動畫</li>
           <li>Enabled qml debugging when compiled in debug mode</li>
           <li xml:lang="ar">فُعّل تنقيح qml عند التجميع في وضع التنقيح</li>
           <li xml:lang="ca">Activa la depuració del QML quan es compila en mode de depuració</li>
@@ -509,6 +522,7 @@
           <li xml:lang="tr">Enabled qml debugging when compiled in debug mode</li>
           <li xml:lang="uk">Уможливлено діагностику qml, якщо програму зібрано у діагностичному режимі</li>
           <li xml:lang="zh-CN">在调试模式下编译时启用 QML 调试</li>
+          <li xml:lang="zh-TW">以除錯模式編譯時也啟用 QML 除錯</li>
           <li>Added ability to recognize the decimal separator in other locales</li>
           <li xml:lang="ar">أُضيفت القدرة على التعرف على الفاصلة العشرية في المحليات الأخرى</li>
           <li xml:lang="ca">Afegeix la capacitat de reconèixer el separador decimal en altres configuracions regionals</li>
@@ -525,6 +539,7 @@
           <li xml:lang="tr">Added ability to recognize the decimal separator in other locales</li>
           <li xml:lang="uk">Додано можливість розпізнавання десяткового роздільника в інших локалях</li>
           <li xml:lang="zh-CN">新增在其他区域设置中识别小数分隔符的能力</li>
+          <li xml:lang="zh-TW">支援辨別其他地域的小數分隔字元</li>
         </ul>
       </description>
       <url>https://www.plasma-mobile.org/2021/06/10/plasma-mobile-update-june/</url>
