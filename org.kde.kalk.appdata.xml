@@ -265,7 +265,7 @@
           <li xml:lang="pt-BR">Exibe separador decimal de acordo com a localidade</li>
           <li xml:lang="ru">Вид десятичного разделителя в соответствии с региональными настройками;</li>
           <li xml:lang="sl">Prikaži decimalno ločilo glede na lokalne jezikovne nastavitve</li>
-          <li xml:lang="tr">Show decimal separator according to locale</li>
+          <li xml:lang="tr">Ondalık ayracını yerele göre göster</li>
           <li xml:lang="uk">Показ десяткового роздільника відповідно до локалі</li>
           <li xml:lang="zh-CN">根据区域设置显示十进制分隔符</li>
           <li xml:lang="zh-TW">依地域顯示小數分隔字元</li>
@@ -282,7 +282,7 @@
           <li xml:lang="pt-BR">Corrigido bug que impedia a inserção de vírgula</li>
           <li xml:lang="ru">Исправлена ошибка, препятствующая вводу запятой;</li>
           <li xml:lang="sl">Popravljena napaka, ki je preprečevala vnos vejice</li>
-          <li xml:lang="tr">Fix bug preventing input of comma</li>
+          <li xml:lang="tr">Virgül girişini engelleyen hatayı düzelt</li>
           <li xml:lang="uk">Виправлено ваду, яка заважала введенню коми</li>
           <li xml:lang="zh-CN">修复妨碍输入逗号的程序缺陷</li>
           <li xml:lang="zh-TW">修正無法輸入逗號的錯誤</li>
@@ -306,7 +306,7 @@
           <li xml:lang="pt-BR">Correção geral de erros e melhorias na qualidade do código</li>
           <li xml:lang="ru">Исправление ошибок и улучшение качества кода;</li>
           <li xml:lang="sl">Splošno odpravljanje napak in izboljšave kakovosti kode</li>
-          <li xml:lang="tr">General bugfixing and code quality improvements</li>
+          <li xml:lang="tr">Genel hata düzeltmeleri ve kod kalitesi iyileştirmeleri</li>
           <li xml:lang="uk">Загальне виправлення вад та удосконалення якості коду</li>
           <li xml:lang="zh-CN">常规程序缺陷修复和代码质量改进</li>
           <li xml:lang="zh-TW">一般改進與程式碼品質改善</li>
@@ -330,7 +330,7 @@
           <li xml:lang="pt-BR">Reorganização das funções trigonométricas para que fiquem juntas</li>
           <li xml:lang="ru">Изменено расположение тригонометрических функций, чтобы они располагались рядом;</li>
           <li xml:lang="sl">Preureditve trigonometričnih funkcij, da so skupaj</li>
-          <li xml:lang="tr">Rearrange trigonometric functions to be together</li>
+          <li xml:lang="tr">Trigonometrik işlevleri bir arada olacak şekilde yeniden düzenle</li>
           <li xml:lang="uk">Тригонометричні функції зібрано разом</li>
           <li xml:lang="zh-CN">重新排列三角函数以一起使用</li>
           <li xml:lang="zh-TW">重新排列三角函數功能讓它們在一起</li>
@@ -347,7 +347,7 @@
           <li xml:lang="pt-BR">Diversas melhorias na interface do usuário</li>
           <li xml:lang="ru">Различные улучшения пользовательского интерфейса;</li>
           <li xml:lang="sl">Različne izboljšave uporabniškega vmesnika</li>
-          <li xml:lang="tr">Various user-interface improvements</li>
+          <li xml:lang="tr">Çeşitli kullanıcı arayüzü iyileştirmeleri</li>
           <li xml:lang="uk">Різноманітні удосконалення інтерфейсу користувача</li>
           <li xml:lang="zh-CN">各种用户界面改进</li>
           <li xml:lang="zh-TW">諸多使用者介面改進</li>
@@ -370,7 +370,7 @@
           <li xml:lang="pt-BR">Reformulação do design da barra lateral</li>
           <li xml:lang="ru">Изменён дизайн боковой панели;</li>
           <li xml:lang="sl">Preoblikovana zasnova stranske vrstice</li>
-          <li xml:lang="tr">Rework sidebar design</li>
+          <li xml:lang="tr">Kenar çubuğu tasarımını yenile</li>
           <li xml:lang="uk">Перероблено дизайн бічної панелі</li>
           <li xml:lang="zh-CN">重新设计侧边栏</li>
           <li xml:lang="zh-TW">重新設計側邊欄</li>
@@ -399,7 +399,7 @@
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sl">Spremembe:</p>
-        <p xml:lang="tr">Changes:</p>
+        <p xml:lang="tr">Değişiklikler:</p>
         <p xml:lang="uk">Зміни:</p>
         <p xml:lang="zh-CN">更改：</p>
         <p xml:lang="zh-TW">變更：</p>
@@ -417,7 +417,7 @@
           <li xml:lang="pt-BR">Ícone do aplicativo atualizado</li>
           <li xml:lang="ru">Обновлён значок приложения;</li>
           <li xml:lang="sl">Posodobljena ikona aplikacije</li>
-          <li xml:lang="tr">Updated the application icon</li>
+          <li xml:lang="tr">Uygulama simgesi güncellendi</li>
           <li xml:lang="uk">Оновлено піктограму програми</li>
           <li xml:lang="zh-CN">更新应用程序图标</li>
           <li xml:lang="zh-TW">更新應用程式圖示</li>
@@ -434,7 +434,7 @@
           <li xml:lang="pt-BR">Adicionado suporte para inserção de parênteses pelo teclado</li>
           <li xml:lang="ru">Добавлена поддержка ввода скобок с клавиатуры;</li>
           <li xml:lang="sl">Dodana podpora za vnos oklepajev s tipkovnico</li>
-          <li xml:lang="tr">Added support for parentheses keyboard input</li>
+          <li xml:lang="tr">Parantez klavye girişi desteği eklendi</li>
           <li xml:lang="uk">Додано підтримку введення дужок з клавіатури</li>
           <li xml:lang="zh-CN">添加对圆括号键盘输入的支持</li>
           <li xml:lang="zh-TW">新增括號鍵盤輸入的支援</li>
@@ -451,7 +451,7 @@
           <li xml:lang="pt-BR">Corrigido o problema que fazia com que a gaveta da calculadora abrisse ao iniciar o aplicativo</li>
           <li xml:lang="ru">Исправлено открытие панели калькулятора при запуске приложения;</li>
           <li xml:lang="sl">Odpravljena napaka, zaradi katere se je predal kalkulatorja odpiral ob odprtju aplikacije.</li>
-          <li xml:lang="tr">Fixed the calculator drawer opening when the application opens</li>
+          <li xml:lang="tr">Uygulama açıldığında hesap makinesi çekmecesinin açılması düzeltildi</li>
           <li xml:lang="uk">Виправлено відкриття панелі калькулятора при відкритті вікна програми</li>
           <li xml:lang="zh-CN">修复应用程序打开时的计算器抽屉打开</li>
           <li xml:lang="zh-TW">修正應用程式開啟時也跟著開啟計算機抽屜的問題</li>
@@ -468,7 +468,7 @@
           <li xml:lang="pt-BR">Alterado o ícone da tecla Backspace para usar um ícone apropriado do sistema em vez de um fornecido pela fonte</li>
           <li xml:lang="ru">Изменён значок клавиши «Backspace» на системный вместо предоставленного шрифтом;</li>
           <li xml:lang="sl">Ikona za brisanje je bila spremenjena tako, da namesto ikone s priloženo pisavo uporablja ustrezno sistemsko ikono</li>
-          <li xml:lang="tr">Changed backspace icon to use a proper system icon instead of a font provided one</li>
+          <li xml:lang="tr">Geri silme simgesi, yazıtipiyle sağlanan simge yerine uygun bir sistem simgesi kullanacak şekilde değiştirildi</li>
           <li xml:lang="uk">Змінено піктограму витирання введеного так, щоб використовувалася належна піктограма з системи, а не піктограма, яку надано шрифтом</li>
           <li xml:lang="zh-CN">回退图标使用合适的系统图标而不是通过字体提供的版本</li>
           <li xml:lang="zh-TW">用正確的系統圖示顯示退格鍵而非使用字型所提供的圖示</li>
@@ -485,7 +485,7 @@
           <li xml:lang="pt-BR">Adicionado suporte para teclado ao conversor de unidades</li>
           <li xml:lang="ru">Добавлена поддержка клавиатуры в конвертере единиц измерения;</li>
           <li xml:lang="sl">Dodana podpora za tipkovnico za pretvornik enot</li>
-          <li xml:lang="tr">Added keyboard support to unit converter</li>
+          <li xml:lang="tr">Birim dönüştürücüsüne klavye desteği eklendi</li>
           <li xml:lang="uk">Додано підтримку введення з клавіатури на панелі перетворення одиниць</li>
           <li xml:lang="zh-CN">添加单位转换器的键盘支持</li>
           <li xml:lang="zh-TW">讓單位轉換器支援鍵盤</li>
@@ -502,7 +502,7 @@
           <li xml:lang="pt-BR">Correção da animação de mudança de página para a calculadora binária</li>
           <li xml:lang="ru">Исправлена анимация переключения страниц для двоичного калькулятора;</li>
           <li xml:lang="sl">Popravljena animacija menjave strani za binarni kalkulator</li>
-          <li xml:lang="tr">Fixed page change animation for binary calculator</li>
+          <li xml:lang="tr">İkili hesap makinesi için sayfa değiştirme canlandırması düzeltildi</li>
           <li xml:lang="uk">Виправлено анімацію зміни сторінок для двійкового калькулятора</li>
           <li xml:lang="zh-CN">修复二进制计算器的换页动画</li>
           <li xml:lang="zh-TW">修正二進制計算機的頁面變更動畫</li>
@@ -519,7 +519,7 @@
           <li xml:lang="pt-BR">Ativada a depuração do QML quando compilado no modo de depuração</li>
           <li xml:lang="ru">Включена отладка QML при компиляции в режиме отладки;</li>
           <li xml:lang="sl">Omogočeno odpravljanje napak qml pri prevajanju v načinu za odpravljanje napak</li>
-          <li xml:lang="tr">Enabled qml debugging when compiled in debug mode</li>
+          <li xml:lang="tr">Hata ayıklama kipinde derlendiğinde QML hata ayıklaması etkinleştirildi</li>
           <li xml:lang="uk">Уможливлено діагностику qml, якщо програму зібрано у діагностичному режимі</li>
           <li xml:lang="zh-CN">在调试模式下编译时启用 QML 调试</li>
           <li xml:lang="zh-TW">以除錯模式編譯時也啟用 QML 除錯</li>
@@ -536,7 +536,7 @@
           <li xml:lang="pt-BR">Adicionada a capacidade de reconhecer o separador decimal em outras localidades</li>
           <li xml:lang="ru">Добавлено распознавание десятичного разделителя в других языковых стандартах;</li>
           <li xml:lang="sl">Dodana možnost prepoznavanja decimalnega ločila v drugih jezikovnih okoljih</li>
-          <li xml:lang="tr">Added ability to recognize the decimal separator in other locales</li>
+          <li xml:lang="tr">Diğer yerellerdeki ondalık ayırıcısını tanıma yeteneği eklendi</li>
           <li xml:lang="uk">Додано можливість розпізнавання десяткового роздільника в інших локалях</li>
           <li xml:lang="zh-CN">新增在其他区域设置中识别小数分隔符的能力</li>
           <li xml:lang="zh-TW">支援辨別其他地域的小數分隔字元</li>
