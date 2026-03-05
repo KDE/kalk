@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 00:46+0000\n"
+"POT-Creation-Date: 2026-03-05 00:47+0000\n"
 "PO-Revision-Date: 2024-05-23 19:45+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -41,7 +41,7 @@ msgstr "Calculator for Plasma"
 #: main.cpp:59
 #, fuzzy, kde-format
 #| msgid "© 2020-2022 KDE Community"
-msgid "© 2020-2024 KDE Community"
+msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2022 KDE Community"
 
 #: qalculateengine.cpp:114
@@ -76,13 +76,13 @@ msgstr "History"
 
 #: qml/CalculationPage.qml:61
 #, kde-format
-msgid "Cut"
-msgstr "Cut"
+msgid "Copy Input"
+msgstr ""
 
 #: qml/CalculationPage.qml:71
 #, kde-format
-msgid "Copy"
-msgstr "Copy"
+msgid "Copy Result"
+msgstr ""
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -232,7 +232,19 @@ msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "Chain"
 
-#: qml/SettingsPage.qml:78
+#: qml/SettingsPage.qml:76
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Copy with separators"
+msgstr ""
+
+#: qml/SettingsPage.qml:77
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Include thousand separators when copying numbers."
+msgstr ""
+
+#: qml/SettingsPage.qml:90
 #, kde-format
 msgid "About"
 msgstr "About"
@@ -241,6 +253,12 @@ msgstr "About"
 #, kde-format
 msgid "Category"
 msgstr "Category"
+
+#~ msgid "Cut"
+#~ msgstr "Cut"
+
+#~ msgid "Copy"
+#~ msgstr "Copy"
 
 #~ msgid "Swap"
 #~ msgstr "Swap"

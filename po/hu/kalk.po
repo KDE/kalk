@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 00:46+0000\n"
+"POT-Creation-Date: 2026-03-05 00:47+0000\n"
 "PO-Revision-Date: 2025-02-02 14:53+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -40,8 +40,9 @@ msgid "Calculator for Plasma"
 msgstr "Számológép a Plasmához"
 
 #: main.cpp:59
-#, kde-format
-msgid "© 2020-2024 KDE Community"
+#, fuzzy, kde-format
+#| msgid "© 2020-2024 KDE Community"
+msgid "© 2020-2026 KDE Community"
 msgstr "© A KDE közösség, 2020-2024."
 
 #: qalculateengine.cpp:114
@@ -76,13 +77,13 @@ msgstr "Előzmények"
 
 #: qml/CalculationPage.qml:61
 #, kde-format
-msgid "Cut"
-msgstr "Kivágás"
+msgid "Copy Input"
+msgstr ""
 
 #: qml/CalculationPage.qml:71
 #, kde-format
-msgid "Copy"
-msgstr "Másolás"
+msgid "Copy Result"
+msgstr ""
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -232,7 +233,19 @@ msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
 msgstr "Lánc"
 
-#: qml/SettingsPage.qml:78
+#: qml/SettingsPage.qml:76
+#, kde-format
+msgctxt "@label:checkbox"
+msgid "Copy with separators"
+msgstr ""
+
+#: qml/SettingsPage.qml:77
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Include thousand separators when copying numbers."
+msgstr ""
+
+#: qml/SettingsPage.qml:90
 #, kde-format
 msgid "About"
 msgstr "Névjegy"
@@ -241,6 +254,12 @@ msgstr "Névjegy"
 #, kde-format
 msgid "Category"
 msgstr "Kategória"
+
+#~ msgid "Cut"
+#~ msgstr "Kivágás"
+
+#~ msgid "Copy"
+#~ msgstr "Másolás"
 
 #~ msgid "Calculator built with Kirigami."
 #~ msgstr "Számológép a Kirigamival építve."
