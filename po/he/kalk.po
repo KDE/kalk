@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-05 00:47+0000\n"
-"PO-Revision-Date: 2025-01-25 12:59+0200\n"
+"PO-Revision-Date: 2026-03-05 07:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,10 +40,9 @@ msgid "Calculator for Plasma"
 msgstr "מחשבון לפלזמה"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020‏-2024 קהילת KDE"
+msgstr "© 2020‏-2026 קהילת KDE"
 
 #: qalculateengine.cpp:114
 #, kde-format
@@ -78,12 +77,12 @@ msgstr "היסטוריה"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "העתקת הקלט"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy Result"
-msgstr ""
+msgstr "העתקת התוצאה"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -237,13 +236,13 @@ msgstr "שרשור"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Copy with separators"
-msgstr ""
+msgstr "העתקה עם מפרידים"
 
 #: qml/SettingsPage.qml:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Include thousand separators when copying numbers."
-msgstr ""
+msgstr "לכלול את מפריד האלפים בעת העתקת מספרים."
 
 #: qml/SettingsPage.qml:90
 #, kde-format

@@ -258,9 +258,3 @@ msgstr "Om"
 #, kde-format
 msgid "Category"
 msgstr "Kategori"
-
-#~ msgid "Cut"
-#~ msgstr "Klipp ut"
-
-#~ msgid "Copy"
-#~ msgstr "Kopier"

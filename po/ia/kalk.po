@@ -1,14 +1,14 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 giovanni <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-05 00:47+0000\n"
-"PO-Revision-Date: 2025-01-28 11:44+0100\n"
+"PO-Revision-Date: 2026-03-05 11:27+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -40,10 +40,9 @@ msgid "Calculator for Plasma"
 msgstr "Calculator per Plasma"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 Communitate de KDE"
+msgstr "© 2020-2026 Communitate de KDE"
 
 #: qalculateengine.cpp:114
 #, kde-format
@@ -78,12 +77,12 @@ msgstr "Chronologia"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "Copia ingresso"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy Result"
-msgstr ""
+msgstr "Copia resultato"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -237,13 +236,13 @@ msgstr "Catena"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Copy with separators"
-msgstr ""
+msgstr "Copia con separatores"
 
 #: qml/SettingsPage.qml:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Include thousand separators when copying numbers."
-msgstr ""
+msgstr "Include separatores de mille quando copiante numeros."
 
 #: qml/SettingsPage.qml:90
 #, kde-format

@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kalk package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-05 00:47+0000\n"
-"PO-Revision-Date: 2025-01-25 16:51+0100\n"
+"PO-Revision-Date: 2026-03-05 10:41+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -39,10 +39,9 @@ msgid "Calculator for Plasma"
 msgstr "Rekenmachine voor Plasma"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE gemeenschap"
+msgstr "© 2020-2026 KDE gemeenschap"
 
 #: qalculateengine.cpp:114
 #, kde-format
@@ -77,12 +76,12 @@ msgstr "Geschiedenis"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "Invoer kopiëren"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy Result"
-msgstr ""
+msgstr "Resultaat kopiëren"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -236,13 +235,13 @@ msgstr "Ketting"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Copy with separators"
-msgstr ""
+msgstr "Met scheidingstekens kopiëren"
 
 #: qml/SettingsPage.qml:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Include thousand separators when copying numbers."
-msgstr ""
+msgstr "Voeg scheidingstekens voor duizend in bij kopiëren van getallen"
 
 #: qml/SettingsPage.qml:90
 #, kde-format
