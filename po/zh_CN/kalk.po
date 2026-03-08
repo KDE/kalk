@@ -40,7 +40,6 @@ msgstr "为 Plasma 设计的计算器程序"
 
 #: main.cpp:59
 #, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
 msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2024 KDE Community"
 
