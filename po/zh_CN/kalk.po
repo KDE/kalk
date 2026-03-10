@@ -39,9 +39,9 @@ msgid "Calculator for Plasma"
 msgstr "为 Plasma 设计的计算器程序"
 
 #: main.cpp:59
-#, fuzzy, kde-format
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE Community"
+msgstr "© 2020-2026 KDE Community"
 
 #: qalculateengine.cpp:114
 #, kde-format
@@ -76,12 +76,12 @@ msgstr "历史记录"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "复制输入"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy Result"
-msgstr ""
+msgstr "复制结果"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -235,13 +235,13 @@ msgstr "链式"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Copy with separators"
-msgstr ""
+msgstr "复制 (带分隔符)"
 
 #: qml/SettingsPage.qml:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Include thousand separators when copying numbers."
-msgstr ""
+msgstr "复制数字时包含千位分隔符。"
 
 #: qml/SettingsPage.qml:90
 #, kde-format
@@ -252,9 +252,3 @@ msgstr "关于"
 #, kde-format
 msgid "Category"
 msgstr "类别"
-
-#~ msgid "Cut"
-#~ msgstr "剪切"
-
-#~ msgid "Copy"
-#~ msgstr "复制"
