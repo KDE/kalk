@@ -77,7 +77,7 @@ msgstr "Historie"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "Kopírovat vstup"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
