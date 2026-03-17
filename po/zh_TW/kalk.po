@@ -4,13 +4,13 @@
 # This file is distributed under the same license as the kalk package.
 # Automatically generated, 2022.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-05 00:47+0000\n"
-"PO-Revision-Date: 2025-03-26 18:15+0900\n"
+"PO-Revision-Date: 2026-03-16 16:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,10 +42,9 @@ msgid "Calculator for Plasma"
 msgstr "Plasma 用的計算機"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2024 KDE 社群"
+msgstr "© 2020-2026 KDE 社群"
 
 #: qalculateengine.cpp:114
 #, kde-format
@@ -80,12 +79,12 @@ msgstr "歷史"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "複製輸入"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy Result"
-msgstr ""
+msgstr "複製結果"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -239,13 +238,13 @@ msgstr "立即計算（連鎖）"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Copy with separators"
-msgstr ""
+msgstr "複製時包含分隔符"
 
 #: qml/SettingsPage.qml:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Include thousand separators when copying numbers."
-msgstr ""
+msgstr "複製數字的時候包含千位的分隔符號。"
 
 #: qml/SettingsPage.qml:90
 #, kde-format
