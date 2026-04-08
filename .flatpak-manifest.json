@@ -15,9 +15,12 @@
         "--socket=wayland"
     ],
     "cleanup": [
+        "/include",
         "/lib/*.a",
         "/lib/*.la",
-        "/lib/pkgconfig"
+        "/lib/pkgconfig",
+        "/share/info",
+        "/share/man"
     ],
     "modules": [
         {
@@ -47,6 +50,9 @@
                 "--disable-shared",
                 "CFLAGS=-fPIC"
             ],
+            "cleanup": [
+                "/share/doc/mpfr"
+            ],
             "sources": [
                 {
                     "type": "git",
@@ -65,6 +71,11 @@
         {
             "name": "libqalculate",
             "buildsystem": "autotools",
+            "cleanup": [
+                "/bin/qalc",
+                "/share/doc/libqalculate",
+                "/share/man"
+            ],
             "sources": [
                 {
                     "type": "archive",
