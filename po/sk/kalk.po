@@ -12,8 +12,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -32,41 +32,39 @@ msgid "Calculator"
 msgstr "Kalkulačka"
 
 #: main.cpp:57
-#, fuzzy, kde-format
-#| msgid "Calculator in Kirigami"
+#, kde-format
 msgid "Calculator for Plasma"
 msgstr "Kalkulačka v Kirigami"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2021 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2021 KDE komunita"
 
 #: qalculateengine.cpp:114
 #, kde-format
 msgid "warning"
-msgstr ""
+msgstr "varovanie"
 
 #: qalculateengine.cpp:114
 #, kde-format
 msgid "error"
-msgstr ""
+msgstr "chyba"
 
 #: qml/BinaryCalculator.qml:12 qml/Main.qml:84
 #, kde-format
 msgid "Programmer"
-msgstr ""
+msgstr "Programátorský"
 
 #: qml/BinaryCalculator.qml:22 qml/CalculationPage.qml:41
 #, kde-format
 msgid "Undo"
-msgstr ""
+msgstr "Späť"
 
 #: qml/BinaryCalculator.qml:29 qml/CalculationPage.qml:51
 #, kde-format
 msgid "Redo"
-msgstr ""
+msgstr "Znovu"
 
 #: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
 #, kde-format
@@ -76,17 +74,17 @@ msgstr "História"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "Kopírovať vstup"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy Result"
-msgstr ""
+msgstr "Kopírovať výsledok"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
 msgid "Paste"
-msgstr ""
+msgstr "Vložiť"
 
 #: qml/HistoryView.qml:30
 #, kde-format
@@ -99,8 +97,7 @@ msgid "History is empty"
 msgstr "História je prázdna"
 
 #: qml/HistoryView.qml:136
-#, fuzzy, kde-format
-#| msgid "Clear history"
+#, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Vyčistiť históriu"
@@ -109,28 +106,27 @@ msgstr "Vyčistiť históriu"
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
-msgstr ""
+msgstr "Táto akcia je trvalá a nedá sa vrátiť späť"
 
 #: qml/HistoryView.qml:152
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušiť"
 
 #: qml/HistoryView.qml:157
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "Vyčistiť"
 
 #: qml/Main.qml:77 qml/Main.qml:139 qml/UnitConverter.qml:16
-#, fuzzy, kde-format
-#| msgid "Convertor"
+#, kde-format
 msgid "Converter"
 msgstr "Konvertor"
 
 #: qml/Main.qml:91 qml/Main.qml:182
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Nastavenia"
 
 #: qml/Main.qml:156
 #, kde-format
@@ -141,83 +137,82 @@ msgstr "Binárna kalkulačka"
 #, kde-format
 msgctxt "@title:window"
 msgid "Settings"
-msgstr ""
+msgstr "Nastavenia"
 
 #: qml/SettingsPage.qml:23
 #, kde-format
 msgctxt "@label:spinbox digits of precision"
 msgid "Precision"
-msgstr ""
+msgstr "Presnosť"
 
 #: qml/SettingsPage.qml:37
 #, kde-format
 msgctxt "@label:listbox trigonometric angle unit"
 msgid "Angle unit"
-msgstr ""
+msgstr "Jednotka uhla"
 
 #: qml/SettingsPage.qml:38
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Default angle unit for trigonometric functions."
-msgstr ""
+msgstr "Predvolená jednotka uhla pre goniometrické funkcie."
 
 #: qml/SettingsPage.qml:41
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Radians"
-msgstr ""
+msgstr "Radiány"
 
 #: qml/SettingsPage.qml:42
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Degrees"
-msgstr ""
+msgstr "Stupne"
 
 #: qml/SettingsPage.qml:43
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Gradians"
-msgstr ""
+msgstr "Grady"
 
 #: qml/SettingsPage.qml:44
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcminute"
-msgstr ""
+msgstr "Oblúková minúta"
 
 #: qml/SettingsPage.qml:45
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Arcsecond"
-msgstr ""
+msgstr "Oblúková sekunda"
 
 #: qml/SettingsPage.qml:46
 #, kde-format
 msgctxt "@item:inlistbox Angle unit"
 msgid "Turn"
-msgstr ""
+msgstr "Otáčka"
 
 #: qml/SettingsPage.qml:58
 #, kde-format
 msgctxt "@label:listbox control how expressions are parsed (read/interpreted)"
 msgid "Parsing mode"
-msgstr ""
+msgstr "Režim spracovania"
 
 #: qml/SettingsPage.qml:59
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Expression evaluation order."
-msgstr ""
+msgstr "Poradie vyhodnocovania výrazov."
 
 #: qml/SettingsPage.qml:62
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Adaptive"
-msgstr ""
+msgstr "Adaptívny"
 
 #: qml/SettingsPage.qml:63
-#, fuzzy, kde-format
-#| msgid "Conversion"
+#, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Conventional"
 msgstr "Prevod"
@@ -226,25 +221,25 @@ msgstr "Prevod"
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Implicit first"
-msgstr ""
+msgstr "Najskôr implicitné"
 
 #: qml/SettingsPage.qml:65
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr ""
+msgstr "Reťazový"
 
 #: qml/SettingsPage.qml:76
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Copy with separators"
-msgstr ""
+msgstr "Kopírovať s oddeľovačmi"
 
 #: qml/SettingsPage.qml:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Include thousand separators when copying numbers."
-msgstr ""
+msgstr "Pri kopírovaní čísel zahrnúť oddeľovače tisícov."
 
 #: qml/SettingsPage.qml:90
 #, kde-format
@@ -254,7 +249,7 @@ msgstr "O aplikácii"
 #: qml/UnitConverter.qml:64
 #, kde-format
 msgid "Category"
-msgstr ""
+msgstr "Kategória"
 
 #~ msgid "Swap"
 #~ msgstr "Odkladací priestor"
