@@ -17,7 +17,7 @@
   <name xml:lang="ca-valencia">Calculadora</name>
   <name xml:lang="cs">Kalkulačka</name>
   <name xml:lang="da">Lommeregner</name>
-  <name xml:lang="de">Calculator</name>
+  <name xml:lang="de">Taschenrechner</name>
   <name xml:lang="el">Αριθμομηχανή</name>
   <name xml:lang="en-GB">Calculator</name>
   <name xml:lang="eo">Calculator</name>
@@ -59,7 +59,7 @@
   <summary xml:lang="ca-valencia">Una calculadora rica en característiques</summary>
   <summary xml:lang="cs">Vybavená aplikace pro výpočty</summary>
   <summary xml:lang="da">En funktionsrig lommeregner</summary>
-  <summary xml:lang="de">Ein leistungsfähiger Rechner</summary>
+  <summary xml:lang="de">Ein leistungsfähiger Taschenrechner</summary>
   <summary xml:lang="el">Μια αριθμομηχανή πλούσια σε χαρακτηριστικά</summary>
   <summary xml:lang="en-GB">A feature rich calculator</summary>
   <summary xml:lang="eo">Multkapabla kalkulilo</summary>
@@ -105,7 +105,7 @@
     <p xml:lang="ca-valencia">Kalk és una calculadora convergent per a Plasma.</p>
     <p xml:lang="cs">Kalk je konvergentní kalkulačka pro prostředí Plasma.</p>
     <p xml:lang="da">Kalk er en konvegerende lommeregner for Plasma.</p>
-    <p xml:lang="de">Kalk ist ein konvergenter Rechner für Plasma.</p>
+    <p xml:lang="de">Kalk ist ein konvergenter Taschenrechner für Plasma.</p>
     <p xml:lang="el">Το Kalk είναι μια αριθμομηχανή για το Plasma.</p>
     <p xml:lang="en-GB">Kalk is a convergent calculator for Plasma.</p>
     <p xml:lang="eo">Kalk estas konverĝa kalkulilopor Plasma.</p>
@@ -149,7 +149,7 @@
       <caption xml:lang="ca-valencia">Pàgina Calculadora</caption>
       <caption xml:lang="cs">Stránka kalkulačky</caption>
       <caption xml:lang="da">Lommeregnerside</caption>
-      <caption xml:lang="de">Calculator-Seite</caption>
+      <caption xml:lang="de">Taschenrechner-Seite</caption>
       <caption xml:lang="el">Η σελίδα του Kalk</caption>
       <caption xml:lang="en-GB">Calculator Page</caption>
       <caption xml:lang="eo">Kalkulila Paĝo</caption>
@@ -260,6 +260,7 @@
           <li xml:lang="ca">Mostra el separador decimal d'acord amb la configuració regional</li>
           <li xml:lang="ca-valencia">Mostra el separador decimal d'acord amb la configuració regional</li>
           <li xml:lang="cs">Zobrazit oddělovač desetinných míst podle národního prostředí</li>
+          <li xml:lang="de">Dezimaltrennzeichen entsprechend der Ländereinstellung anzeigen</li>
           <li xml:lang="es">Mostrar el separador decimal según la configuración regional</li>
           <li xml:lang="fr">Afficher le séparateur décimal selon les paramètres régionaux</li>
           <li xml:lang="he">הצגת מפריד עשרוני לפי ההגדרות המקומיות</li>
@@ -279,6 +280,7 @@
           <li xml:lang="ca">Correcció d'un error que impedeix la introducció de coma</li>
           <li xml:lang="ca-valencia">Correcció d'un error que impedix la introducció de coma</li>
           <li xml:lang="cs">Opravena chyba bránící zadávání čárky</li>
+          <li xml:lang="de">Fehler beim Einfügen eines Kommas behoben</li>
           <li xml:lang="es">Se ha corregido un error que impedía la entrada de comas.</li>
           <li xml:lang="fr">Correction du bogue empêchant la saisie de la virgule</li>
           <li xml:lang="he">תוקנה תקלה שמונעת קלט של פסיק</li>
@@ -305,6 +307,7 @@
           <li xml:lang="ca">Correcció general d'errors i millores en la qualitat del codi</li>
           <li xml:lang="ca-valencia">Correcció general d'errors i millores en la qualitat del codi</li>
           <li xml:lang="cs">Obecná oprava chyb a zlepšení kvality kódu</li>
+          <li xml:lang="de">Allgemeine Fehlerbehebungen und Verbesserung der Quelltextqualität</li>
           <li xml:lang="es">Corrección de errores generales y mejoras en la calidad del código.</li>
           <li xml:lang="fr">Correction générale de bogues et améliorations de la qualité du code</li>
           <li xml:lang="he">תיקון תקלות כללים ושיפורי איכות קוד</li>
@@ -331,6 +334,7 @@
           <li xml:lang="ca">Reordena les funcions trigonomètriques perquè estiguin juntes</li>
           <li xml:lang="ca-valencia">Reordena les funcions trigonomètriques perquè estiguen juntes</li>
           <li xml:lang="cs">Trigonometrické funkce seřazeny tak, aby byly pohromadě</li>
+          <li xml:lang="de">Trigonometrische Funktionen neu nebeneinander angeordnet</li>
           <li xml:lang="es">Se han reorganizado las funciones trigonométricas para que estén juntas.</li>
           <li xml:lang="fr">Regroupement des fonctions trigonométriques ensemble</li>
           <li xml:lang="he">סידור הפונקציות הטריגונומטריות מחדש כדי שתהיינה יחד</li>
@@ -350,6 +354,7 @@
           <li xml:lang="ca">Diverses millores de la interfície d'usuari</li>
           <li xml:lang="ca-valencia">Diverses millores de la interfície d'usuari</li>
           <li xml:lang="cs">Různá vylepšení uživatelského rozhraní</li>
+          <li xml:lang="de">Verschiedene Verbesserungen der Benutzeroberfläche</li>
           <li xml:lang="es">Varias mejoras de la interfaz de usuario</li>
           <li xml:lang="fr">Diverses améliorations de l'interface utilisateur</li>
           <li xml:lang="he">מגוון שיפורי ממשק משתמש</li>
@@ -375,6 +380,7 @@
           <li xml:lang="ca">Refà el disseny de la barra lateral</li>
           <li xml:lang="ca-valencia">Refà el disseny de la barra lateral</li>
           <li xml:lang="cs">Přepracován design postranního panelu</li>
+          <li xml:lang="de">Seitenleisten-Design überarbeitet</li>
           <li xml:lang="es">Se ha rediseñado la barra lateral.</li>
           <li xml:lang="fr">Travailler une nouvelle conception de la barre latérale</li>
           <li xml:lang="he">עבודה מחודשת על עיצוב סרגל הצד</li>
@@ -406,6 +412,7 @@
         <p xml:lang="ca">Canvis:</p>
         <p xml:lang="ca-valencia">Canvis:</p>
         <p xml:lang="cs">Změny:</p>
+        <p xml:lang="de">Änderungen:</p>
         <p xml:lang="es">Cambios:</p>
         <p xml:lang="fr">Modifications :</p>
         <p xml:lang="he">שינויים:</p>
@@ -426,6 +433,7 @@
           <li xml:lang="ca">Actualitza la icona de l'aplicació</li>
           <li xml:lang="ca-valencia">Actualitza la icona de l'aplicació</li>
           <li xml:lang="cs">Aktualizována ikona aplikace</li>
+          <li xml:lang="de">Anwendungssymbol aktualisiert</li>
           <li xml:lang="es">Se ha actualizado el icono de la aplicación</li>
           <li xml:lang="fr">Mise à jour de l'icône de l'application</li>
           <li xml:lang="he">סמל היישום התעדכן</li>
@@ -445,6 +453,7 @@
           <li xml:lang="ca">Afegeix la implementació d'entrada de teclat dels parèntesis</li>
           <li xml:lang="ca-valencia">Afig la implementació d'entrada de teclat dels parèntesis</li>
           <li xml:lang="cs">Přidána podpora pro zadávání závorek pomocí klávesnice</li>
+          <li xml:lang="de">Unterstützung für die Eingabe von Klammern per Tastatur hinzugefügt</li>
           <li xml:lang="es">Se ha añadido compatibilidad para la entrada de paréntesis con el teclado.</li>
           <li xml:lang="fr">Ajout de la prise en charge pour la saisie au clavier des parenthèses</li>
           <li xml:lang="he">נוספה תמיכה בסוגריים דרך קלט מקלדת</li>
@@ -464,6 +473,7 @@
           <li xml:lang="ca">Corregeix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
           <li xml:lang="ca-valencia">Corregix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
           <li xml:lang="cs">Opraven problém, kdy se při spuštění aplikace otevírala klávesnice kalkulačky</li>
+          <li xml:lang="de">Fehler behoben, bei dem sich die Taschenrechner-Schublade bereits beim Anwendungsstart öffnet</li>
           <li xml:lang="es">Se ha corregido la apertura del cajón de la calculadora cuando se abre la aplicación.</li>
           <li xml:lang="fr">Correction de l'ouverture du tiroir de la calculatrice à l'ouverture de l'application</li>
           <li xml:lang="he">תוקנה פתיחת מגירת הדפדפן כשהיישום מופעל</li>
@@ -483,6 +493,7 @@
           <li xml:lang="ca">Canvia la icona de retrocés per a utilitzar una icona de sistema adequada en lloc de la proporcionada a la lletra</li>
           <li xml:lang="ca-valencia">Canvia la icona de retrocés per a utilitzar una icona de sistema adequada en lloc de la proporcionada a la lletra</li>
           <li xml:lang="cs">Ikona klávesy Backspace byla změněna tak, aby místo ikony z písma používala správnou systémovou ikonu</li>
+          <li xml:lang="de">Symbol für die Rücktaste wurde durch das korrekte Systemsymbol ersetzt, statt eines aus der Schriftart zu verwenden</li>
           <li xml:lang="es">Se ha modificado el icono de retroceso para usar un icono del sistema adecuado en lugar de uno proporcionado por una fuente.</li>
           <li xml:lang="fr">Modification de l'icône de retour en arrière pour utiliser une icône système appropriée au lieu d’une icône fournie par une fonte</li>
           <li xml:lang="he">הסמל של המחיקה (backspace) השתנה כך שישתמש בסמל המערכת המתאים במקום בסמל שמגיע מגופן</li>
@@ -502,6 +513,7 @@
           <li xml:lang="ca">Afegeix la implementació del teclat al convertidor d'unitats</li>
           <li xml:lang="ca-valencia">Afig la implementació del teclat al convertidor d'unitats</li>
           <li xml:lang="cs">Přidána podpora klávesnice do převodníku jednotek</li>
+          <li xml:lang="de">Tastaturunterstützung zur Einheitenumrechnung hinzugefügt</li>
           <li xml:lang="es">Se ha añadido compatibilidad con el teclado al conversor de unidades.</li>
           <li xml:lang="fr">Ajout de la prise en charge du clavier pour le convertisseur d'unités</li>
           <li xml:lang="he">נוספה תמיכה במקלדת בממיר היחידות</li>
@@ -521,6 +533,7 @@
           <li xml:lang="ca">Corregeix l'animació del canvi de pàgina de la calculadora binària</li>
           <li xml:lang="ca-valencia">Corregix l'animació del canvi de pàgina de la calculadora binària</li>
           <li xml:lang="cs">Opravena animace při změně stránky v binární kalkulačce</li>
+          <li xml:lang="de">Fehler bei Seitenwechselanimation im Binär-Rechner behoben</li>
           <li xml:lang="es">Animación de cambio de página fija para la calculadora binaria.</li>
           <li xml:lang="fr">Correction de l'animation de changement de page pour la calculatrice binaire</li>
           <li xml:lang="he">תוקנה הנפשת החלפת עמוד במחשבון הבינרי</li>
@@ -540,6 +553,7 @@
           <li xml:lang="ca">Activa la depuració del QML quan es compila en mode de depuració</li>
           <li xml:lang="ca-valencia">Activa la depuració de QML quan es compila en mode de depuració</li>
           <li xml:lang="cs">Při kompilaci v ladicím režimu bylo povoleno ladění QML</li>
+          <li xml:lang="de">QML-Fehlersuchmodus wird aktiviert, wenn die Anwendung mit der Fehlersuchmodus-Option erstellt wird</li>
           <li xml:lang="es">Se ha activado modo de depuración qml cuando se compila en modo de depuración.</li>
           <li xml:lang="fr">Activation du débogage de QML lorsque compilé en mode débogage</li>
           <li xml:lang="he">הופעל ניפוי שגיאות ב־qml כשבוצע הידור במצב ניפוי שגיאות</li>
@@ -559,6 +573,7 @@
           <li xml:lang="ca">Afegeix la capacitat de reconèixer el separador decimal en altres configuracions regionals</li>
           <li xml:lang="ca-valencia">Afig la capacitat de reconéixer el separador decimal en altres configuracions regionals</li>
           <li xml:lang="cs">Přidána možnost rozpoznat oddělovač desetinných míst v jiných jazykových nastaveních</li>
+          <li xml:lang="de">Fähigkeit zum Erkennen des Dezimal-Trennzeichens bei verschiedenen Ländereinstellungen hinzugefügt</li>
           <li xml:lang="es">Se ha añadido la capacidad de reconocer el separador decimal en otras configuraciones regionales.</li>
           <li xml:lang="fr">Ajout de la capacité à reconnaître le séparateur décimal avec d'autres paramètres régionaux</li>
           <li xml:lang="he">נוספה היכולת לזהות את המפריד העשרוני בהגדרות מקומיות אחרות</li>
