@@ -267,6 +267,7 @@
           <li xml:lang="ia">Monstra separator decimal secundo le localisation</li>
           <li xml:lang="ka">წილადის გამყოფის ჩვენება ლოკალის მიხედვით</li>
           <li xml:lang="nl">Het decimaal scheidingsteken volgens de taalregio tonen</li>
+          <li xml:lang="nn">Viser desimalskiljeteikn etter språkinnstillingane</li>
           <li xml:lang="pt-BR">Exibe separador decimal de acordo com a localidade</li>
           <li xml:lang="ru">Вид десятичного разделителя в соответствии с региональными настройками;</li>
           <li xml:lang="sk">Zobrazenie desatinného oddeľovača podľa miestneho nastavenia</li>
@@ -287,6 +288,7 @@
           <li xml:lang="ia">Corrige falta que preveni ingresso de comma</li>
           <li xml:lang="ka">გასწორდა შეცდომა, რომლის გამოც მძიმეს ვერ შეიყვანდით</li>
           <li xml:lang="nl">Fout verholpen die invoer van een komma verhinderde</li>
+          <li xml:lang="nn">Retta feil som hindra innskriving av komma</li>
           <li xml:lang="pt-BR">Corrigido bug que impedia a inserção de vírgula</li>
           <li xml:lang="ru">Исправлена ошибка, препятствующая вводу запятой;</li>
           <li xml:lang="sk">Oprava chyby zabraňujúcej zadaniu čiarky</li>
@@ -314,6 +316,7 @@
           <li xml:lang="ia">Melioramento general de qualitate de codice e correctiones de faltas</li>
           <li xml:lang="ka">კოდის რეფაქტორინგი და მომხმარებლის ინტერფეისის გაუმჯობესებები</li>
           <li xml:lang="nl">Algemene reparaties van fouten en verbeteringen in de codekwaliteit</li>
+          <li xml:lang="nn">Generelle feilrettingar og kodeforbetringar</li>
           <li xml:lang="pt-BR">Correção geral de erros e melhorias na qualidade do código</li>
           <li xml:lang="ru">Исправление ошибок и улучшение качества кода;</li>
           <li xml:lang="sk">Všeobecné opravy chýb a vylepšenia kvality kódu</li>
@@ -341,6 +344,7 @@
           <li xml:lang="ia">Reordina functiones trigonometric per esser insimul</li>
           <li xml:lang="ka">ტრიგონომეტრიული ფუნქციების ერთად დალაგება</li>
           <li xml:lang="nl">Herschik de goniometrische functies zodat ze samen staan</li>
+          <li xml:lang="nn">Omorganiserte trigonometriske funksjonar til å vera samla</li>
           <li xml:lang="pt-BR">Reorganização das funções trigonométricas para que fiquem juntas</li>
           <li xml:lang="ru">Изменено расположение тригонометрических функций, чтобы они располагались рядом;</li>
           <li xml:lang="sk">Preskupenie trigonometrických funkcií tak, aby boli spolu</li>
@@ -361,6 +365,7 @@
           <li xml:lang="ia">Varie melioramentos de interfacie de usator</li>
           <li xml:lang="ka">ინტერფეისის სხვადასხვა ნაწილის გაუმჯობესება</li>
           <li xml:lang="nl">Diverse verbeteringen aan de gebruikersinterface</li>
+          <li xml:lang="nn">Ymse forbetringar i brukargrensesnittet</li>
           <li xml:lang="pt-BR">Diversas melhorias na interface do usuário</li>
           <li xml:lang="ru">Различные улучшения пользовательского интерфейса;</li>
           <li xml:lang="sk">Rôzne vylepšenia používateľského rozhrania</li>
@@ -387,6 +392,7 @@
           <li xml:lang="ia">Relaborar designo de barra lateral</li>
           <li xml:lang="ka">გადამუშავდა გვერდითი პანელის დიზაინი</li>
           <li xml:lang="nl">Ontwerp van de zijbalk aanpassen</li>
+          <li xml:lang="nn">Omarbeidd design for sidestolpen</li>
           <li xml:lang="pt-BR">Reformulação do design da barra lateral</li>
           <li xml:lang="ru">Изменён дизайн боковой панели;</li>
           <li xml:lang="sk">Prepracovanie dizajnu bočného panela</li>
@@ -419,6 +425,7 @@
         <p xml:lang="ia">Modificationes:</p>
         <p xml:lang="ka">ცვლილებები:</p>
         <p xml:lang="nl">Wijzigingen:</p>
+        <p xml:lang="nn">Endringar:</p>
         <p xml:lang="pt-BR">Alterações:</p>
         <p xml:lang="ru">Изменения:</p>
         <p xml:lang="sk">Zmeny:</p>
@@ -440,6 +447,7 @@
           <li xml:lang="ia">Actualisava le icone de application</li>
           <li xml:lang="ka">განახლდა აპლიკაციის ხატულა</li>
           <li xml:lang="nl">Het toepassingspictogram bijgewerkt</li>
+          <li xml:lang="nn">Oppdaterte programikonet</li>
           <li xml:lang="pt-BR">Ícone do aplicativo atualizado</li>
           <li xml:lang="ru">Обновлён значок приложения;</li>
           <li xml:lang="sk">Aktualizovaná ikona aplikácie</li>
@@ -460,6 +468,7 @@
           <li xml:lang="ia">Adite supporto per ingresso de clavieroi de parentheses</li>
           <li xml:lang="ka">დაემატა ფრჩხილების კლავიატურით შეყვანის მხარდაჭერა</li>
           <li xml:lang="nl">Ondersteuning voor het invoeren van haakjes via het toetsenbord is toegevoegd</li>
+          <li xml:lang="nn">La til støtte for inndata med parentesar</li>
           <li xml:lang="pt-BR">Adicionado suporte para inserção de parênteses pelo teclado</li>
           <li xml:lang="ru">Добавлена поддержка ввода скобок с клавиатуры;</li>
           <li xml:lang="sk">Pridaná podpora pre zadávanie zátvoriek z klávesnice</li>
@@ -480,6 +489,7 @@
           <li xml:lang="ia">Corrigite que le designator de calculator aperi quando le application se aperi</li>
           <li xml:lang="ka">გამოსწორდა კალკულატორის უჯრის გახსნა აპლიკაციის გაშვებისას</li>
           <li xml:lang="nl">Het probleem waarbij de rekenmachinelade automatisch openging bij het openen van de toepassing is opgelost</li>
+          <li xml:lang="nn">Fiksa oppteikning av kalkulatoren når programmet vert opna</li>
           <li xml:lang="pt-BR">Corrigido o problema que fazia com que a gaveta da calculadora abrisse ao iniciar o aplicativo</li>
           <li xml:lang="ru">Исправлено открытие панели калькулятора при запуске приложения;</li>
           <li xml:lang="sk">Opravené otváranie zásuvky kalkulačky pri spustení aplikácie</li>
@@ -500,6 +510,7 @@
           <li xml:lang="ia">Cambiate icone de retro-spatio per usr un proprie icone de systema in loco de lo fornite ab un font</li>
           <li xml:lang="ka">შეიცვალა backspace-ის ხატულა, რომ გამოიყენოს სწორი სისტემური ხატულა ფონტის მიერ გადმოცემულის მაგიერ</li>
           <li xml:lang="nl">Het backspace-pictogram is aangepast om een ​​correct systeempictogram te gebruiken in plaats van een pictogram uit een lettertype</li>
+          <li xml:lang="nn">Endra retteikonet til å bruka systemikon i staden for ikon frå skrift</li>
           <li xml:lang="pt-BR">Alterado o ícone da tecla Backspace para usar um ícone apropriado do sistema em vez de um fornecido pela fonte</li>
           <li xml:lang="ru">Изменён значок клавиши «Backspace» на системный вместо предоставленного шрифтом;</li>
           <li xml:lang="sk">Zmena ikony klávesu Backspace na správnu systémovú ikonu namiesto ikony poskytovanej písmom</li>
@@ -520,6 +531,7 @@
           <li xml:lang="ia">Addite supporto de claviero per convertitor de unitate</li>
           <li xml:lang="ka">ერთეულების გარდამქმნელს დაემატა კლავიატურის მხარდაჭერა</li>
           <li xml:lang="nl">Toetsenbordondersteuning toegevoegd aan de convertor voor eenheden</li>
+          <li xml:lang="nn">Lagt til tastaturstøtte til einingskonverteraren</li>
           <li xml:lang="pt-BR">Adicionado suporte para teclado ao conversor de unidades</li>
           <li xml:lang="ru">Добавлена поддержка клавиатуры в конвертере единиц измерения;</li>
           <li xml:lang="sk">Pridaná podpora klávesnice pre prevodník jednotiek</li>
@@ -540,6 +552,7 @@
           <li xml:lang="ia">Corrigite animation de cambio de pagina per calculator binari</li>
           <li xml:lang="ka">გამოსწორდა გვერდის შეცვლის ანიმაცია ბინარული კალკულატორისთვის</li>
           <li xml:lang="nl">De animatie voor het wisselen van pagina's in de binaire rekenmachine is gecorrigeerd</li>
+          <li xml:lang="nn">Retta sideendringsanimasjon for binærkalkulator</li>
           <li xml:lang="pt-BR">Correção da animação de mudança de página para a calculadora binária</li>
           <li xml:lang="ru">Исправлена анимация переключения страниц для двоичного калькулятора;</li>
           <li xml:lang="sk">Opravená animácia zmeny stránky pre binárnu kalkulačku</li>
@@ -560,6 +573,7 @@
           <li xml:lang="ia">Habilitate cribrar de qml quando  compilate in modo de cribrar</li>
           <li xml:lang="ka">ჩაირთო QML-ის გამართვა გამართვის რეჟიმში აგებისას</li>
           <li xml:lang="nl">QML-debugging ingeschakeld bij compilatie in modus foutenopsporing</li>
+          <li xml:lang="nn">Slått på QML-feilsøking ved kompilering i feilsøkingsmodus</li>
           <li xml:lang="pt-BR">Ativada a depuração do QML quando compilado no modo de depuração</li>
           <li xml:lang="ru">Включена отладка QML при компиляции в режиме отладки;</li>
           <li xml:lang="sk">Povolené ladenie QML pri kompilácii v režime ladenia</li>
@@ -580,6 +594,7 @@
           <li xml:lang="ia">Addita habilitate a recognoscer le separator decimal in altere localisationes</li>
           <li xml:lang="ka">დაემატა სხვა ლოკალებში ათწილადის გამყოფის ამოცნობის შესაძლებლობა</li>
           <li xml:lang="nl">De mogelijkheid om het decimale scheidingsteken in andere talen te herkennen is toegevoegd</li>
+          <li xml:lang="nn">Gjort det mogleg å kjenna at desimalskiljeteikn i andre lokale</li>
           <li xml:lang="pt-BR">Adicionada a capacidade de reconhecer o separador decimal em outras localidades</li>
           <li xml:lang="ru">Добавлено распознавание десятичного разделителя в других языковых стандартах;</li>
           <li xml:lang="sk">Pridaná schopnosť rozpoznať desatinný oddeľovač v iných miestnych nastaveniach</li>
