@@ -109,7 +109,7 @@ int InputManager::idealCursorPosition(int position, int arrow) const
     }
 
     // position cursor around functions not between
-    QRegularExpression re(QStringLiteral(R"([^\d+−\-×÷!%π∫√∛ˆ,\^()ˆ⁰¹²³⁴⁵⁶⁷⁸⁹ ]{2,})"));
+    static QRegularExpression re(QStringLiteral(R"([^\d+−\-×÷!%π∫√∛ˆ,\^()ˆ⁰¹²³⁴⁵⁶⁷⁸⁹ ]{2,})"));
     QRegularExpressionMatch match = re.match(m_expression.mid(position - 1, 2));
     if (match.hasMatch()) {
         if (position == m_expression.size()) {
@@ -284,7 +284,11 @@ void InputManager::clear(bool save)
 
 void InputManager::setHistoryIndex(const int &index)
 {
+    if (m_historyIndex == index) {
+        return;
+    }
     m_historyIndex = index;
+    Q_EMIT historyIndexChanged();
 }
 
 int InputManager::historyIndex() const
@@ -380,7 +384,11 @@ bool InputManager::canRedo()
 
 void InputManager::setBinaryMode(bool active)
 {
+    if (m_isBinaryMode == active) {
+        return;
+    }
     m_isBinaryMode = active;
+    Q_EMIT binaryModeChanged();
     clear();
 }
 bool InputManager::binaryMode()
@@ -394,7 +402,7 @@ QString InputManager::formatNumbers(const QString &text)
 
     // show exponents as superscripts
     if (temp.contains(QStringLiteral("^"))) {
-        QRegularExpression re(QStringLiteral(R"((?<base>\w+|\)|!|π|%)?(?<exponent>\^-?[\d.]+(?!\!)))"));
+        static QRegularExpression re(QStringLiteral(R"((?<base>\w+|\)|!|π|%)?(?<exponent>\^-?[\d.]+(?!\!)))"));
         QRegularExpressionMatchIterator i = re.globalMatch(temp);
         while (i.hasNext()) {
             QRegularExpressionMatch match = i.next();
@@ -413,7 +421,7 @@ QString InputManager::formatNumbers(const QString &text)
 
     QString formatted;
     QString number;
-    for (const auto ch : temp) {
+    for (const auto ch : std::as_const(temp)) {
         if (ch.isDigit() || ch == m_decimalPoint || ch == FRACTION_SLASH.toString()) {
             number.append(ch);
         } else {
@@ -463,14 +471,14 @@ void InputManager::replaceWithSuperscript(QString &text)
 void InputManager::addNumberSeparators(QString &number)
 {
     const int idx = number.indexOf(m_decimalPoint);
-
+    static QRegularExpression re(QRegularExpression(QStringLiteral(R"(\B(?=(\d{3})+(?!\d)))")));
     if (idx >= 0 && idx < number.size() - 3) {
         QString left = number.left(idx);
         QString right = number.right(number.size() - idx);
-        left.replace(QRegularExpression(QStringLiteral(R"(\B(?=(\d{3})+(?!\d)))")), m_groupSeparator);
+        left.replace(re, m_groupSeparator);
         number = left + right;
     } else if (number.size() > 3) {
-        number.replace(QRegularExpression(QStringLiteral(R"(\B(?=(\d{3})+(?!\d)))")), m_groupSeparator);
+        number.replace(re, m_groupSeparator);
     }
 }
 

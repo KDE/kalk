@@ -26,10 +26,10 @@ class InputManager : public QObject
     Q_PROPERTY(QString hexResult READ hexResult NOTIFY hexResultChanged)
     Q_PROPERTY(bool moveFromResult READ moveFromResult NOTIFY resultChanged)
     Q_PROPERTY(int cursorPosition READ getCursorPosition WRITE setCursorPosition NOTIFY cursorPositionChanged)
-    Q_PROPERTY(bool binaryMode READ binaryMode WRITE setBinaryMode)
+    Q_PROPERTY(bool binaryMode READ binaryMode WRITE setBinaryMode NOTIFY binaryModeChanged)
     Q_PROPERTY(bool canUndo READ canUndo NOTIFY canUndoChanged)
     Q_PROPERTY(bool canRedo READ canRedo NOTIFY canRedoChanged)
-    Q_PROPERTY(int historyIndex READ historyIndex WRITE setHistoryIndex)
+    Q_PROPERTY(int historyIndex READ historyIndex WRITE setHistoryIndex NOTIFY historyIndexChanged)
 
 public:
     explicit InputManager(QObject *parent = nullptr);
@@ -72,6 +72,8 @@ Q_SIGNALS:
     void cursorPositionChanged();
     void canUndoChanged();
     void canRedoChanged();
+    void binaryModeChanged();
+    void historyIndexChanged();
     void addHistory(const QString &history);
 
 private:
