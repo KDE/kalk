@@ -48,6 +48,7 @@
   <name xml:lang="sl">Kalkulator</name>
   <name xml:lang="sv">Räknare</name>
   <name xml:lang="tr">Hesap Makinesi</name>
+  <name xml:lang="ug">ھېسابلىغۇچ</name>
   <name xml:lang="uk">Калькулятор</name>
   <name xml:lang="zh-CN">计算器</name>
   <name xml:lang="zh-TW">計算機</name>
@@ -90,6 +91,7 @@
   <summary xml:lang="sl">Kalkulator z veliko možnostmi</summary>
   <summary xml:lang="sv">En funktionsrik räknare</summary>
   <summary xml:lang="tr">Çok Özellikli Hesap Makinesi</summary>
+  <summary xml:lang="ug">كۆپ ئىقتىدارلىق ھېسابلىغۇچ</summary>
   <summary xml:lang="uk">Калькулятор із широкими можливостями</summary>
   <summary xml:lang="zh-CN">一款功能丰富的计算器</summary>
   <summary xml:lang="zh-TW">功能豐富的計算機</summary>
@@ -179,6 +181,7 @@
       <caption xml:lang="sl">Stran kalkulatorja</caption>
       <caption xml:lang="sv">Räknarsida</caption>
       <caption xml:lang="tr">Hesap Makinesi Sayfası</caption>
+      <caption xml:lang="ug">ھېسابلاش بېتى</caption>
       <caption xml:lang="uk">Сторінка «Калькулятора»</caption>
       <caption xml:lang="zh-CN">计算器页面</caption>
       <caption xml:lang="zh-TW">計算機頁面</caption>
@@ -433,6 +436,7 @@
         <p xml:lang="sk">Zmeny:</p>
         <p xml:lang="sl">Spremembe:</p>
         <p xml:lang="tr">Değişiklikler:</p>
+        <p xml:lang="ug">ئۆزگىرىش:</p>
         <p xml:lang="uk">Зміни:</p>
         <p xml:lang="zh-CN">更改：</p>
         <p xml:lang="zh-TW">變更：</p>
