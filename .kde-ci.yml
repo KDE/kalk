@@ -19,4 +19,4 @@ Dependencies:
 
 Options:
   cppcheck-arguments: '--enable=warning,style,performance --inline-suppr --suppress=passedByValue --suppress=nullPointer'
-  require-passing-tests-on: [ 'Linux', 'Android', 'FreeBSD' ]
+  require-passing-tests-on: ['@all']
