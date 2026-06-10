@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the kalk package.
 #
 # Kristóf Kiszel <kiszel.kristof@gmail.com>, 2020.
-# SPDX-FileCopyrightText: 2024, 2025 Kristof Kiszel <ulysses@fsf.hu>
+# SPDX-FileCopyrightText: 2024-2026 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-05 00:47+0000\n"
-"PO-Revision-Date: 2025-02-02 14:53+0100\n"
+"PO-Revision-Date: 2026-06-09 21:47+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,10 +40,9 @@ msgid "Calculator for Plasma"
 msgstr "Számológép a Plasmához"
 
 #: main.cpp:59
-#, fuzzy, kde-format
-#| msgid "© 2020-2024 KDE Community"
+#, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© A KDE közösség, 2020-2024."
+msgstr "© A KDE közösség, 2020-2026."
 
 #: qalculateengine.cpp:114
 #, kde-format
@@ -78,12 +77,12 @@ msgstr "Előzmények"
 #: qml/CalculationPage.qml:61
 #, kde-format
 msgid "Copy Input"
-msgstr ""
+msgstr "Bemenet másolása"
 
 #: qml/CalculationPage.qml:71
 #, kde-format
 msgid "Copy Result"
-msgstr ""
+msgstr "Eredmény másolása"
 
 #: qml/CalculationPage.qml:81
 #, kde-format
@@ -237,13 +236,13 @@ msgstr "Lánc"
 #, kde-format
 msgctxt "@label:checkbox"
 msgid "Copy with separators"
-msgstr ""
+msgstr "Másolás elválasztókkal"
 
 #: qml/SettingsPage.qml:77
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Include thousand separators when copying numbers."
-msgstr ""
+msgstr "Ezres elválasztókat is másolja számok másolásakor."
 
 #: qml/SettingsPage.qml:90
 #, kde-format
