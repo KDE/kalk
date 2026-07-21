@@ -44,7 +44,7 @@ msgstr "Una calculadora per a Plasma"
 #: main.cpp:59
 #, kde-format
 msgid "© 2020-2026 KDE Community"
-msgstr "© 2020-2026 Comunitat KDE"
+msgstr "© 2020-2026 La comunitat KDE"
 
 #: qalculateengine.cpp:114
 #, kde-format
