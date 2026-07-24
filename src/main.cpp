@@ -19,6 +19,7 @@
 #include <KAboutData>
 #include <KLocalizedQmlContext>
 #include <KLocalizedString>
+#include <KirigamiAddons/App/KirigamiAppDefaults>
 
 #include "version.h"
 
@@ -33,19 +34,12 @@ int main(int argc, char *argv[])
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-    QQuickStyle::setStyle(QStringLiteral("org.kde.breeze"));
 #else
     QApplication app(argc, argv);
-    // set default style and icon theme
-    QIcon::setFallbackThemeName(QStringLiteral("breeze"));
-    if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
-        QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));
-    }
-    // if using org.kde.desktop, ensure we use kde style if possible
-    if (qEnvironmentVariableIsEmpty("QT_QPA_PLATFORMTHEME")) {
-        qputenv("QT_QPA_PLATFORMTHEME", "kde");
-    }
 #endif
+
+    KirigamiAppDefaults::apply(&app);
+
     QQmlApplicationEngine engine;
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("kalk"));
     parser.addVersionOption();

@@ -56,6 +56,7 @@ target_link_libraries(kalk PRIVATE
     Qt6::QuickControls2
     KF6::I18n
     KF6::CoreAddons
+    KirigamiApp
     kalklib
     kalklibplugin
 )

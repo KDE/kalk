@@ -54,6 +54,7 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
     Config
     UnitConversion
 )
+find_package(KF6KirigamiAddons REQUIRED CONFIG)
 pkg_search_module(QALCULATE libqalculate>4.7.0 REQUIRED IMPORTED_TARGET)
 if (ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Svg)
