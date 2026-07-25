@@ -272,6 +272,7 @@
           <li xml:lang="he">הצגת מפריד עשרוני לפי ההגדרות המקומיות</li>
           <li xml:lang="hu">Tizedes elválasztó megjelenítése a területi beállításoknak megfelelően</li>
           <li xml:lang="ia">Monstra separator decimal secundo le localisation</li>
+          <li xml:lang="it">Mostra il separatore decimale in base alle impostazioni locali</li>
           <li xml:lang="ka">წილადის გამყოფის ჩვენება ლოკალის მიხედვით</li>
           <li xml:lang="nl">Het decimaal scheidingsteken volgens de taalregio tonen</li>
           <li xml:lang="nn">Viser desimalskiljeteikn etter språkinnstillingane</li>
@@ -295,6 +296,7 @@
           <li xml:lang="he">תוקנה תקלה שמונעת קלט של פסיק</li>
           <li xml:lang="hu">A vessző beírását megakadályozó hiba kijavítása</li>
           <li xml:lang="ia">Corrige falta que preveni ingresso de comma</li>
+          <li xml:lang="it">Correzione di un bug che impediva l'inserimento della virgola</li>
           <li xml:lang="ka">გასწორდა შეცდომა, რომლის გამოც მძიმეს ვერ შეიყვანდით</li>
           <li xml:lang="nl">Fout verholpen die invoer van een komma verhinderde</li>
           <li xml:lang="nn">Retta feil som hindra innskriving av komma</li>
@@ -325,6 +327,7 @@
           <li xml:lang="he">תיקון תקלות כללים ושיפורי איכות קוד</li>
           <li xml:lang="hu">Általános hibajavítások és a kódminőség fejlesztése</li>
           <li xml:lang="ia">Melioramento general de qualitate de codice e correctiones de faltas</li>
+          <li xml:lang="it">Correzioni generali di bug, e miglioramenti alla qualità del codice</li>
           <li xml:lang="ka">კოდის რეფაქტორინგი და მომხმარებლის ინტერფეისის გაუმჯობესებები</li>
           <li xml:lang="nl">Algemene reparaties van fouten en verbeteringen in de codekwaliteit</li>
           <li xml:lang="nn">Generelle feilrettingar og kodeforbetringar</li>
@@ -355,6 +358,7 @@
           <li xml:lang="he">סידור הפונקציות הטריגונומטריות מחדש כדי שתהיינה יחד</li>
           <li xml:lang="hu">A trigonometrikus függvények átrendezése úgy, hogy egy helyen legyenek</li>
           <li xml:lang="ia">Reordina functiones trigonometric per esser insimul</li>
+          <li xml:lang="it">Riorganizzazione delle funzioni trigonometriche, in modo che siano raggruppate</li>
           <li xml:lang="ka">ტრიგონომეტრიული ფუნქციების ერთად დალაგება</li>
           <li xml:lang="nl">Herschik de goniometrische functies zodat ze samen staan</li>
           <li xml:lang="nn">Omorganiserte trigonometriske funksjonar til å vera samla</li>
@@ -378,6 +382,7 @@
           <li xml:lang="he">מגוון שיפורי ממשק משתמש</li>
           <li xml:lang="hu">Különböző fejlesztések a felhasználói felületen</li>
           <li xml:lang="ia">Varie melioramentos de interfacie de usator</li>
+          <li xml:lang="it">Vari miglioramenti all'interfaccia utente</li>
           <li xml:lang="ka">ინტერფეისის სხვადასხვა ნაწილის გაუმჯობესება</li>
           <li xml:lang="nl">Diverse verbeteringen aan de gebruikersinterface</li>
           <li xml:lang="nn">Ymse forbetringar i brukargrensesnittet</li>
@@ -407,6 +412,7 @@
           <li xml:lang="he">עבודה מחודשת על עיצוב סרגל הצד</li>
           <li xml:lang="hu">Az oldalsáv kialakításának átdolgozása</li>
           <li xml:lang="ia">Relaborar designo de barra lateral</li>
+          <li xml:lang="it">Rielaborazione del design della barra laterale</li>
           <li xml:lang="ka">გადამუშავდა გვერდითი პანელის დიზაინი</li>
           <li xml:lang="nl">Ontwerp van de zijbalk aanpassen</li>
           <li xml:lang="nn">Omarbeidd design for sidestolpen</li>
@@ -442,6 +448,7 @@
         <p xml:lang="he">שינויים:</p>
         <p xml:lang="hu">Változások:</p>
         <p xml:lang="ia">Modificationes:</p>
+        <p xml:lang="it">Modifiche:</p>
         <p xml:lang="ka">ცვლილებები:</p>
         <p xml:lang="nl">Wijzigingen:</p>
         <p xml:lang="nn">Endringar:</p>
@@ -467,6 +474,7 @@
           <li xml:lang="he">סמל היישום התעדכן</li>
           <li xml:lang="hu">Frissített alkalmazásikon</li>
           <li xml:lang="ia">Actualisava le icone de application</li>
+          <li xml:lang="it">Aggiornamento dell'icona dell'applicazione</li>
           <li xml:lang="ka">განახლდა აპლიკაციის ხატულა</li>
           <li xml:lang="nl">Het toepassingspictogram bijgewerkt</li>
           <li xml:lang="nn">Oppdaterte programikonet</li>
@@ -490,6 +498,7 @@
           <li xml:lang="he">נוספה תמיכה בסוגריים דרך קלט מקלדת</li>
           <li xml:lang="hu">Zárójelek billentyűzetről történő bevitelének támogatása</li>
           <li xml:lang="ia">Adite supporto per ingresso de clavieroi de parentheses</li>
+          <li xml:lang="it">Aggiunta del supporto per l'inserimento di parentesi da tastiera</li>
           <li xml:lang="ka">დაემატა ფრჩხილების კლავიატურით შეყვანის მხარდაჭერა</li>
           <li xml:lang="nl">Ondersteuning voor het invoeren van haakjes via het toetsenbord is toegevoegd</li>
           <li xml:lang="nn">La til støtte for inndata med parentesar</li>
@@ -513,6 +522,7 @@
           <li xml:lang="he">תוקנה פתיחת מגירת הדפדפן כשהיישום מופעל</li>
           <li xml:lang="hu">Az alkalmazás indulásakor megnyíló számológépfiók javítva</li>
           <li xml:lang="ia">Corrigite que le designator de calculator aperi quando le application se aperi</li>
+          <li xml:lang="it">Correzione del problema che causava l'apertura del pannello della calcolatrice all'avvio dell'applicazione</li>
           <li xml:lang="ka">გამოსწორდა კალკულატორის უჯრის გახსნა აპლიკაციის გაშვებისას</li>
           <li xml:lang="nl">Het probleem waarbij de rekenmachinelade automatisch openging bij het openen van de toepassing is opgelost</li>
           <li xml:lang="nn">Fiksa oppteikning av kalkulatoren når programmet vert opna</li>
@@ -536,6 +546,7 @@
           <li xml:lang="he">הסמל של המחיקה (backspace) השתנה כך שישתמש בסמל המערכת המתאים במקום בסמל שמגיע מגופן</li>
           <li xml:lang="hu">Backspace ikon módosítva a rendszer által biztosítottra a betűkészleté helyett</li>
           <li xml:lang="ia">Cambiate icone de retro-spatio per usar un proprie icone de systema in loco de lo fornite ab un font</li>
+          <li xml:lang="it">L'icona del tasto “Backspace” è stata sostituita da quella di sistema, anziché dal carattere</li>
           <li xml:lang="ka">შეიცვალა backspace-ის ხატულა, რომ გამოიყენოს სწორი სისტემური ხატულა ფონტის მიერ გადმოცემულის მაგიერ</li>
           <li xml:lang="nl">Het backspace-pictogram is aangepast om een ​​correct systeempictogram te gebruiken in plaats van een pictogram uit een lettertype</li>
           <li xml:lang="nn">Endra retteikonet til å bruka systemikon i staden for ikon frå skrift</li>
@@ -559,6 +570,7 @@
           <li xml:lang="he">נוספה תמיכה במקלדת בממיר היחידות</li>
           <li xml:lang="hu">Billentyűzet-támogatás a mértékegységváltóhoz</li>
           <li xml:lang="ia">Addite supporto de claviero per convertitor de unitate</li>
+          <li xml:lang="it">Aggiunta del supporto alla tastiera al convertitore di unità</li>
           <li xml:lang="ka">ერთეულების გარდამქმნელს დაემატა კლავიატურის მხარდაჭერა</li>
           <li xml:lang="nl">Toetsenbordondersteuning toegevoegd aan de convertor voor eenheden</li>
           <li xml:lang="nn">Lagt til tastaturstøtte til einingskonverteraren</li>
@@ -582,6 +594,7 @@
           <li xml:lang="he">תוקנה הנפשת החלפת עמוד במחשבון הבינרי</li>
           <li xml:lang="hu">Bináris számológép oldalváltási animációja javítva</li>
           <li xml:lang="ia">Corrigite animation de cambio de pagina per calculator binari</li>
+          <li xml:lang="it">Corretta l'animazione di cambio pagina per la calcolatrice binaria</li>
           <li xml:lang="ka">გამოსწორდა გვერდის შეცვლის ანიმაცია ბინარული კალკულატორისთვის</li>
           <li xml:lang="nl">De animatie voor het wisselen van pagina's in de binaire rekenmachine is gecorrigeerd</li>
           <li xml:lang="nn">Retta sideendringsanimasjon for binærkalkulator</li>
@@ -605,6 +618,7 @@
           <li xml:lang="he">הופעל ניפוי שגיאות ב־qml כשבוצע הידור במצב ניפוי שגיאות</li>
           <li xml:lang="hu">QML hibakeresés engedélyezése, ha a programot hibakeresési módban fordították</li>
           <li xml:lang="ia">Habilitate cribrar de qml quando  compilate in modo de cribrar</li>
+          <li xml:lang="it">Abilitazione del debug QML in caso di compilazione in modalità debug</li>
           <li xml:lang="ka">ჩაირთო QML-ის გამართვა გამართვის რეჟიმში აგებისას</li>
           <li xml:lang="nl">QML-debugging ingeschakeld bij compilatie in modus foutenopsporing</li>
           <li xml:lang="nn">Slått på QML-feilsøking ved kompilering i feilsøkingsmodus</li>
@@ -628,6 +642,7 @@
           <li xml:lang="he">נוספה היכולת לזהות את המפריד העשרוני בהגדרות מקומיות אחרות</li>
           <li xml:lang="hu">Egyéb területi beállítások tizedes elválasztói felismerésének képessége hozzáadva</li>
           <li xml:lang="ia">Addita habilitate a recognoscer le separator decimal in altere localisationes</li>
+          <li xml:lang="it">Aggiunta della possibilità di riconoscere il separatore decimale in altre impostazioni locali</li>
           <li xml:lang="ka">დაემატა სხვა ლოკალებში ათწილადის გამყოფის ამოცნობის შესაძლებლობა</li>
           <li xml:lang="nl">De mogelijkheid om het decimale scheidingsteken in andere talen te herkennen is toegevoegd</li>
           <li xml:lang="nn">Gjort det mogleg å kjenna at desimalskiljeteikn i andre lokale</li>
