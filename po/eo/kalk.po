@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-07-26 00:47+0000\n"
 "PO-Revision-Date: 2024-12-27 23:54+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -27,18 +27,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "olivermkellogg@gmail.com"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
+#: main.cpp:49 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
 #: qml/Main.qml:122
 #, kde-format
 msgid "Calculator"
 msgstr "Kalkulilo"
 
-#: main.cpp:57
+#: main.cpp:51
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Kalkulilo por Plasma"
 
-#: main.cpp:59
+#: main.cpp:53
 #, fuzzy, kde-format
 #| msgid "© 2020-2024 KDE Community"
 msgid "© 2020-2026 KDE Community"

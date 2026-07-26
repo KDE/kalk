@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-07-26 00:47+0000\n"
 "PO-Revision-Date: 2026-03-05 06:18-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -32,18 +32,18 @@ msgstr ""
 "elchevive@opensuse.org, geraldosimiao@fedoraproject.org, "
 "guimarcalsilva@gmail.com"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
+#: main.cpp:49 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
 #: qml/Main.qml:122
 #, kde-format
 msgid "Calculator"
 msgstr "Calculadora"
 
-#: main.cpp:57
+#: main.cpp:51
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Calculadora para o Plasma"
 
-#: main.cpp:59
+#: main.cpp:53
 #, kde-format
 msgid "© 2020-2026 KDE Community"
 msgstr "© 2020-2026 Comunidade KDE"

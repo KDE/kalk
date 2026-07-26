@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-07-26 00:47+0000\n"
 "PO-Revision-Date: 2026-04-21 20:41+0200\n"
 "Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -30,18 +30,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
+#: main.cpp:49 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
 #: qml/Main.qml:122
 #, kde-format
 msgid "Calculator"
 msgstr "Taschenrechner"
 
-#: main.cpp:57
+#: main.cpp:51
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Taschenrechner für Plasma"
 
-#: main.cpp:59
+#: main.cpp:53
 #, kde-format
 msgid "© 2020-2026 KDE Community"
 msgstr "© 2020–2026 KDE-Gemeinschaft"

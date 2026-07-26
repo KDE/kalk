@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-07-26 00:47+0000\n"
 "PO-Revision-Date: 2026-03-20 08:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,18 +28,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
+#: main.cpp:49 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
 #: qml/Main.qml:122
 #, kde-format
 msgid "Calculator"
 msgstr "מחשבון"
 
-#: main.cpp:57
+#: main.cpp:51
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "מחשבון לפלזמה"
 
-#: main.cpp:59
+#: main.cpp:53
 #, kde-format
 msgid "© 2020-2026 KDE Community"
 msgstr "© 2020‏-2026 קהילת KDE"

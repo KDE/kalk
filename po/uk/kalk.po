@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-07-26 00:47+0000\n"
 "PO-Revision-Date: 2026-03-05 09:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -30,18 +30,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: main.cpp:55 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
+#: main.cpp:49 qml/CalculationPage.qml:16 qml/Main.qml:70 qml/Main.qml:116
 #: qml/Main.qml:122
 #, kde-format
 msgid "Calculator"
 msgstr "Калькулятор"
 
-#: main.cpp:57
+#: main.cpp:51
 #, kde-format
 msgid "Calculator for Plasma"
 msgstr "Калькулятор для Плазми"
 
-#: main.cpp:59
+#: main.cpp:53
 #, kde-format
 msgid "© 2020-2026 KDE Community"
 msgstr "© Спільнота KDE, 2020–2026"
