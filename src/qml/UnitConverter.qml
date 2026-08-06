@@ -219,22 +219,23 @@ Kirigami.Page {
         height: unitConverter.height - Kirigami.Units.gridUnit * 5
         parent: applicationWindow().overlay
 
-        ListView {
-            id: listview
-            model: UnitModel
-            clip: true
-            delegate: Controls.RadioDelegate {
-                width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
-                text: modelData
-                checked: index === UnitModel.currentIndex
-                onClicked: {
-                    category.text = text;
-                    UnitModel.currentIndex = index;
-                    categories.close();
+        Controls.ScrollView{
+            ListView {
+                id: listview
+                model: UnitModel
+                clip: true
+                delegate: Controls.RadioDelegate {
+                    width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
+                    text: modelData
+                    checked: index === UnitModel.currentIndex
+                    onClicked: {
+                        category.text = text;
+                        UnitModel.currentIndex = index;
+                        categories.close();
+                    }
                 }
+                Component.onCompleted: category.text = listview.currentItem.text
             }
-
-            Component.onCompleted: category.text = listview.currentItem.text
         }
     }
 }
