@@ -4,6 +4,8 @@
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
+pragma ComponentBehavior: Bound
+
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
@@ -72,10 +74,13 @@ Kirigami.ScrollablePage {
                         }
                     }
                     contentItem: Label {
+                        leftPadding: Kirigami.Units.mediumSpacing
+                        rightPadding: Kirigami.Units.mediumSpacing
                         font.weight: Font.Light
                         font.pointSize: listView.flexPointSize || Kirigami.Theme.defaultFont.pointSize
                         text: item.parts[0].trim()
                         elide: Text.ElideRight
+                        verticalAlignment: Text.AlignVCenter
                     }
 
                     ToolTip.visible: contentItem.truncated && hovered
@@ -102,10 +107,13 @@ Kirigami.ScrollablePage {
                         }
                     }
                     contentItem: Label {
+                        leftPadding: Kirigami.Units.mediumSpacing
+                        rightPadding: Kirigami.Units.mediumSpacing
                         font.weight: Font.Light
                         font.pointSize: listView.flexPointSize || Kirigami.Theme.defaultFont.pointSize
                         text: item.parts[1].trim()
                         elide: Text.ElideRight
+                        verticalAlignment: Text.AlignVCenter
                     }
 
                     ToolTip.visible: contentItem.truncated && hovered
