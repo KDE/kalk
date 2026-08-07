@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-26 00:47+0000\n"
+"POT-Creation-Date: 2026-08-07 00:49+0000\n"
 "PO-Revision-Date: 2026-03-05 11:27+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -69,7 +69,7 @@ msgstr "Annulla"
 msgid "Redo"
 msgstr "Reface"
 
-#: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:18
 #, kde-format
 msgid "History"
 msgstr "Chronologia"
@@ -89,34 +89,34 @@ msgstr "Copia resultato"
 msgid "Paste"
 msgstr "Colla"
 
-#: qml/HistoryView.qml:30
+#: qml/HistoryView.qml:32
 #, kde-format
 msgid "Clear history"
 msgstr "Netta chronologia"
 
-#: qml/HistoryView.qml:128
+#: qml/HistoryView.qml:136
 #, kde-format
 msgid "History is empty"
 msgstr "Chronologia es vacue"
 
-#: qml/HistoryView.qml:136
+#: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Netta omne chronologia?"
 
-#: qml/HistoryView.qml:144
+#: qml/HistoryView.qml:152
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Isto es permanente e non pote esser annullate"
 
-#: qml/HistoryView.qml:152
+#: qml/HistoryView.qml:160
 #, kde-format
 msgid "Cancel"
 msgstr "Cancella"
 
-#: qml/HistoryView.qml:157
+#: qml/HistoryView.qml:165
 #, kde-format
 msgid "Clear"
 msgstr "Netta"
@@ -253,6 +253,159 @@ msgstr "A proposito"
 #, kde-format
 msgid "Category"
 msgstr "Categoria"
+
+#: unitmodel.cpp:112
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Acceleration"
+msgstr ""
+
+#: unitmodel.cpp:113
+#, fuzzy, kde-format
+#| msgctxt "@label:listbox trigonometric angle unit"
+#| msgid "Angle unit"
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Angle"
+msgstr "Unitate de angulo"
+
+#: unitmodel.cpp:114
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Area"
+msgstr ""
+
+#: unitmodel.cpp:115
+#, fuzzy, kde-format
+#| msgid "Binary Calculator"
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Binary Data"
+msgstr "Calculator Binari"
+
+#: unitmodel.cpp:116
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Currency"
+msgstr ""
+
+#: unitmodel.cpp:117
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Density"
+msgstr ""
+
+#: unitmodel.cpp:118
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Electrical Current"
+msgstr ""
+
+#: unitmodel.cpp:119
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Electrical Resistance"
+msgstr ""
+
+#: unitmodel.cpp:120
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Energy"
+msgstr ""
+
+#: unitmodel.cpp:121
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Force"
+msgstr ""
+
+#: unitmodel.cpp:122
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Frequency"
+msgstr ""
+
+#: unitmodel.cpp:123
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Fuel Efficiency"
+msgstr ""
+
+#: unitmodel.cpp:124
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Length"
+msgstr ""
+
+#: unitmodel.cpp:125
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Mass"
+msgstr ""
+
+#: unitmodel.cpp:126
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Permeability"
+msgstr ""
+
+#: unitmodel.cpp:127
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Power"
+msgstr ""
+
+#: unitmodel.cpp:128
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Pressure"
+msgstr ""
+
+#: unitmodel.cpp:129
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Temperature"
+msgstr ""
+
+#: unitmodel.cpp:130
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Thermal Conductivity"
+msgstr ""
+
+#: unitmodel.cpp:131
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Thermal Flux"
+msgstr ""
+
+#: unitmodel.cpp:132
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Thermal Generation"
+msgstr ""
+
+#: unitmodel.cpp:133
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Time"
+msgstr ""
+
+#: unitmodel.cpp:134
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Velocity"
+msgstr ""
+
+#: unitmodel.cpp:135
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Volume"
+msgstr ""
+
+#: unitmodel.cpp:136
+#, kde-format
+msgctxt "@item:inlistbox Category for unit conversion"
+msgid "Voltage"
+msgstr ""
 
 #~ msgid "Cut"
 #~ msgstr "Talia"
