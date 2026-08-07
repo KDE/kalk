@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-07 02:46+0000\n"
 "PO-Revision-Date: 2026-06-06 14:26+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -68,7 +68,7 @@ msgstr "실행 취소"
 msgid "Redo"
 msgstr "다시 실행"
 
-#: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:18
 #, kde-format
 msgid "History"
 msgstr "과거 기록"
@@ -88,34 +88,34 @@ msgstr "결과 복사"
 msgid "Paste"
 msgstr "붙여넣기"
 
-#: qml/HistoryView.qml:30
+#: qml/HistoryView.qml:32
 #, kde-format
 msgid "Clear history"
 msgstr "기록 삭제"
 
-#: qml/HistoryView.qml:128
+#: qml/HistoryView.qml:136
 #, kde-format
 msgid "History is empty"
 msgstr "과거 기록이 비어 있음"
 
-#: qml/HistoryView.qml:136
+#: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "모든 기록을 삭제하시겠습니까?"
 
-#: qml/HistoryView.qml:144
+#: qml/HistoryView.qml:152
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "이 작업은 영구적이며 실행 취소할 수 없습니다"
 
-#: qml/HistoryView.qml:152
+#: qml/HistoryView.qml:160
 #, kde-format
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/HistoryView.qml:157
+#: qml/HistoryView.qml:165
 #, kde-format
 msgid "Clear"
 msgstr "지우기"

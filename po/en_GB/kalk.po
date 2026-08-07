@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-07 02:46+0000\n"
 "PO-Revision-Date: 2024-05-23 19:45+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -69,7 +69,7 @@ msgstr "Undo"
 msgid "Redo"
 msgstr "Redo"
 
-#: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:18
 #, kde-format
 msgid "History"
 msgstr "History"
@@ -89,34 +89,34 @@ msgstr ""
 msgid "Paste"
 msgstr "Paste"
 
-#: qml/HistoryView.qml:30
+#: qml/HistoryView.qml:32
 #, kde-format
 msgid "Clear history"
 msgstr "Clear history"
 
-#: qml/HistoryView.qml:128
+#: qml/HistoryView.qml:136
 #, kde-format
 msgid "History is empty"
 msgstr "History is empty"
 
-#: qml/HistoryView.qml:136
+#: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Clear All History?"
 
-#: qml/HistoryView.qml:144
+#: qml/HistoryView.qml:152
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "This is permanent and cannot be undone"
 
-#: qml/HistoryView.qml:152
+#: qml/HistoryView.qml:160
 #, kde-format
 msgid "Cancel"
 msgstr ""
 
-#: qml/HistoryView.qml:157
+#: qml/HistoryView.qml:165
 #, kde-format
 msgid "Clear"
 msgstr ""

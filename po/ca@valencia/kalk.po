@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-07 02:46+0000\n"
 "PO-Revision-Date: 2026-03-05 10:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr "Desfés"
 msgid "Redo"
 msgstr "Refés"
 
-#: qml/CalculationPage.qml:25 qml/HistoryView.qml:16
+#: qml/CalculationPage.qml:25 qml/HistoryView.qml:18
 #, kde-format
 msgid "History"
 msgstr "Historial"
@@ -91,34 +91,34 @@ msgstr "Copia el resultat"
 msgid "Paste"
 msgstr "Apega"
 
-#: qml/HistoryView.qml:30
+#: qml/HistoryView.qml:32
 #, kde-format
 msgid "Clear history"
 msgstr "Neteja l'historial"
 
-#: qml/HistoryView.qml:128
+#: qml/HistoryView.qml:136
 #, kde-format
 msgid "History is empty"
 msgstr "L'historial està buit"
 
-#: qml/HistoryView.qml:136
+#: qml/HistoryView.qml:144
 #, kde-format
 msgctxt "Delete all items from a list"
 msgid "Clear All History?"
 msgstr "Voleu netejar tot l'historial?"
 
-#: qml/HistoryView.qml:144
+#: qml/HistoryView.qml:152
 #, kde-format
 msgctxt "Deleted items cannot be recovered"
 msgid "This is permanent and cannot be undone"
 msgstr "Açò és permanent i no es podrà desfer"
 
-#: qml/HistoryView.qml:152
+#: qml/HistoryView.qml:160
 #, kde-format
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: qml/HistoryView.qml:157
+#: qml/HistoryView.qml:165
 #, kde-format
 msgid "Clear"
 msgstr "Neteja"
