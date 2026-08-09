@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:49+0000\n"
-"PO-Revision-Date: 2026-04-26 13:24+0200\n"
+"PO-Revision-Date: 2026-08-08 12:14+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.11.70\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -263,151 +263,151 @@ msgstr "Kategori"
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Acceleration"
-msgstr ""
+msgstr "Akselerasjon"
 
 #: unitmodel.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox trigonometric angle unit"
-#| msgid "Angle unit"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Angle"
-msgstr "Vinkeleining"
+msgstr "Vinkel"
 
 #: unitmodel.cpp:114
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Area"
-msgstr ""
+msgstr "Areal"
 
 #: unitmodel.cpp:115
-#, fuzzy, kde-format
-#| msgid "Binary Calculator"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Binary Data"
-msgstr "Binærkalkulator"
+msgstr "Binærdata"
 
 #: unitmodel.cpp:116
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Currency"
-msgstr ""
+msgstr "Valuta"
 
 #: unitmodel.cpp:117
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Density"
-msgstr ""
+msgstr "Tettleik"
 
 #: unitmodel.cpp:118
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Electrical Current"
-msgstr ""
+msgstr "Elektrisk straum"
 
 #: unitmodel.cpp:119
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Electrical Resistance"
-msgstr ""
+msgstr "Elektrisk motstand"
 
 #: unitmodel.cpp:120
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Energy"
-msgstr ""
+msgstr "Energi"
 
 #: unitmodel.cpp:121
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Force"
-msgstr ""
+msgstr "Kraft"
 
 #: unitmodel.cpp:122
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Frequency"
-msgstr ""
+msgstr "Frekvens"
 
 #: unitmodel.cpp:123
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Fuel Efficiency"
-msgstr ""
+msgstr "Energieffektivitet"
 
 #: unitmodel.cpp:124
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Length"
-msgstr ""
+msgstr "Lengd"
 
 #: unitmodel.cpp:125
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Mass"
-msgstr ""
+msgstr "Masse"
 
 #: unitmodel.cpp:126
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Permeability"
-msgstr ""
+msgstr "Permeabilitet"
 
+# Eksempelvis kilowatt.
 #: unitmodel.cpp:127
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Power"
-msgstr ""
+msgstr "Effekt"
 
 #: unitmodel.cpp:128
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Pressure"
-msgstr ""
+msgstr "Trykk"
 
 #: unitmodel.cpp:129
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Temperature"
-msgstr ""
+msgstr "Temperatur"
 
 #: unitmodel.cpp:130
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Conductivity"
-msgstr ""
+msgstr "Varmeleiingsevne"
 
 #: unitmodel.cpp:131
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Flux"
-msgstr ""
+msgstr "Varmefluks"
 
 #: unitmodel.cpp:132
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Generation"
-msgstr ""
+msgstr "Varmegenerering"
 
+# Eksempelvis sekund, dagar og år.
 #: unitmodel.cpp:133
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Time"
-msgstr ""
+msgstr "Tid"
 
 #: unitmodel.cpp:134
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Velocity"
-msgstr ""
+msgstr "Fart"
 
+# Eksempelvis kubikkmeter.
 #: unitmodel.cpp:135
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Volume"
-msgstr ""
+msgstr "Volum"
 
 #: unitmodel.cpp:136
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Voltage"
-msgstr ""
+msgstr "Spenning"
