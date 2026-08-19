@@ -260,12 +260,10 @@ msgid "Acceleration"
 msgstr ""
 
 #: unitmodel.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox trigonometric angle unit"
-#| msgid "Angle unit"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Angle"
-msgstr "角度单位"
+msgstr ""
 
 #: unitmodel.cpp:114
 #, kde-format
@@ -274,11 +272,10 @@ msgid "Area"
 msgstr ""
 
 #: unitmodel.cpp:115
-#, fuzzy, kde-format
-#| msgid "Binary Calculator"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Binary Data"
-msgstr "二进制计算器"
+msgstr ""
 
 #: unitmodel.cpp:116
 #, kde-format
