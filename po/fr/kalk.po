@@ -227,7 +227,7 @@ msgstr "Implicite tout d'abord"
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr "Chaîne"
+msgstr "Chaine"
 
 #: qml/SettingsPage.qml:76
 #, kde-format
