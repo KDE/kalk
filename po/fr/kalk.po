@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 02:46+0000\n"
-"PO-Revision-Date: 2026-03-06 09:00+0100\n"
+"PO-Revision-Date: 2026-08-08 10:56+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -227,7 +227,7 @@ msgstr "Implicite tout d'abord"
 #, kde-format
 msgctxt "@item:inlistbox Parsing mode"
 msgid "Chain"
-msgstr "Chaîne"
+msgstr "Chaine"
 
 #: qml/SettingsPage.qml:76
 #, kde-format
