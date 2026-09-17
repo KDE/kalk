@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:49+0000\n"
-"PO-Revision-Date: 2026-03-16 16:38+0900\n"
+"PO-Revision-Date: 2026-09-17 00:18+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -260,154 +260,151 @@ msgstr "分類"
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Acceleration"
-msgstr ""
+msgstr "加速度"
 
 #: unitmodel.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox trigonometric angle unit"
-#| msgid "Angle unit"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Angle"
-msgstr "角度單位"
+msgstr "角度"
 
 #: unitmodel.cpp:114
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Area"
-msgstr ""
+msgstr "面積"
 
 #: unitmodel.cpp:115
-#, fuzzy, kde-format
-#| msgid "Binary Calculator"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Binary Data"
-msgstr "二進制計算機"
+msgstr "二進位資料"
 
 #: unitmodel.cpp:116
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Currency"
-msgstr ""
+msgstr "貨幣"
 
 #: unitmodel.cpp:117
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Density"
-msgstr ""
+msgstr "密度"
 
 #: unitmodel.cpp:118
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Electrical Current"
-msgstr ""
+msgstr "電流"
 
 #: unitmodel.cpp:119
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Electrical Resistance"
-msgstr ""
+msgstr "電阻"
 
 #: unitmodel.cpp:120
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Energy"
-msgstr ""
+msgstr "能量"
 
 #: unitmodel.cpp:121
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Force"
-msgstr ""
+msgstr "力"
 
 #: unitmodel.cpp:122
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Frequency"
-msgstr ""
+msgstr "頻率"
 
 #: unitmodel.cpp:123
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Fuel Efficiency"
-msgstr ""
+msgstr "燃料效益"
 
 #: unitmodel.cpp:124
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Length"
-msgstr ""
+msgstr "長度"
 
 #: unitmodel.cpp:125
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Mass"
-msgstr ""
+msgstr "質量"
 
 #: unitmodel.cpp:126
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Permeability"
-msgstr ""
+msgstr "滲透性"
 
 #: unitmodel.cpp:127
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Power"
-msgstr ""
+msgstr "功率"
 
 #: unitmodel.cpp:128
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Pressure"
-msgstr ""
+msgstr "壓力"
 
 #: unitmodel.cpp:129
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Temperature"
-msgstr ""
+msgstr "溫度"
 
 #: unitmodel.cpp:130
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Conductivity"
-msgstr ""
+msgstr "熱傳導率"
 
 #: unitmodel.cpp:131
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Flux"
-msgstr ""
+msgstr "熱通量"
 
 #: unitmodel.cpp:132
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Generation"
-msgstr ""
+msgstr "每容積單位功率"
 
 #: unitmodel.cpp:133
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Time"
-msgstr ""
+msgstr "時間"
 
 #: unitmodel.cpp:134
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Velocity"
-msgstr ""
+msgstr "速度"
 
 #: unitmodel.cpp:135
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Volume"
-msgstr ""
+msgstr "容積"
 
 #: unitmodel.cpp:136
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Voltage"
-msgstr ""
+msgstr "電壓"
 
 #~ msgid "Cut"
 #~ msgstr "剪下"
