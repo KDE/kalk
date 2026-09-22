@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:49+0000\n"
-"PO-Revision-Date: 2026-05-30 16:46-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -258,37 +258,37 @@ msgstr "كاتېگورىيە"
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Acceleration"
-msgstr ""
+msgstr "تېزلەت"
 
 #: unitmodel.cpp:113
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Angle"
-msgstr ""
+msgstr "بۇلۇڭ"
 
 #: unitmodel.cpp:114
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Area"
-msgstr ""
+msgstr "دائىرە"
 
 #: unitmodel.cpp:115
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Binary Data"
-msgstr ""
+msgstr "ئىككىلىك سانلىق مەلۇمات"
 
 #: unitmodel.cpp:116
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Currency"
-msgstr ""
+msgstr "پۇل"
 
 #: unitmodel.cpp:117
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Density"
-msgstr ""
+msgstr "زىچلىق"
 
 #: unitmodel.cpp:118
 #, kde-format
@@ -306,37 +306,37 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Energy"
-msgstr ""
+msgstr "قۇۋۋىتى"
 
 #: unitmodel.cpp:121
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Force"
-msgstr ""
+msgstr "مەجبۇرىي"
 
 #: unitmodel.cpp:122
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Frequency"
-msgstr ""
+msgstr "چاستوتا"
 
 #: unitmodel.cpp:123
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Fuel Efficiency"
-msgstr ""
+msgstr "يېقىلغۇ ئۈنۈمى"
 
 #: unitmodel.cpp:124
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Length"
-msgstr ""
+msgstr "ئۇزۇنلۇقى"
 
 #: unitmodel.cpp:125
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Mass"
-msgstr ""
+msgstr "ماسسا"
 
 #: unitmodel.cpp:126
 #, kde-format
@@ -348,19 +348,19 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Power"
-msgstr ""
+msgstr "توك مەنبە"
 
 #: unitmodel.cpp:128
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Pressure"
-msgstr ""
+msgstr "بېسىم"
 
 #: unitmodel.cpp:129
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Temperature"
-msgstr ""
+msgstr "تېمپېراتۇرا"
 
 #: unitmodel.cpp:130
 #, kde-format
@@ -384,7 +384,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Time"
-msgstr ""
+msgstr "ۋاقىت"
 
 #: unitmodel.cpp:134
 #, kde-format
@@ -396,10 +396,10 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Volume"
-msgstr ""
+msgstr "ئاۋاز مىقدارى"
 
 #: unitmodel.cpp:136
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Voltage"
-msgstr ""
+msgstr "توك بېسىمى"
