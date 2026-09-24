@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kalk\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:49+0000\n"
-"PO-Revision-Date: 2026-03-06 14:12+0200\n"
+"PO-Revision-Date: 2026-09-23 09:17+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -259,154 +259,151 @@ msgstr "Категория"
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Acceleration"
-msgstr ""
+msgstr "Ускорение"
 
 #: unitmodel.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox trigonometric angle unit"
-#| msgid "Angle unit"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Angle"
-msgstr "Единицы измерения угла"
+msgstr "Угол"
 
 #: unitmodel.cpp:114
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Area"
-msgstr ""
+msgstr "Площадь"
 
 #: unitmodel.cpp:115
-#, fuzzy, kde-format
-#| msgid "Binary Calculator"
+#, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Binary Data"
-msgstr "Двоичный калькулятор"
+msgstr "Двоичные данные"
 
 #: unitmodel.cpp:116
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Currency"
-msgstr ""
+msgstr "Валюта"
 
 #: unitmodel.cpp:117
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Density"
-msgstr ""
+msgstr "Плотность"
 
 #: unitmodel.cpp:118
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Electrical Current"
-msgstr ""
+msgstr "Электрический ток"
 
 #: unitmodel.cpp:119
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Electrical Resistance"
-msgstr ""
+msgstr "Электрическое сопротивление"
 
 #: unitmodel.cpp:120
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Energy"
-msgstr ""
+msgstr "Энергия"
 
 #: unitmodel.cpp:121
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Force"
-msgstr ""
+msgstr "Сила"
 
 #: unitmodel.cpp:122
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Frequency"
-msgstr ""
+msgstr "Частота"
 
 #: unitmodel.cpp:123
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Fuel Efficiency"
-msgstr ""
+msgstr "Расход топлива"
 
 #: unitmodel.cpp:124
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Length"
-msgstr ""
+msgstr "Длина"
 
 #: unitmodel.cpp:125
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Mass"
-msgstr ""
+msgstr "Масса"
 
 #: unitmodel.cpp:126
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Permeability"
-msgstr ""
+msgstr "Проницаемость"
 
 #: unitmodel.cpp:127
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Power"
-msgstr ""
+msgstr "Мощность"
 
 #: unitmodel.cpp:128
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Pressure"
-msgstr ""
+msgstr "Давление"
 
 #: unitmodel.cpp:129
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Temperature"
-msgstr ""
+msgstr "Температура"
 
 #: unitmodel.cpp:130
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Conductivity"
-msgstr ""
+msgstr "Теплопроводность"
 
 #: unitmodel.cpp:131
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Flux"
-msgstr ""
+msgstr "Тепловой поток"
 
 #: unitmodel.cpp:132
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Thermal Generation"
-msgstr ""
+msgstr "Плотность энерговыделения"
 
 #: unitmodel.cpp:133
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Time"
-msgstr ""
+msgstr "Время"
 
 #: unitmodel.cpp:134
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Velocity"
-msgstr ""
+msgstr "Скорость"
 
 #: unitmodel.cpp:135
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Volume"
-msgstr ""
+msgstr "Объём"
 
 #: unitmodel.cpp:136
 #, kde-format
 msgctxt "@item:inlistbox Category for unit conversion"
 msgid "Voltage"
-msgstr ""
+msgstr "Электрическое напряжение"
 
 #~ msgid "Cut"
 #~ msgstr "Вырезать"
