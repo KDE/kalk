@@ -53,7 +53,8 @@ Item {
     Controls.AbstractButton {
         id: button
         anchors.fill: parent
-        focusPolicy: Qt.NoFocus
+        focusPolicy: Qt.StrongFocus
+        Accessible.name: root.display
 
         background: Rectangle {
             radius: Kirigami.Units.smallSpacing
@@ -98,6 +99,16 @@ Item {
                 z: -1
                 color: Qt.rgba(0, 0, 0, 0.05)
                 radius: Kirigami.Units.smallSpacing
+            }
+
+            // focus indicator
+            Rectangle {
+                anchors.fill: parent
+                radius: Kirigami.Units.smallSpacing
+                color: "transparent"
+                border.width: 2
+                border.color: Kirigami.Theme.focusColor
+                visible: button.activeFocus
             }
         }
         contentItem: Item {

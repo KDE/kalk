@@ -329,6 +329,11 @@ Kirigami.Page {
                         }
 
                         Keys.onPressed: event => {
+                            if (event.key === Qt.Key_Tab || event.key === Qt.Key_Backtab) {
+                                event.accepted = true;
+                                nextItemInFocusChain(event.key === Qt.Key_Tab).forceActiveFocus();
+                                return;
+                            }
                             event.accepted = false;
                             initialPage.Keys.pressed(event);
                         }
