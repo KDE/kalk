@@ -445,27 +445,47 @@ Kirigami.Page {
                         interactive: inPortrait
                         spacing: Kirigami.Units.smallSpacing
 
-                        NumberPad {
-                            id: numberPad
-                            inPortrait: initialPage.inPortrait
-                            onPressed: text => {
-                                if (text == "DEL") {
-                                    InputManager.backspace();
-                                } else if (text == "=") {
-                                    InputManager.equal();
-                                    expressionRow.focus = false;
-                                } else {
-                                    InputManager.append(text);
-                                }
+                        // FocusScope notices focus on off-screen pages.
+                        FocusScope {
+                            enabled: view.interactive || view.currentIndex === 0
+                            onActiveFocusChanged: {
+                                if (activeFocus && view.interactive && view.currentIndex !== 0)
+                                    view.currentIndex = 0;
                             }
-                            onClear: {
-                                InputManager.clear();
-                                resultFadeOutAnimation.start();
+
+                            NumberPad {
+                                id: numberPad
+                                anchors.fill: parent
+                                inPortrait: initialPage.inPortrait
+                                onPressed: text => {
+                                    if (text == "DEL") {
+                                        InputManager.backspace();
+                                    } else if (text == "=") {
+                                        InputManager.equal();
+                                        expressionRow.focus = false;
+                                    } else {
+                                        InputManager.append(text);
+                                    }
+                                }
+                                onClear: {
+                                    InputManager.clear();
+                                    resultFadeOutAnimation.start();
+                                }
                             }
                         }
 
-                        FunctionPad {
-                            onPressed: text => InputManager.append(text)
+                        FocusScope {
+                            // Duplicate of the function pad on the right.
+                            enabled: view.interactive || view.currentIndex === 1
+                            onActiveFocusChanged: {
+                                if (activeFocus && view.interactive && view.currentIndex !== 1)
+                                    view.currentIndex = 1;
+                            }
+
+                            FunctionPad {
+                                anchors.fill: parent
+                                onPressed: text => InputManager.append(text)
+                            }
                         }
                     }
                 }
