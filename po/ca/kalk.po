@@ -255,9 +255,3 @@ msgstr "Quant a la"
 #, kde-format
 msgid "Category"
 msgstr "Categoria"
-
-#~ msgid "Cut"
-#~ msgstr "Retalla"
-
-#~ msgid "Copy"
-#~ msgstr "Copia"
