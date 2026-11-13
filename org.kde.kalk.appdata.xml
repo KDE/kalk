@@ -527,7 +527,7 @@
           <li>Fixed the calculator drawer opening when the application opens</li>
           <li xml:lang="ar">أُصلح فتح درج الحاسبة عند فتح التطبيق</li>
           <li xml:lang="ca">Corregeix l'obertura del calaix de la calculadora quan s'obre l'aplicació</li>
-          <li xml:lang="ca-valencia">Corregix l'obertura del calaix de la calculadora quan s'obra l'aplicació</li>
+          <li xml:lang="ca-valencia">Corregix l'obertura del calaix de la calculadora quan s'obri l'aplicació</li>
           <li xml:lang="cs">Opraven problém, kdy se při spuštění aplikace otevírala klávesnice kalkulačky</li>
           <li xml:lang="de">Fehler behoben, bei dem sich die Taschenrechner-Schublade bereits beim Anwendungsstart öffnet</li>
           <li xml:lang="es">Se ha corregido la apertura del cajón de la calculadora cuando se abre la aplicación.</li>
